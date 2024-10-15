@@ -1,7 +1,5 @@
 # Testisivu
 
-![](./images/avatar-photo.jpg)
-
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec facilisis urna vitae risus iaculis efficitur. Ut euismod venenatis ligula, vitae auctor nibh egestas et. Quisque consequat consequat velit, id laoreet elit auctor in. Aenean sed mi tempus, lobortis elit eget, varius diam. Phasellus eget suscipit arcu, ac ultrices sapien. Morbi suscipit, sem ullamcorper rutrum lobortis, orci orci iaculis velit, sed ullamcorper eros lacus vel nisl. Aliquam venenatis imperdiet eros, sed gravida turpis imperdiet ac. Proin id turpis ut neque vestibulum consequat. Nam convallis sit amet ante ac bibendum. Mauris non purus quis dui faucibus elementum vel et nulla. Sed cursus sem at risus efficitur auctor. Cras odio odio, placerat in lobortis ut, tincidunt tempus nisl.
 
