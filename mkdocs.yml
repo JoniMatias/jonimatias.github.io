@@ -19,7 +19,7 @@ theme:
   features:
     - navigation.tabs
 nav:
-  - Home: 'index.md'
+  - Koti: 'index.md'
   - Hahmot: 'hahmot.md'
   - Tarinat: 'sessiot.md'
 extra_css:
