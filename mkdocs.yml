@@ -1,0 +1,45 @@
+# Replace the text below to customize your site
+site_name: Projects of Joni Rajala
+site_description: Adventures in Fabrication
+
+site_author: Joni Matias Rajala
+docs_dir: docs
+site_dir: _site
+copyright: Creative Commons Attribution Non Commercial
+theme:
+  name: material
+  # see https://squidfunk.github.io/mkdocs-material/getting-started/#color-palette
+  palette:
+    primary: "black"
+    accent: "red"
+  font:
+    false
+    # text: "Ubuntu"
+    # code: "Ubuntu Mono"
+  features:
+    - navigation.tabs
+nav:
+  - Home: 'index.md'
+  - Hahmot: 'hahmot.md'
+  - Tarinat: 'sessiot.md'
+extra_css:
+  - style.css
+
+
+markdown_extensions:
+  - extra
+  - smarty
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
+
+plugins:
+  - mkdocs-video:
+      is_video: True
+      video_autoplay: False
