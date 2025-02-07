@@ -14,6 +14,9 @@ Ennen kuin alat tekemään näitä tehtäviä, kannattaa lukea seuraavat ohjeet:
 
 <div class="grid cards" markdown>
 
+-   [# Aakkostus](./haasteet/aakkostus.md)
+
+
 -   [# Rooma](./haasteet/roomalaiset.md)
 
 

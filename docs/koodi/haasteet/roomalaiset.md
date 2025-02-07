@@ -4,7 +4,7 @@ Tee ohjelma, joka lukee sille annettuja roomalaisittain merkittyjä numeroita, j
 
 Roomalaisessa numerojärjestelmässä lukuja merkitään kirjaimilla, ja merkitätapa on hyvin lähellä tukkimiehenkirjanpitoa. Monta kappaletta samaa merkkiä plusataan yhteen: `I` on yksi, ja `II` on kaksi. Vain jos heti yksikkömerkin `I, X, C` jälkeen tulee merkkiä isompaa lukua edustava merkkin, niin yksikkömerkit vähennetään isommasta: `IX` on yhdeksän.
 
-!!! tip "Roomalaiset numerot tiivistetysti"
+??? tip "Roomalaiset numerot tiivistetysti"
     - I - 1
     - II - 2
     - III - 3
@@ -28,7 +28,7 @@ Roomalaisessa numerojärjestelmässä lukuja merkitään kirjaimilla, ja merkit�
 Eli mm. `MMDCCXCII = 2792`.
 
 
-Kannattaa huomioida myös se, ettei roomalaisilla numeroilla ole tarkkaa vakiintunutta kirjoitusasua, jolloin myös sellaiset tapaukset kuin `IIX = 8`, `CCCCIIII = 404` tai `MIM = 1999` ovat mahdollisia.
+Kannattaa huomioida myös se, ettei roomalaisilla numeroilla ole tarkkaa vakiintunutta kirjoitusasua, jolloin myös sellaiset tapaukset kuin `IIX = 8`, `CCCCIIII = 404` ja `MIM = 1999` ovat mahdollisia.
 
 Oletuksena kuitenkin voidaan pitää seuraavia sääntöjä:
 
@@ -40,7 +40,7 @@ Oletuksena kuitenkin voidaan pitää seuraavia sääntöjä:
 
 ## Data
 
-Lataa alla oleva tiedosto. Siinä on riveittäin annettu erilaisia syötteitä. Alla olevaan vastauskenttään odotetaan tekstikenttä, jossa joka rivillä on syötetiedoston riviä vastaava tulos.
+Lataa alla oleva tiedosto. Siinä on riveittäin annettu erilaisia syötteitä. Alla olevaan vastauskenttään odotetaan tekstiä, jossa joka rivillä on syötetiedoston riviä vastaava tulos.
 
 [Lataa syötetiedosto](../syotteet/rooma_input.txt){ .md-button }
 
@@ -49,6 +49,6 @@ Lataa alla oleva tiedosto. Siinä on riveittäin annettu erilaisia syötteitä. 
 
 <textarea rows="10" cols="80" id="tulos"></textarea>
 <button class="md-button md-button--primary" id="submit_button">Kokeile vastausta</button>
-<div style="display: none;" id="vastaus_tiedosto">../../syotteet/rooma_output.txt</div>
-<div style="display: none;" id="tehtava_tiedosto">../../syotteet/rooma_input.txt</div>
+<div style="display: none;" id="vastaustiedosto">../../syotteet/rooma_output.txt</div>
+<div style="display: none;" id="tehtavatiedosto">../../syotteet/rooma_input.txt</div>
 <div style="text_color: red" id="virhelista"></div>

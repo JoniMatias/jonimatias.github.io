@@ -6,8 +6,8 @@ document$.subscribe(function() {
 
 
 function test() {
-    var vastaustiedosto = document.getElementById("vastaus_tiedosto").innerHTML
-    var tehtavatiedosto = document.getElementById("tehtava_tiedosto").innerHTML
+    var vastaustiedosto = document.getElementById("vastaustiedosto").innerHTML
+    var tehtavatiedosto = document.getElementById("tehtavatiedosto").innerHTML
     var syote = document.getElementById("tulos").value
 
     tarkista(syote, vastaustiedosto, tehtavatiedosto)
@@ -37,10 +37,6 @@ function tarkista(syote, vastaustiedosto_url, tehtavatiedosto_url) {
             var virheet = []
     
             for (let i=0; i< oikeat_vastaukset.length; i++) {
-                if (syotteet.length <= i) {
-                    break
-                }
-    
                 if (oikeat_vastaukset[i] !== syotteet[i]) {
                     virheet.push("" + tehtavat[i] + " - " + syotteet[i])
                 }
