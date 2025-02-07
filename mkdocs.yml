@@ -10,8 +10,8 @@ theme:
   name: material
   # see https://squidfunk.github.io/mkdocs-material/getting-started/#color-palette
   palette:
-    primary: "black"
-    accent: "red"
+    primary: "cyan"
+    accent: "light blue"
   font:
     false
     # text: "Ubuntu"
@@ -20,8 +20,9 @@ theme:
     - navigation.tabs
 nav:
   - Koti: 'index.md'
-  - Hahmot: 'hahmot.md'
-  - Tarinat: 'sessiot.md'
+  - Koodihaasteet: 'koodi/koodi_toc.md'
+extra_javascript:
+  - javascripts/extra.js
 extra_css:
   - style.css
 

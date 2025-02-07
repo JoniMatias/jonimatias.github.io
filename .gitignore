@@ -1,4 +1,5 @@
 .env
+.venv
 _site
 .DS_Store
 .vscode
