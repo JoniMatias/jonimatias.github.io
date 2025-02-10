@@ -34,7 +34,7 @@ Huomaa, että ääkköset saattavat tuottaa ongelmia. Ääkköset pitää käsit
 
 ## Data
 
-Lataa alla oleva tiedosto. Siinä on riveittäin annettu erilaisia syötteitä. *Vastauskenttä odottaa karsittua syötetiedostoa*, eli vastauksessa on vähemmän rivejä kuin alkuperäisessä syötteessä.
+Lataa alla oleva tiedosto. Siinä on riveittäin annettu erilaisia syötteitä.
 
 Aineisto on rakennettu Suomen kielitoimiston nykysuomen sanalistan pohjalta. https://kotus.fi/sanakirjat/kielitoimiston-sanakirja/nykysuomen-sana-aineistot/nykysuomen-sanalista/
 

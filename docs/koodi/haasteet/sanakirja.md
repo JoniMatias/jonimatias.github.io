@@ -27,9 +27,9 @@ Tällainen puurakenne toimii erittäin hyvin sellaisissa tapauksissa, jossa sano
 
 ## Data
 
-Lataa alla oleva tiedosto. Siinä on riveittäin annettu erilaisia syötteitä. *Vastauskenttä odottaa uudestaan muotoiltua syötetiedostoa*.
+Lataa alla oleva tiedosto. Siinä on riveittäin annettu erilaisia syötteitä.
 
-Aineisto on rakennettu Suomen kielitoimiston nykysuomen sanalistan pohjalta. https://kotus.fi/sanakirjat/kielitoimiston-sanakirja/nykysuomen-sana-aineistot/nykysuomen-sanalista/
+Aineisto on rakennettu Suomen kielitoimiston nykysuomen sanalistan pohjalta. [https://kotus.fi/sanakirjat/kielitoimiston-sanakirja/nykysuomen-sana-aineistot/nykysuomen-sanalista/](https://kotus.fi/sanakirjat/kielitoimiston-sanakirja/nykysuomen-sana-aineistot/nykysuomen-sanalista/)
 
 [Lataa syötetiedosto](../syotteet/sanakirja_input.txt){ .md-button }
 
