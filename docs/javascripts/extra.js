@@ -1,21 +1,54 @@
 
 
 document$.subscribe(function() {
-    document.getElementById("submit_button").onclick = test
+    document.getElementById("submit_button").onclick = testi_yksi
+    document.getElementById("submit_button_2").onclick = testi_kaksi
+    document.getElementById("submit_button_3").onclick = testi_kolme
 })
 
+function tulosta_virheet(virheet, elementtiin) {
+    document.getElementById(elementtiin).innerHTML = "<b>Seuraavat syötteet menivät väärin</b>: <br>"
+    for (let i=0; i<virheet.length; ++i) {
+        document.getElementById(elementtiin).innerHTML += virheet[i] + "<br>"
+    }
+}
 
-function test() {
+function testi_yksi() {
     var vastaustiedosto = document.getElementById("vastaustiedosto").innerHTML
     var tehtavatiedosto = document.getElementById("tehtavatiedosto").innerHTML
     var syote = document.getElementById("tulos").value
 
+    var virhe_elementti = "virhelista"
+
     tarkista(syote, vastaustiedosto, tehtavatiedosto)
     .then(virheet => {
-        document.getElementById("virhelista").innerHTML = "<b>Seuraavat syötteet menivät väärin</b>: <br>"
-        for (let i=0; i<virheet.length; ++i) {
-            document.getElementById("virhelista").innerHTML += virheet[i] + "<br>"
-        }
+        tulosta_virheet(virheet, virhe_elementti)
+    })
+}
+
+function testi_kaksi() {
+    var vastaustiedosto = document.getElementById("vastaustiedosto_2").innerHTML
+    var tehtavatiedosto = document.getElementById("tehtavatiedosto_2").innerHTML
+    var syote = document.getElementById("tulos").value
+
+    var virhe_elementti = "virhelista_2"
+
+    tarkista(syote, vastaustiedosto, tehtavatiedosto)
+    .then(virheet => {
+        tulosta_virheet(virheet, virhe_elementti)
+    })
+}
+
+function testi_kolme() {
+    var vastaustiedosto = document.getElementById("vastaustiedosto_3").innerHTML
+    var tehtavatiedosto = document.getElementById("tehtavatiedosto_3").innerHTML
+    var syote = document.getElementById("tulos").value
+
+    var virhe_elementti = "virhelista_3"
+
+    tarkista(syote, vastaustiedosto, tehtavatiedosto)
+    .then(virheet => {
+        tulosta_virheet(virheet, virhe_elementti)
     })
 }
 

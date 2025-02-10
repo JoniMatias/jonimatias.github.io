@@ -27,6 +27,8 @@ Oikeasti nämä syötetiedostot ovat pidempiä. Usein satoja rivejä pitkiä.
 
 Jos ohjelmointitaitosi on vielä sen verran vaiheessa, ettei tiedostojen lukeminen suju, niin kurkkaapa [tiedostorivien lukemisen ohjesivulle](). Sieltä löytyy kopiotavaa koodia, jolla voi lukaista tiedoston rivi kerrallaan.
 
+Jokainen syötetiedosto on UTF-8-koodattu txt-tiedosto, joka noudattaa UNIX-standardia rivien vaihtamiseen. Eli rivinvaihdot tehdään pelkällä `new-line` -merkillä, eikä Windowsin käyttämällä `carriage-return` + `new-line` -yhdistelmällä. Tämän ei pitäisi tuottaa isompia ongelmia Windows-puolella, suurin osa ohjemointiympäristöistä osaa tunnistaa molemmat merkit, mutta jos jostain syystä rivinvaihtojen tunnistaminen tuottaa ongelmia Windows-koneilla, niin kannattaa kokeilla vaihtoehtoisia menetelmiä.
+
 
 
 ## Tulos
@@ -47,3 +49,5 @@ Käyttäen aikaisempaa roomalaista kirjoitusjärjestelmäesimerkin syötetiedost
 virhe: outoja kirjaimia
 91
 ```
+
+Tarkastimen pitäisi huomioida automaattisesti kirjainten koodaus ja rivinvaihtomerkkien erilaisuus. Suurin osa testeistä on kuitenkin tehty vain UTF-8-kooodatulla tekstillä ja UNIX-rivivaihdoilla, joten ongelmatapauksissa kannattaa tarkastaa tarkistimeen laitetun tekstin muotoilu.

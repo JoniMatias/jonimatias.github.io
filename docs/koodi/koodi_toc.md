@@ -20,7 +20,7 @@ Ennen kuin alat tekemään näitä tehtäviä, kannattaa lukea seuraavat ohjeet:
 -   [# Rooma](./haasteet/roomalaiset.md)
 
 
--   [# Rytmi](./haasteet/rytmi.md)
+-   [# Sanakirja](./haasteet/sanakirja.md)
 
 
 </div>
