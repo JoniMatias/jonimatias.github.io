@@ -4,9 +4,31 @@ Koska outojen sanojen käyttäminen on kivaa, niin ajattelin huomenna puhua vain
 
 Tehtävänäsi on käydä syöteaineistosta kaikki sanat läpi, ja merkitä sieltä kaikki sanat, joissa kaikki kirjaimet ovat jo aakkosjärjestyksessä. Aakkosjärjestykseen kelpaa myös saman kirjaimen toistaminen. Eli sanat `aho`, `aamuyö` ja `hiiltyä` ovat aakkosjärjestyksessä. Sellaiset sanat, kuin `koira`, `aasi` ja `alava` eivät ole.
 
-Vastaus odottaa listaa kaikista aakkosjärjestyksissä olevista sanoista. Vastauslistan pitäisi olla samassa aakkosjärjestyksessä kuin syötelistakin.
+Vastaus odottaa listaa sanoista `true` tai `false`, riippuen siitä, onko syötteen sana aakkosjärjestyksessä vai ei. Vastauslistan pitäisi olla samassa järjestyksessä kuin syötelistakin.
 
-Huomaa, että ääkköset saattavat tuottaa ongelmia tehtävänannon kanssa. Syötetiedosto on UTF-8-koodattu.
+Eli syöte:
+
+```
+aamuyö
+aasi
+aho
+alava
+hiiltyä
+koira
+```
+
+tuottaa tuloksen:
+
+```
+true
+false
+true
+false
+true
+false
+```
+
+Huomaa, että ääkköset saattavat tuottaa ongelmia. Ääkköset pitää käsitellä suomen aakkosjärjestyksen mukaan. Syötetiedosto on UTF-8-koodattu.
 
 
 

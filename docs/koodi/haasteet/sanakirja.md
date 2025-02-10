@@ -20,7 +20,7 @@ Vastauksen muotoilu olettaa valmiin puun, jonka läpi kuljetaan. Läpikulun pit�
 <<<<<<<<
 ```
 
-Tällainen puurakenne toimii erittäin hyvin sellaisissa tapauksissa, jossa sanojen kirjaimia pitää käydä järjestyksessä läpi, ja tulevia kirjaimia ei voi joka tapauksessa tietää etukäteen. Hyvä esimerkki tällaisen sanakirjan käytöstä olisi muunmuassa sanaristikon täyttöalgoritmi, [Boggle-lautapelin](https://fi.wikipedia.org/wiki/Boggle) automaattinen ratkaisija tai algortimi, joka yrittää tarjota mahdollisia tapoja jatkaa käyttäjän syöttämää sanaa.
+Tällainen puurakenne toimii erittäin hyvin sellaisissa tapauksissa, jossa sanojen kirjaimia pitää käydä järjestyksessä läpi, ja tulevia kirjaimia ei voi kaikissa tapauksissa tietää etukäteen. Hyvä esimerkki tällaisen sanakirjan käytöstä olisi muunmuassa sanaristikon täyttöalgoritmi, [Boggle-lautapelin](https://fi.wikipedia.org/wiki/Boggle) automaattinen ratkaisija tai algortimi, joka yrittää tarjota mahdollisia tapoja jatkaa käyttäjän syöttämää sanaa.
 
 
 
