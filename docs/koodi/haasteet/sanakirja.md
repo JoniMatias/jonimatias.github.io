@@ -1,4 +1,8 @@
 # Sanakirja
+<!-- 
+Tietorakenteet ja algoritmit
+Sanakirja
+-->
 
 **Tämä on suhteellisen monimutkainen tehtävä.**
 
@@ -29,7 +33,7 @@ Tällainen puurakenne toimii erittäin hyvin sellaisissa tapauksissa, jossa sano
 
 Lataa alla oleva tiedosto. Siinä on riveittäin annettu erilaisia syötteitä.
 
-Aineisto on rakennettu Suomen kielitoimiston nykysuomen sanalistan pohjalta. [https://kotus.fi/sanakirjat/kielitoimiston-sanakirja/nykysuomen-sana-aineistot/nykysuomen-sanalista/](https://kotus.fi/sanakirjat/kielitoimiston-sanakirja/nykysuomen-sana-aineistot/nykysuomen-sanalista/)
+Syöte sisältää 5000 satunnaisesti valittua sanaa Suomen kielitoimiston nykysuomen sanalistasta. [https://kotus.fi/sanakirjat/kielitoimiston-sanakirja/nykysuomen-sana-aineistot/nykysuomen-sanalista/](https://kotus.fi/sanakirjat/kielitoimiston-sanakirja/nykysuomen-sana-aineistot/nykysuomen-sanalista/)
 
 [Lataa syötetiedosto](../syotteet/sanakirja_input.txt){ .md-button }
 

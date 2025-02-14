@@ -1,8 +1,12 @@
 # Aakkostus
+<!-- 
+Ohjelmointi 1
+Merkkijono
+-->
 
 Koska outojen sanojen käyttäminen on kivaa, niin ajattelin huomenna puhua vain sanoilla, joiden kirjaimet ovat valmiiksi aakkosjärjestyksessä. Tätä varten pitäisi kuitenkin löytää kaikki tarkoitukseen sopivat sanat. Onneksi on olemassa Suomen kielitoimisto, jolta löytyy lista kaikista suomen sanoista.
 
-Tehtävänäsi on käydä syöteaineistosta kaikki sanat läpi, ja merkitä sieltä kaikki sanat, joissa kaikki kirjaimet ovat jo aakkosjärjestyksessä. Aakkosjärjestykseen kelpaa myös saman kirjaimen toistaminen. Eli sanat `aho`, `aamuyö` ja `hiiltyä` ovat aakkosjärjestyksessä. Sellaiset sanat, kuin `koira`, `aasi` ja `alava` eivät ole.
+Tehtävänäsi on käydä syöteaineistosta kaikki sanat läpi, ja merkitä sieltä sanat, joissa kaikki kirjaimet ovat jo aakkosjärjestyksessä. Aakkosjärjestykseen kelpaa myös saman kirjaimen toistaminen. Eli sanat `aho`, `aamuyö` ja `hiiltyä` ovat aakkosjärjestyksessä. Sellaiset sanat, kuin `koira`, `aasi` ja `alava` eivät ole.
 
 Vastaus odottaa listaa sanoista `true` tai `false`, riippuen siitä, onko syötteen sana aakkosjärjestyksessä vai ei. Vastauslistan pitäisi olla samassa järjestyksessä kuin syötelistakin.
 

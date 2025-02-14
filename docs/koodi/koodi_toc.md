@@ -17,6 +17,9 @@ Ennen kuin alat tekemään näitä tehtäviä, kannattaa lukea seuraavat ohjeet:
 -   [# Aakkostus](./haasteet/aakkostus.md)
 
 
+-   [# Boggle](./haasteet/boggle.md)
+
+
 -   [# Rooma](./haasteet/roomalaiset.md)
 
 

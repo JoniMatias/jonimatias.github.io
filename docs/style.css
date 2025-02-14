@@ -20,6 +20,15 @@
   top: 10px;
 }
 
+.half-width {
+  width: 49%;
+}
+
+.auto-width {
+  width: auto;
+}
+
+
 .full-width {
   width: 100%;
 }
