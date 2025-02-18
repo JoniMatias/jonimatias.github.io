@@ -10,7 +10,7 @@ Ennen kuin alat tekemään näitä tehtäviä, kannattaa lukea seuraavat ohjeet:
 
 
 
-## Tehtävät julkaisujärjestyksessä
+## Tehtävät aakkosjärjestyksessä
 
 <div class="grid cards" markdown>
 
@@ -20,7 +20,7 @@ Ennen kuin alat tekemään näitä tehtäviä, kannattaa lukea seuraavat ohjeet:
 -   [# Boggle](./haasteet/boggle.md)
 
 
--   [# Palindromit 1: Palindromienen tunnistaminen](./haasteet/palindromi.md)
+-   [# Palindromit 1: Tunnistaminen](./haasteet/palindromi.md)
 
 
 -   [# Palindromit 2: Palindromiprosentti](./haasteet/palindromi2.md)
