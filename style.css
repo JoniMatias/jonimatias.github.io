@@ -1,0 +1,39 @@
+
+
+.md-typeset h1 {
+  margin-left: 10px;
+  font-weight: bold;
+  color: skyblue;
+}
+
+.md-typeset h2 {
+  margin-left: 15px;
+  font-weight: bold;
+}
+
+.md-typeset h3 {
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+.button-icon img {
+  top: 10px;
+}
+
+.half-width {
+  width: 49%;
+}
+
+.auto-width {
+  width: auto;
+}
+
+
+.full-width {
+  width: 100%;
+}
+
+.md-button.full-width {
+  width: 100%;
+  text-align: center;
+}
