@@ -4639,7 +4639,6 @@ vauraus
 vauvavoide
 vauveli
 vavahtaa
-WC
 vedenneito
 vedenpyhitys
 vehmaus

@@ -17,6 +17,18 @@ Ennen kuin alat tekemään näitä tehtäviä, kannattaa lukea seuraavat ohjeet:
 -   [# Aakkostus](./haasteet/aakkostus.md)
 
 
+-   [# Boggle](./haasteet/boggle.md)
+
+
+-   [# Palindromit 1: Palindromienen tunnistaminen](./haasteet/palindromi.md)
+
+
+-   [# Palindromit 2: Palindromiprosentti](./haasteet/palindromi2.md)
+
+
+-   [# Palindromit 3: Alipalindromit](./haasteet/palindromi3.md)
+
+
 -   [# Rooma](./haasteet/roomalaiset.md)
 
 

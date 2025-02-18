@@ -1,4 +1,8 @@
 # Rooma
+<!-- 
+Ohjelmointi 1
+Merkkijono
+-->
 
 Tee ohjelma, joka lukee sille annettuja roomalaisittain merkittyj채 numeroita, ja palauttaa luvun tavallisessa kymmenj채rjestysmuodossa.
 
@@ -16,7 +20,7 @@ Roomalaisessa numeroj채rjestelm채ss채 lukuja merkit채채n kirjaimilla, ja merkit�
     - IX - 9
     - X - 10
     - XX - 20
-    - XXX - 3
+    - XXX - 30
     - XL - 40
     - L - 50
     - LX - 60

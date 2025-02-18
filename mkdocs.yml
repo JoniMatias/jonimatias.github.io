@@ -29,6 +29,7 @@ extra_css:
 
 markdown_extensions:
   - extra
+  - meta
   - smarty
   - admonition
   - attr_list
