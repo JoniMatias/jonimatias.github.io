@@ -1,8 +1,5 @@
 # Palindromit 2: Palindromiprosentti
-<!-- 
-Ohjelmointi 1
-Merkkijono
--->
+★★☆☆☆
 
 ??? Palindromitehtävät
     Tämä kuuluu palindromitehtävien ryhmään. Näiden tehtävien vaikeusaste nousee hiljalleen tehtävien edetessä, mutta missään vaiheessa niistä ei tule mitenkään läpipääsemättömän vaikeita. Sarjaan kuuluu tehtävät:
@@ -11,23 +8,23 @@ Merkkijono
      - **Palindromit 2: Palindromiprosentti**
      - [Palindromit 3: Alipalindromit](./palindromi3.md)
 
-Käyttäen annettua syötetiedostoa, laske syötteriveillä olevien kirjainten määrä, joille löytyy palindrominen kirjain. Eli toisin sanoen kirjaimet, joille löytyy merkijonon toisesta päästä vastaava kirjain. Tehtävänanto edelleen olettaa, että palindromissa huomioidaan vain kirjaimet, ja erikoismerkkien indeksien yli vain hypätään. Merkkijonon kokonaispituudessa nämä erikoismerkit pitäisi kuitenkin laskea.
+Käyttäen annettua syötetiedostoa, laske syöteriveillä olevien kirjainten määrä, joille löytyy palindromisesti vastaava kirjain. Eli toisin sanoen kirjaimet, joille löytyy merkkijonon toisesta päästä vastaava kirjain. Tehtävänanto edelleen olettaa, että palindromissa huomioidaan vain kirjaimet, ja erikoismerkkien indeksien yli vain hypätään. Merkkijonon kokonaispituudessa nämä erikoismerkit pitäisi kuitenkin laskea.
 
 Ilmoita löydettyjen kirjainten määrä murtolukuna koko merkkijonon kirjainten määrästä.
 
-Taulukossa on muutamia esimerkkejä siitä, millaisia tuloksia tähtävästä odotettaisiin.
+Taulukossa on muutamia esimerkkejä siitä, millaisia tuloksia tehtävästä odotettaisiin.
 
 
 | Syöte       | Palindroivat merkit    | Tulos |
 |-------------|------------------------|-------|
 | ässä        | **ässä**               | 4/4   |
-| allakka     | **a**llakk**a**        | 2/7   |
+| allakka     | **a**ll**a**kk**a**    | 3/7   |
 | amme        | a**mm**e               | 2/4   |
 | aho         | a**h**o                | 1/3   |
 | s 21 ii-s   | **s** 21 **ii**-**s**  | 4/9   |
 | Linux unil' | **Linux unil**'        | 9/11  |
 
-Vastaus odottaa jokaista syöteriviä vastaavalla vastausrivillä vain tulos osion. Eli esimerkin mukaiselle syötteelle:
+Vastaus odottaa jokaista syöteriviä vastaavalle vastausriville vain taulukon tulososion. Eli esimerkin mukaiselle syötteelle:
 
 ```
 ässä
@@ -42,7 +39,7 @@ vastaus olisi:
 
 ```
 4/4
-2/7
+3/7
 2/4
 1/3
 4/9

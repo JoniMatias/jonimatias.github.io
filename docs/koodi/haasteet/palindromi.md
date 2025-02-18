@@ -1,8 +1,5 @@
-# Palindromit 1: Palindromien tunnistaminen
-<!-- 
-Ohjelmointi 1
-Merkkijono
--->
+# Palindromit 1: Tunnistaminen
+★★☆☆☆
 
 ??? Palindromitehtävät
     Tämä kuuluu palindromitehtävien ryhmään. Näiden tehtävien vaikeusaste nousee hiljalleen tehtävien edetessä, mutta missään vaiheessa niistä ei tule mitenkään läpipääsemättömän vaikeita. Kaikki tehtävät käyttävät myös samaa syötetiedostoa. Sarjaan kuuluu tehtävät:
