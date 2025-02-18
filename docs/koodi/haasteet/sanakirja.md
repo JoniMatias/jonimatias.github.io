@@ -1,8 +1,5 @@
 # Sanakirja
-<!-- 
-Tietorakenteet ja algoritmit
-Sanakirja
--->
+★★★★☆
 
 **Tämä on suhteellisen monimutkainen tehtävä.**
 

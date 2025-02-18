@@ -1,12 +1,9 @@
 # Rooma
-<!-- 
-Ohjelmointi 1
-Merkkijono
--->
+★★☆☆☆
 
-Tee ohjelma, joka lukee sille annettuja roomalaisittain merkittyjä numeroita, ja palauttaa luvun tavallisessa kymmenjärjestysmuodossa.
+Tee ohjelma, joka lukee sille annettuja roomalaisittain merkittyjä numeroita, ja palauttaa luvun tavallisessa kymmenjärjestelmämuodossa.
 
-Roomalaisessa numerojärjestelmässä lukuja merkitään kirjaimilla, ja merkitätapa on hyvin lähellä tukkimiehenkirjanpitoa. Monta kappaletta samaa merkkiä plusataan yhteen: `I` on yksi, ja `II` on kaksi. Vain jos heti yksikkömerkin `I, X, C` jälkeen tulee merkkiä isompaa lukua edustava merkkin, niin yksikkömerkit vähennetään isommasta: `IX` on yhdeksän.
+Roomalaisessa numerojärjestelmässä lukuja merkitään kirjaimilla, ja merkintätapa on hyvin lähellä tukkimiehen kirjanpitoa. Monta kappaletta samaa merkkiä plussataan yhteen: `I` on yksi, ja `II` on kaksi. Vain jos heti yksikkömerkin `I, X, C` jälkeen tulee merkkiä isompaa lukua edustava merkkiin, niin yksikkömerkit vähennetään isommasta: `IX` on yhdeksän.
 
 ??? tip "Roomalaiset numerot tiivistetysti"
     - I - 1

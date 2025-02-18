@@ -9,5 +9,5 @@ Ennen kuin alat tekemään näitä tehtäviä, kannattaa lukea seuraavat ohjeet:
 
 
 
-## Tehtävät julkaisujärjestyksessä
+## Tehtävät aakkosjärjestyksessä
 

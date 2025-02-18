@@ -5,6 +5,27 @@ Jos kiinnotaa tehdä näitä tehtäviä, mutta ohjelmointi ei vielä taivu niin 
 
 
 
+## C
+
+??? note "C-koodi"
+    ```
+    FILE * tiedosto;
+    char rivi[64];
+
+    tiedosto = fopen("path/to/tile.txt", "r");
+    if (tiedosto == NULL) {
+        return;
+    }
+
+    while ((read = getline(&rivi, 64, tiedosto)) != -1) {
+        // Tähän laitetaan rivin käsittelykoodi
+    }
+
+    fclose(tiedosto);
+    ```
+
+
+
 ## Swift
 
 ??? note "Swift-koodi"
@@ -22,3 +43,5 @@ Jos kiinnotaa tehdä näitä tehtäviä, mutta ohjelmointi ei vielä taivu niin 
         //Virheenkäsittelykoodi tänne
     }
     ```
+
+

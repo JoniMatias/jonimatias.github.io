@@ -1,8 +1,5 @@
 # Palindromit 2: Palindromiprosentti
-<!-- 
-Ohjelmointi 1
-Merkkijono
--->
+★★☆☆☆
 
 ??? Palindromitehtävät
     Tämä kuuluu palindromitehtävien ryhmään. Näiden tehtävien vaikeusaste nousee hiljalleen tehtävien edetessä, mutta missään vaiheessa niistä ei tule mitenkään läpipääsemättömän vaikeita. Sarjaan kuuluu tehtävät:
@@ -11,11 +8,11 @@ Merkkijono
      - **Palindromit 2: Palindromiprosentti**
      - [Palindromit 3: Alipalindromit](./palindromi3.md)
 
-Käyttäen annettua syötetiedostoa, laske syötteriveillä olevien kirjainten määrä, joille löytyy palindrominen kirjain. Eli toisin sanoen kirjaimet, joille löytyy merkijonon toisesta päästä vastaava kirjain. Tehtävänanto edelleen olettaa, että palindromissa huomioidaan vain kirjaimet, ja erikoismerkkien indeksien yli vain hypätään. Merkkijonon kokonaispituudessa nämä erikoismerkit pitäisi kuitenkin laskea.
+Käyttäen annettua syötetiedostoa, laske syöteriveillä olevien kirjainten määrä, joille löytyy palindromisesti vastaava kirjain. Eli toisin sanoen kirjaimet, joille löytyy merkkijonon toisesta päästä vastaava kirjain. Tehtävänanto edelleen olettaa, että palindromissa huomioidaan vain kirjaimet, ja erikoismerkkien indeksien yli vain hypätään. Merkkijonon kokonaispituudessa nämä erikoismerkit pitäisi kuitenkin laskea.
 
 Ilmoita löydettyjen kirjainten määrä murtolukuna koko merkkijonon kirjainten määrästä.
 
-Taulukossa on muutamia esimerkkejä siitä, millaisia tuloksia tähtävästä odotettaisiin.
+Taulukossa on muutamia esimerkkejä siitä, millaisia tuloksia tehtävästä odotettaisiin.
 
 
 | Syöte       | Palindroivat merkit    | Tulos |

@@ -1,4 +1,5 @@
 # Palindromit 3: Alipalindromit
+★★★★★
 <!-- 
 Ohjelmointi 2
 Merkkijono
@@ -13,9 +14,14 @@ Merkkijono
 
 Palindromilauseiden rakentamiseen ei yleensä riitä se, että tunnistaa yksittäisen sanan palindromiksi. Palindromin rakentaminen yleensä tarvitsee kykyä tunnistaa myös sanan osia palindromeiksi tai muiden sanojen osiksi väärin päin. Muiden sanojen löytäminen sanastosta on tämän tehtävän puitteissa vielä turhan monimutkaista (siihen ehkä voisi käyttää [sanakirjatehtävän puurakennetta](./sanakirja.md)), mutta sanan sisäisten palindromien etsimisen ei pitäisi olla vaikeaa. 
 
-Käyttäen edelleen samaa syötettä, etsi siitä jokaisen rivin sanan sisällä olevat palindromiset osiot. Löydettyjen osioiden ei tarvitse olla sanoja itsessään, kunhan ne noudattavat ensimmäisessä osassa annettuja palindromien sääntöjä. Jotta tulosteessa olisi jotain tolkkua, niin vain kolmikirjaimiset ja sitä pidemmät kirjainyhdistelmät lasketaan alipalindromeiksi tässä tehtävässä.
+Käyttäen annettua syötettä, etsi siitä jokaisen rivin sanan sisällä olevat palindromiset osiot. Löydettyjen osioiden ei tarvitse olla sanoja itsessään, kunhan ne noudattavat ensimmäisessä osassa annettuja palindromien sääntöjä. Jotta tulosteessa olisi jotain tolkkua, niin vain kolmikirjaimiset ja sitä pidemmät kirjainyhdistelmät lasketaan alipalindromeiksi tässä tehtävässä.
 
-Vataukseksi oletetaan jokaista syöteriviä vastaava tuloste, jossa on listattu kaikki sanan sisäiset vähintään kolmikirjaimiset alipalindromit aakkosjärjestyksessä puolipisteellä eroteltuna. Eli mm. syöte `minimikoko` jakautuisi osiin `imi`, `ini`, `kok`, `minim` ja `oko`, jolloin odotettu vastaus olisi muotoiltu seuraavasti `imi;ini;kok;minim;oko`. Tuloksissa pitää myös olla mukana alkuperäisen syötteen erikoismerkit vaikka niitä ei huomioitaisikaan palindromisuutta määriteltäessä, eli syötteen `si i-si` jakautuisi osiin `i-si` ja `si i-s`. Jos annetulla syötteellä ei ole yhtään alipalindromia, niin silloin tulosrivi jätetään tyhjäksi.
+!!! info inline end "Palindromien säännöt"
+ 
+    - Teksti on sama etuperin kuin takaperin luettuna.
+    - Vain kirjaimet lasketaan palindromiin, muut erikoismerkit jätetään huomiotta.
+
+Vastaukseksi oletetaan jokaista syöteriviä vastaava tuloste, jossa on listattu kaikki sanan sisäiset vähintään kolmikirjaimiset alipalindromit aakkosjärjestyksessä puolipisteellä eroteltuna. Eli mm. syöte `minimikoko` jakautuisi osiin `imi`, `ini`, `kok`, `minim` ja `oko`, jolloin odotettu vastaus olisi muotoiltu seuraavasti `imi;ini;kok;minim;oko`. Tuloksissa pitää myös olla mukana alkuperäisen syötteen erikoismerkit vaikka niitä ei huomioitaisikaan palindromisuutta määriteltäessä, eli syötteen `si i-si` jakautuisi osiin `i-si` ja `si i-s`. Jos annetulla syötteellä ei ole yhtään tarvittavan pituista alipalindromia, niin silloin tulosrivi jätetään tyhjäksi.
 
 ## Data
 
