@@ -10,7 +10,7 @@
 
 Palindromit ovat hauskoja ja hyödyllisiä.
 
-Palindromeissa kirjainten järjestys on sama oikealta vasemmalle luettuna ja vasemmalta oikealle luettuna. Tässä tehtävässä myös oletetaan palindromien yleiset säännöt, eli muita erikoismerkkejä ei lasketa palindromiin ollenkaan, ne vaan jätetään huomiotta. Erikoismerkeiksi lasketaan kaikki muut merkit kuin tavalliset aakkoset, eli väliviivat `-`, numerot `0123456789`, välilyönnit ` `, välimerkit `,.;:!?` ja rivinlopetusmerkit `\n` `\r` eivät ole osa palindromia. Palindromit eivät myöskään välitä isoista tai pienistä kirjaimista. Kaikki tällaiset merkit pitäisi palindromista vain jättää huomiotta.
+Palindromeissa kirjainten järjestys on sama oikealta vasemmalle luettuna ja vasemmalta oikealle luettuna. Tässä tehtävässä myös oletetaan palindromien yleiset säännöt, eli muita erikoismerkkejä ei lasketa palindromiin ollenkaan, ne vaan jätetään huomiotta. Erikoismerkeiksi lasketaan kaikki muut merkit kuin tavalliset aakkoset, eli väliviivat `-`, numerot `0123456789`, välilyönnit ` `, välimerkit `,.;:!?` ja rivinlopetusmerkit `\n` `\r` eivät ole osa palindromia. Palindromit eivät myöskään välitä isoista tai pienistä kirjaimista. Kaikki tällaiset merkit pitäisi jättää palindromista vain huomiotta.
 
 Näitä ohjeita nuodattamalla seuraavien merkkijonojen pitäisi siis olla palindromeja:
 

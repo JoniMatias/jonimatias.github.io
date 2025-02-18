@@ -33,7 +33,7 @@ Kannattaa huomioida myös se, ettei roomalaisilla numeroilla ole tarkkaa vakiint
 
 Oletuksena kuitenkin voidaan pitää seuraavia sääntöjä:
 
- - Merkit listataan suurammasta pienempään (ellei vähennetä).
+ - Merkit listataan suuremmasta pienempään (ellei vähennetä).
  - Vain yksikköä edustavilla merkeillä `I, X, C` voidaan vähentää.
  - Vähennettäessä käytetään vain yhtä merkkiä. (eli `XIC` ei ole mahdollinen.)
 

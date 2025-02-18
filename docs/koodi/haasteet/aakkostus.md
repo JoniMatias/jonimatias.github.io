@@ -5,7 +5,7 @@ Koska outojen sanojen käyttäminen on kivaa, niin suosittelen kaikki puhumaan h
 
 Tehtävänäsi on käydä syöteaineistosta kaikki sanat läpi, ja merkitä sieltä sanat, joissa kaikki kirjaimet ovat jo aakkosjärjestyksessä. Aakkosjärjestykseen kelpaa myös saman kirjaimen toistaminen. Eli sanat `aho`, `aamuyö` ja `hiiltyä` ovat aakkosjärjestyksessä. Sellaiset sanat, kuin `koira`, `aasi` ja `alava` eivät ole.
 
-Vastaus odottaa listaa sanoista `true` tai `false`, riippuen siitä, onko syötteen sana aakkosjärjestyksessä vai ei. Vastauslistan pitäisi olla samassa järjestyksessä kuin syötelistakin.
+Vastaus odottaa listaa sanoista `true` tai `false`, riippuen siitä, onko syötteen sana aakkosjärjestyksessä vai ei. Vastauslistan pitäisi olla samassa järjestyksessä kuin syötelistan.
 
 Eli syöte:
 
