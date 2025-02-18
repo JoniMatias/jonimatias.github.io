@@ -18,7 +18,7 @@ Taulukossa on muutamia esimerkkejä siitä, millaisia tuloksia tehtävästä odo
 | Syöte       | Palindroivat merkit    | Tulos |
 |-------------|------------------------|-------|
 | ässä        | **ässä**               | 4/4   |
-| allakka     | **a**llakk**a**        | 2/7   |
+| allakka     | **a**ll**a**kk**a**    | 3/7   |
 | amme        | a**mm**e               | 2/4   |
 | aho         | a**h**o                | 1/3   |
 | s 21 ii-s   | **s** 21 **ii**-**s**  | 4/9   |
