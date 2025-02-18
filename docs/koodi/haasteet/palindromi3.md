@@ -14,7 +14,7 @@ Merkkijono
 
 Palindromilauseiden rakentamiseen ei yleensä riitä se, että tunnistaa yksittäisen sanan palindromiksi. Palindromin rakentaminen yleensä tarvitsee kykyä tunnistaa myös sanan osia palindromeiksi tai muiden sanojen osiksi väärin päin. Muiden sanojen löytäminen sanastosta on tämän tehtävän puitteissa vielä turhan monimutkaista (siihen ehkä voisi käyttää [sanakirjatehtävän puurakennetta](./sanakirja.md)), mutta sanan sisäisten palindromien etsimisen ei pitäisi olla vaikeaa. 
 
-Käyttäen annettua syötettä, etsi siitä jokaisen rivin sanan sisällä olevat palindromiset osiot. Löydettyjen osioiden ei tarvitse olla sanoja itsessään, kunhan ne noudattavat ensimmäisessä osassa annettuja palindromien sääntöjä. Jotta tulosteessa olisi jotain tolkkua, niin vain kolmikirjaimiset ja sitä pidemmät kirjainyhdistelmät lasketaan alipalindromeiksi tässä tehtävässä.
+Käyttäen annettua syötettä, etsi siitä jokaisen rivin sanan sisällä olevat palindromiset osiot. Löydettyjen osioiden ei tarvitse olla sanoja itsessään, kunhan ne noudattavat ensimmäisessä osassa annettuja palindromien sääntöjä. Jotta tulosteessa olisi jotain tolkkua, niin vain kolmikirjaimiset ja sitä pidemmät kirjainyhdistelmät lasketaan alipalindromeiksi.
 
 !!! info inline end "Palindromien säännöt"
  
