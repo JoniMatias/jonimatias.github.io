@@ -24,7 +24,7 @@ Taulukossa on muutamia esimerkkejä siitä, millaisia tuloksia tehtävästä odo
 | s 21 ii-s   | **s** 21 **ii**-**s**  | 4/9   |
 | Linux unil' | **Linux unil**'        | 9/11  |
 
-Vastaus odottaa jokaista syöteriviä vastaavalla vastausrivillä vain tulos osion. Eli esimerkin mukaiselle syötteelle:
+Vastaus odottaa jokaista syöteriviä vastaavalle vastausriville vain taulukon tulososion. Eli esimerkin mukaiselle syötteelle:
 
 ```
 ässä
@@ -39,7 +39,7 @@ vastaus olisi:
 
 ```
 4/4
-2/7
+3/7
 2/4
 1/3
 4/9
