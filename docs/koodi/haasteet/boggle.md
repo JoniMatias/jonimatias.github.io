@@ -1,7 +1,7 @@
 # Boggle
 ★★★★★
 
-Kun sinulla on nyt [sanakirja-tehtävän](sanakirja.md) sanakirjapuu tehtynä, niin sille olisi hyvä keksiä jotain käyttöä. Onneksi ihmiset ovat laiskoja, ja kaikista parasta hupia on pelien pelaamisen automatisoida tietokoneille. Enää ei tarvitse itse miettiä ja olla hyvä peleissä, kunhan tietokoneet osaavat senkin hoitaa.
+Kun sinulla on nyt [sanakirja-tehtävän](sanakirja.md) sanakirjapuu tehtynä, niin sille olisi hyvä keksiä jotain käyttöä. Onneksi ihmiset ovat laiskoja, ja kaikista parasta hupia on pelien pelaamisen automatisoida tietokoneille. Enää ei tarvitse itse miettiä ja olla hyvä peleissä, kun tietokoneet osaavat senkin hoitaa.
 
 Yritetään siis ratkaista [Boggle-pelin](https://fi.wikipedia.org/wiki/Boggle) lauta automaattisesti. (*Vastaava peli on saatavilla myös muilla tuotenimillä.*) Pelin säännöt ovat seuraavat:
 
@@ -19,7 +19,7 @@ Sanojen sisäinen polku voi mennä kulkea ruudukossa hyvin vapaasti, kunhan per�
 ![](boggle-esimerkki-tihku.jpg){ .half-width }
 ![](boggle-esimerkki-häät.jpg){ .half-width }
 
-Tee algoritmi, joka hakee ristikosta kaikki mahdolliset sanat, jotka löytyvät sanakirjasta. Tehtävän voi toki suorittaa monella eri tavalla, mutta helpointa olisi käyttää [sanakirja-tehtävässä](./sanakirja.md) rakennettua puurakennetta.
+Tee algoritmi, joka hakee ruudukosta kaikki mahdolliset sanat, jotka löytyvät käytetystä sanakirjasta. Tehtävän voi toki suorittaa monella eri tavalla, mutta helpointa olisi käyttää [sanakirja-tehtävässä](./sanakirja.md) rakennettua puurakennetta.
 
 Tehtävä antaa syötteenä yhden 6x6 kokoisen kirjaintaulukon, jossa jokainen kirjainlaatta on merkitty omalla kirjaimellaan. Syötteessä jokainen ristikon vaakarivi on omalla tekstirivillään, ja pystyrivit on eroteltu rivinvaihdoilla. Esimerkiksi ylhäällä olevan kuvan ruudukko olisi merkitty näin:
 
@@ -48,7 +48,7 @@ Huomaa, että hyväksytty sanalista ei ole täydellinen lista kaikista sopivista
 
 ## Data
 
-Lataa alla oleva tiedosto. Siinä on annettu käytetty 6x6 kirjaintaulukko. 
+Lataa alla oleva tiedosto. Siinä on tehtävässä käytettävä 6x6 kirjaintaulukko. 
 
 [Lataa syötetiedosto](../syotteet/boggle_input.txt){ .md-button }
 
