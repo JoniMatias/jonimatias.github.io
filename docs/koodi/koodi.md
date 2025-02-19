@@ -1,11 +1,13 @@
 # Koodihaasteet
 
-Tällä sivulla on erilaisia kokeiluja siitä, miten Oulun yliopiston opetuskäytössä voitaisiin mahdollisimman helposti käyttää Advent of Code (tms) tyylisiä ohjelmointitehtäviä. AoC on aloittelevien opiskelijoiden mielestä sekä liian vaikeita ja niitä tulee liian nopeaan tahtiin. Tästä näkökulmasta lisätehtävien antaminen ei välttämättä ole huono idea.
+Tervetuloa Jonin epämääräisiin ohjelmointitehtäviin. Jos ohjelmointi kiinnostaa harrastepohjalla, mutta kaikki omat ideat vaikuttavat vielä turhan monimutkaisilta, niin täältä voi löytyä jotain toteuttamisen arvoista. Kaikki sivuston tehtävät on suunniteltu nopeasti toteutettaviksi harjoituksiksi.Ohjelmoinnin ammattilaiselta niihin pitäisi kulua enintään tunti, eikä harrastelijaltakaan niihin mene paljoa sen enempää.
 
-Ennen kuin alat tekemään näitä tehtäviä, kannattaa lukea seuraavat ohjeet:
+Tällä sivustolla olevia tehtäviä voi käyttää monella tavalla. Niitä voi käyttää pieninä aivopähkinöinä itselle, ja yrittää pohtia sopivaa ratkaisua itsekseen. Toisaalta monet tehtävät ovat myös hyviä lähtökohtia siihen, että lähdet itse perehtymään miten muut koodarit ovat aikaisemmin ratkaisseet vastaavanlaisia ongelmia. Joistain sivustolla olevista tehtävistä voi myös alkaa 
 
- - [Tehtävien syötteet ja tulokset](./arviointi.md)
- - [Apufunktioita ja koodinpätkiä](./apufunktiot.md)
+Ennen kuin alat tekemään näitä tehtäviä, kannattaa kurkata seuraavat alisivut:
+
+ - [Miten tehtävien syötteet ja tulokset toimivat](./arviointi.md)
+ - [Apufunktioita, koodinpätkiä ja teoriaa](./apufunktiot.md)
 
 
 
