@@ -52,3 +52,7 @@ Lataa alla oleva tiedosto. Siinä on riveittäin annettu erilaisia syötteitä. 
     <div style="display: none;" id="tehtavatiedosto">../../syotteet/palindromi_input.txt</div>
     <div style="text_color: red" id="virhelista"></div>
 </div>
+
+<div markdown class="pikkuprantti">
+Yllä olevat palindromit ovat Alivaltiosihteerin käsialaa.
+</div>
