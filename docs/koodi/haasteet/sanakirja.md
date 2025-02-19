@@ -1,5 +1,9 @@
 # Sanakirja
-★★★★☆
+<div markdown class="info-card">
+Vaikeusaste: ★★★★☆
+
+**Ääkkösiä**
+</div>
 
 **Tämä on suhteellisen monimutkainen tehtävä.**
 

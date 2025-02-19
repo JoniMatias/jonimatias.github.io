@@ -1,9 +1,9 @@
 # Palindromit 3: Alipalindromit
-★★★★★
-<!-- 
-Ohjelmointi 2
-Merkkijono
--->
+<div markdown class="info-card">
+Vaikeusaste: ★★★★★
+
+**Ääkkösiä**
+</div>
 
 ??? Palindromitehtävät
     Tämä kuuluu palindromitehtävien ryhmään. Näiden tehtävien vaikeusaste nousee hiljalleen tehtävien edetessä, mutta missään vaiheessa niistä ei tule mitenkään läpipääsemättömän vaikeita. Sarjaan kuuluu tehtävät:

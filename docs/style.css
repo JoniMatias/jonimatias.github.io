@@ -24,9 +24,46 @@
   width: 49%;
 }
 
+.md-content__inner {
+  position: relative;
+}
+
 .info-card {
-  position: absolute;
-  
+  position: relative;
+  text-align: left;
+  top: -15px;
+  background-color: rgb(220, 234, 239);
+  outline-color: rgb(141, 207, 207);
+  outline-width: 2px;
+  outline-style: solid;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 80%;
+  border-radius: 5px;
+}
+
+@media (min-width: 960px) {
+  .info-card {
+    position: absolute;
+    right: -260px;
+    top: 0px;
+    text-align: left;
+    background-color: rgb(220, 234, 239);
+    outline-color: rgb(141, 207, 207);
+    outline-width: 2px;
+    outline-style: solid;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-right: 0px;
+    width: 240px;
+    border-radius: 5px;
+  }
 }
 
 .auto-width {
