@@ -1,0 +1,5 @@
+nav:
+  - Koodi:
+    - Index: 'koodi/koodi_toc.md'
+    - "koodi/haasteet/*.md"
+  - Apufunktiot: 'koodi/apufunktiot.md'

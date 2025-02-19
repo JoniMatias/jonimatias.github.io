@@ -6,7 +6,7 @@ Tällä sivulla on erilaisia kokeiluja siitä, miten Oulun yliopiston opetuskäy
 Ennen kuin alat tekemään näitä tehtäviä, kannattaa lukea seuraavat ohjeet:
 
  - [Tehtävien syötteet ja tulokset](./arviointi.md)
- - [Apufunktioita ja koodinpätkiä](./tiedostonlukeminen.md)
+ - [Apufunktioita ja koodinpätkiä](./apufunktiot.md)
 
 
 

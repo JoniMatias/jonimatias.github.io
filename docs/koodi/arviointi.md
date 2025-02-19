@@ -25,7 +25,7 @@ XCI
 
 Oikeasti nämä syötetiedostot ovat pidempiä. Usein satoja rivejä pitkiä.
 
-Jos olet vielä ohjelmointitaipaleesi alkumetreillä, eikä tiedostojen lukeminen ole vielä erityisen sulavaa, niin kurkkaapa [tiedostorivien lukemisen ohjesivulle](./tiedostonlukeminen.md). Sieltä löytyy kopiotavaa koodia eri kielillä, jolla voi lukaista tiedoston rivi kerrallaan.
+Jos olet vielä ohjelmointitaipaleesi alkumetreillä, eikä tiedostojen lukeminen ole vielä erityisen sulavaa, niin kurkkaapa [tiedostorivien lukemisen ohjesivulle](./apufunktiot.md). Sieltä löytyy kopiotavaa koodia eri kielillä, jolla voi lukaista tiedoston rivi kerrallaan.
 
 Jokainen syötetiedosto on UTF-8-koodattu txt-tiedosto, joka noudattaa UNIX-standardia rivien vaihtamiseen. Eli rivinvaihdot tehdään pelkällä `new-line` -merkillä, eikä Windowsin käyttämällä `carriage-return` + `new-line` -yhdistelmällä. Tämän ei pitäisi tuottaa isompia ongelmia Windows-puolella, suurin osa ohjemointiympäristöistä osaa tunnistaa molemmat rivinvaihtotavat, mutta jos jostain syystä rivinvaihtojen tunnistaminen tuottaa ongelmia Windows-koneilla, niin kannattaa kokeilla vaihtoehtoisia menetelmiä.
 
