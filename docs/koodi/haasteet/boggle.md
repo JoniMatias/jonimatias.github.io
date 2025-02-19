@@ -1,5 +1,9 @@
 # Boggle
-★★★★★
+<div markdown class="info-card">
+Vaikeusaste: ★★★★★
+
+**Ääkkösiä**
+</div>
 
 Kun sinulla on nyt [sanakirja-tehtävän](sanakirja.md) sanakirjapuu tehtynä, niin sille olisi hyvä keksiä jotain käyttöä. Onneksi ihmiset ovat laiskoja, ja kaikista parasta hupia on pelien pelaamisen automatisoida tietokoneille. Enää ei tarvitse itse miettiä ja olla hyvä peleissä, kun tietokoneet osaavat senkin hoitaa.
 

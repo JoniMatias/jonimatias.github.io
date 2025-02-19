@@ -1,0 +1,10 @@
+nav:
+  - Tehtävät:
+    - Aloitussivu: 'koodi/koodi_toc.md'
+    - "koodi/haasteet/*.md"
+  - Apufunktiot: 
+    - Aloitussivu: 'koodi/apufunktiot.md'
+    - "koodi/apufunktiot/*.md"
+
+ignore:
+  - "*.hidden.md"

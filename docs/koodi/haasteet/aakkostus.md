@@ -1,11 +1,15 @@
 # Aakkostus
-★★☆☆☆
+<div markdown class="info-card">
+Vaikeusaste: ★★☆☆☆
 
-Koska outojen sanojen käyttäminen on kivaa, niin suosittelen kaikki puhumaan huomenna vain sanoilla, joiden kirjaimet ovat valmiiksi aakkosjärjestyksessä. Jotta tämä olisi mahdollista, pitää ensin löytää kaikki sopivat sanat. Onneksi on olemassa Suomen kielitoimisto, jolta löytyy lista kaikista suomen sanoista.
+**Ääkkösiä**
+</div>
+
+Koska outojen sanojen käyttäminen on kivaa, niin suosittelen kaikkia puhumaan huomenna vain sanoilla, joiden kirjaimet ovat valmiiksi aakkosjärjestyksessä. Jotta tämä olisi mahdollista, pitää ensin löytää kaikki sopivat sanat. Onneksi on olemassa Suomen kielitoimisto, jolta löytyy lista kaikista suomen sanoista.
 
 Tehtävänäsi on käydä syöteaineistosta kaikki sanat läpi, ja merkitä sieltä sanat, joissa kaikki kirjaimet ovat jo aakkosjärjestyksessä. Aakkosjärjestykseen kelpaa myös saman kirjaimen toistaminen. Eli sanat `aho`, `aamuyö` ja `hiiltyä` ovat aakkosjärjestyksessä. Sellaiset sanat, kuin `koira`, `aasi` ja `alava` eivät ole.
 
-Vastaus odottaa listaa sanoista `true` tai `false`, riippuen siitä, onko syötteen sana aakkosjärjestyksessä vai ei. Vastauslistan pitäisi olla samassa järjestyksessä kuin syötelistan.
+Vastaus pitää olla lista sanoista `true` tai `false`, riippuen syötteenä annetun sanan kirjainten aakkosjärjestyksestä. Vastauslistan pitää olla samassa järjestyksessä kuin syötelistan.
 
 Eli syöte:
 
@@ -29,13 +33,13 @@ true
 false
 ```
 
-Huomaa, että ääkköset saattavat tuottaa ongelmia. Ääkköset pitää käsitellä suomen aakkosjärjestyksen mukaan. Syötetiedosto on UTF-8-koodattu.
+Syötteessä on ääkkösiä, jotka saattavat tuottaa ongelmia. Ääkköset pitää käsitellä suomen aakkosjärjestyksen mukaan. Syötetiedosto on UTF-8 -koodattu.
 
 
 
 ## Data
 
-Lataa alla oleva tiedosto. Siinä on riveittäin annettu erilaisia syötteitä.
+Lataa alla oleva tiedosto. Siinä on riveittäin annettu erilaisia syötteitä. Vastauskenttään pitää antaa jokaista syötetiedoston riviä vastaava tulosrivi.
 
 Aineisto on rakennettu Suomen kielitoimiston nykysuomen sanalistan pohjalta. https://kotus.fi/sanakirjat/kielitoimiston-sanakirja/nykysuomen-sana-aineistot/nykysuomen-sanalista/
 
