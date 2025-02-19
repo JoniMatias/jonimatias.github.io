@@ -24,6 +24,11 @@
   width: 49%;
 }
 
+.info-card {
+  position: absolute;
+  
+}
+
 .auto-width {
   width: auto;
 }
