@@ -1,8 +1,15 @@
+---
+tags:
+  - Ääkkösiä
+  - Sanakirja
+  - Vaikeusaste 2
+---
+
 # Palindromit 2: Palindromiprosentti
 <div markdown class="info-card">
 !!! question "INFO"
     Vaikeusaste: ★★☆☆☆
-    
+
     **Ääkkösiä**
 </div>
 

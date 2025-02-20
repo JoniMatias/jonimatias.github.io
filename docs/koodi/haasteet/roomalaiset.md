@@ -1,3 +1,9 @@
+---
+tags:
+  - Algoritmit
+  - Vaikeusaste 2
+---
+
 # Rooma
 <div markdown class="info-card">
 !!! question "INFO"

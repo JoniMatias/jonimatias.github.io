@@ -1,3 +1,9 @@
+---
+tags:
+  - Sanakirja
+  - Ääkkösiä
+  - Vaikeusaste 2
+---
 # Aakkostus
 <div markdown class="info-card">
 !!! question "INFO"

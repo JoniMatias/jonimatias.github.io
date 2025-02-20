@@ -39,9 +39,9 @@ markdown_extensions:
       guess_lang: false
   - toc:
       permalink: true
-      toc_depth: 0
 
 
 plugins:
   - search
   - awesome-nav
+  - tags

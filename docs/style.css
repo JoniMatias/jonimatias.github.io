@@ -24,6 +24,11 @@
   width: 49%;
 }
 
+.md-sidebar--secondary {
+  opacity: 0%;
+  pointer-events: none;
+}
+
 .md-content__inner {
   position: relative;
 }

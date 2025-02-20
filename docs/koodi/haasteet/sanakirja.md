@@ -1,3 +1,11 @@
+---
+tags:
+  - Ääkkösiä
+  - Sanakirja
+  - Vaikeusaste 4
+  - Puurakenne
+---
+
 # Sanakirja
 <div markdown class="info-card">
 !!! question "INFO"

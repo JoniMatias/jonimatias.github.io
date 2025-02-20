@@ -1,3 +1,10 @@
+---
+tags:
+  - Ääkkösiä
+  - Sanakirja
+  - Vaikeusaste 3
+---
+
 # Palindromit 3: Alipalindromit
 <div markdown class="info-card">
 !!! question "INFO"

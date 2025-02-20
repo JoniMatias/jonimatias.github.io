@@ -1,3 +1,9 @@
+---
+tags:
+  - Ääkkösiä
+  - Sanakirja
+  - Vaikeusaste 2
+---
 # Palindromit 1: Tunnistaminen
 <div markdown class="info-card">
 !!! question "INFO"

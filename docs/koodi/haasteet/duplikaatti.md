@@ -1,3 +1,8 @@
+---
+tags:
+  - Algoritmit
+  - Vaikeusaste 3
+---
 # Duplikaatit
 <div markdown class="info-card">
 !!! question "INFO"
