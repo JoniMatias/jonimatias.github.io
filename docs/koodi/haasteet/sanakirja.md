@@ -1,8 +1,9 @@
 # Sanakirja
 <div markdown class="info-card">
-Vaikeusaste: ★★★★☆
+!!! question "INFO"
+    Vaikeusaste: ★★★★☆
 
-**Ääkkösiä**
+    **Ääkkösiä**
 </div>
 
 **Tämä on suhteellisen monimutkainen tehtävä.**

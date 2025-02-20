@@ -1,6 +1,7 @@
 # Duplikaatit
 <div markdown class="info-card">
-Vaikeusaste: ★★★☆☆
+!!! question "INFO"
+    Vaikeusaste: ★★★☆☆
 </div>
 
 Jokaisella syöterivillä on yksi **UUID**-tunniste, joiden kaikkien olisi tarkoitus olla nimensä mukaisesti uniikkeja (*Universally Unique Identifier*). Kuitenkin jokin on niiden luomisessa mennyt pieleen, ja syötteessä olevassa miljoonassa UUID:ssä on muutamia kaksoiskappaleita. Tehtävänäsi on etsiä annetusta syötetiedostosta kaikki siinä kaksi tai useamman kerran esiintyvät rivit.
@@ -8,7 +9,7 @@ Jokaisella syöterivillä on yksi **UUID**-tunniste, joiden kaikkien olisi tarko
 !!! info inline end "Mikä UUID?"
     [UUID:t](https://en.wikipedia.org/wiki/Universally_unique_identifier), toiselta nimeltään GUID (*Globally Unique Indentifier*), ovat yleisesti ohjelmoinnissa käytettyjä tunnuksia. Niitä käyttäessä ohjelmoija voi olla suhteellisen luottavainen siihen, ettei kahdella eri oliolla ole samaa tunnusta. UUID:llä on eri versioita, jotka luovat tunnuksen eri tavoilla. Yleisin on todennäköisesti UUIDv4, joka on käytännössä vain 122-bittinen oudosti muotoiltu satunnaisluku. 122-bittiä riittää siihen, ettei käytännössä ole sellaista käyttötapausta, jossa sama luku luotaisiin kahdesti.
 
-Koska tässä tehtävän syöte on jokseenkin suuri - miljoona riviä - kannattaa miettiä tehtävän suoritusnopeutta. Alkeellinen toteutus, jossa jokaista syöteriviä verrataan jokaiseen syöteriviin kahdella sisäkkäisellä silmukalla tarkoittaisi sitä, että ohjelma tekisi 1.000.000.000.000 vertailua tuloksen saamiseksi. Niin monen vertailun tekemiseen kuluu tavalliselta kotikoneelta nykyäänkin todennäköisesti toista tuntia. Suhteellisen nopeasti sekin siis tulee käsin tehtyyn verrattuna, mutta algoritmi on optimoitavissa. Kaksoiskappaleiden löytämiseen annetusta syötteestä ei pitäisi mennä muutamaa sekuntia enempää millään koneella.
+Koska tässä tehtävän syöte on jokseenkin suuri - miljoona riviä - kannattaa miettiä tehtävän suoritusnopeutta. Alkeellinen toteutus, jossa jokaista syöteriviä verrataan jokaiseen syöteriviin kahdella sisäkkäisellä silmukalla tarkoittaisi sitä, että ohjelma tekisi 1.000.000.000.000 vertailua tuloksen saamiseksi. Niin monen vertailun tekemiseen kuluu tavalliselta kotikoneelta nykyäänkin todennäköisesti toista tuntia. Siis suhteellisen nopeasti käsin tehtyyn verrattuna, mutta algoritmi on optimoitavissa. Kaksoiskappaleiden löytämiseen annetusta syötteestä ei pitäisi mennä muutamaa sekuntia enempää millään koneella.
 
 Tämä tehtävä on yksinkertaisin mahdollinen esimerkki [O(n<sup>2</sup>)](https://www.geeksforgeeks.org/analysis-algorithms-big-o-analysis/) algoritmin yksinkertaistamisesta.
 

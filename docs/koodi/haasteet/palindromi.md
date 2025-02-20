@@ -1,8 +1,9 @@
 # Palindromit 1: Tunnistaminen
 <div markdown class="info-card">
-Vaikeusaste: ★★☆☆☆
-
-**Ääkkösiä**
+!!! question "INFO"
+    Vaikeusaste: ★★☆☆☆
+    
+    **Ääkkösiä**
 </div>
 
 ??? Palindromitehtävät
