@@ -6,12 +6,6 @@ tags:
 ---
 
 # Palindromit 3: Alipalindromit
-<div markdown class="info-card">
-!!! question "INFO"
-    Vaikeusaste: ★★★★★
-
-    **Ääkkösiä**
-</div>
 
 ??? Palindromitehtävät
     Tämä kuuluu palindromitehtävien ryhmään. Näiden tehtävien vaikeusaste nousee hiljalleen tehtävien edetessä, mutta missään vaiheessa niistä ei tule mitenkään läpipääsemättömän vaikeita. Sarjaan kuuluu tehtävät:
@@ -28,6 +22,7 @@ Käyttäen annettua syötettä, etsi siitä jokaisen rivin sanan sisällä oleva
  
     - Teksti on sama etuperin kuin takaperin luettuna.
     - Vain kirjaimet lasketaan palindromiin, muut erikoismerkit jätetään huomiotta.
+    - Kirjainkoolla ei ole väliä.
 
 Vastaukseksi oletetaan jokaista syöteriviä vastaava tuloste, jossa on listattu kaikki sanan sisäiset vähintään kolmikirjaimiset alipalindromit aakkosjärjestyksessä puolipisteellä eroteltuna. Eli mm. syöte `minimikoko` jakautuisi osiin `imi`, `ini`, `kok`, `minim` ja `oko`, jolloin odotettu vastaus olisi muotoiltu seuraavasti `imi;ini;kok;minim;oko`. Tuloksissa pitää myös olla mukana alkuperäisen syötteen erikoismerkit vaikka niitä ei huomioitaisikaan palindromisuutta määriteltäessä, eli syötteen `si i-si` jakautuisi osiin `i-si` ja `si i-s`. Jos annetulla syötteellä ei ole yhtään tarvittavan pituista alipalindromia, niin silloin tulosrivi jätetään tyhjäksi.
 

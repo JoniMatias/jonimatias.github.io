@@ -5,12 +5,6 @@ tags:
   - Vaikeusaste 2
 ---
 # Aakkostus
-<div markdown class="info-card">
-!!! question "INFO"
-    Vaikeusaste: ★★☆☆☆
-
-    **Ääkkösiä**
-</div>
 
 Koska outojen sanojen käyttäminen on kivaa, niin suosittelen kaikkia puhumaan huomenna vain sanoilla, joiden kirjaimet ovat valmiiksi aakkosjärjestyksessä. Jotta tämä olisi mahdollista, pitää ensin löytää kaikki sopivat sanat. Onneksi on olemassa Suomen kielitoimisto, jolta löytyy lista kaikista suomen sanoista.
 

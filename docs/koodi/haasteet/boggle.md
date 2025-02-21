@@ -7,16 +7,12 @@ tags:
   - Puurakenne
 ---
 # Boggle
-<div markdown class="info-card">
-!!! question "INFO"
-    Vaikeusaste: ★★★★★
-
-    **Ääkkösiä**
-</div>
 
 Kun sinulla on nyt [sanakirja-tehtävän](sanakirja.md) sanakirjapuu tehtynä, niin sille olisi hyvä keksiä jotain käyttöä. Onneksi ihmiset ovat laiskoja, ja heidän parasta hupiaan on pelien pelaamisen automatisoida tietokoneille. Enää ei tarvitse itse miettiä ja olla hyvä peleissä, kun tietokoneet hoitavat senkin.
 
-Yritetään siis ratkaista [Boggle-pelin](https://fi.wikipedia.org/wiki/Boggle) lauta automaattisesti. (*Vastaava peli on saatavilla myös muilla tuotenimillä.*) Pelin säännöt ovat seuraavat:
+Tässä tehtävässä ratkaistaan [Boggle-pelin](https://fi.wikipedia.org/wiki/Boggle) lauta automaattisesti. (*Vastaava peli on saatavilla myös muilla tuotenimillä.*) Ihmiset ovat laiskoja, ja parasta hupia on pelien pelaamisen automatisointi tietokoneella. Enää ei tarvitse itse miettiä ja olla hyvä peleissä, kun tietokoneet hoitavat senkin. 
+
+Bogglen säännöt ovat seuraavat:
 
  - Pelissä on ruudukko kirjaimia, joista on tarkoitus etsiä sanoja.
  - Sanan peräkkäiset kirjaimet pitää olla ruudukossa vierekkäin, joko pääilmansuuntiin tai viistoittain.

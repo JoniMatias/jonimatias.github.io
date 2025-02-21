@@ -33,6 +33,10 @@
   position: relative;
 }
 
+.md-tag {
+  height: 20px;
+}
+
 .info-card {
   position: relative;
   text-align: left;

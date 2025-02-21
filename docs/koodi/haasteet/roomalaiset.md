@@ -5,10 +5,6 @@ tags:
 ---
 
 # Rooma
-<div markdown class="info-card">
-!!! question "INFO"
-    Vaikeusaste: ★★☆☆☆
-</div>
 
 Tee ohjelma, joka lukee sille annettuja roomalaisittain merkittyjä numeroita, ja palauttaa luvun tavallisessa kymmenjärjestelmämuodossa.
 

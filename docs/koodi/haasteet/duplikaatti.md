@@ -4,10 +4,6 @@ tags:
   - Vaikeusaste 3
 ---
 # Duplikaatit
-<div markdown class="info-card">
-!!! question "INFO"
-    Vaikeusaste: ★★★☆☆
-</div>
 
 Jokaisella syöterivillä on yksi **UUID**-tunniste, joiden kaikkien olisi tarkoitus olla nimensä mukaisesti uniikkeja (*Universally Unique Identifier*). Kuitenkin jokin on niiden luomisessa mennyt pieleen, ja syötteessä olevassa miljoonassa UUID:ssä on muutamia kaksoiskappaleita. Tehtävänäsi on etsiä annetusta syötetiedostosta kaikki siinä kaksi tai useamman kerran esiintyvät rivit.
 
