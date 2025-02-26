@@ -38,6 +38,8 @@ Jokainen syötetiedosto on UTF-8-koodattu txt-tiedosto, joka noudattaa UNIX-stan
 
 Jokainen tehtävä vaatii tuloksen. Tulos kirjoitetaan (tai todennäköisemmin kopioidaan ja liitetään) tehtäväsivun alalaidassa olevaan tuloskenttään. Tuloksen muotoilun odotetaan seuraavan samaa rakennetta kuin syötetiedoston, ja olevan samassa järjestyksessä syötetiedoston kanssa. Ensimmäisen rivin syötettä vastaava tulos pitäisi siis olla ensimmäisellä tulosrivillä, ja toisen syöterivin tulos toisella tulosrivillä, jne. Ylimääräisiä rivinvaihtoja ei kannata siis tulosteessa olla, koska muuten tulos luetaan väärin.
 
+Helpoin tapa siirtää tuloste tälle sivulle on kopioida se päätteen tulosteesta. Sillä tavalla ohjelmassa ei tarvitse tehdä muuta kuin käsitellä syöte rivi riviltä, ja tulostaa rivin tulos käyttäen kielen tulostusfunktiota, kuten `printf`, `print` tai `System.out.println`. Sitten komentoriville tulostetun tekstin voi suoraan kopioida tämän sivun vastauskenttään.
+
 Jos syöte on virheellinen, eikä tulosta voida sen perustella tuottaa, niin tuloksen niillä riveillä kuuluu olla joko tyhjä rivi, `virhe` tai `error`. `virhe` ja `error` pitää olla rivin alussa, mutta samalla rivillä niiden kanssa saa olla myös muuta tekstiä.
 
 Käyttäen aikaisempaa roomalaista kirjoitusjärjestelmäesimerkin syötetiedostoa, tulos voisi olla muotoa:
