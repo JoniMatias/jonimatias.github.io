@@ -10,6 +10,44 @@ Monet kielet, kuten Python, Java ja Swift tukevat Unicodea luonnostaan, ainakin 
 
 ## C
 
+C-kielellä ei pitkään ollut minkäänlaista tukea ASCII-merkistön ulkopuoliselle koodaukselle. Ne piti käsitellä tavu kerrallaan itse, tai hyödyntää muiden käyttäjien tekemiä kirjastoja. C11-standardin mukana tuli parempi tuki `widechar_t` tyypin muodossa. `widechar_t` on käytännössä uusi tyyppi, joka toimii hyvin samaan tapaan kuin perinteinen `char`, mutta se pystyy käsittelemään vaihtelevan pituisia merkkejä. Tyypin mukana tuli myös paljon uusia funktioita sen käsittelyyn. Pääasiallisesti nämä uudet funktiot on nimetty samalla tavalla kuin funktiot jotka käyttävät `char`-tyyppisiä muuttujia, mutta niissä on w-kirjain jossain loogisen oloisessa paikassa. Esimerkiksi funktion `isalpha` vastine on `iswalpha` ja `strlen` vastine on `wcslen`. 
+
+Löydät muut `widechat_t` funktiot [täältä](https://en.cppreference.com/w/cpp/string/wide).
+
+Myös vakiomerkkijonon määritteleminen toimii leveillä merkeillä hiukan eri tavalla. Tavallisesti merkkijono laitetaan vain lainausmerkkien sisään (esim. `"merkkijono"`), mutta leveät merkit haluavat ison L-kirjaimen ennen avaavaa lainausmerkkiä (esim. `L"ääkköjono"`).
+
+
+### Koodiesimerkit
+
+Jos haluaa käsitellä UTF-8-koodattua suomenkielistä tekstiä C:llä, niin ensimmäisenä kannattaa asettaa **locale**, eli paikallisuusmääritelmät, oikeaksi. Tämä tapahtuu lisäämällä pääohjelmaan seuraava koodinpätkä:
+
+```
+char * locale = setlocale(LC_ALL, "fi_FI.UTF-8");
+```
+
+Sitten voit lukea tiedoston käyttämällä seuraavaa koodia. Tämä toimii samoin kuin perusesimerkkikoodinpätkä [tiedoston lukeminen sivulla](./tiedoston_lukeminen.md), mutta käyttää `widechar_t`-tyyppiä `char`-tyypin sijasta. 
+
+```
+static const int MAX_RIVIN_PITUUS = 100;
+
+FILE * tiedosto;
+char rivi[MAX_RIVIN_PITUUS];
+
+tiedosto = fopen("path/to/tile.txt", "r");
+if (tiedosto == NULL) {
+    printf("Tiedoston avaaminen ei onnistunut.");
+    //Virheenkäsittelykoodi tänne
+    return;
+}
+
+while ((fgetws(line, MAX_LINE_LENGTH, inputFile)) != NULL) {
+    // Tähän laitetaan rivin käsittelykoodi
+}
+
+fclose(tiedosto);
+```
+
+
 
 
 
