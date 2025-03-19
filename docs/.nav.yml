@@ -5,6 +5,8 @@ nav:
   - Apufunktiot: 
     - Aloitussivu: 'koodi/apufunktiot.md'
     - "koodi/apufunktiot/*.md"
+  - Muuta:
+    - Muita ideoita: 'koodi/muut_sivut/muut_sivut.md'
 
 ignore:
   - "*.hidden.md"
