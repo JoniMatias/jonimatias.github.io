@@ -51,45 +51,47 @@ Tiedosto pääte yleensä kertoo minkälaisesta tiedostosta on kyse, ja tämän 
 Tietokoneella tiedostot on jaoteltu hierarkisen puurakenteen mukaisesti eri hakemistoihin. Jokainen hakemisto voi vuorostaan sisältää useampia tiedostoja ja hakemistoja. 
 
 !!! shell "bash: tree"
-    **C54W4KDHGK**:testikansio jonrajal$ <pop>tree</pop><br>
-    .<br>
-    ├── alikansio<br>
-    │   ├── kuva.jpg<br>
-    │   └── tiedosto.txt<br>
-    ├── bar.txt<br>
-    └── foo.txt<br>
-    <br>
-    2 directories, 4 files<br>
+    **C54W4KDHGK**:testikansio jonrajal$ <pop>tree</pop>
+    .
+    ├── alikansio
+    │   ├── kuva.jpg
+    │   └── tiedosto.txt
+    ├── bar.txt
+    └── foo.txt
+    
+    2 directories, 4 files
 
 Komentorivillä kansiorakenteen näkee näppärästi ```tree```-komennolla. Komento näyttää aktiivisen kansion sisällön puurakenteena. Jokaisen kansion sisällä olevat tiedostot ja alikansiot näytetään haarautuvana polkuna (tai oksina) rakenteessa, ja jokainen tiedosto on puurakenteen lehti.
 
 ??? info "bash esimerkkien oletuskansio"
     Tällä verkkosivustolla kaikki esimerkkikomennot ajetaan kansiossa nimeltä ```tol-alkeet``` tai jossain sen alikansiossa. Kansion sisältö on aina seuraavanlainen ennen komennon aloitusta.
     !!! shell "bash: tree"
-        **C54W4KDHGK**:tol-alkeet jonrajal$ <pop>tree</pop><br>
-        .<br>
-        ├── html-kansio<br>
-        │   ├── alikansio<br>
-        │   │   └── foobar.txt<br>
-        │   └── index.html<br>
-        ├── kuvia<br>
-        │   ├── asd-5.jpg<br>
-        │   ├── kuva-.jpg<br>
-        │   ├── kuva-08.jpg<br>
-        │   ├── kuva-1.jpg<br>
-        │   ├── kuva-10.jpg<br>
-        │   ├── kuva-2.jpg<br>
-        │   ├── kuva-3.jpg<br>
-        │   ├── kuva-5.jpg<br>
-        │   ├── kuva-54.jpg<br>
-        │   ├── kuva-6.jpg<br>
-        │   ├── kuva-7.jpg<br>
-        │   └── kuva-9.jpg<br>
-        ├── README.txt<br>
-        ├── teksti.txt<br>
-        └── toinen.txt<br>
-        <br>
-        4 directories, 17 files
+        **C54W4KDHGK**:tol-alkeet jonrajal$ <pop>tree</pop>
+        .
+        ├── hello
+        ├── <span class="bash-purple">html-kansio</span>
+        │   ├── <span class="bash-purple">alikansio</span>
+        │   │   └── foobar.txt
+        │   └── index.html
+        ├── <span class="bash-purple">kuvia</span>
+        │   ├── asd-5.jpg
+        │   ├── kuva-.jpg
+        │   ├── kuva-08.jpg
+        │   ├── kuva-1.jpg
+        │   ├── kuva-10.jpg
+        │   ├── kuva-2.jpg
+        │   ├── kuva-3.jpg
+        │   ├── kuva-5.jpg
+        │   ├── kuva-54.jpg
+        │   ├── kuva-6.jpg
+        │   ├── kuva-7.jpg
+        │   └── kuva-9.jpg
+        ├── README.txt
+        ├── teksti.txt
+        ├── toinen.txt
+        └── uusi.txt
+
+        4 directories, 19 files
 
 !!! hint "Juurihakemisto" 
     Tietokoneen kansiorakenne alkaa aina jostain hierarkian yläpäässä olevasta juurihakemistosta. Kaikki muut tiedostot ja hakemistot ovat tämän hakemiston, tai sen alihakemistojen, sisällä.
@@ -108,17 +110,18 @@ Yleensä tiedostojen sijainti tietokoneen kansiorakenteessa ilmaistaan tiedostop
 
 Tiedostopolkuja voidaan kirjoittaa useammalla eri tavalla. Yleensä aikaisemman esimerkin mukainen suora, kaikki kansiot luetteleva polku ei välttämättä ole paras ratkaisu. Sen takia polkuja voi kirjoittaa myös suhteessa aktiiviseen hakemistoon ja suhteessa kotihakemistoon. 
 
+[](){#absoluuttinen-polku}
 #### Täysi, eli absoluuttinen polku
 
 !!! abstract "Täysi polku"
-    C:\\Users\\jonrajal\\Koodi\\tol-alkeet\\kuvia\\kuva-02.jpg
+    C:\\Users\\jonrajal\\Koodi\\tol-alkeet\\kuvia\\kuva-02.jpg<br>
     /Users/jonrajal/Koodi/opetus/tol-alkeet/kuvia/kuva-02.jpg
 
 Absoluuttinen polku on aikaisemmissa esimerkeissä mainittu alimmaisimmasta hakemistosta – juurihakemistosta – lähtevä polku. Tällaiset polut alkavat joko kovalevyn nimellä Windows-koneissa (```C:\```), tai nimettömällä juurihakemistolla Unix-koneissa (```/```).
 
 Esimerkiksi testikoneella tol-alkeet -kansio on löytyy polusta ```/Users/jonrajal/Koodi/opetus/tol-alkeet```. Vastaavanlainen polku Windows-koneella olisi suunnilleen ```C:\Users\jonrajal\Koodi\tol-alkeet```. Molemmissa poluissa ensimmäiset kolme kansiota ovat käyttöjärjestelmässä valmiina olevia kansioita, ja viimeiset kaksi ovat käyttäjän itse luomia.
 
-#### Suhteessa kotihakemistoon
+#### Suhteessa kotihakemistoon { #suhteellinen-polku }
 
 !!! abstract "Suhteessa kotihakemistoon"
     ~/Koodi/opetus/tol-alkeet/kuvia/kuva-02.jpg
@@ -131,7 +134,7 @@ Toinen hyöty tällaisesta kirjoitusasusta on koneilla, joille voi kirjautua use
 
 Windows-koneilla on vastaavanlainen polkuoikotie olemassa: ```%userprofile%```. Sitä ei käytetä kovinkaan usein sen pituuden vuoksi.
 
-#### Suhteessa aktiiviseen kansioon
+#### Suhteessa aktiiviseen kansioon { #aktiivinen-polku }
 
 !!! abstract "Aktiivisen kansion polku"
     ./kuvia/kuva-02.jpg

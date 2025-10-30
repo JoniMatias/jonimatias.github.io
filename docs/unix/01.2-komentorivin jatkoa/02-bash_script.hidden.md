@@ -52,8 +52,8 @@ Jokerimerkkejä voi olla useampi samassa haussa. Esimerkiksi haku ```*.*``` löy
 Esimerkkien mukaiset tulokset on toistamiseen nähtävissä alla olevassa taulukossa.
 
 
-| Tiedosto     | kuva-?.jpg   | kuva-*.jpg   | kuva-.jpg             |
-|--------------|--------------|--------------|-----------------------|
+| Tiedosto     | kuva-?.jpg   | kuva-*.jpg   | kuva-\[0-9\]\[0-9\].jpg             |
+|--------------|--------------|--------------|---------------------------------|
 | kuva-2.jpg   | X            | X            |                       |
 | kuva-5.jpg   | X            | X            |                       |
 | kuva-08.jpg  |              | X            | X                     |
@@ -62,6 +62,43 @@ Esimerkkien mukaiset tulokset on toistamiseen nähtävissä alla olevassa tauluk
 | kuva-.jpg    |              | X            |                       |
 | kuva-asd.jpg |              | X            |                       |
 | asd-5.jpg    |              |              |                       |
+
+??? info "bash komennot jokerimerkeillä"
+    Seuraavat esimerkit käyttävät silmukoita ja muuttujia. Niiden käyttö selitetään alempana.
+    === "kuva-?.jpg"
+        !!! shell "bash: ?"
+            **C54W4KDHGK**:kuvia jonrajal$ for tiedosto in <pop>kuva-?.jpg</pop>; do echo $tiedosto; done
+            kuva-1.jpg
+            kuva-2.jpg
+            kuva-3.jpg
+            kuva-5.jpg
+            kuva-6.jpg
+            kuva-7.jpg
+            kuva-9.jpg
+
+    === "kuva-*.jpg"
+        !!! shell "bash: *"
+            **C54W4KDHGK**:kuvia jonrajal$ for tiedosto in <pop>kuva-*.jpg</pop>; do echo $tiedosto; done
+            kuva-.jpg
+            kuva-08.jpg
+            kuva-1.jpg
+            kuva-10.jpg
+            kuva-2.jpg
+            kuva-3.jpg
+            kuva-5.jpg
+            kuva-54.jpg
+            kuva-6.jpg
+            kuva-7.jpg
+            kuva-9.jpg
+
+    === "kuva-[0-9][0-9].jpg"
+        !!! shell "bash: []"
+            **C54W4KDHGK**:kuvia jonrajal$ for tiedosto in <pop>kuva-[0-9][0-9].jpg</pop>; do echo $tiedosto; done
+            kuva-08.jpg
+            kuva-10.jpg
+            kuva-54.jpg
+
+
 
 
 Näiden *bashin* sisäänrakennettujen perusjokerimerkkien lisäksi joillain ohjelmilla ja komennoilla voi olla omia jokerimerkkejään. Monet ohjelman tukevat mm. [säännöllisiä lausekkeita](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Cheatsheet), jotka tunnetaan myös paremmin englannista tulevalla **regex**-lyhenteellä. Tämä on yksi syy lisää tutustua jokaisen käyttämääsi ohjelmaan ```man```-komennolla.

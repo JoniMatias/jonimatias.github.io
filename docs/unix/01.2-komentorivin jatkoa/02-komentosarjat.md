@@ -1,4 +1,4 @@
-# Komentirivin komentosarjat
+# Komentosarjat
 
 Usein tietokoneella täytyy tehdä hyvinkin toisteisia asioita. Sama toiminto pitää tehdä sadoille tai tuhansille tiedostoille yhdellä kertaa, tai jokin komentosarja pitää ajaa täysin samanlaisena joka päivä. Nämä voi toki tehdä käsinkin komento kerrallaan, mutta lähes jokainen komentorivitulkki (**shell**) tukee jonkinlaista automaatiota.
 

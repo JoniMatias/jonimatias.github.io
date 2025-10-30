@@ -5,7 +5,7 @@ Ennen kuin 1980-luvulla tietokoneille kehitettiin graafiset, ikkunoihin pohjautu
  - Paljon ohjelmia oli jo luotu käyttämään vain komentoriviä
  - Komentorivisovellusten ohjelmoiminen oli helpompaa, koska visuaalista puolta ei tarvinnut miettiä.
  - Monet ohjelmat ovat vain taustasovelluksia, jotka eivät edes tarvitse visuaalista esitystapaa.
- - Komentorivillä oli paljon sisäänrakennettuja automaatio-ominaisuuksia, joille ei ole vieläkään standardoitua vaihtoehtoa graafisilla käyttöliittymillä.
+ - Komentorivillä oli paljon sisäänrakennettuja automaatio-ominaisuuksia, joille ei ole vielä nykyäänkään standardoitua vaihtoehtoa graafisille käyttöliittymille.
  - Komentorivi on tehokas työkalu ohjelmien väliseen kommunikaatioon. 
 
 Näistä syistä komentorivi on edelleenkin hyvin tärkeä työkalu ohjelmoijille ja tietokoneiden kanssa työskenteleville. Jos tietokoneesta haluaa ottaa kaiken hyödyn irti, komentorivi on käytännössä pakollinen.
@@ -46,7 +46,7 @@ Komentorivin käynnistäminen on helppoa. Kaikissa tietokoneissa on valmiiksi as
 
 Komentorivien käyttöä varten tietokone tarvitsee kolme eri komponenttia: päätteen, tulkin ja komentokehotteen.
 
-!!! warning inline end "Windows-käyttäjille"
+!!! warning inline end fasdas "Windows-käyttäjille"
     Tämä sivu käsittelee *bashia*, joka on Unix-pohjaisten käyttöjärjestelmien yleisin tulkki. Jos haluat käyttää näitä komentoja Windows-koneella, niin sinun pitää asentaa koneellesi **wsl**, eli Windows Subsystem for Linux. wsl
     
     Jos haluat käyttää Windowsin omaa päätettä ja tulkkia, niin sen ohjeet löytyvät [täältä](./windows-komennot.md).
@@ -61,7 +61,7 @@ Komentorivien käyttöä varten tietokone tarvitsee kolme eri komponenttia: pä�
 ### Kehotteen muotoja
 
 === "cmd.exe"
-    Windowsin komentorivitulkin kehotteessa näytetään vain [absoluuttinen polku](../00-intro/01-tiedostot.md#täysi-eli-absoluuttinen-polku) aktiiviseen kansioon.
+    Windowsin komentorivitulkin kehotteessa näytetään vain [absoluuttinen polku](../00-intro/01-tiedostot.md#taysi-eli-absoluuttinen-polku) aktiiviseen kansioon.
     !!! shell "cmd.exe"
         C:\Windows\System32>
     
@@ -88,6 +88,8 @@ Samoin kuin graafisen käyttöliitymän ikkunoissa, komentorivillä on yksi akti
     <span class="bash-table-element">teksti.txt</span>
     <span class="bash-table-element">toinen.txt</span>
     <span class="bash-table-element">uusi.txt</span>
+
+Aktiivista kansiota voi vaihtaa ```cd```-komennolla. ```cd kansion_nimi``` vaihtaa aktiivisen kansion nykyisen aktiivisen kansion alikansioon, jolla on annettu nimi. ```cd ..`` siirtää aktiivista kansiota yhden kansiota yhden askeleen ylöspäin; nykyisen aktiivisen kansion yläkansion.
 
 
 

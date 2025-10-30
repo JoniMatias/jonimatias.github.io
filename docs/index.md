@@ -12,7 +12,7 @@ Alkeet on jaettu muutamaan osioon. Ensimmäinen osio käy läpi kaiken, mitä al
 
 Sen jälkeen osiossa aletaan syventymään komentorivin saloihin. Komentorivi on tietokoneen tehokkain työkalu, joten siinä riittää opittavaa. Samalla sen oppiminen avaa paljon mahdollisuuksia, joihin tietokone ei muuten taipuisi.
 
-### Ohjelmointitehtäviä
+### Ohjelmointitehtävät
 
 Ohjelmointi 1 -kurssin jälkeen opiskelijalle voi jäädä sellainen tunne, että koodaustehtäviä olisi hyvä saada lisää. Tällaiseen pyyntöön on perinteisesti ollut vaikea vastata, koska suurin osa internetin ohjelmointitehtävistä on suunnattu vähän enemmän oppineille ihmisille. 
 

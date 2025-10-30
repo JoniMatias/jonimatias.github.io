@@ -12,27 +12,27 @@ Komennon nimet ovat yleensä lyhyitä yhden sanan tai muutaman kirjaimen mittais
 
 === "Windows"
     !!! shell "cmd.exe: dir"
-        C:\\System32\\jonrajal\\Koodi\\opetus\\jonimatias.github.io> <pop>dir</pop> <br>
-        10/22/2025 &ensp; 10:34 AM &emsp; <DIR\> &emsp;&emsp; _site<br>
-        10/16/2025 &ensp; 12:19 PM &emsp; <DIR\> &emsp;&emsp; .git<br>
-        08/0842025 &ensp; 11:41 PM &emsp; <DIR\> &emsp;&emsp; .github<br>
-        02/05/2025 &ensp; 04:52 PM &emsp;  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; .gitignore<br>
-        02/05/2025 &ensp; 04:12 PM &emsp; <DIR\> &emsp;&emsp; .venv<br>
-        02/18/2025 &ensp; 08:05 PM &emsp; <DIR\> &emsp;&emsp; .vscode<br>
-        10/21/2025 &ensp; 12:03 PM &emsp; <DIR\> &emsp;&emsp; docs<br>
-        02/05/2025 &ensp; 11:43 PM &emsp;  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; imgresize.bat<br>
-        02/05/2025 &ensp; 09:31 PM &emsp;  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; index.html<br>
-        02/14/2025 &ensp; 12:01 PM &emsp;  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; koodi_toc.bat<br>
-        10/22/2025 &ensp; 12:58 PM &emsp;  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; mkdocs.yml<br>
-        02/05/2025 &ensp; 10:34 PM &emsp;  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; README.md<br>
-        10/22/2025 &ensp; 12:14 PM &emsp;  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; requirements.txt<br>
-        02/05/2025 &ensp; 11:41 PM &emsp;  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; test.bat<br>
-        02/05/2025 &ensp; 11:41 PM &emsp;  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; vidresize.bat<br>
-        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 9 File(s)&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;12,5123,633 bytes<br>
-        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 6 Dir(s) &emsp;&emsp;512,523,436,852 bytes free
+        C:\\System32\\jonrajal\\Koodi\\opetus\\jonimatias.github.io> <pop>dir</pop>
+        10/22/2025  10:34 AM   <DIR\>      _site
+        10/16/2025  12:19 PM   <DIR\>      .git
+        08/0842025  11:41 PM   <DIR\>      .github
+        02/05/2025  04:52 PM              .gitignore
+        02/05/2025  04:12 PM   <DIR\>      .venv
+        02/18/2025  08:05 PM   <DIR\>      .vscode
+        10/21/2025  12:03 PM   <DIR\>      docs
+        02/05/2025  11:43 PM              imgresize.bat
+        02/05/2025  09:31 PM              index.html
+        02/14/2025  12:01 PM              koodi_toc.bat
+        10/22/2025  12:58 PM              mkdocs.yml
+        02/05/2025  10:34 PM              README.md
+        10/22/2025  12:14 PM              requirements.txt
+        02/05/2025  11:41 PM              test.bat
+        02/05/2025  11:41 PM              vidresize.bat
+                           9 File(s)       12,5123,633 bytes
+                           6 Dir(s)    512,523,436,852 bytes free
 
 === "bash"
-    !!! shell "bash: ls"
+    !!! shell html-whitespace "bash: ls"
         **C54W4KDHGK**:jonimatias.github.io jonrajal$ <pop>ls</pop> <br>
         <span class="bash-table-element bash-purple">_site/</span>
         <span class="bash-table-element bash-purple">docs/</span>
@@ -48,8 +48,8 @@ Komennon nimet ovat yleensä lyhyitä yhden sanan tai muutaman kirjaimen mittais
 Joillekin komennoille voi antaa tarkentavia käskyjä. Näitä voivat olla mm. käytettävän tiedosto nimi, lisäargumentit ja ohjausliput. Nämä kirjoitetaan komennon perään, yleensä vapaassa järjestyksessä.  Unix-koneilla komento ```ls``` tukee mm. lippua ```-A```, joka näyttää kaikki piilotetut tiedostot. Unix-pohjaisissa järjestelmissä tiedostot ovat piilotettuja, jos niiden nimi alkaa pisteellä. 
  
  
-!!! shell "bash: ls -A"
-    **C54W4KDHGK**:jonimatias.github.io jonrajal$ <pop>ls -A</pop> <br>
+!!! shell html-whitespace "bash: ls -A"
+    **C54W4KDHGK**:jonimatias.github.io jonrajal$ <pop>ls -A</pop>
     <span class="bash-table-element bash-purple">_site/</span>
     <span class="bash-table-element bash-purple">.github/</span>
     <span class="bash-table-element bash-purple">.vscode/</span>
@@ -84,18 +84,18 @@ Lippuja, valintoja ja argumentteja voi olla niin paljon kuin käyttäjä niitä 
 #### Argumentit
 
 !!! shell "bash: argumentti"
-    **C54W4KDHGK**:~ jonrajal$ cat <pop>index.html</pop><br>
-    <!DOCTYPE html\><br>
-    <html\><br>
-        &emsp;&emsp;<head\><br>
-            &emsp;&emsp;&emsp;&emsp;Yksinkertainen HTML-verkkosivu.<br>
-        &emsp;&emsp;</head\><br>
-        &emsp;&emsp;<body\><br>
-            &emsp;&emsp;&emsp;&emsp;Terve, maailma!<br>
-        &emsp;&emsp;</body\><br>
-    </html\><br>
+    **C54W4KDHGK**:~ jonrajal$ cat <pop>index.html</pop>
+    <!DOCTYPE html\>
+    <html\>
+        <head\>
+            Yksinkertainen HTML-verkkosivu.
+        </head\>
+        <body\>
+            Terve, maailma!
+        </body\>
+    </html\>
 
-Argumentti on komennon vastaanottama tieto, yleensä tiedoston tai kansion nimi. Argumentti kirjoitetaan yleisesti suoraan komennon perään tai valintalistan loppuun. Jos komennon argumentiksi annetaan tiedosto, siihen yleensä riittää pelkkä tiedostonimi, ellei käsiteltävä tiedosto ole jossain muualla kuin aktiivisessa kansiossa. Muualla oleviin tiedostoihin pitää viitata joko [absoluuttisella polulla](../00-intro/01-tiedostot.md#täysi-eli-absoluuttinen-polku) tai jollain [suhteellisella polulla](../00-intro/01-tiedostot.md#tiedostopolut).
+Argumentti on komennon vastaanottama tieto, yleensä tiedoston tai kansion nimi. Argumentti kirjoitetaan yleisesti suoraan komennon perään tai valintalistan loppuun. Jos komennon argumentiksi annetaan tiedosto, siihen yleensä riittää pelkkä tiedostonimi, ellei käsiteltävä tiedosto ole jossain muualla kuin aktiivisessa kansiossa. Muualla oleviin tiedostoihin pitää viitata joko [absoluuttisella polulla](../00-intro/01-tiedostot.md#taysi-eli-absoluuttinen-polku) tai jollain [suhteellisella polulla](../00-intro/01-tiedostot.md#tiedostopolut).
 
 Argumenttien määrää ei ole mitenkään rajattu, ja jotkin ohjelman ja komennot edellyttävät useampia argumentteja. Tällaisessa tapauksessa argumenttien järjestyksellä voi olla suuri merkitys. Esimerkiksi tiedostoja kopioiva ```cp```-komento haluaa kaksi argumenttia: kopioitavan lähdetiedoston ja uuden luotavan tiedoston nimen. Lähdetiedosto pitää ```cp```komennolle antaa ensin ja uusi tiedosto sitten.
 
@@ -118,7 +118,7 @@ Lisävalintoja on pääasiallisesti kahta erilaista: lippuja ja parametrillisiä
 Liput (eng. *flag*) ovat yksinkertaisin lisävalintatyyppi, ja lähes kaikki ohjelmat ja komennot tukevat niitä. Muun muassa ylläolevassa ```ls -A``` esimerkissä käytettiin ```-A```-lippua. Se lippu muutti komennon suorittamista siten, että se tulostaa myös kaikkien piilotiedostojen nimet.
 
 !!! shell "bash: git --version"
-    **C54W4KDHGK**:jonimatias.github.io jonrajal$ git <pop>\-\-version</pop><br>
+    **C54W4KDHGK**:jonimatias.github.io jonrajal$ git <pop>\-\-version</pop>
     git version 2.39.5 (Apple Git-154)
 
 Yksinkertaisin lippu, joita lähes kaikki komentoriviohjelmat tukevat on ```--version``` tai jokin vastaava. Tällä lipulla ohjelma tulostaa ohjelman versionumeron, ja keskeyttää sen jälkeen ohjelman suorittamisen siten, ettei mitään muuta tapahdu.
@@ -129,10 +129,10 @@ Yksinkertaisin lippu, joita lähes kaikki komentoriviohjelmat tukevat on ```--ve
 Jotkin lisävalinnat tarvitsevat itselleenkin syötteen tai muun tarkentavat arvon. Tällaisia parametrillisiä lisävalintoja on paljon. Parametrilliset lisävalinnat yleensä alkavat yhdellä tai kahdella väliviivalla, ja ovat muotoa ```komento --valinnannimi parametri```. Jotkin parametrilliset lisävalinnat voivat olla myös muotoa ```--valinnannimi=parametri```; kannattaa tutustua dokumentaatioon.
 
 !!! shell "bash: find parametrillisellä lisävalinnalla"
-    **C54W4KDHGK**:testikansio jonrajal$ find . <pop>-name "*.txt"</pop><br>
-    ./foo.txt<br>
-    ./bar.txt<br>
-    ./alikansio/tiedosto.txt<br>
+    **C54W4KDHGK**:testikansio jonrajal$ find . <pop>-name "*.txt"</pop>
+    ./foo.txt
+    ./bar.txt
+    ./alikansio/tiedosto.txt
 
 Ylläolevassa esimerkissä käytetään ```find```-komentoa etsimään aktiivisesta kansiosta kaikki tiedostot, joiden nimen lopussa on ```.txt```. Komento ottaa argumentikseen kansion mihin haku tehdään, joka tässä tapauksessa on aktiivinen kansio. Aktiivinen kansio merkitään aika merkillä ```.```.
 
@@ -145,24 +145,24 @@ Lisävalintana on esimerkissä on ```-name```, joka vaatii parametrikseen vapaam
 Lisävalintoja ja lippuja voi laittaa myös useampia samalle komennolle. Komennolla ```ls``` on useita lippuja, mukaan lukien liput ```-A```, joka näyttää kaikki kansion piilotiedostot ja ```-l```, joka näyttää kaikkien listassa näkyvien tiedostojen oikeudet. Näitä lippuja voi käyttää komennon kanssa erikseen: ```ls -A``` näyttää kaikki aktiivisen kansion tiedostot ja piilotiedostot, ja ```ls -l``` näyttää kaikki aktiivisen kansion näkyvien tiedostojen oikeudet. Jos haluaisi nähdä myös piilotiedostojen oikeudet, komentoon voi laittaa molemmat liput peräjälkeen muodossa ```ls -A -l```. Usein tällaisia lyhyitä yhden kirjaimen lippuja voi myös ketjuttaa yhteen, jolloin myös ```ls -Al``` tekee saman asian.
 
 !!! shell "bash: ls -Al"
-    **C54W4KDHGK**:jonimatias.github.io jonrajal$ ls <pop>-Al</pop><br>
-    total 104<br>
-    drwxr-xr-x  17 jonrajal  staff   544B 22 Lok 10:34 <span class="bash-purple">_site/</span><br>
-    -rw-r--r--@  1 jonrajal  staff    10K 16 Lok 14:17 .DS_Store<br>
-    drwxr-xr-x  15 jonrajal  staff   480B 16 Lok 12:19 <span class="bash-purple">.git/</span><br>
-    drwxr-xr-x   4 jonrajal  staff   128B  4 Elo 11:41 <span class="bash-purple">.github/</span><br>
-    -rw-r--r--@  1 jonrajal  staff    34B  5 Hel  2025 .gitignore<br>
-    drwxr-xr-x   7 jonrajal  staff   224B  5 Hel  2025 <span class="bash-purple">.venv/</span><br>
-    drwxr-xr-x@  3 jonrajal  staff    96B 18 Hel  2025 <span class="bash-purple">.vscode/</span><br>
-    drwxr-xr-x  12 jonrajal  staff   384B 21 Lok 12:03 <span class="bash-purple">docs/</span><br>
-    -rwxr-xr-x   1 jonrajal  staff   335B  5 Hel  2025 imgresize.sh\*<br>
-    -rw-r--r--   1 jonrajal  staff   268B  5 Hel  2025 index.html<br>
-    -rwxr-xr-x@  1 jonrajal  staff   452B 14 Hel  2025 koodi_toc.command\*<br>
-    -rw-r--r--@  1 jonrajal  staff   1,3K 22 Lok 12:58 mkdocs.yml<br>
-    -rw-r--r--@  1 jonrajal  staff   154B  5 Hel  2025 README.md<br>
-    -rw-r--r--@  1 jonrajal  staff    62B 20 Lok 12:14 requirements.txt<br>
-    -rwxr-xr-x@  1 jonrajal  staff   171B  5 Hel  2025 test.command\*<br>
-    -rwxr-xr-x   1 jonrajal  staff   361B  5 Hel  2025 vidresize.sh\*<br>
+    **C54W4KDHGK**:jonimatias.github.io jonrajal$ ls <pop>-Al</pop>
+    total 104
+    drwxr-xr-x  17 jonrajal  staff   544B 22 Lok 10:34 <span class="bash-purple">_site/</span>
+    -rw-r--r--@  1 jonrajal  staff    10K 16 Lok 14:17 .DS_Store
+    drwxr-xr-x  15 jonrajal  staff   480B 16 Lok 12:19 <span class="bash-purple">.git/</span>
+    drwxr-xr-x   4 jonrajal  staff   128B  4 Elo 11:41 <span class="bash-purple">.github/</span>
+    -rw-r--r--@  1 jonrajal  staff    34B  5 Hel  2025 .gitignore
+    drwxr-xr-x   7 jonrajal  staff   224B  5 Hel  2025 <span class="bash-purple">.venv/</span>
+    drwxr-xr-x@  3 jonrajal  staff    96B 18 Hel  2025 <span class="bash-purple">.vscode/</span>
+    drwxr-xr-x  12 jonrajal  staff   384B 21 Lok 12:03 <span class="bash-purple">docs/</span>
+    -rwxr-xr-x   1 jonrajal  staff   335B  5 Hel  2025 imgresize.sh\*
+    -rw-r--r--   1 jonrajal  staff   268B  5 Hel  2025 index.html
+    -rwxr-xr-x@  1 jonrajal  staff   452B 14 Hel  2025 koodi_toc.command\*
+    -rw-r--r--@  1 jonrajal  staff   1,3K 22 Lok 12:58 mkdocs.yml
+    -rw-r--r--@  1 jonrajal  staff   154B  5 Hel  2025 README.md
+    -rw-r--r--@  1 jonrajal  staff    62B 20 Lok 12:14 requirements.txt
+    -rwxr-xr-x@  1 jonrajal  staff   171B  5 Hel  2025 test.command\*
+    -rwxr-xr-x   1 jonrajal  staff   361B  5 Hel  2025 vidresize.sh\*
 
 Tässä ```ls```-komennon tulosteessa tiedostojen ja kansioiden oikeudet on listattu rivin vasemmassa laidassa. Siinä on 10 merkkiä, joista ensimmäinen kertoo onko kyseessä kansio vai ei. Loput merkit kulkevat kolmen sarjoissa, jokainen sarja kuvastaa eri käyttäjäryhmien luku- kirjoitus- ja suoritusoikeuksia kyseiseen tiedostoon. Jos kiinnostaa enemmän, suosittelen tutustumaan [**man chmod**](https://man7.org/linux/man-pages/man1/chmod.1.html).
 
@@ -170,12 +170,17 @@ Tässä ```ls```-komennon tulosteessa tiedostojen ja kansioiden oikeudet on list
 
 ## Ohjelmien suorittaminen
 
-Toisin kuin komennot, jotka on saatavilla kaikissa kansioissa, tiedostoihin ja ohjelmiin päästäkseen pitää tietää niiden sijainti. Tiedoston sijainnin voi joko antaa [absoluuttisena polkuna](../00-intro/01-tiedostot.md#täysi-eli-absoluuttinen-polku) tai suhteessa *aktiiviseen kansioon*. Aktiivinen kansio viittaa siihen paikkaan, jossa käyttäjä tällä hetkellä "on". Kaikki komennot ja ohjelmat oletuksena suoritetaan aktiivisessa kansiossa, ellei toisin määritetä. Aktiivista kansiota voi vaihtaa käyttämällä [```cd```-komentoa](03-bash-peruskomennot.md#cd).
+Toisin kuin komennot, jotka on saatavilla kaikissa kansioissa, tiedostoihin ja ohjelmiin päästäkseen pitää tietää niiden sijainti. Tiedoston sijainnin voi joko antaa [absoluuttisena polkuna](../00-intro/01-tiedostot.md#taysi-eli-absoluuttinen-polku) tai suhteessa *aktiiviseen kansioon*. Aktiivinen kansio viittaa siihen paikkaan, jossa käyttäjä tällä hetkellä "on". Kaikki komennot ja ohjelmat oletuksena suoritetaan aktiivisessa kansiossa, ellei toisin määritetä. Aktiivista kansiota voi vaihtaa käyttämällä [```cd```-komentoa](03-bash-peruskomennot.md#cd).
 
 Komennon suorittamisen sijasta komentorivillä voi myös käynnistää ohjelman. Ohjelman käynnistäminen tapahtuu samalla tavoin kuin komennon suorittaminen, mutta komennon sijasta ensimmäiseksi sanaksi kirjoitetaan suoritettavan ohjelman tiedostonimi tai -polku. Mikäli suoritettava ohjelmatiedosto on aktiivisessa kansiossa, pitää tiedostonimen eteen lisätä ```./```. Tämä siksi, etteivät komentojen nimet ole varattuja avainsanoja, eli tiedostot voi nimetä myös komentoja vastaavilla nimillä. *Bash* ei siis pysty erottamaan komentoa tiedostosta, ellei tiedostoa ole kirjoitettu polkumuodossa.
 
 !!! shell "bash: Hello World"
-    **C54W4KDHGK**:testikansio jonrajal$ ./hello <br>
+    **C54W4KDHGK**:testikansio jonrajal$ ./hello
 
 Tämän lisäksi ohjelmien suorittaminen ei eroa komentorivillä muiden komentojen suorittamisesta mitenkään. Ohjelmille annetaan argumentit, lisävalinnat ja liput samalla tavoin kuin komennoilla.
 
+## Päätteen kontrollointi
+
+ctrl+c
+
+ctrl+z
