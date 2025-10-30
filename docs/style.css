@@ -150,7 +150,9 @@ p > code {
   border-width: 1mm;
   border-bottom-left-radius: 3mm;
   border-bottom-right-radius: 3mm;
-  background-color: #dff3f6;
+  border-color: #ccf1f9;
+  border-style: solid;
+  background-color: #fafeff;
   padding: 2mm;
 }
 
