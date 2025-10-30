@@ -6,8 +6,8 @@ nav:
     - Aloitussivu: 'koodi/apufunktiot.md'
     - "koodi/apufunktiot/*.md"
   - Komentorivi:
-    - Aloitussivu: 'unix/intro.md'
-    - "unix/*.md"
+    - Aloitussivu: 'unix/00-intro/00-intro.md'
+    - "unix/*"
   - Muuta:
     - Muita ideoita: 'koodi/muut_sivut/muut_sivut.md'
 

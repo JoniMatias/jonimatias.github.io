@@ -1,0 +1,293 @@
+# Bashin peruskomennot
+
+
+Komentorivi tukee satoja erilaisia komentoja. Tavallisten komentojen lisäksi komentorivillä voi kutsua [komentosarjoja](02-bash_script.md) ja muita ohjelmia täysin samalla tavalla. Tämän vuoksi komentorivillä on usein vaikea erottaa, minkälaista toimintoa onkaan kutsumassa. Onneksi sillä ei ole suurta merkitystä, sillä kaikilla näillä on sama tarkoitus: saada tietokone tekemään jotain.
+
+Tässä listataan muutama yleisin *bashin* tukema komento, mitä ne tekevät ja miten niitä käytetään. Jos haluat tietää enemmän näiden toiminnasta, niin tarkemmat ohjeet saa ```man```-komennolla.
+
+Windowsilla on eri komennot.
+
+### Aktiivisen kansion hallinta
+
+#### pwd ([**man pwd**](https://man7.org/linux/man-pages/man1/pwd.1.html))
+
+!!! shell "bash: pwd"
+    **C54W4KDHGK**:jonimatias.github.io jonrajal$ <pop>pwd</pop>
+    /Users/jonrajal/Koodi/web/jonimatias.github.io
+
+eli print working directory. Näyttää aktiivisen kansion sijainnin [absoluuttisena polkuna](../00-intro/01-tiedostot.md#täysi-eli-absoluuttinen-polku), eli reittinä tiedostojärjestelmän juuresta kansio kerrallaan aktiiviseen kansioon. ```pwd``` näyttää siis aktiivisen kansion niin kutsutun absoluuttisen polun. Absoluuttinen polku eroaa sen kumppanista suhteellisesta polusta siten, että suhteellinen polku on aina suhteessa johonkin: joko aktiiviseen kansioon tai kotihakemistoon.
+
+
+#### ls ([**man ls**](https://www.man7.org/linux/man-pages/man1/ls.1.html))
+
+!!! shell "bash: ls"
+    **C54W4KDHGK**:jonimatias.github.io jonrajal$ <pop>ls</pop> <br>
+    <span class="bash-table-element bash-purple">_site/</span>
+    <span class="bash-table-element bash-purple">docs/</span>
+    <span class="bash-table-element bash-red">imgresize.sh\*</span>
+    <span class="bash-table-element">index.html</span>
+    <span class="bash-table-element bash-red">koodi_toc.command*</span>
+    <span class="bash-table-element">mkdocs.yml</span>
+    <span class="bash-table-element">README.md</span>
+    <span class="bash-table-element">requirements.txt</span>
+    <span class="bash-table-element bash-red">test.command\*</span>
+    <span class="bash-table-element bash-red">vidresize.sh\*</span>
+
+eli list directory, näyttää aktiivisen kansion tiedostot ja alikansiot. Ilman muita valintoja tai lippuja, ```ls``` näyttää vain kaikkien tiedostojen nimet ja tiedostopäätteet. Komennon oletustulosteesta voi kuitenkin päätellä tiedostoista erilaisia asioita:
+
+ - Niistä näkee tiedostojen tiedotopäätteen, eli tiedostotyypin.
+ - Jos nimi loppuu kauttamerkkiin ```/```, niin kyseessä on kansio.
+ - Jos nimen perässä on tähtimerkki ```*```, niin kyseessä on [suoritettava tiedosto](02-bash_script.md).
+
+Kuten tämän sivun esimerkeistä myös näkee, ```ls``` usein myös värjää erilaiset tiedostot eri väreillä. Tämä värjäys on kuitenkin pääte- ja tulkkikohtaista, joten kannattaa tutustua siihen, miten komento toimii omalla koneellasi.
+
+
+
+#### cd ([**man cd**](https://man7.org/linux/man-pages/man1/cd.1p.html))
+
+!!! shell "cd"
+    **C54W4KDHGK**:tol-alkeet jonrajal$ pwd<br>
+    /Users/jonrajal/Koodi/opetus/tol-alkeet<br>
+    **C54W4KDHGK**:tol-alkeet jonrajal$ <pop>cd kuvia</pop><br>
+    **C54W4KDHGK**:kuvia jonrajal$ pwd<br>
+    /Users/jonrajal/Koodi/opetus/tol-alkeet/kuvia<br>
+    **C54W4KDHGK**:kuvia jonrajal$ <br>
+
+eli change directory -komento vaihtaa aktiivisen kansion komennon parametrina annettuun kansioon. Toisin sanoen siirtää käyttökontekstin annettuun kansioon. Komento vaatii argumentiksi jonkin aktiivisessa kansiossa sijaitsevan kansion, tai kokonaisen tiedostopolun alkaen juuresta (```/```) tai kotihakemistosta (```~```).
+
+
+
+### Tiedostojen hallinta
+
+#### touch ([**man touch**](https://man7.org/linux/man-pages/man1/touch.1.html))
+
+!!! shell "bash: touch"
+    **C54W4KDHGK**:jonimatias.github.io jonrajal$ <pop>touch uusitiedosto.txt</pop>
+
+-komentoa pääasiallisesti käytetään uusien tiedostojen luomiseen. Jos ```touch```-komennolle antaa tiedoston nimen, jota ei vielä ole olemassa aktiivisessa kansiossa – tai polun tiedostoon jota ei vielä ole olemassa – komento luo uuden tyhjän tiedoston annetulla nimellä.
+
+Komento on oikeasti tarkoitettu tiedostojen aikaleimojen muokkaamiseen, mutta se on harvinaisempi käyttötapaus.
+
+#### rm ([**man rm**](https://man7.org/linux/man-pages/man1/rm.1.html))
+
+!!! shell "bash: rm"
+    **C54W4KDHGK**:testikansio jonrajal$ touch asd.txt<br>
+    **C54W4KDHGK**:testikansio jonrajal$ ls<br>
+    asd.txt<br>
+    **C54W4KDHGK**:testikansio jonrajal$ <pop>rm asd.txt</pop><br>
+    **C54W4KDHGK**:testikansio jonrajal$ ls<br>
+    **C54W4KDHGK**:testikansio jonrajal$ <br>
+
+eli remove file. Komento poistaa argumenttina annetun tiedoston. ```rm``` ei tee minkäänlaista tarkistusta tai varmistusta poistaessaan tiedoston.
+
+
+#### cp ([**man cp**](https://man7.org/linux/man-pages/man1/cp.1.html))
+
+!!! shell "bash: cp"
+    **C54W4KDHGK**:testikansio jonrajal$ touch foo.txt<br>
+    **C54W4KDHGK**:testikansio jonrajal$ <pop>cp foo.txt bar.txt</pop><br>
+    **C54W4KDHGK**:testikansio jonrajal$ ls<br>
+    bar.txt  foo.txt
+
+eli copy. Komento ottaa vastaan kaksi tiedostoa argumentteina. Ensimmäinen tiedosto pitää olla olemassa oleva tiedosto, jonka sisältö kopiodaan sellaisenaan toiseen tiedostoon. Jos toisena argumenttina annettua tiedostoa ei ole olemassa, niin se luodaan, muuten ```cp``` korvaa tiedoston uudella. Kannattaa siis olla tarkkana, ettei tällä tuhoa olemassa olevia tiedostoja.
+
+
+### Kansioiden hallinta
+
+#### mkdir ([**man mkdir**](https://man7.org/linux/man-pages/man1/mkdir.1.html))
+
+!!! shell "bash: mkdir"
+    **C54W4KDHGK**:testikansio jonrajal$ ls<br>
+    <span class="bash-table-element">README.md</span>
+    <span class="bash-table-element">requirements.txt</span><br>
+    **C54W4KDHGK**:testikansio jonrajal$ <pop>mkdir uusi_kansio</pop><br>
+    **C54W4KDHGK**:testikansio jonrajal$ ls<br>
+    <span class="bash-table-element">README.md</span>
+    <span class="bash-table-element">requirements.txt</span><br>
+    <span class="bash-table-element bash-purple">uusi_kansio/</span>
+
+eli make directory. Komento luo uuden kansion argumenttina annetun nimisen kansion aktiiviseen kansioon. Argumentiksi voidaan antaa myös polku, jolloin kansio luodaan polun päähän. ```mkdir```ei kuitenkaan voi luoda useampaa sisäkkäistä kansiota kerralla, ellei sille anneta lippua ```-p```.
+
+!!! shell "bash: mkdir foo/bar"
+    **C54W4KDHGK**:testikansio jonrajal$ <pop>mkdir foo/bar</pop><br>
+    mkdir: foo: No such file or directory
+
+!!! shell "bash: mkdir -p foo/bar"
+    **C54W4KDHGK**:testikansio jonrajal$ <pop>mkdir -p foo/bar</pop><br>
+    **C54W4KDHGK**:testikansio jonrajal$ tree<br>
+    .<br>
+    └── foo<br>
+    &emsp;&emsp;&emsp;&emsp;└── bar<br>
+    <br>
+    3 directories, 0 files
+
+#### rmdir ([**man rmdir**](https://man7.org/linux/man-pages/man1/rmdir.1.html))
+
+
+### Sisällön tulostaminen
+
+#### echo ([**man echo**](https://man7.org/linux/man-pages/man1/echo.1.html))
+
+!!! shell "echo"
+    jonrajal@C54W4KDHGK:~/testikansio$ <pop>echo Hello World!</pop><br>
+    Hello World!
+
+Tämä komento tulostaa vastaukseksi sille annetun argumentin. Näppärä [komentosarjojen](../01.2-komentorivin%20jatkoa/02-bash_script.md) kanssa, jos haluaa saada tilannepäivityksiä. Ajatus on hyvinkin saman, kuin C-ohjelmointikielen ```printf()``` komennolla, vaikka muuttujien hallinta on hyvin erilainen.
+
+#### cat ([**man cat**](https://man7.org/linux/man-pages/man1/cat.1.html))
+
+!!! shell "bash: cat index.html"
+    **C54W4KDHGK**:~ jonrajal$ <pop>cat index.html</pop><br>
+    <!DOCTYPE html\><br>
+    <html\><br>
+        &emsp;&emsp;<head\><br>
+            &emsp;&emsp;&emsp;&emsp;Yksinkertainen HTML-verkkosivu.<br>
+        &emsp;&emsp;</head\><br>
+        &emsp;&emsp;<body\><br>
+            &emsp;&emsp;&emsp;&emsp;Terve, maailma!<br>
+        &emsp;&emsp;</body\><br>
+    </html\><br>
+
+Komennon nimi on lyhenne englanninkielen sanasta concatenate, eli yhdistää. ```cat``` tulostaa argumentiksi annetun tiedoston sisällön komentoriville. 
+
+Komennon nimi tulee siitä, että sillä on helppo yhdistää useampia tiedostoja yhdeksi. Jos komennolle antaa useamman tiedoston yhtä aikaa argumentiksi, se tulostaa molempien tiedostojen sisällön komentoriville.
+
+!!! shell "bash: cat teksti.txt toinen.txt"
+    **C54W4KDHGK**:tol-alkeet jonrajal$ cat teksti.txt toinen.txt<br>
+    Tämä on tekstitiedoston sisältö. Tätä käytetään tol-alkeet-materiaalin esimerkkitiedostona.<br>
+    <br>
+    Tekstitiedosto sisältää tekstiä, kuten kirjaimia, numeroita ja muita erikoismerkkejä.Tästä alkaa toinen tekstitiedosto. Tämänkin tiedoston sisältö on tekstiä.
+
+Tästä toiminnallisuudesta on vielä enemmän hyötyä, kun alkaa käyttämään [tulosteen ohjausta](#tuloste-tiedostoon).
+
+### Tuloste tiedostoon
+
+[```echo```](#echo-man-echo) ja [```cat```](#cat-man-cat) ovat näppäriä komentoja jos haluaa saada tulostuksia tilapäisesti näkymään ruudulla. Joskus kuitenkin tulostuksen haluaa säilymään pidemmän aikaa, jolloin tuloste on hyvä tallentaa tiedostoon.
+
+Tiedostoon tallentamisen voi tehdä maalaamalla *päätteen* tekstin, ja kopioimalla ja liittämällä tekstin tiedostoon käsin. Tämä on kuitenkin työlästä ja aikaa vievää, joten eikö olisi parempi, jos sen voisi tulostaa suoraan tiedostoon.
+
+Sitä varten *bash* tarjoaa tulosteenohjausmerkit. Jos komennon lopettaa merkeillä ´´´>´´´ tai ´´´>>´´´, jonka jälkeen laitetaan tiedoston nimi, niin kaikki komennon tai ohjelman komentoriville tulostettava teksti kirjoitetaan annettuun tiedostoon. Jos tiedostoa ei ole olemassa, niin se luodaan. Ohjausmerkkejä käytetään muodossa ```komento --valinnat argumentit >> ohjattu_tiedosto```.
+
+Jos ohjauksessa käytetään vain yhtä merkkiä (```>```), niin silloin tuloste korvaa annetun tiedoston sisällön. Jos taas merkkejä on kaksi (```>>```), niin tuloste lisätään tiedoston perään.
+
+!!! shell "bash: >"
+    **C54W4KDHGK**:tol-alkeet jonrajal$ ls<br>
+    index.html  kuvia/      README.txt  teksti.txt  toinen.txt<br>
+    **C54W4KDHGK**:tol-alkeet jonrajal$ <pop>cat teksti.txt toinen.txt > uusi.txt</pop><br>
+    **C54W4KDHGK**:tol-alkeet jonrajal$ cat uusi.txt <br>
+    Tämä on tekstitiedoston sisältö. Tätä käytetään tol-alkeet-materiaalin esimerkkitiedostona.<br>
+    <br>
+    Tekstitiedosto sisältää tekstiä, kuten kirjaimia, numeroita ja muita erikoismerkkejä.Tästä alkaa toinen tekstitiedosto. Tämänkin tiedoston sisältö on tekstiä.
+
+Koko tuloste voidaan ohjata kerralla yhteen tiedostoon. Tämä on näppärä mm. ```cat``` komennon kanssa, koska siten sillä voi helposti yhdistää kahden tekstitiedoston sisällöt.
+
+
+!!! shell "bash: echo tiedostoon"
+    **C54W4KDHGK**:tol-alkeet jonrajal$ <pop>echo Hello World! > uusi.txt</pop><br>
+    **C54W4KDHGK**:tol-alkeet jonrajal$ cat uusi.txt<br>
+    Hello World!
+
+Yksinkertaisimmillaan tätä voi käyttää kokonaan uuden tekstitiedoston luomiseen määritellyllä sisällöllä. ```echo``` toistaa sille annetun argumentin, mutta koska toistettu tuloste ohjataan tiedostoon, lopputuloksena on tiedosto, jonka sisältö on annettu argumentti. 
+
+
+!!! shell "bash: peräkkäiset >>"
+    **C54W4KDHGK**:tol-alkeet jonrajal$ <pop>echo eka argumentti >> uusi.txt</pop><br>
+    **C54W4KDHGK**:tol-alkeet jonrajal$ <pop>echo toka argumentti >> uusi.txt</pop><br>
+    **C54W4KDHGK**:tol-alkeet jonrajal$ cat uusi.txt <br>
+    eka argumenttitoka argumentti
+
+Kahden merkin versio lisää tulosteet tiedoston perään. Tällöin kaksi peräkkäistä komentoa voi kirjoittaa samaan tiedostoon. 
+
+!!! shell "bash: peräkkäiset >"
+    **C54W4KDHGK**:tol-alkeet jonrajal$ <pop>echo eka argumentti > uusi.txt</pop><br>
+    **C54W4KDHGK**:tol-alkeet jonrajal$ <pop>echo toka argumentti > uusi.txt</pop><br>
+    **C54W4KDHGK**:tol-alkeet jonrajal$ cat uusi.txt<br>
+    toka argumentti
+
+Jos taas yrittää käyttää yhtä merkkiä ```>``` siirtämiseen, niin uuden komennon tuloste korvaa tulostetiedoston sisällön kokonaan uudella tulosteella.
+
+
+### Muita komentoja
+
+#### man [**man man**](https://man7.org/linux/man-pages/man1/man.1.html)
+
+!!! shell "man echo"
+    ECHO(1)                     General Commands Manual                    ECHO(1)<br>
+    <br>
+    NAME<br>
+        echo – write arguments to the standard output<br>
+    <br>
+    SYNOPSIS<br>
+        echo [-n] [string ...]<br>
+    <br>
+    DESCRIPTION<br>
+        The echo utility writes any specified operands, separated by single blank<br>
+        (‘ ’) characters and followed by a newline (‘\n’) character, to the<br>
+        standard output.<br>
+    <br>
+        The following option is available:<br>
+    <br>
+        -n    Do not print the trailing newline character.  This may also be<br>
+            achieved by appending ‘\c’ to the end of the string, as is done by<br>
+            iBCS2 compatible systems.  Note that this option as well as the<br>
+            effect of ‘\c’ are implementation-defined in IEEE Std 1003.1-2001<br>
+            (“POSIX.1”) as amended by Cor. 1-2002.  Applications aiming for<br>
+            maximum portability are strongly encouraged to use printf(1) to<br>
+            suppress the newline character.<br>
+    <br>
+    :
+
+eli manuaali. Antamalla ```man```-komennolle argumentiksi ohjelman tai komennon nimen, pääte avaa kyseisen komennon manuaalin selattavaksi. Manuaali avautuu komentoriville, ja sitä voi selata nuoli-, page up ja page down -näppäimillä. Manuaali sulkeutuu painamalla Q-näppäintä näppäimistöltä. Jotkin käyttöjärjestelmät tukevat myös man-manuaalien avautumista erilliseen ikkunaan.
+
+```man``` avaa manuaalin vain, jos pyydetyn ohjelman manuaali on asennettu koneelle. Ainakin kaikilla peruskomennoilla ja yleisimmillä ohjelmilla on jonkinlainen komentorivimanuaali olemassa. 
+
+#### clear [**man clear**](https://man7.org/linux/man-pages/man1/clear.1.html)
+
+=== "Ennen *clear*ia"
+    !!! shell "bash: clear"
+        käytetään tol-alkeet-materiaalin esimerkkitiedostona.<br>
+        <br>
+        Tekstitiedosto sisältää tekstiä, kuten kirjaimia, numeroita ja muita erikoismerkkejä.Tästä alkaa toinen tekstitiedosto. Tämänkin tiedoston sisältö on tekstiä.<br>
+        **C54W4KDHGK**:tol-alkeet jonrajal$ cat index.html<br>
+        <!DOCTYPE html\><br>
+        <html\><br>
+            &emsp;&emsp;<head\><br>
+                &emsp;&emsp;&emsp;&emsp;Yksinkertainen HTML-verkkosivu.<br>
+            &emsp;&emsp;</head\><br>
+            &emsp;&emsp;<body\><br>
+                &emsp;&emsp;&emsp;&emsp;Terve, maailma!<br>
+            &emsp;&emsp;</body\><br>
+        </html\><br>
+        **C54W4KDHGK**:tol-alkeet jonrajal$ <pop>clear</pop><br>
+
+=== "*clear*in jälkeen"
+    !!! shell "bash: *clear*in jälkeen"
+        **C54W4KDHGK**:tol-alkeet jonrajal$
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+tyhjentää komentorivin sisällön ja näyttää vain uuden komentokehotteen. Päätteen toteutuksesta riippuen se joko poistaa kaiken tekstisisällön ikkunasta, tai vain skrollaa ikkunaa alaspäin niin, että vain uusin komentokehote näkyy.
+
+### sudo
+
+
+## Päätteen kontrollointi
+
+ctrl+c
+
+ctrl+z

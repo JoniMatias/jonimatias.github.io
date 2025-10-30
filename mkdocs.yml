@@ -1,6 +1,6 @@
 # Replace the text below to customize your site
-site_name: Jonin projektit
-site_description: Joni Github-leikkialusta
+site_name: Perustiedot tietojenkäsittelytieteen opiskelijalle
+site_description: Tältä sivustolta löytyy kaikki tarvittava tieto, mitä Oulun yliopistossa aloittava tietojenkäsittelytieteen opiskelijan kannattaa tietokoneesta tietää. Ja vähän enemmän.
 
 site_author: Joni Matias Rajala
 docs_dir: docs
@@ -43,10 +43,10 @@ markdown_extensions:
   - toc:
       permalink: true
   - pymdownx.superfences:
-    custom_fences:
-      - name: vegalite
-        class: vegalite
-        format: !!python/name:mkdocs_charts_plugin.fences.fence_vegalite
+      custom_fences:
+        - name: vegalite
+          class: vegalite
+          format: !!python/name:mkdocs_charts_plugin.fences.fence_vegalite
 
 
 plugins:

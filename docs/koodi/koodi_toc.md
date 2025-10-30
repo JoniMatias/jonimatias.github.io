@@ -11,10 +11,35 @@ Ennen kuin alat tekemään näitä tehtäviä, kannattaa kurkata seuraavat alisi
  - [Apufunktioita, koodinpätkiä ja teoriaa](./apufunktiot.md)
 
 
+## Tehtävät teemoittain
 
-## Tehtävät aakkosjärjestyksessä
+<!-- material/tags { include: [Sanakirja, Ääkkösiä, Puurakenne, Algoritmit] } -->
 
-<div class="grid cards" markdown>
+
+## Tehtävät vaikeusasteittain
+
+### ★☆☆☆☆
+
+<!-- material/tags { include: [Vaikeusaste 1] } -->
+
+### ★★☆☆☆
+
+<!-- material/tags { include: [Vaikeusaste 2] } -->
+
+### ★★★☆☆
+
+<!-- material/tags { include: [Vaikeusaste 3] } -->
+
+### ★★★★☆
+
+<!-- material/tags { include: [Vaikeusaste 4] } -->
+
+### ★★★★★
+
+<!-- material/tags { include: [Vaikeusaste 5] } -->
+
+
+## Tehtävät aakkosjärjestyksessä<div class="grid cards" markdown>
 
 -   [---](./haasteet/aakkostus.md)
 

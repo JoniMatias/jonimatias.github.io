@@ -24,6 +24,13 @@
   width: 49%;
 }
 
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
 .md-sidebar--secondary {
   opacity: 0%;
   pointer-events: none;
@@ -65,8 +72,32 @@
   }
 }
 
+.bash-table-element {
+  float: left;
+  width: 32%;
+}
+
+@media (min-width: 960px) {
+  .bash-table-element {
+    float: left;
+    width: 24%;
+  }
+}
+
 .auto-width {
   width: auto;
+}
+
+.bash-red {
+  color: rgb(239, 47, 85);
+}
+
+.bash-purple {
+  color: rgb(212, 24, 212);
+}
+
+p > code {
+  white-space: pre;
 }
 
 
@@ -77,4 +108,92 @@
 .md-button.full-width {
   width: 100%;
   text-align: center;
+}
+
+
+.hoverable {
+    position: relative;
+    cursor: pointer;
+}
+ 
+.popup {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    background-color: #f9f9f9;
+    color: darkgray;
+    border: 1px solid #ccc;
+    padding: 10px;
+    z-index: 1;
+}
+ 
+.hoverable:hover .popup {
+    display: block;
+}
+
+.admonition:hover pop {
+  color: rgb(51, 57, 52);
+  font-weight: bold;
+  background-color: greenyellow;
+}
+
+.md-typeset .tabbed-labels {
+  border-width: 1mm;
+  border-top-left-radius: 3mm;
+  border-top-right-radius: 3mm;
+  background-color: #ccf1f9;
+  padding: 2mm;
+}
+
+.md-typeset .tabbed-content {
+  border-width: 1mm;
+  border-bottom-left-radius: 3mm;
+  border-bottom-right-radius: 3mm;
+  background-color: #dff3f6;
+  padding: 2mm;
+}
+
+
+
+
+a[href*="//"]:not([href*="jonimatias.github.io"]) {
+  background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M440-280H280q-83 0-141.5-58.5T80-480q0-83 58.5-141.5T280-680h160v80H280q-50 0-85 35t-35 85q0 50 35 85t85 35h160v80ZM320-440v-80h320v80H320Zm200 160v-80h160q50 0 85-35t35-85q0-50-35-85t-85-35H520v-80h160q83 0 141.5 58.5T880-480q0 83-58.5 141.5T680-280H520Z"/></svg>');
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding-left: 20px;
+}
+
+a.md-button[href*="//"]:not([href*="jonimatias.github.io"]) {
+  background-image: none;
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding-left: 20px;
+}
+
+:root {
+  --md-admonition-icon--shell: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm0-80h640v-400H160v400Zm140-40-56-56 103-104-104-104 57-56 160 160-160 160Zm180 0v-80h240v80H480Z"/></svg>')
+}
+.md-typeset .admonition.shell,
+.md-typeset details.shell {
+  border-color: rgb(51, 57, 52);
+  background-color: rgb(51, 57, 52);
+}
+.md-typeset .shell > .admonition-title,
+.md-typeset .shell > summary {
+  background-color:  rgb(77, 90, 79);
+  border-color: rgb(51, 57, 52);
+  color:greenyellow;
+}
+.md-typeset .shell > .admonition-title::before,
+.md-typeset .shell > summary::before {
+  background-color: greenyellow;
+  -webkit-mask-image: var(--md-admonition-icon--shell);
+          mask-image: var(--md-admonition-icon--shell);
+}
+
+.md-typeset .shell > :not(.admonition-title) {
+  color: greenyellow;
+  font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
 }
