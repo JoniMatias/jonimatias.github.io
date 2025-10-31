@@ -1,13 +1,10 @@
 # Bashin peruskomennot
 
-
-Komentorivi tukee satoja erilaisia komentoja. Tavallisten komentojen tavoin komentorivillä voi kutsua [komentosarjoja](02-bash_script.md) ja muita ohjelmia. Tämän vuoksi komentorivillä on usein vaikea erottaa, minkälaista toimintoa onkaan kutsumassa. Onneksi sillä ei ole suurta merkitystä, sillä kaikilla näillä on sama tarkoitus: saada tietokone tekemään jotain.
-
 Tässä listataan muutama yleisin *bashin* tukema komento, mitä ne tekevät ja miten niitä käytetään. Jos haluat tietää enemmän näiden toiminnasta, niin tarkemmat ohjeet saa ```man```-komennolla.
 
-Windowsilla on eri komennot, jotka on listattu erillisellä sivulla.
+Löydät Windowsin *cmd.exe*n käyttämät peruskomennot alla olevasta linkistä. 
 
-[Windowsin peruskomennot](./windows-komennot.md){ .md-button }
+[Windowsin peruskomennot](./windows-peruskomennot.hidden.md.md){ .md-button }
 
 ### Aktiivisen kansion hallinta
 
