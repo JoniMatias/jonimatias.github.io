@@ -80,7 +80,7 @@ Komentorivien käyttöä varten tietokone tarvitsee kolme eri komponenttia: pä�
 
 Samoin kuin graafisen käyttöliitymän tiedostoikkunoissa, komentorivillä on yksi aktiivinen kansio kerralla auki. Käytännössä kaikki komennot ajetaan aktiivisessa kansiossa. Graafisella ikkunalla tämän kansion sisältö näkyy kerralla, mutta komentorivillä kansion sisällön tarkasteluun tarvitaan komento ```ls```. Se listaa kaikki tämänhetkisen kansion tiedostot.
 
-!!! shell "bash: ls"
+!!! shell html-whitespace "bash: ls"
     **C54W4KDHGK**:tol-alkeet jonrajal$ <pop>ls</pop><br>
     <span class="bash-table-element bash-purple">html-kansio/</span>
     <span class="bash-table-element bash-purple">kuvia/</span>
