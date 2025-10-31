@@ -5,7 +5,9 @@ Komentorivi tukee satoja erilaisia komentoja. Tavallisten komentojen tavoin kome
 
 Tässä listataan muutama yleisin *bashin* tukema komento, mitä ne tekevät ja miten niitä käytetään. Jos haluat tietää enemmän näiden toiminnasta, niin tarkemmat ohjeet saa ```man```-komennolla.
 
-Windowsilla on eri komennot.
+Windowsilla on eri komennot, jotka on listattu erillisellä sivulla.
+
+[Windowsin peruskomennot](./windows-komennot.md){ .md-button }
 
 ### Aktiivisen kansion hallinta
 
