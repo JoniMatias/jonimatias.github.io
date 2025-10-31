@@ -300,4 +300,8 @@ tyhjentää komentorivin sisällön ja näyttää vain uuden komentokehotteen. P
 
 ### sudo
 
-Jotkin komennot vaativat käyttäjältä erikoisoikeuksia. Tällaiset toiminnot yleensä ovat tietoa tuhoavia, tietokoneen asetuksia muuttavia tai tietokoneen turvallisuutta vaarantavia toimia. 
+Jotkin komennot vaativat käyttäjältä erikoisoikeuksia. Tällaiset toiminnot yleensä ovat tietoa tuhoavia, tietokoneen asetuksia muuttavia tai tietokoneen turvallisuutta vaarantavia toimia. Nämä komennot vaativat niiden ajamista ```sudo```-komennon kanssa.
+
+Komennot siis ajetaan muodossa ```sudo komento --valinta```. Tämän jälkeen ```sudo``` kysyy vielä käyttäjän salasanaa, jos komento tarvitsee pääkäyttäjän oikeuksia. 
+
+```sudo``` on turvallisuustoiminto nakkisormia vastaan. Se ei estä käyttäjää tekemästä mitään, mihin käyttäjällä ei olisi valmiiksi oikeuksia, eikä se rajaa käytössä olevia toimintoja pois niiltä, joiden ei sitä pitäisi tehdä. Sitä varten on erilliset käyttäjätilit ja -oikeudet. ```sudo``` suojelee käyttäjää tekemästä haitallisia toimia vahingossa. Ajatuksena on se että, jos komento vaatii ```sudo```-lisäkomennon, käyttäjän kannattaa miettiä kahdesti, ja varmistaa komennon tekevän juuri sen mitä hän haluaa sen tekevän.

@@ -181,6 +181,12 @@ Tämän lisäksi ohjelmien suorittaminen ei eroa komentorivillä muiden komentoj
 
 ## Päätteen kontrollointi
 
+Joskus ohjelma tai komento ei sammu itsekseen käynnistymisen jälkeen. Tällaisia ovat mm. ```man```-manuaalikomento tai ```nano```-tekstinkäsittelyohjelma. Moniin tällaisiin ohjelmiin on yleensä ohjelmoitu tapa sammuttaa ne, mutta joskus se ei ole tarpeellista.
+
+Joskus myös ohjelmassa on bugi, jonka takia se jää ikuiseen silmukkaan, eikä lopu ikinä. Joskus taas voit huomata käynnistäneesi väärän ohjelman, ja haluat sammuttaa sen ennenkuin se ehtii tehdä liikaa tuhoja.
+
+Näitä ongelmia varten on olemassa näppäinyhdistelmä <kbd>^ Control</kbd>+<kbd>c</kbd>. Kun tätä näppäinyhdistelmää painetaan, *bash* sammuttaa tällä hetkellä suorituksen alaisen ohjelman heti. Se ei jää kyselemään tai odottamaan käyttäjältä lisäsyötteitä, ohjelma vaan keskeytetään suoraan siihen, ja sen toiminta jätetään kesken.
+
 ctrl+c
 
 ctrl+z

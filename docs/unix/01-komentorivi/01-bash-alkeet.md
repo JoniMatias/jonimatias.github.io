@@ -78,7 +78,7 @@ Komentorivien käyttöä varten tietokone tarvitsee kolme eri komponenttia: pä�
 
 ## Aktiivinen kansio
 
-Samoin kuin graafisen käyttöliitymän ikkunoissa, komentorivillä on yksi aktiivinen kansio kerralla auki. Graafisella ikkunalla tämän kansion sisältö näkyy kerralla, mutta komentorivillä kansion sisällön tarkasteluun tarvitaan komento ```ls```. Se listaa kaikki tämänhetkisen kansion tiedostot.
+Samoin kuin graafisen käyttöliitymän tiedostoikkunoissa, komentorivillä on yksi aktiivinen kansio kerralla auki. Käytännössä kaikki komennot ajetaan aktiivisessa kansiossa. Graafisella ikkunalla tämän kansion sisältö näkyy kerralla, mutta komentorivillä kansion sisällön tarkasteluun tarvitaan komento ```ls```. Se listaa kaikki tämänhetkisen kansion tiedostot.
 
 !!! shell "bash: ls"
     **C54W4KDHGK**:tol-alkeet jonrajal$ <pop>ls</pop><br>
@@ -89,7 +89,5 @@ Samoin kuin graafisen käyttöliitymän ikkunoissa, komentorivillä on yksi akti
     <span class="bash-table-element">toinen.txt</span>
     <span class="bash-table-element">uusi.txt</span>
 
-Aktiivista kansiota voi vaihtaa ```cd```-komennolla. ```cd kansion_nimi``` vaihtaa aktiivisen kansion nykyisen aktiivisen kansion alikansioon, jolla on annettu nimi. ```cd ..`` siirtää aktiivista kansiota yhden kansiota yhden askeleen ylöspäin; nykyisen aktiivisen kansion yläkansion.
-
-
+Aktiivista kansiota voi vaihtaa ```cd```-komennolla. ```cd kansion_nimi``` vaihtaa aktiivisen kansion nykyisen aktiivisen kansion alikansioon, jolla on annettu nimi. ```cd ..`` siirtää aktiivista kansiota yhden kansiota yhden askeleen ylöspäin; nykyisen aktiivisen kansion yläkansioon.
 
