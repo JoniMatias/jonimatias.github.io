@@ -1,0 +1,1708 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Tältä sivustolta löytyy kaikki tarvittava tieto, mitä Oulun yliopistossa aloittava tietojenkäsittelytieteen opiskelijan kannattaa tietokoneesta tietää. Ja vähän enemmän.">
+      
+      
+        <meta name="author" content="Joni Matias Rajala">
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title>Bash-komentosarjat - Perustiedot tietojenkäsittelytieteen opiskelijalle</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../style.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#bash-komentosarjat" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Perustiedot tietojenkäsittelytieteen opiskelijalle" class="md-header__button md-logo" aria-label="Perustiedot tietojenkäsittelytieteen opiskelijalle" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Perustiedot tietojenkäsittelytieteen opiskelijalle
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Bash-komentosarjat
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../koodi/koodi_toc/" class="md-tabs__link">
+          
+  
+  
+  Tehtävät
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../koodi/apufunktiot/" class="md-tabs__link">
+          
+  
+  
+  Apufunktiot
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../00-intro/00-intro/" class="md-tabs__link">
+          
+  
+  
+  Komentorivi
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../koodi/muut_sivut/muut_sivut/" class="md-tabs__link">
+          
+  
+  
+  Muuta
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Perustiedot tietojenkäsittelytieteen opiskelijalle" class="md-nav__button md-logo" aria-label="Perustiedot tietojenkäsittelytieteen opiskelijalle" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Perustiedot tietojenkäsittelytieteen opiskelijalle
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tehtävät
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Tehtävät
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../koodi/koodi_toc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aloitussivu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../koodi/haasteet/aakkostus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aakkostus
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../koodi/haasteet/boggle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Boggle
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../koodi/haasteet/duplikaatti/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Duplikaatit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../koodi/haasteet/palindromi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Palindromit 1: Tunnistaminen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../koodi/haasteet/palindromi2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Palindromit 2: Palindromiprosentti
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../koodi/haasteet/palindromi3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Palindromit 3: Alipalindromit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../koodi/haasteet/roomalaiset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Rooma
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../koodi/haasteet/sanakirja/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sanakirja
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Apufunktiot
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Apufunktiot
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../koodi/apufunktiot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aloitussivu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../koodi/apufunktiot/tiedoston_lukeminen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tiedostojen lukeminen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../koodi/apufunktiot/unicode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ääkköset
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Komentorivi
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Komentorivi
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00-intro/00-intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aloitussivu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    00 intro
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            00 intro
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00-intro/01-tiedostot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tiedostot ja tiedostojärjestelmät
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00-intro/02-email/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Opiskelijan sähköposti
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    01 komentorivi
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            01 komentorivi
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-komentorivi/01-bash-alkeet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Komentorivin alkeet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-komentorivi/02-bash-muoto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Komentojen rakenne
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-komentorivi/03-bash-peruskomennot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bashin peruskomennot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-komentorivi/04-asennus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ohjelmien asentaminen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-komentorivi/windows-komennot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Yleisimmät Windowsin komennot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    01.2 komentorivin jatkoa
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            01.2 komentorivin jatkoa
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-komentosarjat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Komentosarjat
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-environment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Komentirivin ympäristö
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-grep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Datan ajaminen putkeen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    02 ohjelmointi
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            02 ohjelmointi
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-ohjelmointi/01-IDEt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ohjelmointiympäristöt
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-ohjelmointi/02-git/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Git-versionhallinta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-ohjelmointi/03-debug/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Koodin testaaminen ja debuggaaminen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    03 verkot
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            03 verkot
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-verkot/01-verkkosivut/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Verkkosivujen kehitys
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Muuta
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Muuta
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../koodi/muut_sivut/muut_sivut/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Muita ideoita
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#shebang" class="md-nav__link">
+    <span class="md-ellipsis">
+      #! (shebang)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ohjausrakenteet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ohjausrakenteet
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ohjausrakenteet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jokerimerkit-wildcard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jokerimerkit (wildcard)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#silmukat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Silmukat
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ehtolauseet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ehtolauseet
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#komentosarjojen-ajaminen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Komentosarjojen ajaminen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bash-skriptit-ja-path-ja-muut-ymparistomuuttujat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bash-skriptit ja $PATH (ja muut ympäristömuuttujat)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cron-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      cron-job
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="bash-komentosarjat">Bash-komentosarjat<a class="headerlink" href="#bash-komentosarjat" title="Permanent link">&para;</a></h1>
+<p>Näitä tiedostoja kutsutaan yleisemmin nimellä <strong>bash-skripti</strong>.</p>
+<p>Skriptitiedosto on vain tavallinen tekstitiedosto, johon on kirjoitettu ajettavat komennot erillisille riveille siinä järjestyksessä kun ne halutaan ajaa. Yksinkertaisimmillaan tiedostossa voi olla vain muutama komento ilman minkäänlaisia kontrollirakenteita. Esimerkiksi tätä nettisivua varten on tehty yksinkertainen komentosarja, jolla sivua voi testata paikallisesti omalla koneella.</p>
+<details class="abstract">
+<summary>Komentosarja verkkosivun testaamiseen</summary>
+<div class="highlight"><pre><span></span><code>#!/bin/bash
+
+cd &quot;$(dirname &quot;$0&quot;)&quot;
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+mkdocs build
+open http://127.0.0.1:8000/
+mkdocs serve
+</code></pre></div>
+</details>
+<p>Kyseinen ohjelma käynnistää pythonin virtuaalikoneen, tarkistaa ja asentaa kaikki vaaditut ohjelmat ja kääntää verkkosivun testaamista varten. Viimeiseksi se avaa selaimen uuteen välilehteen paikallisella palvelimella sijaitsevan verkkosivun.</p>
+<h2 id="shebang">#! (shebang)<a class="headerlink" href="#shebang" title="Permanent link">&para;</a></h2>
+<p>Komentosarjatiedostoon saa kirjoittaa vapaasti komentoja miten tahtoo, paitsi ensimmäiselle riville. Ensimmäinen rivi, ts. otsakerivi, on tarkoitettu tulkin (<strong>shell</strong>) määrittelemiseksi.</p>
+<p>Tulkin määritteleminen tiedostossa mahdollistaa komentosarjatiedostojen siirtämisen tietokoneelta toiselle, vaikka eri koneen käyttäjillä olisikin käytössään eri oletustulkki. Jokainen käyttäjä voi kirjoittaa skriptinsä haluamalleen tulkille, ja näin kirjoitettu komentosarja voidaan ajaa koneella kuin koneella.</p>
+<p>Otsakerivin kaksi ensimmäistä merkkiä pitää olla <code>#!</code>, eli risuaita ja huutomerkki. Näiden perään samalle riville kuuluu määritellä mikä komentorivitulkki tulkitsee tiedoston komennot. Tulkki pitää määritellä antamalla oman koneesi tiedostopolku tulkin ohjelmaan. Nämä tiedostopolut on kuitenkin yleensä hyvin standardoituja, ja tulkit asentuvat jokaiselle tietokoneelle yleensä samaan paikkaan. </p>
+<p>Jos komentosarjan haluaa tulkita <em>bash</em>-tulkilla, niin tiedoston ensimmäinen rivi on muotoa <code>#! /bin/bash</code>. <em>zsh</em>-tulkille se on taas muotoa <code>#! /bin/zsh</code>. </p>
+<h2 id="ohjausrakenteet">Ohjausrakenteet<a class="headerlink" href="#ohjausrakenteet" title="Permanent link">&para;</a></h2>
+<p>Usein yksinkertaiset listamuotoiset komentosarjat eivät riitä, vaan komentojen pitää myös pystyä tekemään päätöksiä, ja reagoimaan löydettyihin tuloksiin. Tätä varten tulkit tukevat samanlaisia ohjausrakenteita kuin tavalliset ohjelmointikielet.</p>
+<h3 id="jokerimerkit-wildcard">Jokerimerkit (wildcard)<a class="headerlink" href="#jokerimerkit-wildcard" title="Permanent link">&para;</a></h3>
+<p>Jokerimerkit ovat erikoismerkkejä, joita voidaan käyttää teksin etsimiseen. Komentosarjojen tapauksessa niiden pääasiallinen käyttötarkoitus on etsiä useita tiedostoja, joiden nimet ovat lähellä toisiaan tai joilla on sama tiedostopääte. Esimerkiksi komento <code>echo *.txt</code> tulostaa kaikki aktiivisessa kansiossa olevat .txt-tiedostot.</p>
+<p><em>Bash</em> tukee kolmea erilaista jokerimerkkiä. Nämä merkit ovat <code>*</code>, <code>?</code> ja <code>[]</code>.</p>
+<p>Näistä yksinkertaisin on <code>?</code>, joka voidaan korvata millä tahansa yhdellä merkillä. Täten siis merkkijono <code>kuva-?.jpg</code> löytää minkä tahansa seuraavista: <code>kuva-2.jpg</code>, <code>kuva-5.jpg</code> ja <code>kuva-9.jpg</code>, mutta ei löydä <code>kuva-.jpg</code> tai <code>kuva-25.jpg</code></p>
+<p>Yleisin jokerimerkki on <code>*</code>. Tämä korvataan millä tahansa määrällä mitä tahansa merkkejä. *-merkki voidaan jättää myös kokonaan korvaamatta. Eli merkkijono <code>kuva-*.jpg</code> löytää tiedostot <code>kuva-2.jpg</code>, <code>kuva-76.jpg</code>, <code>kuva-asd.jpg</code> ja <code>kuva-.jpg</code>, mutta ei löydä merkkijonona <code>asd-2.jpg</code> tai <code>kuva-54.png</code>.</p>
+<p>Tarkimman kontrollin jokerimerkeistä saa joukon määrittävällä jokerimerkillä. Vaihteluvälin voi määritellä kirjoittamalla kaikki hyväksytyt merkit hakasulkeiden (<code>[</code> ja <code>]</code>) väliin. Hakasulkeisiin voidaan kirjoittaa jokainen etsitty merkki erikseen (<code>[a6gnfy]</code>) tai määritellä ne liukuvälinä: <code>[0-9]</code> löytää minkä tahansa numeron ja <code>[a-z]</code> minkä tahansa pienen kirjaimen. Hakasulkeiden sisään voi myös laittaa useamman liukuvälin, jolloin ´´´[A-Za-z]´´´ löytää minkä tahansa kirjaimen. Joukon määrittelevä jokerimerkki toimii kuten <code>?</code>, eli se etsii vain yhtä merkkiä annetusta paikasta. </p>
+<p>Jokerimerkkejä voi olla useampi samassa haussa. Esimerkiksi haku <code>*.*</code> löytää kaikki kansiossa olevat tiedostot, joilla on tiedostopääte (tai piste muuten nimessä).</p>
+<p>Esimerkkien mukaiset tulokset on toistamiseen nähtävissä alla olevassa taulukossa.</p>
+<table>
+<thead>
+<tr>
+<th>Tiedosto</th>
+<th>kuva-?.jpg</th>
+<th>kuva-*.jpg</th>
+<th>kuva-[0-9][0-9].jpg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>kuva-2.jpg</td>
+<td>X</td>
+<td>X</td>
+<td></td>
+</tr>
+<tr>
+<td>kuva-5.jpg</td>
+<td>X</td>
+<td>X</td>
+<td></td>
+</tr>
+<tr>
+<td>kuva-08.jpg</td>
+<td></td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr>
+<td>kuva-54.jpg</td>
+<td></td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr>
+<td>kuva-f.jpg</td>
+<td>X</td>
+<td>X</td>
+<td></td>
+</tr>
+<tr>
+<td>kuva-.jpg</td>
+<td></td>
+<td>X</td>
+<td></td>
+</tr>
+<tr>
+<td>kuva-asd.jpg</td>
+<td></td>
+<td>X</td>
+<td></td>
+</tr>
+<tr>
+<td>asd-5.jpg</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<details class="info">
+<summary>bash komennot jokerimerkeillä</summary>
+<p>Seuraavat esimerkit käyttävät silmukoita ja muuttujia. Niiden käyttö selitetään alempana.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">kuva-?.jpg</label><label for="__tabbed_1_2">kuva-*.jpg</label><label for="__tabbed_1_3">kuva-[0-9][0-9].jpg</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="admonition shell">
+<p class="admonition-title">bash: ?</p>
+<p><strong>C54W4KDHGK</strong>:kuvia jonrajal$ for tiedosto in <pop>kuva-?.jpg</pop>; do echo $tiedosto; done
+kuva-1.jpg
+kuva-2.jpg
+kuva-3.jpg
+kuva-5.jpg
+kuva-6.jpg
+kuva-7.jpg
+kuva-9.jpg</p>
+</div>
+</div>
+<div class="tabbed-block">
+<div class="admonition shell">
+<p class="admonition-title">bash: *</p>
+<p><strong>C54W4KDHGK</strong>:kuvia jonrajal$ for tiedosto in <pop>kuva-*.jpg</pop>; do echo $tiedosto; done
+kuva-.jpg
+kuva-08.jpg
+kuva-1.jpg
+kuva-10.jpg
+kuva-2.jpg
+kuva-3.jpg
+kuva-5.jpg
+kuva-54.jpg
+kuva-6.jpg
+kuva-7.jpg
+kuva-9.jpg</p>
+</div>
+</div>
+<div class="tabbed-block">
+<div class="admonition shell">
+<p class="admonition-title">bash: []</p>
+<p><strong>C54W4KDHGK</strong>:kuvia jonrajal$ for tiedosto in <pop>kuva-[0-9][0-9].jpg</pop>; do echo $tiedosto; done
+kuva-08.jpg
+kuva-10.jpg
+kuva-54.jpg</p>
+</div>
+</div>
+</div>
+</div>
+</details>
+<p>Näiden <em>bashin</em> sisäänrakennettujen perusjokerimerkkien lisäksi joillain ohjelmilla ja komennoilla voi olla omia jokerimerkkejään. Monet ohjelman tukevat mm. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Cheatsheet">säännöllisiä lausekkeita</a>, jotka tunnetaan myös paremmin englannista tulevalla <strong>regex</strong>-lyhenteellä. Tämä on yksi syy lisää tutustua jokaisen käyttämääsi ohjelmaan <code>man</code>-komennolla.</p>
+<h3 id="silmukat">Silmukat<a class="headerlink" href="#silmukat" title="Permanent link">&para;</a></h3>
+<div class="admonition abstract">
+<p class="admonition-title">Yhdistä tekstitiedostot yhteen tiedostoon.</p>
+<div class="highlight"><pre><span></span><code>for tiedosto in *.txt
+    do cat $tiedosto &gt;&gt; tulos.txt
+done
+</code></pre></div>
+</div>
+<h3 id="ehtolauseet">Ehtolauseet<a class="headerlink" href="#ehtolauseet" title="Permanent link">&para;</a></h3>
+<h2 id="komentosarjojen-ajaminen">Komentosarjojen ajaminen<a class="headerlink" href="#komentosarjojen-ajaminen" title="Permanent link">&para;</a></h2>
+<p><strong>TODO:</strong> sh-komennon kautta.</p>
+<p><strong>TODO:</strong> chmod</p>
+<p><strong>TODO:</strong> Macos .command &amp; Ubuntun tuplaklikkaus</p>
+<h2 id="bash-skriptit-ja-path-ja-muut-ymparistomuuttujat">Bash-skriptit ja $PATH (ja muut ympäristömuuttujat)<a class="headerlink" href="#bash-skriptit-ja-path-ja-muut-ymparistomuuttujat" title="Permanent link">&para;</a></h2>
+<h2 id="cron-job">cron-job<a class="headerlink" href="#cron-job" title="Permanent link">&para;</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Creative Commons Attribution Non Commercial
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../../js/mkdocs-charts-plugin.js"></script>
+      
+        <script src="../../../javascripts/extra.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+      
+    
+  </body>
+</html>
