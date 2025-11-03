@@ -13,3 +13,6 @@ nav:
 
 ignore:
   - "*.hidden.md"
+
+sort:
+  sections: mixed

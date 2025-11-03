@@ -44,6 +44,14 @@
   height: 20px;
 }
 
+.md-nav__item--section {
+  margin-top: 8mm;
+}
+
+.md-nav__item--section>.md-nav__link:not(.md-nav__container) {
+  color: black;
+}
+
 .info-card {
   position: relative;
   text-align: left;

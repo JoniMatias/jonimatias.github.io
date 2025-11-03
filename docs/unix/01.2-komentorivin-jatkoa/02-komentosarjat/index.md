@@ -8,5 +8,5 @@ Kaikki tässä luvussa käsiteltävät komennot ohjausrakenteet voi myös kirjoi
 
 Komentosarjojen kirjoittaminen riippuu täysin käytössä olevasta komentotulkista. Unix-puolella komentosarjojen tulkin voi määritellä joka komentosarjan alussa, mutta Windowsin puolella on täysin oma ohjelmointikieli komentosarjoille. Tämän vuoksi näitä varten on kirjoitettu omat ohjeistuksena.
 
-[Windows .bat-tiedostot](02-cmd_script.hidden.md){ .md-button .md-button--primary }
-[Bash-komentosarjat](02-bash_script.hidden.md){ .md-button .md-button--primary }
+[Windows .bat-tiedostot](02-cmd_script.md){ .md-button .md-button--primary }
+[Bash-komentosarjat](02-bash_script.md){ .md-button .md-button--primary }

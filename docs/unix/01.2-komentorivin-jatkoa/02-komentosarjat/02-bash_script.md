@@ -46,7 +46,7 @@ Muuttujiin tallennettua arvoa voi käsitellä sitten missä tahansa myöhemmäss
     pilipom
 
 
-Komentorivi käsittelee aina pelkästään tekstiä, joten muuttujatkin ovat aina tekstiä. Tekstissä voi joskus olla myös sanavälejä, eli välilyöntejä. *Bash* ei kuitenkaan pidä ylimääräisistä välilyönneistä, sillä se tulkitsee välilyönnit [argumenttien ja valintojen](../01-komentorivi/02-bash-muoto.md#argumentit) jakajiksi. Jotta tulkki ymmärtäisi monisanaisin argumentin yhdeksi, se täytyy kirjoittaa lainausmerkkien väliin.
+Komentorivi käsittelee aina pelkästään tekstiä, joten muuttujatkin ovat aina tekstiä. Tekstissä voi joskus olla myös sanavälejä, eli välilyöntejä. *Bash* ei kuitenkaan pidä ylimääräisistä välilyönneistä, sillä se tulkitsee välilyönnit [argumenttien ja valintojen](../../01-komentorivi/02-bash-muoto.md#argumentit) jakajiksi. Jotta tulkki ymmärtäisi monisanaisin argumentin yhdeksi, se täytyy kirjoittaa lainausmerkkien väliin.
 
 !!! shell "bash: echo muuttuja"
     **C54W4KDHGK**:~ jonrajal$ teksti="pili pom"
@@ -55,7 +55,7 @@ Komentorivi käsittelee aina pelkästään tekstiä, joten muuttujatkin ovat ain
 
 Komentorivi muistaa kaikki sille asetetut muuttujat niin kauan kun pääte on päällä, tai kunnes muuttujan päälle kirjoitetaan uusi arvo. Muuttujat eivät ole siis hyviä tiedon pitkäaikaiseen säilytykseen, mutta toimivat tiedon laittamiseen pikaiseen muistiin.
 
-Kaikki käyttöjärjestelmät ja tulkit tukevat myös yleisiä oletusmuuttujia, joihin on asetettu arvo jo heti käyttöjärjestelmän käynnistyessä. Näitä kutsutaan [ympäristömuuttujiksi](03-environment.md). Nämä muuttujat on tarkoitettu kertomaan käyttöjärjestelmän tilasta ja sen asetuksista. Yksi yleisimmistä näistä on [```PATH```](03-environment.md#path), josta komentorivitulkki etsii suoritettavia komentoja ja ohjelmia.
+Kaikki käyttöjärjestelmät ja tulkit tukevat myös yleisiä oletusmuuttujia, joihin on asetettu arvo jo heti käyttöjärjestelmän käynnistyessä. Näitä kutsutaan [ympäristömuuttujiksi](../03-environment.md). Nämä muuttujat on tarkoitettu kertomaan käyttöjärjestelmän tilasta ja sen asetuksista. Yksi yleisimmistä näistä on [```PATH```](../03-environment.md#path), josta komentorivitulkki etsii suoritettavia komentoja ja ohjelmia.
 
 
 ### Jokerimerkit (wildcard)

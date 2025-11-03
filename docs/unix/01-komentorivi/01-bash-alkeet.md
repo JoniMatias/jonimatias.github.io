@@ -49,7 +49,7 @@ Komentorivien käyttöä varten tietokone tarvitsee kolme eri komponenttia: pä�
 !!! warning inline end fasdas "Windows-käyttäjille"
     Tämä sivu käsittelee *bashia*, joka on Unix-pohjaisten käyttöjärjestelmien yleisin tulkki. Jos haluat käyttää näitä komentoja Windows-koneella, niin sinun pitää asentaa koneellesi **wsl**, eli Windows Subsystem for Linux. wsl
     
-    Jos haluat käyttää Windowsin omaa päätettä ja tulkkia, niin sen ohjeet löytyvät [täältä](windows-peruskomennot.hidden.md).
+    Jos haluat käyttää Windowsin omaa päätettä ja tulkkia, niin sen ohjeet löytyvät [täältä](./03-peruskomennot/windows-peruskomennot.md).
 
 **Pääte** on ohjelma, jolla voi suorittaa tekstikomentoja. Pääte joko virtualisoi vanhemman käyttöjärjestelmäympäristön, tai se on rakennettu graafisen käyttöliittymän päälle. Käyttäjälle pääte näkyy yleensä ikkunana, johon komennot kirjoitetaan. Yleensä pääteen käyttäjä voi valita mitä tulkkia pääte käyttää. Aikaisemmassa luvun ohjeet kertoivatkin miten pääte käynnistetään.
 

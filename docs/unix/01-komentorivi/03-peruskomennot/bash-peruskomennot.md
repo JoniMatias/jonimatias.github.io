@@ -4,7 +4,7 @@ Tässä listataan muutama yleisin *bashin* tukema komento, mitä ne tekevät ja 
 
 Löydät Windowsin *cmd.exe*n käyttämät peruskomennot alla olevasta linkistä. 
 
-[Windowsin peruskomennot](windows-peruskomennot.hidden.md){ .md-button }
+[Windowsin peruskomennot](windows-peruskomennot.md){ .md-button }
 
 ### Aktiivisen kansion hallinta
 
