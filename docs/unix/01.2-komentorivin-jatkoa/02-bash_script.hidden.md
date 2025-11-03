@@ -31,7 +31,7 @@ Jos komentosarjan haluaa tulkita *bash*-tulkilla, niin tiedoston ensimmäinen ri
 
 ## Tiedon käsittely
 
-Automaatiota varten bashin pitää pystyä käsittelemään, säilyttämään ja siirtämään tietoa eri muodoissa.
+Automaatiota varten bashin pitää pystyä käsittelemään, säilyttämään ja siirtämään tietoa eri muodoissa. Tätä varten komentorivillä on käytössä useampia erilaisia työkaluja, joista osa on yhteisiä ohjelmointikielten kanssa. 
 
 
 ### Muuttujat
