@@ -8,7 +8,8 @@ Löydät Windowsin *cmd.exe*n käyttämät peruskomennot alla olevasta linkistä
 
 ### Aktiivisen kansion hallinta
 
-#### pwd ([**man pwd**](https://man7.org/linux/man-pages/man1/pwd.1.html))
+#### pwd 
+[**man pwd**](https://man7.org/linux/man-pages/man1/pwd.1.html){ .man-link }
 
 !!! shell "bash: pwd"
     **C54W4KDHGK**:jonimatias.github.io jonrajal$ <pop>pwd</pop>
@@ -17,7 +18,8 @@ Löydät Windowsin *cmd.exe*n käyttämät peruskomennot alla olevasta linkistä
 eli print working directory. Näyttää aktiivisen kansion sijainnin [absoluuttisena polkuna](../00-intro/01-tiedostot.md#taysi-eli-absoluuttinen-polku), eli reittinä tiedostojärjestelmän juuresta kansio kerrallaan aktiiviseen kansioon. Absoluuttinen polku eroaa sen kumppanista suhteellisesta polusta siten, että suhteellinen polku on aina suhteessa johonkin: yleensä joko aktiiviseen kansioon tai kotihakemistoon.
 
 
-#### ls ([**man ls**](https://www.man7.org/linux/man-pages/man1/ls.1.html))
+#### ls 
+[**man ls**](https://www.man7.org/linux/man-pages/man1/ls.1.html){ .man-link }
 
 !!! shell html-whitespace "bash: ls"
     **C54W4KDHGK**:jonimatias.github.io jonrajal$ <pop>ls</pop><br>
@@ -34,15 +36,15 @@ eli print working directory. Näyttää aktiivisen kansion sijainnin [absoluutti
 
 eli list directory, näyttää aktiivisen kansion tiedostot ja alikansiot. Ilman muita valintoja tai lippuja, ```ls``` näyttää vain kaikkien tiedostojen nimet ja tiedostopäätteet. Komennon oletustulosteesta voi kuitenkin päätellä tiedostoista erilaisia asioita:
 
- - Niistä näkee tiedostojen tiedotopäätteen, eli tiedostotyypin.
+ - Niistä näkee tiedostojen tiedostopäätteen, eli tiedostotyypin.
  - Jos nimi loppuu kauttamerkkiin ```/```, niin kyseessä on kansio.
- - Jos nimen perässä on tähtimerkki ```*```, niin kyseessä on [suoritettava tiedosto](02-bash_script.md).
+ - Jos nimen perässä on tähtimerkki ```*```, niin kyseessä on [suoritettava tiedosto](../01.2-komentorivin-jatkoa/02-komentosarjat.md).
 
 Kuten tämän sivun esimerkeistä myös näkee, ```ls``` usein myös värjää erilaiset tiedostot eri väreillä. Tämä värjäys on kuitenkin pääte- ja tulkkikohtaista, joten kannattaa tutustua siihen, miten komento toimii omalla koneellasi.
 
 
-
-#### cd ([**man cd**](https://man7.org/linux/man-pages/man1/cd.1p.html))
+#### cd 
+[**man cd**](https://man7.org/linux/man-pages/man1/cd.1p.html){ .man-link }
 
 !!! shell "cd"
     **C54W4KDHGK**:tol-alkeet jonrajal$ pwd
@@ -75,7 +77,8 @@ Komennolle voi antaa myös polun, jolloin aktiivinen kansio vaihtuu kansioksi, j
 
 ### Tiedostojen hallinta
 
-#### touch ([**man touch**](https://man7.org/linux/man-pages/man1/touch.1.html))
+#### touch
+[**man touch**](https://man7.org/linux/man-pages/man1/touch.1.html){ .man-link }
 
 !!! shell "bash: touch"
     **C54W4KDHGK**:jonimatias.github.io jonrajal$ <pop>touch uusitiedosto.txt</pop>
@@ -84,7 +87,8 @@ Komennolle voi antaa myös polun, jolloin aktiivinen kansio vaihtuu kansioksi, j
 
 Komento on oikeasti tarkoitettu tiedostojen aikaleimojen muokkaamiseen, mutta se on harvinaisempi käyttötapaus.
 
-#### rm ([**man rm**](https://man7.org/linux/man-pages/man1/rm.1.html))
+#### rm
+[**man rm**](https://man7.org/linux/man-pages/man1/rm.1.html){ .man-link }
 
 !!! shell "bash: rm"
     **C54W4KDHGK**:testikansio jonrajal$ touch asd.txt
@@ -96,8 +100,8 @@ Komento on oikeasti tarkoitettu tiedostojen aikaleimojen muokkaamiseen, mutta se
 
 eli remove file. Komento poistaa argumenttina annetun tiedoston. ```rm``` ei tee minkäänlaista tarkistusta tai varmistusta poistaessaan tiedoston.
 
-
-#### cp ([**man cp**](https://man7.org/linux/man-pages/man1/cp.1.html))
+#### cp
+[**man cp**](https://man7.org/linux/man-pages/man1/cp.1.html){ .man-link }
 
 !!! shell "bash: cp"
     **C54W4KDHGK**:testikansio jonrajal$ touch foo.txt
@@ -110,7 +114,8 @@ eli copy. Komento ottaa vastaan kaksi tiedostoa argumentteina. Ensimmäinen tied
 
 ### Kansioiden hallinta
 
-#### mkdir ([**man mkdir**](https://man7.org/linux/man-pages/man1/mkdir.1.html))
+#### mkdir 
+[**man mkdir**](https://man7.org/linux/man-pages/man1/mkdir.1.html){ .man-link }
 
 !!! shell html-whitespace "bash: mkdir"
     **C54W4KDHGK**:testikansio jonrajal$ ls<br>
@@ -137,20 +142,23 @@ eli make directory. Komento luo uuden kansion argumenttina annetun nimisen kansi
     
     3 directories, 0 files
 
-#### rmdir ([**man rmdir**](https://man7.org/linux/man-pages/man1/rmdir.1.html))
+#### rmdir 
+[**man rmdir**](https://man7.org/linux/man-pages/man1/rmdir.1.html){ .man-link }
 
 
 ### Sisällön tulostaminen
 
-#### echo ([**man echo**](https://man7.org/linux/man-pages/man1/echo.1.html))
+#### echo 
+[**man echo**](https://man7.org/linux/man-pages/man1/echo.1.html){ .man-link }
 
 !!! shell "echo"
     jonrajal@C54W4KDHGK:~/testikansio$ <pop>echo Hello World!</pop>
     Hello World!
 
-Tämä komento tulostaa vastaukseksi sille annetun argumentin. Näppärä [komentosarjojen](../01.2-komentorivin%20jatkoa/02-bash_script.md) kanssa, jos haluaa saada tilannepäivityksiä. Ajatus on hyvinkin saman, kuin C-ohjelmointikielen ```printf()``` komennolla, vaikka muuttujien hallinta on hyvin erilainen.
+Tämä komento tulostaa vastaukseksi sille annetun argumentin. Näppärä [komentosarjojen](../01.2-komentorivin-jatkoa/02-komentosarjat.md) kanssa, jos haluaa saada tilannepäivityksiä. Ajatus on hyvinkin saman, kuin C-ohjelmointikielen ```printf()``` komennolla, vaikka muuttujien hallinta on hyvin erilainen.
 
-#### cat ([**man cat**](https://man7.org/linux/man-pages/man1/cat.1.html))
+#### cat 
+[**man cat**](https://man7.org/linux/man-pages/man1/cat.1.html){ .man-link }
 
 !!! shell "bash: cat index.html"
     **C54W4KDHGK**:~ jonrajal$ <pop>cat index.html</pop>
@@ -178,7 +186,7 @@ Tästä toiminnallisuudesta on vielä enemmän hyötyä, kun alkaa käyttämää
 
 ### Tuloste tiedostoon
 
-[```echo```](#echo-man-echo) ja [```cat```](#cat-man-cat) ovat näppäriä komentoja jos haluaa saada tulostuksia tilapäisesti näkymään ruudulla. Joskus kuitenkin tulostuksen haluaa säilymään pidemmän aikaa, jolloin tuloste on hyvä tallentaa tiedostoon.
+[```echo```](#echo) ja [```cat```](#cat) ovat näppäriä komentoja jos haluaa saada tulostuksia tilapäisesti näkymään ruudulla. Joskus kuitenkin tulostuksen haluaa säilymään pidemmän aikaa, jolloin tuloste on hyvä tallentaa tiedostoon.
 
 Tiedostoon tallentamisen voi tehdä maalaamalla *päätteen* tekstin, ja kopioimalla ja liittämällä tekstin tiedostoon käsin. Tämä on kuitenkin työlästä ja aikaa vievää, joten eikö olisi parempi, jos sen voisi tulostaa suoraan tiedostoon.
 
@@ -225,7 +233,8 @@ Jos taas yrittää käyttää yhtä merkkiä ```>``` siirtämiseen, niin uuden k
 
 ### Muita komentoja
 
-#### man [**man man**](https://man7.org/linux/man-pages/man1/man.1.html)
+#### man 
+[**man man**](https://man7.org/linux/man-pages/man1/man.1.html){ .man-link }
 
 !!! shell "man echo"
     ECHO(1)                     General Commands Manual                    ECHO(1)
@@ -255,7 +264,8 @@ eli manuaali. Antamalla ```man```-komennolle argumentiksi ohjelman tai komennon 
 
 ```man``` avaa manuaalin vain, jos pyydetyn ohjelman manuaali on asennettu koneelle. Ainakin kaikilla peruskomennoilla ja yleisimmillä ohjelmilla on jonkinlainen komentorivimanuaali olemassa. 
 
-#### clear [**man clear**](https://man7.org/linux/man-pages/man1/clear.1.html)
+#### clear 
+[**man clear**](https://man7.org/linux/man-pages/man1/clear.1.html){ .man-link }
 
 === "Ennen *clear*ia"
     !!! shell "bash: clear"
@@ -297,7 +307,8 @@ eli manuaali. Antamalla ```man```-komennolle argumentiksi ohjelman tai komennon 
 
 tyhjentää komentorivin sisällön ja näyttää vain uuden komentokehotteen. Päätteen toteutuksesta riippuen se joko poistaa kaiken tekstisisällön ikkunasta, tai vain skrollaa ikkunaa alaspäin niin, että vain uusin komentokehote näkyy.
 
-### sudo
+### sudo 
+[man sudo](https://www.man7.org/linux/man-pages/man8/sudo.8.html){ .man-link }
 
 Jotkin komennot vaativat käyttäjältä erikoisoikeuksia. Tällaiset toiminnot yleensä ovat tietoa tuhoavia, tietokoneen asetuksia muuttavia tai tietokoneen turvallisuutta vaarantavia toimia. Nämä komennot vaativat niiden ajamista ```sudo```-komennon kanssa.
 

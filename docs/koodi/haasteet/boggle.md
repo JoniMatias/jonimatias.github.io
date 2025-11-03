@@ -61,7 +61,7 @@ Lataa alla oleva tiedosto. Siinä on tehtävässä käytettävä 6x6 kirjaintaul
 
 [Lataa syötetiedosto](../syotteet/boggle_input.txt){ .md-button }
 
-Tehtävä olettaa, että käytät [sanakirja-tehtävän syötesanastoa](../syotteet/sanakirja_input.txt). Voit toki kokeilla tätä itse koko [nykysuomen sanakirjan sanastolla](../syotteet/nykysuomen_sanakirja_originaali.txt), mutta tämän tehtävän tarkistin olettaa rajatumpaa sanakirjaa, lähinnä selaimen suoritusnopeuden takia.
+Tehtävä olettaa, että käytät [sanakirja-tehtävän syötesanastoa](../syotteet/sanakirja_input.txt). Voit toki kokeilla tätä itse koko [nykysuomen sanakirjan sanastolla](../syotteet/nykysuomen_sanakirja_orig.txt), mutta tämän tehtävän tarkistin olettaa rajatumpaa sanakirjaa, lähinnä selaimen suoritusnopeuden takia.
 
 
 ### Vastaus

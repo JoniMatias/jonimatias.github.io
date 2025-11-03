@@ -156,6 +156,12 @@ p > code {
   padding: 2mm;
 }
 
+p:has(.man-link) {
+  margin-top: -4mm;
+  font-size: 85%;
+  margin-bottom: -2mm;
+}
+
 
 
 

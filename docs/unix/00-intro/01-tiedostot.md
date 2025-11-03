@@ -131,9 +131,9 @@ Unix-pohjaisissa käyttöjärjestelmissä polun voi kirjoittaa myös suhteessa k
 
 Tällaisella polulla on kaksi käyttötapausta. Yleisin hyöty on vain kirjoittamisen vähentäminen. On paljon helpompaa kirjoittaa ```~/Koodi/opetus/tol-alkeet```, kuin ```/Users/jonrajal/Koodi/opetus/tol-alkeet```. Unix-koneissa lähes kaikki käyttäjän tarvitsemat tiedostot ovat kuitenkin jossain kotihakemiston alihakemistoissa, joten polku on näppärämpi kirjoittaa lyhyemmässä muodossa.
 
-Toinen hyöty tällaisesta kirjoitusasusta on koneilla, joille voi kirjautua useita eri käyttäjiä eri käyttäjätileillä. Jos ohjelma tai [komentosarja](../01.2-komentorivin%20jatkoa/02-bash_script.md) haluaa tallentaa, joka käyttäjälle eri tiedot tai ladata jotain käyttäjäkohtaisia tiedostoja, ohjelman ei tarvitse käyttää eri polkua jokaiselle eri käyttäjälle. ```~``` on aina aktiivisen käyttäjän kotihakemisto.
+Toinen hyöty tällaisesta kirjoitusasusta on koneilla, joille voi kirjautua useita eri käyttäjiä eri käyttäjätileillä. Jos ohjelma tai [komentosarja](../01.2-komentorivin-jatkoa/02-komentosarjat.md) haluaa tallentaa, joka käyttäjälle eri tiedot tai ladata jotain käyttäjäkohtaisia tiedostoja, ohjelman ei tarvitse käyttää eri polkua jokaiselle eri käyttäjälle. ```~``` on aina aktiivisen käyttäjän kotihakemisto.
 
-Windows-koneilla on vastaavanlainen polkuoikotie olemassa: ```%userprofile%```. Sitä ei käytetä kovinkaan usein sen pituuden vuoksi.
+Windows-koneilla on vastaavanlainen polkuoikotie: ```%userprofile%```. Sitä ei kuitenkaan käytetä läheskään yhtä usein sen pituuden vuoksi.
 
 #### Suhteessa aktiiviseen kansioon { #aktiivinen-polku }
 

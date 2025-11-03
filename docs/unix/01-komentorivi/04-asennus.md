@@ -2,7 +2,7 @@
 
 Internet on pullollaan erilaisia komentorivillä suoritettavia ohjelmia. Osan niistä voi ladata ja asentaa kuin tavallisen graafisen käyttöliittymän ohjelman, mutta monet eivät tue graafisen puolen asennusohjelmia. Silloin käyttäjälle jää vain muutama vaihtoehto:
 
- - Ladata ohjelma itse, ja laittaa se kansioon, joka on määritelty [ympäristömuuttujissa](./environment.md). Tämä kuitenkin voi tuottaa ongelmia, jos asennettava ohjelma tarvitsee toimiakseen muita ohjelmia, joita sinulla ei ole asennettuna.
+ - Ladata ohjelma itse, ja laittaa se kansioon, joka on määritelty [ympäristömuuttujissa](../01.2-komentorivin-jatkoa/03-environment.md). Tämä kuitenkin voi tuottaa ongelmia, jos asennettava ohjelma tarvitsee toimiakseen muita ohjelmia, joita sinulla ei ole asennettuna.
  - Käyttää paketinhallintaohjelmaa, joka lataa ja asentaa tarvittavan ohjelman koneellesi ja kaikki sen riippuvuudet.
 
 
@@ -62,7 +62,7 @@ Paketinhallintaohjelmat ovat erillisiä asennettavia komentoriviohjelmia, jotka 
 
 Tavallisesti ohjelman ajaminen tapahtuu tietämällä ohjelman sijainti. Ohjelma käynnistetään aina tietämällä minkä tahansa polun suoritettavaan tiedostoon, ja kutsumalla ohjelmaa polun kautta. Joskus käyttäjä voi kuitenkin haluta ajaa omia komentojaan samalla tavalla kuin komentoja, eli missä tahansa kansiossa ja välittämättä ohjelman sijainnista.
 
-Jos olet tehnyt itse ohjelman, jota haluaisit käyttää kuten komentoja, niin kannattaa tutustua ympäristömuuttujiin ja ohjelmien oikeuksiin [niistä kertovalla sivulla](../01.2-komentorivin_jatkoa/03-environment.md).
+Jos olet tehnyt itse ohjelman, jota haluaisit käyttää kuten komentoja, niin kannattaa tutustua ympäristömuuttujiin ja ohjelmien oikeuksiin [niistä kertovalla sivulla](../01.2-komentorivin-jatkoa/03-environment.md).
 
 Pääasiallisesti prosessi kuitenkin toimii seuraavalla tavalla:
 
