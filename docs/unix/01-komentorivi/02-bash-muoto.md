@@ -105,11 +105,11 @@ Argumenttien määrää ei ole mitenkään rajattu, ja jotkin ohjelman ja komenn
 
 #### Lisävalinnat
 
-Joidenkin komentojen suoritusta voi ohjata lisäksi komennolle annettavilla lisävalinnoilla. Lisävalinnat eroavat argumenteista siten, että ne alkavat yhdellä tai kahdella väliviivalla (```-``` tai ```--```). Toisin kuin argumentit, joita käytetään ohjelman syötteenä, lisävalinnoilla vain muutetaan ohjelman suoritustapaa. Toisin sanoen, lisävalinnat kertovat mitä ohjelma/komento tekee, ja argumentti kertoo mille se tehdään.
+Joidenkin komentojen suoritusta voi ohjata lisäksi komennolle annettavilla lisävalinnoilla. Lisävalinnat eroavat argumenteista siten, että ne alkavat valintaa merkkaavalla merkillä. Usein *Windowsilla* se on kauttaviiva ```/```; *bashissa* käytetään käytännössä aina yhtä tai kahta väliviivaa (```-``` tai ```--```). Toisin kuin argumentit, joita käytetään ohjelman syötteenä, lisävalinnoilla vain muutetaan ohjelman suoritustapaa. Toisin sanoen, lisävalinnat kertovat mitä ohjelma/komento tekee, ja argumentti kertoo mille se tehdään.
 
 Lisävalinnan edessä olevien väliviivojen määrä perintenteisesti riippuu siitä, kuinka monimerkkinen tunnus lisävalinnalla on. Kaikilla yksikirjaimisilla lisävalinnoilla on usein vain yksi väliviiva, kuten vaikka aikaisemin ```ls -A```. Jos taas tunnus on pidempi sana, väliviivoja on yleensä kaksi, kuten vaikka [gitin](../02-ohjelmointi/02-git.md) komennossa ```git commit --message "Viesti"```. Joillakin valinnoilla voi olla myös pitkä ja lyhyt muoto, jossa lyhyt on yhden merkin mittainen ja tiivis, ja pitkä on kuvaavampi. Esimerkiksi tuo aikaisempi git-komennon voi kirjoittaa myös muodossa ```git commit -m "viesti"```.
 
-Nämä säännöt ovat kuitenkin vain yleisiä käytänteitä, jotka voivat vaihdella ohjelmasta, komennosta ja tulkista toiseen.
+Nämä säännöt ovat kuitenkin vain yleisiä käytänteitä, jotka voivat vaihdella ohjelmasta, komennosta ja tulkista toiseen. Suoritettavan ohjelman kooditasolla valinnat ja argumentit eivät eroa toisistaan mitenkään.
 
 Lisävalintoja on pääasiallisesti kahta erilaista: lippuja ja parametrillisiä lisävalintoja.
 

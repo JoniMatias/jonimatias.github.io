@@ -29,10 +29,34 @@ Otsakerivin kaksi ensimmäistä merkkiä pitää olla ```#!```, eli risuaita ja 
 
 Jos komentosarjan haluaa tulkita *bash*-tulkilla, niin tiedoston ensimmäinen rivi on muotoa ```#! /bin/bash```. *zsh*-tulkille se on taas muotoa ```#! /bin/zsh```. 
 
+## Tiedon käsittely
 
-## Ohjausrakenteet
+Automaatiota varten bashin pitää pystyä käsittelemään, säilyttämään ja siirtämään tietoa eri muodoissa.
 
-Usein yksinkertaiset listamuotoiset komentosarjat eivät riitä, vaan komentojen pitää myös pystyä tekemään päätöksiä, ja reagoimaan löydettyihin tuloksiin. Tätä varten tulkit tukevat samanlaisia ohjausrakenteita kuin tavalliset ohjelmointikielet.
+
+### Muuttujat
+
+Bashissa voi tallentaa mitä tahansa tietoa tilapäisesti muuttujiin, jotta sitä voi käyttää jossain myöhemmässä komennossa. Muuttujiin tallennetaan arvo kirjoittamalla komento muodossa ```muuttujan_nimi=asetettava_arvo```, eli esimerkiksi ```kerros=4```. Muuttujan nimi voi olla mikä tahansa käyttäjän valitsema nimi, kunhan se on vain yksi sana ilman välilyöntejä.
+
+Muuttujiin tallennettua arvoa voi käsitellä sitten missä tahansa myöhemmässä komennossa kirjoittamalla muuttujan nimen, jonka edessä on dollarimerkki ```$```. Eli seuraavat komentorivikomennot ovat täysin mahdollisia:
+
+!!! shell "bash: echo muuttuja"
+    **C54W4KDHGK**:~ jonrajal$ teksti=pilipom
+    **C54W4KDHGK**:~ jonrajal$ echo $teksti
+    pilipom
+
+
+Komentorivi käsittelee aina pelkästään tekstiä, joten muuttujatkin ovat aina tekstiä. Tekstissä voi joskus olla myös sanavälejä, eli välilyöntejä. *Bash* ei kuitenkaan pidä ylimääräisistä välilyönneistä, sillä se tulkitsee välilyönnit [argumenttien ja valintojen](../01-komentorivi/02-bash-muoto.md#argumentit) jakajiksi. Jotta tulkki ymmärtäisi monisanaisin argumentin yhdeksi, se täytyy kirjoittaa lainausmerkkien väliin.
+
+!!! shell "bash: echo muuttuja"
+    **C54W4KDHGK**:~ jonrajal$ teksti="pili pom"
+    **C54W4KDHGK**:~ jonrajal$ echo $teksti
+    pili pom
+
+Komentorivi muistaa kaikki sille asetetut muuttujat niin kauan kun pääte on päällä, tai kunnes muuttujan päälle kirjoitetaan uusi arvo. Muuttujat eivät ole siis hyviä tiedon pitkäaikaiseen säilytykseen, mutta toimivat tiedon laittamiseen pikaiseen muistiin.
+
+Kaikki käyttöjärjestelmät ja tulkit tukevat myös yleisiä oletusmuuttujia, joihin on asetettu arvo jo heti käyttöjärjestelmän käynnistyessä. Näitä kutsutaan [ympäristömuuttujiksi](03-environment.md). Nämä muuttujat on tarkoitettu kertomaan käyttöjärjestelmän tilasta ja sen asetuksista. Yksi yleisimmistä näistä on [```PATH```](03-environment.md#path), josta komentorivitulkki etsii suoritettavia komentoja ja ohjelmia.
+
 
 ### Jokerimerkit (wildcard)
 
@@ -102,6 +126,15 @@ Esimerkkien mukaiset tulokset on toistamiseen nähtävissä alla olevassa tauluk
 
 
 Näiden *bashin* sisäänrakennettujen perusjokerimerkkien lisäksi joillain ohjelmilla ja komennoilla voi olla omia jokerimerkkejään. Monet ohjelman tukevat mm. [säännöllisiä lausekkeita](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Cheatsheet), jotka tunnetaan myös paremmin englannista tulevalla **regex**-lyhenteellä. Tämä on yksi syy lisää tutustua jokaisen käyttämääsi ohjelmaan ```man```-komennolla.
+
+
+
+
+## Ohjausrakenteet
+
+Usein yksinkertaiset listamuotoiset komentosarjat eivät riitä, vaan komentojen pitää myös pystyä tekemään päätöksiä, reagoimaan löydettyihin tuloksiin ja toistamaan toiminta useammalle tiedostolle kerralla. Tätä varten tulkit tukevat samanlaisia ohjausrakenteita kuin tavalliset ohjelmointikielet, eli silmukoita ja ehtolauseita.
+
+
 
 
 ### Silmukat 

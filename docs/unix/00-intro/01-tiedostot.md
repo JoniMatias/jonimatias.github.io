@@ -41,6 +41,7 @@ Koska tiedostopäätteet ovat vain osa tiedoston nimeä, niitä voi olla käytä
 | .png          | Yleinen kuvatiedoston muoto. Käyttää pakkausalgoritmiä, joka ei hukkaa tietoa.                          |
 | .bmp          | Bittikartta. Suht yleinen kuvatiedoston muoto. Kuvan pikselien tieto on täysin pakkaamaton.             |
 | .docx         | Microsoft Wordin käyttämä muokattava tiedostomuoto. Kaikki Wordilla luodut dokumentit ovat tällaisia.   |
+| .zip          | Usein käytetty pakkaustiedosto. Pienentää sen sisään laitettujen tiedostojen kokoa ilman hävikkiä.      |
 | .pdf          | Tulostukseen, painamiseen ja jakamiseen tarkoitettu tiedostomuoto. Hyvin vaikea muokata.                |
 
 
