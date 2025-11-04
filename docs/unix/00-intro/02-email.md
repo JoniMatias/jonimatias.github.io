@@ -13,14 +13,14 @@ Tarkemmat tiedot opiskelijasähköpostin käytöstä löytyy tietohallinnon sivu
 
 Sähköposti on myös automatisoitavissa monilla tavoin. Yleisimmät sähköpostiautomaation käyttötapaukset liittyvät vastaanotettujen sähköpostien luokitteluun. Palveluntarjoaja -- kuten Microsoftin Office -- on automatisoinut tällaista kategorisointia jo valmiiksi käyttäjälle, mutta jokainen voi luoda lisää automaatioita omaan sähköpostilaatikkoonsa.
 
-Office365 paketissa sähköpostiautomaatiota kutsutään säännöiksi. Uusia sääntöjä voi luoda seuraavia ohjeita seuraamalla:
+Office365-paketissa sähköpostiautomaatiota kutsutaan *säännöiksi*. Uusia sääntöjä voi luoda seuraavia ohjeita seuraamalla:
 
 
  - **1.** Kirjaudu omaan sähköpostiisi osoitteessa [office365.oulu.fi](https://office365.oulu.fi).
 
 ![](kuvat/outlook-asetukset.png)
 
- - **2.** Avaa tilisi asetukset painamalla oikean yläkulman hammasratasikonia.
+ - **2.** Avaa tilisi asetukset painamalla oikean yläkulman hammasrataskuvaketta.
 
 ![](kuvat/outlook-saannot.png)
 
