@@ -100,6 +100,7 @@
   color: rgb(239, 47, 85);
 }
 
+
 .bash-purple {
   color: rgb(212, 24, 212);
 }
@@ -144,6 +145,18 @@ p > code {
   color: rgb(51, 57, 52);
   font-weight: bold;
   background-color: greenyellow;
+}
+
+.admonition:hover .bash-red pop {
+  color: rgb(51, 57, 52);
+  font-weight: bold;
+  background-color: rgb(239, 47, 85);
+}
+
+.admonition:hover .bash-purple pop {
+  color: rgb(51, 57, 52);
+  font-weight: bold;
+  background-color: rgb(212, 24, 212);
 }
 
 .md-typeset .tabbed-labels {

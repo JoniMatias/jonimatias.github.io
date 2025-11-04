@@ -145,6 +145,40 @@ eli make directory. Komento luo uuden kansion argumenttina annetun nimisen kansi
 #### rmdir 
 [**man rmdir**](https://man7.org/linux/man-pages/man1/rmdir.1.html){ .man-link }
 
+!!! shell html-whitespace "rmdir"
+    **C54W4KDHGK**:tol-alkeet jonrajal$ ls<br>
+    <span class="bash-table-element bash-red">hello*</span>
+    <span class="bash-table-element bash-purple">kuvia/</span>
+    <span class="bash-table-element">teksti.txt</span>
+    <span class="bash-table-element bash-purple">html-kansio/</span>
+    <span class="bash-table-element">README.txt</span>
+    <span class="bash-table-element">toinen.txt</span>
+    <br><br>
+    **C54W4KDHGK**:tol-alkeet jonrajal$ mkdir uusikansio<br>
+    **C54W4KDHGK**:tol-alkeet jonrajal$ ls<br>
+    <span class="bash-table-element bash-red">hello*</span>
+    <span class="bash-table-element bash-purple">kuvia/</span>
+    <span class="bash-table-element">teksti.txt</span>
+    <span class="bash-table-element bash-purple">html-kansio/</span>
+    <span class="bash-table-element">README.txt</span>
+    <span class="bash-table-element">toinen.txt</span>
+    <span class="bash-table-element bash-purple"><pop>uusikansio/</pop></span>
+    <br><br>
+    **C54W4KDHGK**:tol-alkeet jonrajal$ <pop>rmdir uusikansio</pop><br>
+    **C54W4KDHGK**:tol-alkeet jonrajal$ ls<br>
+    <span class="bash-table-element bash-red">hello*</span>
+    <span class="bash-table-element bash-purple">kuvia/</span>
+    <span class="bash-table-element">teksti.txt</span>
+    <span class="bash-table-element bash-purple">html-kansio/</span>
+    <span class="bash-table-element">README.txt</span>
+    <span class="bash-table-element">toinen.txt</span>
+    <br>
+
+eli remove directory. Vastinkappale komennolle ```mkdir```, joka poistaa kansion. Komennolle annetaan parametriksi poistettavan kansion nimi, ja se kansio sisältöineen poistetaan kovalevyltä.
+
+Komento poistaa kansion vain, jos sen sisällä ei ole tiedostoja tai alikansioita. 
+
+Kuten kaikki komentorivin poistokomennot, ```rmdir``` ei käytä roskakoria. Kaikki tuhotut kansiot ja tiedostot häviävät kerralla, eikä niitä voi saada takaisin. Kannattaa siis olla varovainen tämän komennon kanssa.
 
 ### Sisällön tulostaminen
 
