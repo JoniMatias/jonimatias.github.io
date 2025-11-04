@@ -16,20 +16,20 @@ Sähköposti on myös automatisoitavissa monilla tavoin. Yleisimmät sähköpost
 Office365 paketissa sähköpostiautomaatiota kutsutään säännöiksi. Uusia sääntöjä voi luoda seuraavia ohjeita seuraamalla:
 
 
- - Kirjaudu omaan sähköpostiisi osoitteessa [office365.oulu.fi](https://office365.oulu.fi).
+ - **1.** Kirjaudu omaan sähköpostiisi osoitteessa [office365.oulu.fi](https://office365.oulu.fi).
 
 ![](kuvat/outlook-asetukset.png)
 
- - Avaa tilisi asetukset painamalla oikean yläkulman hammasratasikonia.
+ - **2.** Avaa tilisi asetukset painamalla oikean yläkulman hammasratasikonia.
 
 ![](kuvat/outlook-saannot.png)
 
- - Valitse vasemman reunan valikosta kohta *Säännöt*.
- - Tässä näkymässä voi luoda uusia sääntöjä painamalla *Luo uusi sääntö* painiketta.
+ - **3.** Valitse vasemman reunan valikosta kohta *Säännöt*.
+ - **4.** Tässä näkymässä voi luoda uusia sääntöjä painamalla *Luo uusi sääntö* painiketta.
 
 ![](kuvat/outlook-uusi-saanto.png)
 
- - Jokainen sääntö tarvitsee vain kolme asiaa: nimen, ehdon ja toiminnan.
+Jokainen sääntö tarvitsee vain kolme asiaa: nimen, ehdon ja toiminnan.
 
  - **Nimi** on täysin vapaavalintainen kuvaus, jolla voit tunnistaa luomasi säännön. Hyödyllinen, jos sinulla on paljon sääntöjä.
  - **Ehto** kertoo milloin sääntö tulee voimaan. Alasvetovalikossa on paljon valittavia ehtoja joita o365 tukee. Osa ehdoista voi tarvia lisätietoja.
@@ -43,6 +43,8 @@ Yksi yleinen sähköpostiautomaatio on sähköpostin uudelleen ohjaus, eli osan 
 Yliopisto-opiskelijana tämä voi olla käytännöllinen ominaisuus, jos sinulla on jo käytössä oma henkilökohtainen sähköposti. Jos ohjaat kaiken yliopiston opiskelijasähköpostiin tulleen viestit itsellesi, niin sinun ei tarvitse seurata yliopiston postilaatikkoa erikseen.
 
 Yliopiston sähköpostissa uudelleenohjauksen voi luoda säännöillä.
+
+![](./kuvat/outlook-forwarding.png)
 
 Yllä olevassa kuvassa on esimerkki uudelleenohjauksesta. Siinä ehdoksi on valittu *Käytä kaikkiin viesteihin*, jolloin uudelleen ohjaus tapahtuu jokaiselle vastaanotetulle viestille.
 

@@ -177,9 +177,9 @@ Komennon nimi on lyhenne englanninkielen sanasta concatenate, eli yhdistää. ``
 Komennon nimi tulee siitä, että sillä on helppo yhdistää useampia tiedostoja yhdeksi. Jos komennolle antaa useamman tiedoston yhtä aikaa argumentiksi, se tulostaa molempien tiedostojen sisällön komentoriville.
 
 !!! shell "bash: cat teksti.txt toinen.txt"
-    **C54W4KDHGK**:tol-alkeet jonrajal$ <pop>cat teksti.txt toinen.txt</pop><br>
-    Tämä on tekstitiedoston sisältö. Tätä käytetään tol-alkeet-materiaalin esimerkkitiedostona.<br>
-    <br>
+    **C54W4KDHGK**:tol-alkeet jonrajal$ <pop>cat teksti.txt toinen.txt</pop>
+    Tämä on tekstitiedoston sisältö. Tätä käytetään tol-alkeet-materiaalin esimerkkitiedostona.
+    
     Tekstitiedosto sisältää tekstiä, kuten kirjaimia, numeroita ja muita erikoismerkkejä.Tästä alkaa toinen tekstitiedosto. Tämänkin tiedoston sisältö on tekstiä.
 
 Tästä toiminnallisuudesta on vielä enemmän hyötyä, kun alkaa käyttämään [tulosteen ohjausta](#tuloste-tiedostoon).
@@ -190,16 +190,21 @@ Tästä toiminnallisuudesta on vielä enemmän hyötyä, kun alkaa käyttämää
 
 Tiedostoon tallentamisen voi tehdä maalaamalla *päätteen* tekstin, ja kopioimalla ja liittämällä tekstin tiedostoon käsin. Tämä on kuitenkin työlästä ja aikaa vievää, joten eikö olisi parempi, jos sen voisi tulostaa suoraan tiedostoon.
 
-Sitä varten *bash* tarjoaa tulosteenohjausmerkit. Jos komennon lopettaa merkeillä ´´´>´´´ tai ´´´>>´´´, jonka jälkeen laitetaan tiedoston nimi, niin kaikki komennon tai ohjelman komentoriville tulostettava teksti kirjoitetaan annettuun tiedostoon. Jos tiedostoa ei ole olemassa, niin se luodaan. Ohjausmerkkejä käytetään muodossa ```komento --valinnat argumentit >> ohjattu_tiedosto```.
+Sitä varten *bash* tarjoaa tulosteenohjausmerkit. Jos komennon lopettaa merkeillä ```>``` tai ```>>```, jonka jälkeen laitetaan tiedoston nimi, niin kaikki komennon tai ohjelman komentoriville tulostettava teksti kirjoitetaan annettuun tiedostoon. Jos tiedostoa ei ole olemassa, niin se luodaan. Ohjausmerkkejä käytetään muodossa ```komento --valinnat argumentit >> ohjattu_tiedosto```.
 
 Jos ohjauksessa käytetään vain yhtä merkkiä (```>```), niin silloin tuloste korvaa annetun tiedoston sisällön. Jos taas merkkejä on kaksi (```>>```), niin tuloste lisätään tiedoston perään.
 
-!!! shell "bash: >"
-    **C54W4KDHGK**:tol-alkeet jonrajal$ ls
-    index.html  kuvia/      README.txt  teksti.txt  toinen.txt
-    **C54W4KDHGK**:tol-alkeet jonrajal$ <pop>cat teksti.txt toinen.txt > uusi.txt</pop>
-    **C54W4KDHGK**:tol-alkeet jonrajal$ cat uusi.txt
-    Tämä on tekstitiedoston sisältö. Tätä käytetään tol-alkeet-materiaalin esimerkkitiedostona.
+!!! shell html-whitespace "bash: >"
+    **C54W4KDHGK**:tol-alkeet jonrajal$ ls<br>
+    <span class="bash-table-element">index.html</span>
+    <span class="bash-table-element bash-purple">kuvia/</span>
+    <span class="bash-table-element">README.txt</span>
+    <span class="bash-table-element">teksti.txt</span>
+    <span class="bash-table-element">toinen.txt</span>
+    <br><br>
+    **C54W4KDHGK**:tol-alkeet jonrajal$ <pop>cat teksti.txt toinen.txt > uusi.txt</pop><br>
+    **C54W4KDHGK**:tol-alkeet jonrajal$ cat uusi.txt<br>
+    Tämä on tekstitiedoston sisältö. Tätä käytetään tol-alkeet-materiaalin esimerkkitiedostona.<br>
     <br>
     Tekstitiedosto sisältää tekstiä, kuten kirjaimia, numeroita ja muita erikoismerkkejä.Tästä alkaa toinen tekstitiedosto. Tämänkin tiedoston sisältö on tekstiä.
 

@@ -96,7 +96,7 @@ Komentorivillä kansiorakenteen näkee näppärästi ```tree```-komennolla. Kome
 !!! hint "Juurihakemisto" 
     Tietokoneen kansiorakenne alkaa aina jostain hierarkian yläpäässä olevasta juurihakemistosta. Kaikki muut tiedostot ja hakemistot ovat tämän hakemiston, tai sen alihakemistojen, sisällä.
 
-     Windows-käyttöjärjestelmässä jokaisella kovalevyllä on oma juurihakemisto, jolloin se yleensä kirjoitetaan vain kovalevyn nimen mukaan. Yleisin juuri Windows-koneissa on ```C:\```. 
+     Windows-käyttöjärjestelmässä jokaisella kovalevyllä tai asemalla on oma juurihakemisto, jolloin se yleensä kirjoitetaan vain kovalevyn nimen mukaan. Yleisin juuri Windows-koneissa on ```C:\```. 
 
     Unix-pohjaisissa järjestelmissä koko tietokoneella on vain yksi nimetön juurihakemisto, johon kaikki kovalevyt liitetään (eng. *mount*). Täten juurihakemisto on Linux- ja MacOS-käyttöjärjestelmissä aina ```/```. 
 
