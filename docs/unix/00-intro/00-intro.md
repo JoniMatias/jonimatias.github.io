@@ -1,4 +1,4 @@
-# Tol-alkeet
+# TOL-alkeet
 
 TOL-alkeet osiosta löytyy paljon hyvää ja hyödyllistä Oulun yliopiston tietojenkäsittelytieteen opiskelijalle. Sivusto alkaa hyvin yksinkertaisista tietokoneeseen liittyvistä asioista, kuten sähköpostista ja tiedostoista. Nämä ovat yksinkertaisia asioita, mutta jokaisen opiskelijan on hyvä ne tietää.
 

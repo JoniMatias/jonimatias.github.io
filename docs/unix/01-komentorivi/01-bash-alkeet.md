@@ -22,7 +22,7 @@ Komentorivin käynnistäminen on helppoa. Kaikissa tietokoneissa on valmiiksi as
     **TODO:** Kuva cmd.exe:stä.
 
 === "Pääte (MacOS)"
-    Helpoin tapa käynnistää *Pääte* on käyttää MacOS spotlight-toimintoa. Paina oikean yläkulman suurennuslasia (tai paina yhtäaikaa <kbd>⌘ Command</kbd> + <kbd> Välilyönti</kbd>), ja kirjoita ilmestyvään hakukenttään Pääte (jos koneesi on englanniksi, niin kirjoita Terminal) ja paina enteriä.
+    Helpoin tapa käynnistää *Pääte* on käyttää MacOS spotlight-toimintoa. Paina oikean yläkulman suurennuslasia (tai paina yhtä aikaa <kbd>⌘ Command</kbd> + <kbd> Välilyönti</kbd>), ja kirjoita ilmestyvään hakukenttään Pääte (jos koneesi on englanniksi, niin kirjoita Terminal) ja paina enteriä.
 
     Toinen tapa avata *Pääte* on mennä Finderilla Apit-kansioon (eng. *Apps*), löytää sieltä Apuohjelmat-kansio (eng. *Utilities*) ja käynnistää *Pääte.app* sieltä.
 
@@ -47,12 +47,12 @@ Komentorivin käynnistäminen on helppoa. Kaikissa tietokoneissa on valmiiksi as
 
 Komentorivien käyttöä varten tietokone tarvitsee kolme eri komponenttia: päätteen, tulkin ja komentokehotteen.
 
-!!! warning inline end fasdas "Windows-käyttäjille"
+!!! warning inline end "Windows-käyttäjille"
     Tämä sivu käsittelee *bashia*, joka on Unix-pohjaisten käyttöjärjestelmien yleisin tulkki. Jos haluat käyttää näitä komentoja Windows-koneella, niin sinun pitää asentaa koneellesi **wsl**, eli Windows Subsystem for Linux. wsl
     
     Jos haluat käyttää Windowsin omaa päätettä ja tulkkia, niin sen ohjeet löytyvät [täältä](./03-peruskomennot/windows-peruskomennot.md).
 
-**Pääte** on ohjelma, jolla voi suorittaa tekstikomentoja. Pääte joko virtualisoi vanhemman käyttöjärjestelmäympäristön, tai se on rakennettu graafisen käyttöliittymän päälle. Käyttäjälle pääte näkyy yleensä ikkunana, johon komennot kirjoitetaan. Yleensä pääteen käyttäjä voi valita mitä tulkkia pääte käyttää. Aikaisemmassa luvun ohjeet kertoivatkin miten pääte käynnistetään.
+**Pääte** on ohjelma, jolla voi suorittaa tekstikomentoja. Pääte joko virtualisoi vanhemman käyttöjärjestelmäympäristön, tai se on rakennettu graafisen käyttöliittymän päälle. Käyttäjälle pääte näkyy yleensä ikkunana, johon komennot kirjoitetaan. Yleensä päätteen käyttäjä voi valita mitä tulkkia pääte käyttää. Aikaisemmassa luvun ohjeet kertoivatkin miten pääte käynnistetään.
 
 
 **Komentorivien tulkkeja**, ts. **shell**ejä, on useita erilaisia. Yleisimmät niistä on *bash* ja *zsh*. Microsoft käyttää omassa päätteessään joko *PowerShelliä* tai vanhempaa MS-DOS:ista periytyvää *cmd.exeä*. Tulkeissa on pieniä ja suuria eroja sen mukaan mitä komentoja ne tukevat, miten komennot täytyy kirjoittaa ja miten komennot tarkalleen ottaen toimivat. Tällä sivustolla käsitellään pääasiallisesti *bash*-tulkin ymmärtämiä komentoja.
@@ -71,7 +71,7 @@ Komentorivien käyttöä varten tietokone tarvitsee kolme eri komponenttia: pä�
     !!! shell "bash: Kehote"
         **C54W4KDHGK**:~ jonrajal$ 
 
-    Ylläolevassa esimerkissä aktiiviseksi kansioksi on merkitty ```~```. Merkkiä ```~``` käytetään oikotienä/lyhenteenä käyttäjän kotihakemistolle. Jos käyttäjän aktiivinen kansio on jokin muu kansio kuin hänen kotihakemistonsa, niin kehote näyttää sen kansion nimen.
+    Yllä olevassa esimerkissä aktiiviseksi kansioksi on merkitty ```~```. Merkkiä ```~``` käytetään oikotienä/lyhenteenä käyttäjän kotihakemistolle. Jos käyttäjän aktiivinen kansio on jokin muu kansio kuin hänen kotihakemistonsa, niin kehote näyttää sen kansion nimen.
 
     !!! shell "bash: Kehote kansiossa"
         **C54W4KDHGK**:tol-alkeet jonrajal$
@@ -79,7 +79,7 @@ Komentorivien käyttöä varten tietokone tarvitsee kolme eri komponenttia: pä�
 
 ## Aktiivinen kansio
 
-Samoin kuin graafisen käyttöliitymän tiedostoikkunoissa, komentorivillä on yksi aktiivinen kansio kerralla auki. Käytännössä kaikki komennot ajetaan aktiivisessa kansiossa. Graafisella ikkunalla tämän kansion sisältö näkyy kerralla, mutta komentorivillä kansion sisällön tarkasteluun tarvitaan komento ```ls```. Se listaa kaikki tämänhetkisen kansion tiedostot.
+Samoin kuin graafisen käyttöliittymän tiedostoikkunoissa, komentorivillä on yksi aktiivinen kansio kerralla auki. Käytännössä kaikki komennot ajetaan aktiivisessa kansiossa. Graafisella ikkunalla tämän kansion sisältö näkyy kerralla, mutta komentorivillä kansion sisällön tarkasteluun tarvitaan komento ```ls```. Se listaa kaikki tämänhetkisen kansion tiedostot.
 
 !!! shell html-whitespace "bash: ls"
     **C54W4KDHGK**:tol-alkeet jonrajal$ <pop>ls</pop><br>

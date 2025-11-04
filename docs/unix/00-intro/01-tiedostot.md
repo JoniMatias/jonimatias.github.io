@@ -49,7 +49,7 @@ Tiedosto pääte yleensä kertoo minkälaisesta tiedostosta on kyse, ja tämän 
 
 ## Kansiorakenne
 
-Tietokoneella tiedostot on jaoteltu hierarkisen puurakenteen mukaisesti eri hakemistoihin. Jokainen hakemisto voi vuorostaan sisältää useampia tiedostoja ja hakemistoja. 
+Tietokoneella tiedostot on jaoteltu hierarkkisen puurakenteen mukaisesti eri hakemistoihin. Jokainen hakemisto voi vuorostaan sisältää useampia tiedostoja ja hakemistoja. 
 
 !!! shell "bash: tree"
     **C54W4KDHGK**:testikansio jonrajal$ <pop>tree</pop>
@@ -65,7 +65,7 @@ Tietokoneella tiedostot on jaoteltu hierarkisen puurakenteen mukaisesti eri hake
 Komentorivillä kansiorakenteen näkee näppärästi ```tree```-komennolla. Komento näyttää aktiivisen kansion sisällön puurakenteena. Jokaisen kansion sisällä olevat tiedostot ja alikansiot näytetään haarautuvana polkuna (tai oksina) rakenteessa, ja jokainen tiedosto on puurakenteen lehti.
 
 ??? info "bash esimerkkien oletuskansio"
-    Tällä verkkosivustolla kaikki esimerkkikomennot ajetaan kansiossa nimeltä ```tol-alkeet``` tai jossain sen alikansiossa. Kansion sisältö on aina seuraavanlainen ennen komennon aloitusta.
+    Tällä verkkosivustolla kaikki esimerkkinä käytetyt komennot ajetaan kansiossa nimeltä ```tol-alkeet``` tai jossain sen alikansiossa. Kansion sisältö on aina seuraavanlainen ennen komennon aloitusta.
     !!! shell "bash: tree"
         **C54W4KDHGK**:tol-alkeet jonrajal$ <pop>tree</pop>
         .
@@ -89,10 +89,9 @@ Komentorivillä kansiorakenteen näkee näppärästi ```tree```-komennolla. Kome
         │   └── kuva-9.jpg
         ├── README.txt
         ├── teksti.txt
-        ├── toinen.txt
-        └── uusi.txt
+        └── toinen.txt
 
-        4 directories, 19 files
+        4 directories, 18 files
 
 !!! hint "Juurihakemisto" 
     Tietokoneen kansiorakenne alkaa aina jostain hierarkian yläpäässä olevasta juurihakemistosta. Kaikki muut tiedostot ja hakemistot ovat tämän hakemiston, tai sen alihakemistojen, sisällä.
@@ -131,7 +130,7 @@ Unix-pohjaisissa käyttöjärjestelmissä polun voi kirjoittaa myös suhteessa k
 
 Tällaisella polulla on kaksi käyttötapausta. Yleisin hyöty on vain kirjoittamisen vähentäminen. On paljon helpompaa kirjoittaa ```~/Koodi/opetus/tol-alkeet```, kuin ```/Users/jonrajal/Koodi/opetus/tol-alkeet```. Unix-koneissa lähes kaikki käyttäjän tarvitsemat tiedostot ovat kuitenkin jossain kotihakemiston alihakemistoissa, joten polku on näppärämpi kirjoittaa lyhyemmässä muodossa.
 
-Toinen hyöty tällaisesta kirjoitusasusta on koneilla, joille voi kirjautua useita eri käyttäjiä eri käyttäjätileillä. Jos ohjelma tai [komentosarja](../01.2-komentorivin-jatkoa/02-komentosarjat.md) haluaa tallentaa, joka käyttäjälle eri tiedot tai ladata jotain käyttäjäkohtaisia tiedostoja, ohjelman ei tarvitse käyttää eri polkua jokaiselle eri käyttäjälle. ```~``` on aina aktiivisen käyttäjän kotihakemisto.
+Toinen hyöty tällaisesta kirjoitusasusta on koneilla, joille voi kirjautua useita eri käyttäjiä eri käyttäjätileillä. Jos ohjelma tai [komentosarja](../01.2-komentorivin-jatkoa/02-komentosarjat/index.md) haluaa tallentaa, joka käyttäjälle eri tiedot tai ladata jotain käyttäjäkohtaisia tiedostoja, ohjelman ei tarvitse käyttää eri polkua jokaiselle eri käyttäjälle. ```~``` on aina aktiivisen käyttäjän kotihakemisto.
 
 Windows-koneilla on vastaavanlainen polkuoikotie: ```%userprofile%```. Sitä ei kuitenkaan käytetä läheskään yhtä usein sen pituuden vuoksi.
 

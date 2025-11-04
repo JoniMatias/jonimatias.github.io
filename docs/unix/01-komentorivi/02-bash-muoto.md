@@ -107,7 +107,7 @@ Argumenttien määrää ei ole mitenkään rajattu, ja jotkin ohjelman ja komenn
 
 Joidenkin komentojen suoritusta voi ohjata lisäksi komennolle annettavilla lisävalinnoilla. Lisävalinnat eroavat argumenteista siten, että ne alkavat valintaa merkkaavalla merkillä. Usein *Windowsilla* se on kauttaviiva ```/```; *bashissa* käytetään käytännössä aina yhtä tai kahta väliviivaa (```-``` tai ```--```). Toisin kuin argumentit, joita käytetään ohjelman syötteenä, lisävalinnoilla vain muutetaan ohjelman suoritustapaa. Toisin sanoen, lisävalinnat kertovat mitä ohjelma/komento tekee, ja argumentti kertoo mille se tehdään.
 
-Lisävalinnan edessä olevien väliviivojen määrä perintenteisesti riippuu siitä, kuinka monimerkkinen tunnus lisävalinnalla on. Kaikilla yksikirjaimisilla lisävalinnoilla on usein vain yksi väliviiva, kuten vaikka aikaisemin ```ls -A```. Jos taas tunnus on pidempi sana, väliviivoja on yleensä kaksi, kuten vaikka [gitin](../02-ohjelmointi/02-git.md) komennossa ```git commit --message "Viesti"```. Joillakin valinnoilla voi olla myös pitkä ja lyhyt muoto, jossa lyhyt on yhden merkin mittainen ja tiivis, ja pitkä on kuvaavampi. Esimerkiksi tuo aikaisempi git-komennon voi kirjoittaa myös muodossa ```git commit -m "viesti"```.
+Lisävalinnan edessä olevien väliviivojen määrä perinteisesti riippuu siitä, kuinka monimerkkinen tunnus lisävalinnalla on. Kaikilla yksikirjaimisilla lisävalinnoilla on usein vain yksi väliviiva, kuten vaikka aikaisemmin ```ls -A```. Jos taas tunnus on pidempi sana, väliviivoja on yleensä kaksi, kuten vaikka [gitin](../02-ohjelmointi/02-git.md) komennossa ```git commit --message "Viesti"```. Joillakin valinnoilla voi olla myös pitkä ja lyhyt muoto, jossa lyhyt on yhden merkin mittainen ja tiivis, ja pitkä on kuvaavampi. Esimerkiksi tuo aikaisempi git-komennon voi kirjoittaa myös muodossa ```git commit -m "viesti"```.
 
 Nämä säännöt ovat kuitenkin vain yleisiä käytänteitä, jotka voivat vaihdella ohjelmasta, komennosta ja tulkista toiseen. Suoritettavan ohjelman kooditasolla valinnat ja argumentit eivät eroa toisistaan mitenkään.
 
@@ -115,7 +115,7 @@ Lisävalintoja on pääasiallisesti kahta erilaista: lippuja ja parametrillisiä
 
 ##### Liput
 
-Liput (eng. *flag*) ovat yksinkertaisin lisävalintatyyppi, ja lähes kaikki ohjelmat ja komennot tukevat niitä. Muun muassa ylläolevassa ```ls -A``` esimerkissä käytettiin ```-A```-lippua. Se lippu muutti komennon suorittamista siten, että se tulostaa myös kaikkien piilotiedostojen nimet.
+Liput (eng. *flag*) ovat yksinkertaisin lisävalintatyyppi, ja lähes kaikki ohjelmat ja komennot tukevat niitä. Muun muassa yllä olevassa ```ls -A``` esimerkissä käytettiin ```-A```-lippua. Se lippu muutti komennon suorittamista siten, että se tulostaa myös kaikkien piilotiedostojen nimet.
 
 !!! shell "bash: git --version"
     **C54W4KDHGK**:jonimatias.github.io jonrajal$ git <pop>\-\-version</pop>
@@ -134,7 +134,7 @@ Jotkin lisävalinnat tarvitsevat itselleenkin syötteen tai muun tarkentavat arv
     ./bar.txt
     ./alikansio/tiedosto.txt
 
-Ylläolevassa esimerkissä käytetään ```find```-komentoa etsimään aktiivisesta kansiosta kaikki tiedostot, joiden nimen lopussa on ```.txt```. Komento ottaa argumentikseen kansion mihin haku tehdään, joka tässä tapauksessa on aktiivinen kansio. Aktiivinen kansio merkitään aika merkillä ```.```.
+Yllä olevassa esimerkissä käytetään ```find```-komentoa etsimään aktiivisesta kansiosta kaikki tiedostot, joiden nimen lopussa on ```.txt```. Komento ottaa argumentikseen kansion mihin haku tehdään, joka tässä tapauksessa on aktiivinen kansio. Aktiivinen kansio merkitään aika merkillä ```.```.
 
 Lisävalintana on esimerkissä on ```-name```, joka vaatii parametrikseen vapaamuotoisen merkkijonon. Lisävalinta muuttaa ```find```-komennon toiminnan siihen, että se käyttää tiedostojen nimeä hakuehtona. Samalla komennolle annettu parametri määrittelee minkälaista merkkijonoa tiedostojen nimistä etsitään. 
 
@@ -170,7 +170,9 @@ Tässä ```ls```-komennon tulosteessa tiedostojen ja kansioiden oikeudet on list
 
 ## Ohjelmien suorittaminen
 
-Toisin kuin komennot, jotka on saatavilla kaikissa kansioissa, tiedostoihin ja ohjelmiin päästäkseen pitää tietää niiden sijainti. Tiedoston sijainnin voi joko antaa [absoluuttisena polkuna](../00-intro/01-tiedostot.md#taysi-eli-absoluuttinen-polku) tai suhteessa *aktiiviseen kansioon*. Aktiivinen kansio viittaa siihen paikkaan, jossa käyttäjä tällä hetkellä "on". Kaikki komennot ja ohjelmat oletuksena suoritetaan aktiivisessa kansiossa, ellei toisin määritetä. Aktiivista kansiota voi vaihtaa käyttämällä ```cd```-komentoa ([Windows](./03-peruskomennot/windows-peruskomennot.md#cd) tai [bash](./03-peruskomennot/bash-peruskomennot.md#cd)).
+Toisin kuin komennot, jotka on saatavilla kaikissa kansioissa, tiedostoihin ja ohjelmiin päästäkseen pitää tietää niiden sijainti. Tiedoston sijainnin voi joko antaa [absoluuttisena polkuna](../00-intro/01-tiedostot.md#absoluuttinen-polku) tai suhteessa *aktiiviseen kansioon*. Aktiivinen kansio viittaa siihen paikkaan, jossa käyttäjä tällä hetkellä "on". Kaikki komennot ja ohjelmat oletuksena suoritetaan aktiivisessa kansiossa, ellei toisin määritetä. Aktiivista kansiota voi vaihtaa käyttämällä ```cd```-komentoa ([Windows](./03-peruskomennot/windows-peruskomennot.md#cd) tai [bash](./03-peruskomennot/bash-peruskomennot.md#cd)).
+
+[Linkki](./03-peruskomennot/index32.md)
 
 Komennon suorittamisen sijasta komentorivillä voi myös käynnistää ohjelman. Ohjelman käynnistäminen tapahtuu samalla tavoin kuin komennon suorittaminen, mutta komennon sijasta ensimmäiseksi sanaksi kirjoitetaan suoritettavan ohjelman tiedostonimi tai -polku. Mikäli suoritettava ohjelmatiedosto on aktiivisessa kansiossa, pitää tiedostonimen eteen lisätä ```./```. Tämä siksi, etteivät komentojen nimet ole varattuja avainsanoja, eli tiedostot voi nimetä myös komentoja vastaavilla nimillä. *Bash* ei siis pysty erottamaan komentoa tiedostosta, ellei tiedostoa ole kirjoitettu polkumuodossa.
 
@@ -183,7 +185,7 @@ Tämän lisäksi ohjelmien suorittaminen ei eroa komentorivillä muiden komentoj
 
 Joskus ohjelma tai komento ei sammu itsekseen käynnistymisen jälkeen. Tällaisia ovat mm. ```man```-manuaalikomento tai ```nano```-tekstinkäsittelyohjelma. Moniin tällaisiin ohjelmiin on yleensä ohjelmoitu tapa sammuttaa ne, mutta joskus se ei ole tarpeellista.
 
-Joskus myös ohjelmassa on bugi, jonka takia se jää ikuiseen silmukkaan, eikä lopu ikinä. Joskus taas voit huomata käynnistäneesi väärän ohjelman, ja haluat sammuttaa sen ennenkuin se ehtii tehdä liikaa tuhoja.
+Joskus myös ohjelmassa on bugi, jonka takia se jää ikuiseen silmukkaan, eikä lopu ikinä. Joskus taas voit huomata käynnistäneesi väärän ohjelman, ja haluat sammuttaa sen ennen kuin se ehtii tehdä liikaa tuhoja.
 
 Näitä ongelmia varten on olemassa näppäinyhdistelmä <kbd>^ Control</kbd>+<kbd>c</kbd>. Kun tätä näppäinyhdistelmää painetaan, *bash* sammuttaa tällä hetkellä suorituksen alaisen ohjelman heti. Se ei jää kyselemään tai odottamaan käyttäjältä lisäsyötteitä, ohjelma vaan keskeytetään suoraan siihen, ja sen toiminta jätetään kesken.
 
