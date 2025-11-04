@@ -18,16 +18,16 @@ Office365 paketissa sähköpostiautomaatiota kutsutään säännöiksi. Uusia s�
 
  - Kirjaudu omaan sähköpostiisi osoitteessa [office365.oulu.fi](https://office365.oulu.fi).
 
-![](./outlook-asetukset.png)
+![](kuvat/outlook-asetukset.png)
 
  - Avaa tilisi asetukset painamalla oikean yläkulman hammasratasikonia.
 
-![](./outlook-saannot.png)
+![](kuvat/outlook-saannot.png)
 
  - Valitse vasemman reunan valikosta kohta *Säännöt*.
  - Tässä näkymässä voi luoda uusia sääntöjä painamalla *Luo uusi sääntö* painiketta.
 
-![](./outlook-uusi-saanto.png)
+![](kuvat/outlook-uusi-saanto.png)
 
  - Jokainen sääntö tarvitsee vain kolme asiaa: nimen, ehdon ja toiminnan.
 

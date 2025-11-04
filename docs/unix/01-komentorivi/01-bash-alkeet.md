@@ -1,4 +1,4 @@
-# Komentorivin alkeet
+# Komentorivin esittely
 
 Ennen kuin 1980-luvulla tietokoneille kehitettiin graafiset, ikkunoihin pohjautuvat käyttöliittymät, tietokoneita käytettiin ainoastaan tekstipohjaisen komentorivin kautta. Kun graafiset käyttöliittymät yleistyivät, komentorivit kuitenkin jäivät osaksi tietokoneita muutamasta eri syystä:
 
@@ -14,10 +14,17 @@ Näistä syistä komentorivi on edelleenkin hyvin tärkeä työkalu ohjelmoijill
 
 Komentorivin käynnistäminen on helppoa. Kaikissa tietokoneissa on valmiiksi asennettuna jonkinlainen *pääteohjelma*, jolla pääsee käsiksi komentoriviin. Windows-käyttäjille se on *cmd.exe*, MacOS-koneilla ohjelman nimi on *Pääte* (eng. *Terminal*) ja Ubuntulla (joka on yleisin Linux-käyttöjärjestelmä) se on *gnome-terminal*. 
 
+=== "cmd.exe (Windows)"
+    Windows piilottaa oman päätteensä käyttäjältä. Helpoin tapa käynnistää komentorivi on kirjoittaa aloitusvalikon hakukenttään cmd.exe, ja käynnistää löytynyt ohjelma. 
+
+    Kun saat pääteohjelman päälle, niin eteesi pitäisi avautua mustataustainen ikkuna valkoisella tekstillä.
+
+    **TODO:** Kuva cmd.exe:stä.
+
 === "Pääte (MacOS)"
     Helpoin tapa käynnistää *Pääte* on käyttää MacOS spotlight-toimintoa. Paina oikean yläkulman suurennuslasia (tai paina yhtäaikaa <kbd>⌘ Command</kbd> + <kbd> Välilyönti</kbd>), ja kirjoita ilmestyvään hakukenttään Pääte (jos koneesi on englanniksi, niin kirjoita Terminal) ja paina enteriä.
 
-    Toinen tapa avata *Pääte* on mennä Finderilla Apit (eng. *Apps*) kansioon, löytää sieltä Apuohjelmat-kansio (eng. *Utilities*) ja käynnistää *Pääte.app* sieltä.
+    Toinen tapa avata *Pääte* on mennä Finderilla Apit-kansioon (eng. *Apps*), löytää sieltä Apuohjelmat-kansio (eng. *Utilities*) ja käynnistää *Pääte.app* sieltä.
 
     ![](./macos-paate-alku.png)
 
@@ -25,7 +32,7 @@ Komentorivin käynnistäminen on helppoa. Kaikissa tietokoneissa on valmiiksi as
 
     MacOS:n oletustulkki on nykyään *zsh*, ja tämä sivusto käsittelee pääasiallisesti *bashia*. Tämän sivuston näkökulmasta näillä kahdella ei ole merkittäviä eroja, mutta jos haluat vaihtaa tulkin samaksi kuin mitä tällä kurssilla käytetään, aja komento ```chsh -s /bin/bash``` ja syötä salasanasi sitä pyydettäessä. ```chsh```-komento vaihtaa käyttäjän perusasetuksia, ja ```-s```-lippu kertoo komennolle, että kyseessä on tulkin (eng. *shell*) vaihto.
 
-    Jos päätät vaihtaa tulkin *bashiksi*, kannattaa huomioida että Applen koneilla oleva *bashin* versio on jo kohta 20 vuotta vanha. Toiminnallisuuteen se ei suuresti vaikuta, mutta tietoturvapäivityksiä siinä ei ole mukana. Jos haluat asentaa *bashin* uudemman version koneellesi, kannattaa lukea ohjeet [komentoriviohjelmien asentamisesta](../01-komentorivi/04-asennus.md), ja sitten ladata Homebrewillä *bash*.
+    Jos päätät vaihtaa tulkin *bashiksi*, kannattaa huomioida että Applen koneilla oleva *bashin* versio on jo kohta 20 vuotta vanha. Toiminnallisuuteen se ei suuresti vaikuta, mutta uusimpia tietoturvapäivityksiä siinä ei ole mukana. Jos haluat asentaa *bashin* uudemman version koneellesi, kannattaa lukea ohjeet [komentoriviohjelmien asentamisesta](../01-komentorivi/04-asennus.md), ja sitten ladata Homebrewillä *bashin*.
 
 === "Terminal (Ubuntu)"
     **TODO:** Miten Terminal käynnistetään Ubuntussa.
@@ -33,12 +40,6 @@ Komentorivin käynnistäminen on helppoa. Kaikissa tietokoneissa on valmiiksi as
     *Bash* on oletustulkki Ubuntulla, joten tämän sivuston ohjeistus toimii Ubuntun komentorivillä suoraan.
 
 
-=== "cmd.exe (Windows)"
-    Windows piilottaa oman komentorivipäätteensä käyttäjältä. Helpoin tapa käynnistää komentorivi on kirjoittaa aloitusvalikon hakukenttään cmd.exe, ja käynnistää löytynyt ohjelma. 
-
-    Kun saat pääteohjelman päälle, niin eteesi pitäisi avautua mustataustainen ikkuna valkoisella tekstillä.
-
-    **TODO:** Kuva cmd.exe:stä.
 
 
 

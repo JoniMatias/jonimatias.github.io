@@ -23,10 +23,10 @@ Nykyään jotkin käyttöjärjestelmät piilottavat tiedostopäätteet oletuksen
 
 === "Windows"
     Windows-koneilla tiedostopäätteet saa näkyville tiedostoikkunan ylävalikosta Sort > Show > File name extensions
-    ![](./Windows-file-extensions-korostus.png)
+    ![](kuvat/Windows-file-extensions-korostus.png)
 === "MacOS"
     MacOS-tietokoneille tiedostopäätteet saa näkyville Finderin asetuksista. Kun Finder-ikkuna on valittuna, paina <kbd>⌘ Command</kbd> + <kbd>,</kbd>. Uudessa ikkunassa valitse yläreunasta *Lisävalinnat*-välilehti. Välilehden ensimmäinen valinta on "Näytä kaikki tiedostotarkenteet"; jos se ei ole päällä, laita se päälle.
-    ![](MacOS-file-extensions-korostus.png){ .half-width .center }
+    ![](kuvat/MacOS-file-extensions-korostus.png){ .half-width .center }
 
 #### Yleisimpiä tiedostopäätteitä
 
