@@ -60,7 +60,7 @@ Kaikki käyttöjärjestelmät ja tulkit tukevat myös yleisiä oletusmuuttujia, 
 
 ### Jokerimerkit (wildcard)
 
-Jokerimerkit ovat erikoismerkkejä, joita voidaan käyttää teksin etsimiseen. Komentosarjojen tapauksessa niiden pääasiallinen käyttötarkoitus on etsiä useita tiedostoja, joiden nimet ovat lähellä toisiaan tai joilla on sama tiedostopääte. Esimerkiksi komento ```echo *.txt``` tulostaa kaikki aktiivisessa kansiossa olevat .txt-tiedostot.
+Jokerimerkit ovat erikoismerkkejä, joita voidaan käyttää teksin etsimiseen. Komentosarjojen tapauksessa niiden pääasiallinen käyttötarkoitus on etsiä useita tiedostoja, joiden nimet ovat lähellä toisiaan tai joilla on sama tiedostopääte. Esimerkiksi komento ```echo *.txt``` tulostaa kaikki aktiivisessa kansiossa olevat ```.txt```-päätteiset tiedostot.
 
 *Bash* tukee kolmea erilaista jokerimerkkiä. Nämä merkit ovat ```*```, ```?``` ja ```[]```.
 

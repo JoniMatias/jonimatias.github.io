@@ -102,6 +102,12 @@ eli remove file. Komento poistaa argumenttina annetun tiedoston. ```rm``` ei tee
 
 Kuten kaikki komentorivin poistokomennot, ```rm``` ei käytä roskakoria. Kaikki tuhotut kansiot ja tiedostot häviävät kerralla, eikä niitä voi saada takaisin. Kannattaa siis olla varovainen tämän komennon kanssa.
 
+#### mv
+
+**TODO:** mv
+
+eli move. Tätä komentoa voi käyttää tiedoston siirtämiseen tai uudelleen nimeämiseen. 
+
 #### cp
 [**man cp**](https://man7.org/linux/man-pages/man1/cp.1.html){ .man-link }
 
@@ -191,7 +197,7 @@ Kuten kaikki komentorivin poistokomennot, ```rmdir``` ei käytä roskakoria. Kai
     jonrajal@C54W4KDHGK:~/testikansio$ <pop>echo Hello World!</pop>
     Hello World!
 
-Tämä komento tulostaa vastaukseksi sille annetun argumentin. Näppärä [komentosarjojen](../../01.2-komentorivin-jatkoa/02-komentosarjat/index.md) kanssa, jos haluaa saada tilannepäivityksiä. Ajatus on hyvinkin saman, kuin C-ohjelmointikielen ```printf()``` komennolla, vaikka muuttujien hallinta on hyvin erilainen.
+Tämä komento tulostaa vastaukseksi sille annetun argumentin. Näppärä [komentosarjojen](../../01.2-komentorivin-jatkoa/02-komentosarjat/index.md) kanssa, jos haluaa saada tilannepäivityksiä. 
 
 #### cat 
 [**man cat**](https://man7.org/linux/man-pages/man1/cat.1.html){ .man-link }

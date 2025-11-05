@@ -8,5 +8,5 @@ Iso osa netistä löytyvästä komentorivikomennoista voi näyttää esoteerisia
 
 Eri käyttöjärjestelmillä on eri [komentotulkit](./01-bash-alkeet.md#komentorivin-osat), joten niissä on myös erilaiset komennot. Tällä sivulla käydään kahden yleisimmän tulkin peruskomennot läpi: Windowsin *cmd.exe*n ja Unix-käyttöjärjestelmien *bash*in.
 
-[Windowsin *cmd.exe*-peruskomennot](./windows-peruskomennot.md){ .md-button .md-button--primary }
-[Unixin *bash*-peruskomennot](./bash-peruskomennot.md){ .md-button .md-button--primary }
+[:os-win: Windowsin *cmd.exe*-peruskomennot](./windows-peruskomennot.md){ .md-button .md-button--primary }
+[:os-mac::os-linux: Unixin *bash*-peruskomennot](./bash-peruskomennot.md){ .md-button .md-button--primary }

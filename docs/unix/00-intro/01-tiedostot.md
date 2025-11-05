@@ -21,10 +21,10 @@ Tiedoston tyypin voi yleensä päätellä sen tiedostopäätteestä. Tiedostopä
 
 Nykyään jotkin käyttöjärjestelmät piilottavat tiedostopäätteet oletuksena. Jos käyttöjärjestelmäsi tekee näin, niin kannattaa laittaa ne näkymään. Tiedostopäätteiden näkeminen auttaa sekä käyttämään tiedostoja tehokkaammin, ja estää sinua vahingossa ajamasta suoritettavia tiedostoja.
 
-=== "Windows"
+=== ":os-win: Windows"
     Windows-koneilla tiedostopäätteet saa näkyville tiedostoikkunan ylävalikosta Sort > Show > File name extensions
     ![](kuvat/Windows-file-extensions-korostus.png)
-=== "MacOS"
+=== ":os-mac: MacOS"
     MacOS-tietokoneille tiedostopäätteet saa näkyville Finderin asetuksista. Kun Finder-ikkuna on valittuna, paina <kbd>⌘ Command</kbd> + <kbd>,</kbd>. Uudessa ikkunassa valitse yläreunasta *Lisävalinnat*-välilehti. Välilehden ensimmäinen valinta on "Näytä kaikki tiedostotarkenteet"; jos se ei ole päällä, laita se päälle.
     ![](kuvat/MacOS-file-extensions-korostus.png){ .half-width .center }
 
@@ -45,11 +45,11 @@ Koska tiedostopäätteet ovat vain osa tiedoston nimeä, niitä voi olla käytä
 | .pdf          | Tulostukseen, painamiseen ja jakamiseen tarkoitettu tiedostomuoto. Hyvin vaikea muokata.                |
 
 
-Tiedosto pääte yleensä kertoo minkälaisesta tiedostosta on kyse, ja tämän vuoksi monet ohjelmat käyttävätkin sitä tunnisteena. Tiedostopääte on kuitenkin vain osa tiedoston nimeä, joten tiedostopääte voi helposti vaihtua vahingossa toiseksi. Päätteen vaihtaminen ei kuitenkaan muuta tiedoston sisältöä, joten jpg-tiedosto ei muutu pdf-tiedostoksi pelkkää päätettä vaihtamalla. 
+Tiedosto pääte yleensä kertoo minkälaisesta tiedostosta on kyse, ja tämän vuoksi monet ohjelmat käyttävätkin sitä tunnisteena. Tiedostopääte on kuitenkin vain osa tiedoston nimeä, joten tiedostopääte voi helposti vaihtua vahingossa toiseksi. Päätteen vaihtaminen ei kuitenkaan muuta tiedoston sisältöä, joten jpg-tiedosto ei muutu pdf-tiedostoksi pelkkää päätettä vaihtamalla. Eikä myöskään kansiosta saa pakattua zip-tiedostoa vain kirjoittamalla sen nimen perään ```.zip```. Zip-tiedoston tekemiseen on [erilliset ohjeet](01.2-perustiedostot.md#zip-tiedoston-luominen).  
 
-## Kansiorakenne
+## Hakemistorakenne
 
-Tietokoneella tiedostot on jaoteltu hierarkkisen puurakenteen mukaisesti eri hakemistoihin. Jokainen hakemisto voi vuorostaan sisältää useampia tiedostoja ja hakemistoja. 
+Tietokoneella tiedostot on jaoteltu hierarkkisen puurakenteen mukaisesti eri hakemistoihin. Jokainen hakemisto voi vuorostaan sisältää useampia tiedostoja ja hakemistoja. Näitä hakemistoja kutsutaan yleensä myös kansioiksi, sillä niiden kuvake graafisissa käyttöliittymissä näyttää kansiolta.
 
 !!! shell "bash: tree"
     **C54W4KDHGK**:testikansio jonrajal$ <pop>tree</pop>
@@ -96,9 +96,9 @@ Komentorivillä kansiorakenteen näkee näppärästi ```tree```-komennolla. Kome
 !!! hint "Juurihakemisto" 
     Tietokoneen kansiorakenne alkaa aina jostain hierarkian yläpäässä olevasta juurihakemistosta. Kaikki muut tiedostot ja hakemistot ovat tämän hakemiston, tai sen alihakemistojen, sisällä.
 
-     Windows-käyttöjärjestelmässä jokaisella kovalevyllä tai asemalla on oma juurihakemisto, jolloin se yleensä kirjoitetaan vain kovalevyn nimen mukaan. Yleisin juuri Windows-koneissa on ```C:\```. 
+     Windows-käyttöjärjestelmässä jokaisella kovalevyllä tai muilla asemilla on omat juurihakemistonsa, jolloin se yleensä kirjoitetaan vain kovalevyn nimen mukaan. Yleisin juuri Windows-koneissa on ```C:\```. 
 
-    Unix-pohjaisissa järjestelmissä koko tietokoneella on vain yksi nimetön juurihakemisto, johon kaikki kovalevyt liitetään (eng. *mount*). Täten juurihakemisto on Linux- ja MacOS-käyttöjärjestelmissä aina ```/```. 
+    Unix-pohjaisissa järjestelmissä koko tietokoneella on vain yksi nimetön juurihakemisto, johon kaikki kovalevyt ja asemat liitetään (eng. *mount*). Täten juurihakemisto on Linux- ja MacOS-käyttöjärjestelmissä aina ```/```. 
 
 
 ### Tiedostopolut
@@ -114,17 +114,18 @@ Tiedostopolkuja voidaan kirjoittaa useammalla eri tavalla. Yleensä aikaisemman 
 #### Täysi, eli absoluuttinen polku
 
 !!! abstract "Täysi polku"
-    C:\\Users\\jonrajal\\Koodi\\tol-alkeet\\kuvia\\kuva-02.jpg<br>
-    /Users/jonrajal/Koodi/opetus/tol-alkeet/kuvia/kuva-02.jpg
+    :os-win: C:\\Users\\jonrajal\\Koodi\\opetus\\tol-alkeet\\kuvia\\kuva-02.jpg<br>
+    :os-mac::os-linux: /Users/jonrajal/Koodi/opetus/tol-alkeet/kuvia/kuva-02.jpg
 
 Absoluuttinen polku on aikaisemmissa esimerkeissä mainittu alimmaisimmasta hakemistosta – juurihakemistosta – lähtevä polku. Tällaiset polut alkavat joko kovalevyn nimellä Windows-koneissa (```C:\```), tai nimettömällä juurihakemistolla Unix-koneissa (```/```).
 
-Esimerkiksi testikoneella tol-alkeet -kansio on löytyy polusta ```/Users/jonrajal/Koodi/opetus/tol-alkeet```. Vastaavanlainen polku Windows-koneella olisi suunnilleen ```C:\Users\jonrajal\Koodi\tol-alkeet```. Molemmissa poluissa ensimmäiset kolme kansiota ovat käyttöjärjestelmässä valmiina olevia kansioita, ja viimeiset kaksi ovat käyttäjän itse luomia.
+Esimerkiksi testikoneella tol-alkeet -kansio on löytyy polusta ```/Users/jonrajal/Koodi/opetus/tol-alkeet```. Vastaavanlainen polku Windows-koneella olisi suunnilleen ```C:\Users\jonrajal\Koodi\tol-alkeet```. Molemmissa poluissa ensimmäiset kolme hakemistoa ovat käyttöjärjestelmässä valmiina olevia kansioita (```C:\Users\jonrajal\```, ```/Users/jonrajal/```), ja viimeiset neljä ovat käyttäjän itse luomia.
 
 #### Suhteessa kotihakemistoon { #suhteellinen-polku }
 
 !!! abstract "Suhteessa kotihakemistoon"
-    ~/Koodi/opetus/tol-alkeet/kuvia/kuva-02.jpg
+    :os-win: %userprofile%\\opetus\\tol-alkeet\\kuvia\\kuva-02.jpg<br>
+    :os-mac::os-linux: ~/Koodi/opetus/tol-alkeet/kuvia/kuva-02.jpg
 
 Unix-pohjaisissa käyttöjärjestelmissä polun voi kirjoittaa myös suhteessa koneelle kirjautuneen käyttäjän kotihakemistoon. Jos polku alkaa aaltoviivalla ```~```, niin kyseessä on polku suhteessa käyttäjän kotihakemistoon.
 
@@ -137,7 +138,8 @@ Windows-koneilla on vastaavanlainen polkuoikotie: ```%userprofile%```. Sitä ei 
 #### Suhteessa aktiiviseen kansioon { #aktiivinen-polku }
 
 !!! abstract "Aktiivisen kansion polku"
-    ./kuvia/kuva-02.jpg
+    :os-win: .\\kuvia\\kuva-02.jpg<br>
+    :os-mac::os-linux: ./kuvia/kuva-02.jpg
 
 Jokainen ohjelma suoritetaan aina jossain kansiossa. Yleensä tämä kansio on sama kuin missä ohjelman tiedosto on, mutta komentoriviltä ajaessa se voi olla myös se kansio, johon komentorivin ```cd```-komennolla on viimeisimmäksi menty.
 

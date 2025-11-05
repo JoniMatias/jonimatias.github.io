@@ -8,9 +8,9 @@ Näitä komentorivin hyötyjä ei kuitenkaan voi saada käyttöönsä, ellei tun
 
 Komennot koostuvat yleensä muutamasta perusosasesta. Komentoriville kirjoitetun komennon kuuluu aina alkaa komennon nimellä, ja sen jälkeen komennolle voidaan antaa lisämääreitä, kuten argumentteja, lippuja ja valintoja.
 
-Komennon nimet ovat yleensä lyhyitä yhden sanan tai muutaman kirjaimen mittaisia. Tällainen on mm. kansion sisällön ruudulle tulostava ```dir``` (Windows) tai ```ls``` (Unix).
+Komennon nimet ovat yleensä lyhyitä yhden sanan tai muutaman kirjaimen mittaisia. Tällainen on mm. kansion sisällön ruudulle tulostava :os-win:```dir``` tai :os-mac::os-linux:```ls```.
 
-=== "Windows"
+=== ":os-win: Windows"
     !!! shell "cmd.exe: dir"
         C:\\System32\\jonrajal\\Koodi\\opetus\\jonimatias.github.io> <pop>dir</pop>
         10/22/2025  10:34 AM   <DIR\>      _site
@@ -31,7 +31,7 @@ Komennon nimet ovat yleensä lyhyitä yhden sanan tai muutaman kirjaimen mittais
                            9 File(s)       12,5123,633 bytes
                            6 Dir(s)    512,523,436,852 bytes free
 
-=== "bash"
+=== ":os-mac::os-linux: bash"
     !!! shell html-whitespace "bash: ls"
         **C54W4KDHGK**:jonimatias.github.io jonrajal$ <pop>ls</pop> <br>
         <span class="bash-table-element bash-purple">_site/</span>
@@ -45,7 +45,7 @@ Komennon nimet ovat yleensä lyhyitä yhden sanan tai muutaman kirjaimen mittais
         <div class="bash-table-element bash-red">test.command\*</div>
         <div class="bash-table-element bash-red">vidresize.sh\*</div>
 
-Joillekin komennoille voi antaa tarkentavia käskyjä. Näitä voivat olla mm. käytettävän tiedosto nimi, lisäargumentit ja ohjausliput. Nämä kirjoitetaan komennon perään, yleensä vapaassa järjestyksessä.  Unix-koneilla komento ```ls``` tukee mm. lippua ```-A```, joka näyttää kaikki piilotetut tiedostot. Unix-pohjaisissa järjestelmissä tiedostot ovat piilotettuja, jos niiden nimi alkaa pisteellä. 
+Joillekin komennoille voi antaa tarkentavia käskyjä. Näitä voivat olla mm. käytettävän tiedoston nimi, lisäargumentit ja ohjausliput. Tarkentavat käskyt kirjoitetaan komennon perään, yleensä vapaassa järjestyksessä.  :os-mac::os-linux: Unix-koneilla komento ```ls``` tukee mm. lippua ```-A```, joka näyttää kaikki piilotetut tiedostot. Unix-pohjaisissa järjestelmissä tiedostot ovat piilotettuja, jos niiden nimi alkaa pisteellä. 
  
  
 !!! shell html-whitespace "bash: ls -A"
@@ -68,7 +68,7 @@ Joillekin komennoille voi antaa tarkentavia käskyjä. Näitä voivat olla mm. k
     <span class="bash-table-element">requirements.txt</span>
 
 
-Jokaisen komennon argumentteihin ja toimintatapaan voi tutustua paremmin komennolla ```man```, joka avaa pyydetyn komennon manuaalin. Esimerkiksi ```man ls``` kertoo tarkemmin ls-komennon toiminnasta.
+Jokaisen komennon argumentteihin ja toimintatapaan voi tutustua paremmin komennolla [```man```](03-peruskomennot/bash-peruskomennot.md#man), joka avaa pyydetyn komennon manuaalin. Esimerkiksi ```man ls``` kertoo tarkemmin ls-komennon toiminnasta.
 
 
 ## Argumentit, lisävalinnat ja liput
@@ -186,7 +186,3 @@ Joskus ohjelma tai komento ei sammu itsekseen käynnistymisen jälkeen. Tällais
 Joskus myös ohjelmassa on bugi, jonka takia se jää ikuiseen silmukkaan, eikä lopu ikinä. Joskus taas voit huomata käynnistäneesi väärän ohjelman, ja haluat sammuttaa sen ennen kuin se ehtii tehdä liikaa tuhoja.
 
 Näitä ongelmia varten on olemassa näppäinyhdistelmä <kbd>^ Control</kbd>+<kbd>c</kbd>. Kun tätä näppäinyhdistelmää painetaan, *bash* sammuttaa tällä hetkellä suorituksen alaisen ohjelman heti. Se ei jää kyselemään tai odottamaan käyttäjältä lisäsyötteitä, ohjelma vaan keskeytetään suoraan siihen, ja sen toiminta jätetään kesken.
-
-ctrl+c
-
-ctrl+z

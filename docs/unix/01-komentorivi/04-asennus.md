@@ -20,24 +20,24 @@ Paketinhallintaohjelmat ovat erillisiä asennettavia komentoriviohjelmia, jotka 
 
 ### Paketinhallintaohjelman asennus
 
-=== "Windows - WinGet"
+=== ":os-win: Windows - WinGet"
     **TODO:** Kirjoita WinGetin kuvaus
 
-=== "MacOS - brew"
+=== ":os-mac: MacOS - brew"
     Applella ei ole omaa järjestelmään sisäänrakennettua paketinhallintaohjelmaa, mutta Homebrewistä on tullut vahva yleisesti käytössä oleva standardi. Homebrewin voi asentaa ajamalla seuraavan komennon komentorivillä:
     !!! shell "Asenna brew"
         **C54W4KDHGK**:~ jonrajal$ <pop>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</pop>
 
-=== "Ubuntu - apt"
+=== ":os-linux: Ubuntu - apt"
     ```apt``` on heti käyttövalmis Ubuntulla. Se on asennettuna koneelle oletuksena.
 
 
 ### Pakettien asentaminen
 
-=== "Windows - WinGet"
-    **TODO:** Kirjoita WinGetin kuvaus
+=== ":os-win: Windows - WinGet"
+    **TODO:** Kirjoita WinGetin kuvaus ja esimerkit
 
-=== "MacOS - brew"    
+=== ":os-mac: MacOS - brew"    
     Kun Homebrew on asennettu, uusien komentoriviohjelmien asentaminen on suhteellisen helppoa: asentaminen tapahtuu komennolla ```brew install <ohjelman nimi>```. Homebrewilla asennettavien ohjelmien lista löytyy osoitteesta: [https://formulae.brew.sh/formula/](https://formulae.brew.sh/formula/).
 
     Esimerkiksi jos haluaa asentaa koneelleen ohjelman ```ffmpeg```, joka on tehokas (ja vaikeakäyttöinen) videotiedostojen muokkausohjelma, se tapahtuu komennolla:
@@ -54,13 +54,14 @@ Paketinhallintaohjelmat ovat erillisiä asennettavia komentoriviohjelmia, jotka 
 
     Jokainen paketti asentuu eri tavalla, joten kannattaa tutustua jokaisen ohjelman dokumentaatioon sen käytöstä. 
 
-=== "Ubuntu - apt"
+=== ":os-linux: Ubuntu - apt"
     ```apt``` on heti käyttövalmis Ubuntulla. Se on asennettuna koneelle oletuksena.
+    **TODO:** Kirjoita kuvaus ja esimerkit
 
 
 ## Omien ohjelmien korottaminen komennoiksi
 
-Tavallisesti ohjelman ajaminen tapahtuu tietämällä ohjelman sijainti. Ohjelma käynnistetään aina tietämällä minkä tahansa polun suoritettavaan tiedostoon, ja kutsumalla ohjelmaa polun kautta. Joskus käyttäjä voi kuitenkin haluta ajaa omia komentojaan samalla tavalla kuin komentoja, eli missä tahansa kansiossa ja välittämättä ohjelman sijainnista.
+Tavallisesti ohjelman ajaminen tapahtuu tietämällä ohjelman sijainti. Ohjelma käynnistetään aina tietämällä minkä tahansa polun suoritettavaan tiedostoon, ja kutsumalla ohjelmaa polun kautta. Joskus käyttäjä voi kuitenkin haluta ajaa omia ohjelmiaan samalla tavalla kuin komentoja, eli missä tahansa kansiossa ja välittämättä ohjelman sijainnista.
 
 Jos olet tehnyt itse ohjelman, jota haluaisit käyttää kuten komentoja, niin kannattaa tutustua ympäristömuuttujiin ja ohjelmien oikeuksiin [niistä kertovalla sivulla](../01.2-komentorivin-jatkoa/03-environment.md).
 

@@ -14,14 +14,14 @@ Näistä syistä komentorivi on edelleenkin hyvin tärkeä työkalu ohjelmoijill
 
 Komentorivin käynnistäminen on helppoa. Kaikissa tietokoneissa on valmiiksi asennettuna jonkinlainen *pääteohjelma*, jolla pääsee käsiksi komentoriviin. Windows-käyttäjille se on *cmd.exe*, MacOS-koneilla ohjelman nimi on *Pääte* (eng. *Terminal*) ja Ubuntulla (joka on yleisin Linux-käyttöjärjestelmä) se on *gnome-terminal*. 
 
-=== "cmd.exe (Windows)"
+=== ":os-win: cmd.exe (Windows)"
     Windows piilottaa oman päätteensä käyttäjältä. Helpoin tapa käynnistää komentorivi on kirjoittaa aloitusvalikon hakukenttään cmd.exe, ja käynnistää löytynyt ohjelma. 
 
     Kun saat pääteohjelman päälle, niin eteesi pitäisi avautua mustataustainen ikkuna valkoisella tekstillä.
 
     **TODO:** Kuva cmd.exe:stä.
 
-=== "Pääte (MacOS)"
+=== ":os-mac: Pääte (MacOS)"
     Helpoin tapa käynnistää *Pääte* on käyttää MacOS spotlight-toimintoa. Paina oikean yläkulman suurennuslasia (tai paina yhtä aikaa <kbd>⌘ Command</kbd> + <kbd> Välilyönti</kbd>), ja kirjoita ilmestyvään hakukenttään Pääte (jos koneesi on englanniksi, niin kirjoita Terminal) ja paina enteriä.
 
     Toinen tapa avata *Pääte* on mennä Finderilla Apit-kansioon (eng. *Apps*), löytää sieltä Apuohjelmat-kansio (eng. *Utilities*) ja käynnistää *Pääte.app* sieltä.
@@ -34,7 +34,7 @@ Komentorivin käynnistäminen on helppoa. Kaikissa tietokoneissa on valmiiksi as
 
     Jos päätät vaihtaa tulkin *bashiksi*, kannattaa huomioida että Applen koneilla oleva *bashin* versio on jo kohta 20 vuotta vanha. Toiminnallisuuteen se ei suuresti vaikuta, mutta uusimpia tietoturvapäivityksiä siinä ei ole mukana. Jos haluat asentaa *bashin* uudemman version koneellesi, kannattaa lukea ohjeet [komentoriviohjelmien asentamisesta](../01-komentorivi/04-asennus.md), ja sitten ladata Homebrewillä *bashin*.
 
-=== "Terminal (Ubuntu)"
+=== ":os-linux: Terminal (Ubuntu)"
     **TODO:** Miten Terminal käynnistetään Ubuntussa.
 
     *Bash* on oletustulkki Ubuntulla, joten tämän sivuston ohjeistus toimii Ubuntun komentorivillä suoraan.
@@ -61,12 +61,12 @@ Komentorivien käyttöä varten tietokone tarvitsee kolme eri komponenttia: pä�
 
 ### Kehotteen muotoja
 
-=== "cmd.exe"
+=== ":os-win: cmd.exe"
     Windowsin komentorivitulkin kehotteessa näytetään vain [absoluuttinen polku](../00-intro/01-tiedostot.md#taysi-eli-absoluuttinen-polku) aktiiviseen kansioon.
     !!! shell "cmd.exe"
         C:\Windows\System32>
     
-=== "bash"
+=== ":os-mac::os-linux: bash"
     *bashissä* komentokehote on muotoa ```tietokoneen_nimi:aktiivinen_kansio käyttäjä$```. Kehotteen dollarimerkin jälkeen käyttäjä voi syöttää haluamansa komennon.
     !!! shell "bash: Kehote"
         **C54W4KDHGK**:~ jonrajal$ 
@@ -79,7 +79,7 @@ Komentorivien käyttöä varten tietokone tarvitsee kolme eri komponenttia: pä�
 
 ## Aktiivinen kansio
 
-Samoin kuin graafisen käyttöliittymän tiedostoikkunoissa, komentorivillä on yksi aktiivinen kansio kerralla auki. Käytännössä kaikki komennot suoritetaan aktiivisessa kansiossa. Graafisella ikkunalla tämän kansion sisältö näkyy kerralla, mutta komentorivillä kansion sisällön tarkasteluun tarvitaan komento ```ls```. Se listaa kaikki tämänhetkisen kansion tiedostot.
+Samoin kuin graafisen käyttöliittymän tiedostoikkunoissa, komentorivillä on yksi aktiivinen kansio kerralla auki. Käytännössä kaikki komennot suoritetaan aktiivisessa kansiossa. Graafisella ikkunalla tämän kansion sisältö näkyy kerralla, mutta komentorivillä kansion sisällön tarkasteluun tarvitaan komento :os-win:```dir``` tai :os-mac::os-linux:```ls```. Se listaa kaikki tämänhetkisen kansion tiedostot.
 
 !!! shell html-whitespace "bash: ls"
     **C54W4KDHGK**:tol-alkeet jonrajal$ <pop>ls</pop><br>
@@ -90,5 +90,5 @@ Samoin kuin graafisen käyttöliittymän tiedostoikkunoissa, komentorivillä on 
     <span class="bash-table-element">toinen.txt</span>
     <span class="bash-table-element">uusi.txt</span>
 
-Aktiivista kansiota voi vaihtaa ```cd```-komennolla. ```cd kansion_nimi``` vaihtaa aktiivisen kansion nykyisen aktiivisen kansion alikansioon, jolla on annettu nimi. ```cd ..`` siirtää aktiivista kansiota yhden kansiota yhden askeleen ylöspäin; nykyisen aktiivisen kansion yläkansioon.
+Aktiivista kansiota voi vaihtaa ```cd```-komennolla. ```cd kansion_nimi``` vaihtaa aktiivisen kansion nykyisen aktiivisen kansion alikansioon, jolla on annettu nimi. :os-win:```cd..``` tai :os-mac::os-linux:```cd ..``` (huom. välilyönti) siirtää aktiivista kansiota yhden kansiota yhden askeleen ylöspäin; nykyisen aktiivisen kansion yläkansioon.
 

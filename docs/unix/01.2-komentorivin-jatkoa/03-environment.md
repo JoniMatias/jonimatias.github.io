@@ -1,4 +1,4 @@
-# Komentirivin ympäristö
+# Komentorivin ympäristö
 
 
 ## $PATH
