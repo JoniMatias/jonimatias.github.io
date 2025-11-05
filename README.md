@@ -11,6 +11,7 @@ MkDocsin lisäpalikoista tällä sivustolla on käytössä:
  - [charts](https://timvink.github.io/mkdocs-charts-plugin/usage/)
  - [admonition](https://jimandreas.github.io/mkdocs-material/reference/admonitions/)
  - smarty
+ - [emoji](https://jimandreas.github.io/mkdocs-material/reference/icons-emojis/)
  - [md-in-html](https://github.com/Python-Markdown/markdown/blob/master/docs/extensions/md_in_html.md) (mahdollistaa markdownin kirjoittamisen html-tagien sisään.)
 
 
@@ -57,4 +58,21 @@ Toisin kuin muut admonitionit, ```shell``` oletuksena säilyttää kaikki tyhjä
     <pop>kuva-10.jpg</pop>
     kuva-54.jpg
 ```
+
+
+### Omat ikonit
+
+Sivusto käyttää [emoji-pluginia](https://jimandreas.github.io/mkdocs-material/reference/icons-emojis/) piirtämään omia ikoneita tekstin sekaan. Ikonit kirjoitetaan muodossa ```:<ikonin-nimi>:``` Tällä hetkellä käytössä on vain kolme käyttöjärjestelmäikonia:
+
+| avain        |  Ikoni                     |
+|--------------|----------------------------|
+| :os-win:     | Windows-logo               |
+| :os-mac:     | Applen logo                |
+| :os-linux:   | Ubuntun logo               |
+
+
+Uusia ikoneita voi lisätä laittamalla svg-tiedosto kansioon ```overrides/.icons/```. Sitten ikonin saa piirrettyä kirjoittamalla tiedoston polun suhteessa ```.icons```-kansioon kaksoispisteiden väliin, korvaamalla kaikki kauttamerkit (```/```) väliviivoilla (```-```) ja jättämällä tiedostopääte pois.
+
+Eli kansiossa ```overrides/.icons/os/win.svg``` oleva ikoni sijoitetaan tekstiin komennolla ```:os-win:```.
+
 

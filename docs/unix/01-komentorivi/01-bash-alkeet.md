@@ -12,9 +12,9 @@ Näistä syistä komentorivi on edelleenkin hyvin tärkeä työkalu ohjelmoijill
 
 ## Komentorivin käynnistäminen
 
-Komentorivin käynnistäminen on helppoa. Kaikissa tietokoneissa on valmiiksi asennettuna jonkinlainen *pääteohjelma*, jolla pääsee käsiksi komentoriviin. Windows-käyttäjille se on *cmd.exe*, MacOS-koneilla ohjelman nimi on *Pääte* (eng. *Terminal*) ja Ubuntulla (joka on yleisin Linux-käyttöjärjestelmä) se on *gnome-terminal*. 
+Komentorivin käynnistäminen on helppoa. Kaikissa tietokoneissa on valmiiksi asennettuna jonkinlainen *pääteohjelma*, jolla pääsee käsiksi komentoriviin. :os-win: Windows-käyttäjille se on *Komentokehote*, :os-mac: MacOS-koneilla ohjelman nimi on *Pääte* (eng. *Terminal*) ja :os-linux: Ubuntulla (joka on yleisin Linux-käyttöjärjestelmä) se on *gnome-terminal*. 
 
-=== ":os-win: cmd.exe (Windows)"
+=== ":os-win: Komentokehote (Windows)"
     Windows piilottaa oman päätteensä käyttäjältä. Helpoin tapa käynnistää komentorivi on kirjoittaa aloitusvalikon hakukenttään cmd.exe, ja käynnistää löytynyt ohjelma. 
 
     Kun saat pääteohjelman päälle, niin eteesi pitäisi avautua mustataustainen ikkuna valkoisella tekstillä.
@@ -52,8 +52,7 @@ Komentorivien käyttöä varten tietokone tarvitsee kolme eri komponenttia: pä�
     
     Jos haluat käyttää Windowsin omaa päätettä ja tulkkia, niin sen ohjeet löytyvät [täältä](./03-peruskomennot/windows-peruskomennot.md).
 
-**Pääte** on ohjelma, jolla voi suorittaa tekstikomentoja. Pääte joko virtualisoi vanhemman käyttöjärjestelmäympäristön, tai se on rakennettu graafisen käyttöliittymän päälle. Käyttäjälle pääte näkyy yleensä ikkunana, johon komennot kirjoitetaan. Yleensä päätteen käyttäjä voi valita mitä tulkkia pääte käyttää. Aikaisemmassa luvun ohjeet kertoivatkin miten pääte käynnistetään.
-
+**Pääte** on ohjelma, jolla voi suorittaa tekstikomentoja. Pääte joko virtualisoi vanhemman käyttöjärjestelmäympäristön, tai se on rakennettu graafisen käyttöliittymän päälle. Käyttäjälle pääte näkyy yleensä ikkunana, johon komennot kirjoitetaan. Yleensä päätteen käyttäjä voi valita mitä tulkkia pääte käyttää. Aikaisemmassa luvun ohjeet kertoivatkin miten pääte käynnistetään. :os-win: Windows-koneilla pääte on Komentokehote, :os-mac: MacOS:llä se on Pääte ja :os-linux: Ubuntulla se on Terminal.
 
 **Komentorivien tulkkeja**, ts. **shell**ejä, on useita erilaisia. Yleisimmät niistä on *bash* ja *zsh*. Microsoft käyttää omassa päätteessään joko *PowerShelliä* tai vanhempaa MS-DOS:ista periytyvää *cmd.exeä*. Tulkeissa on pieniä ja suuria eroja sen mukaan mitä komentoja ne tukevat, miten komennot täytyy kirjoittaa ja miten komennot tarkalleen ottaen toimivat. Tällä sivustolla käsitellään pääasiallisesti *bash*-tulkin ymmärtämiä komentoja.
 

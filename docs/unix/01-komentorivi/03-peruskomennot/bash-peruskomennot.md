@@ -1,10 +1,10 @@
 # Bashin peruskomennot
 
-Tässä listataan muutama yleisin *bashin* tukema komento, mitä ne tekevät ja miten niitä käytetään. Jos haluat tietää enemmän näiden toiminnasta, niin tarkemmat ohjeet saa ```man```-komennolla.
+Tässä listataan muutama yleisin *bashin* tukema komento, mitä ne tekevät ja miten niitä käytetään. Jos haluat tietää enemmän näiden toiminnasta, niin tarkemmat ohjeet saa ```man```-komennolla. *Bashiä* (tai läheistä korviketta) voi käyttää suoraan :os-mac: MacOS-koneilla ja :os-linux: Linux-koneilla. :os-win: Windowsilla *bashin* käyttö vaatii *Windows Subsystem for Linuxin* asentamisen.
 
-Löydät Windowsin *cmd.exe*n käyttämät peruskomennot alla olevasta linkistä. 
+Windowsin tavallinen komentotulkki on *cmd.exe*. Sen käyttämät peruskomennot alla olevasta linkistä. 
 
-[Windowsin peruskomennot](windows-peruskomennot.md){ .md-button }
+[:os-win: Windowsin peruskomennot](windows-peruskomennot.md){ .md-button }
 
 ### Aktiivisen kansion hallinta
 

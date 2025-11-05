@@ -4,7 +4,7 @@ Tässä listataan muutama yleisin *cmd.exe*n tukema komento. Samalla kerrotaan m
 
 Löydät Unixin *bash*in käyttämät peruskomennot alla olevasta linkistä. 
 
-[Bashin peruskomennot](bash-peruskomennot.md){ .md-button }
+[:os-mac::os-linux: Bashin peruskomennot](bash-peruskomennot.md){ .md-button }
 
 
 ### Aktiivisen kansion hallinta
