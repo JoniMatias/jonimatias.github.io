@@ -15,7 +15,7 @@ Löydät Windowsin *cmd.exe*n käyttämät peruskomennot alla olevasta linkistä
     **C54W4KDHGK**:jonimatias.github.io jonrajal$ <pop>pwd</pop>
     /Users/jonrajal/Koodi/web/jonimatias.github.io
 
-eli print working directory. Näyttää aktiivisen kansion sijainnin [absoluuttisena polkuna](../00-intro/01-tiedostot.md#taysi-eli-absoluuttinen-polku), eli reittinä tiedostojärjestelmän juuresta kansio kerrallaan aktiiviseen kansioon. Absoluuttinen polku eroaa sen kumppanista suhteellisesta polusta siten, että suhteellinen polku on aina suhteessa johonkin: yleensä joko aktiiviseen kansioon tai kotihakemistoon.
+eli print working directory. Näyttää aktiivisen kansion sijainnin [absoluuttisena polkuna](../../00-intro/01-tiedostot.md#taysi-eli-absoluuttinen-polku), eli reittinä tiedostojärjestelmän juuresta kansio kerrallaan aktiiviseen kansioon. Absoluuttinen polku eroaa sen kumppanista suhteellisesta polusta siten, että suhteellinen polku on aina suhteessa johonkin: yleensä joko aktiiviseen kansioon tai kotihakemistoon.
 
 
 #### ls 
@@ -38,7 +38,7 @@ eli list directory, näyttää aktiivisen kansion tiedostot ja alikansiot. Ilman
 
  - Niistä näkee tiedostojen tiedostopäätteen, eli tiedostotyypin.
  - Jos nimi loppuu kauttamerkkiin ```/```, niin kyseessä on kansio.
- - Jos nimen perässä on tähtimerkki ```*```, niin kyseessä on [suoritettava tiedosto](../01.2-komentorivin-jatkoa/02-komentosarjat.md).
+ - Jos nimen perässä on tähtimerkki ```*```, niin kyseessä on [suoritettava tiedosto](../../01.2-komentorivin-jatkoa/02-komentosarjat/index.md).
 
 Kuten tämän sivun esimerkeistä myös näkee, ```ls``` usein myös värjää erilaiset tiedostot eri väreillä. Tämä värjäys on kuitenkin pääte- ja tulkkikohtaista, joten kannattaa tutustua siihen, miten komento toimii omalla koneellasi.
 
@@ -191,7 +191,7 @@ Kuten kaikki komentorivin poistokomennot, ```rmdir``` ei käytä roskakoria. Kai
     jonrajal@C54W4KDHGK:~/testikansio$ <pop>echo Hello World!</pop>
     Hello World!
 
-Tämä komento tulostaa vastaukseksi sille annetun argumentin. Näppärä [komentosarjojen](../01.2-komentorivin-jatkoa/02-komentosarjat.md) kanssa, jos haluaa saada tilannepäivityksiä. Ajatus on hyvinkin saman, kuin C-ohjelmointikielen ```printf()``` komennolla, vaikka muuttujien hallinta on hyvin erilainen.
+Tämä komento tulostaa vastaukseksi sille annetun argumentin. Näppärä [komentosarjojen](../../01.2-komentorivin-jatkoa/02-komentosarjat/index.md) kanssa, jos haluaa saada tilannepäivityksiä. Ajatus on hyvinkin saman, kuin C-ohjelmointikielen ```printf()``` komennolla, vaikka muuttujien hallinta on hyvin erilainen.
 
 #### cat 
 [**man cat**](https://man7.org/linux/man-pages/man1/cat.1.html){ .man-link }
