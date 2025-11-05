@@ -100,6 +100,8 @@ Komento on oikeasti tarkoitettu tiedostojen aikaleimojen muokkaamiseen, mutta se
 
 eli remove file. Komento poistaa argumenttina annetun tiedoston. ```rm``` ei tee minkäänlaista tarkistusta tai varmistusta poistaessaan tiedoston.
 
+Kuten kaikki komentorivin poistokomennot, ```rm``` ei käytä roskakoria. Kaikki tuhotut kansiot ja tiedostot häviävät kerralla, eikä niitä voi saada takaisin. Kannattaa siis olla varovainen tämän komennon kanssa.
+
 #### cp
 [**man cp**](https://man7.org/linux/man-pages/man1/cp.1.html){ .man-link }
 
