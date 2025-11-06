@@ -10,7 +10,7 @@ Komennot koostuvat yleensä muutamasta perusosasesta. Komentoriville kirjoitetun
 
 Komennon nimet ovat yleensä lyhyitä yhden sanan tai muutaman kirjaimen mittaisia. Tällainen on mm. kansion sisällön ruudulle tulostava :os-win:```dir``` tai :os-mac::os-linux:```ls```.
 
-=== ":os-win: Windows"
+=== ":os-win: Windows"
     !!! shell "cmd.exe: dir"
         C:\\System32\\jonrajal\\Koodi\\opetus\\jonimatias.github.io> <pop>dir</pop>
         10/22/2025  10:34 AM   <DIR\>      _site

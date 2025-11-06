@@ -49,7 +49,7 @@ Toisin kuin muut admonitionit, ```shell``` oletuksena säilyttää kaikki tyhjä
     kuva-54.jpg<br>
 ```
 
-```shell``` tukee myös interaktiivisia korostuksia. Jos haluat korostaa jotain osaa komentorivin tekstistä, kun käyttäjä siirtää hiiren osoittimen minne tahansa admonitionin päälle, voit ympäröidä korostettavan tekstit <pop>-tageilla.
+```shell``` tukee myös interaktiivisia korostuksia. Jos haluat korostaa jotain osaa komentorivin tekstistä, kun käyttäjä siirtää hiiren osoittimen minne tahansa admonitionin päälle, voit ympäröidä korostettavan tekstit ```<pop>```-tageilla.
 
 ```
 !!! shell "otsikko lainausmerkkien sisällä"
@@ -66,7 +66,7 @@ Sivusto käyttää [emoji-pluginia](https://jimandreas.github.io/mkdocs-material
 
 | avain        |  Ikoni                     |
 |--------------|----------------------------|
-| :os-win:     | Windows-logo               |
+| :os-win:     | Windows-logo               |
 | :os-mac:     | Applen logo                |
 | :os-linux:   | Ubuntun logo               |
 

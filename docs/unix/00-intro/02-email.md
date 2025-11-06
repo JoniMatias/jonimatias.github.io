@@ -1,6 +1,6 @@
 # Opiskelijan sähköposti
 
-Oulun yliopisto tarjoaa kaikille opiskelijoille sähköpostiosoitteen. Tämä sähköpostiosoite on muotoa <käyttäjätunnus>@student.oulu.fi. Tätä samaa sähköpostiosoitetta käytetään myös kirjautumaan moniin muihin yliopiston palveluihin, kuten Moodleen, Peppiin ja yliopiston tietokoneille.
+Oulun yliopisto tarjoaa kaikille opiskelijoille sähköpostiosoitteen. Tämä sähköpostiosoite on muotoa ```käyttäjätunnus@student.oulu.fi```. Tätä samaa sähköpostiosoitetta käytetään myös kirjautumaan moniin muihin yliopiston palveluihin, kuten Moodleen, Peppiin ja yliopiston tietokoneille.
 
 Samoin, kun yliopisto haluaa kertoa opiskelijalle jotain hänen kurssisuorituksesta, pakollisista toimista tai muista ilmoitusluontoisista asioista, yliopisto tekee tämän yliopiston tarjoaman sähköpostiosoitteen kautta.
 

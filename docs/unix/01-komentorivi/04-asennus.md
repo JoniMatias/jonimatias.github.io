@@ -20,7 +20,7 @@ Paketinhallintaohjelmat ovat erillisiä asennettavia komentoriviohjelmia, jotka 
 
 ### Paketinhallintaohjelman asennus
 
-=== ":os-win: Windows - WinGet"
+=== ":os-win: Windows - WinGet"
     **TODO:** Kirjoita WinGetin kuvaus
 
 === ":os-mac: MacOS - brew"
@@ -34,7 +34,7 @@ Paketinhallintaohjelmat ovat erillisiä asennettavia komentoriviohjelmia, jotka 
 
 ### Pakettien asentaminen
 
-=== ":os-win: Windows - WinGet"
+=== ":os-win: Windows - WinGet"
     **TODO:** Kirjoita WinGetin kuvaus ja esimerkit
 
 === ":os-mac: MacOS - brew"    

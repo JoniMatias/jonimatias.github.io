@@ -21,7 +21,7 @@ Tiedoston tyypin voi yleensä päätellä sen tiedostopäätteestä. Tiedostopä
 
 Nykyään jotkin käyttöjärjestelmät piilottavat tiedostopäätteet oletuksena. Jos käyttöjärjestelmäsi tekee näin, niin kannattaa laittaa ne näkymään. Tiedostopäätteiden näkeminen auttaa sekä käyttämään tiedostoja tehokkaammin, ja estää sinua vahingossa ajamasta suoritettavia tiedostoja.
 
-=== ":os-win: Windows"
+=== ":os-win: Windows"
     Windows-koneilla tiedostopäätteet saa näkyville tiedostoikkunan ylävalikosta Sort > Show > File name extensions
     ![](kuvat/Windows-file-extensions-korostus.png)
 === ":os-mac: MacOS"
@@ -114,7 +114,7 @@ Tiedostopolkuja voidaan kirjoittaa useammalla eri tavalla. Yleensä aikaisemman 
 #### Täysi, eli absoluuttinen polku
 
 !!! abstract "Täysi polku"
-    :os-win: C:\\Users\\jonrajal\\Koodi\\opetus\\tol-alkeet\\kuvia\\kuva-02.jpg<br>
+    :os-win: C:\\Users\\jonrajal\\Koodi\\opetus\\tol-alkeet\\kuvia\\kuva-02.jpg<br>
     :os-mac::os-linux: /Users/jonrajal/Koodi/opetus/tol-alkeet/kuvia/kuva-02.jpg
 
 Absoluuttinen polku on aikaisemmissa esimerkeissä mainittu alimmaisimmasta hakemistosta – juurihakemistosta – lähtevä polku. Tällaiset polut alkavat joko kovalevyn nimellä Windows-koneissa (```C:\```), tai nimettömällä juurihakemistolla Unix-koneissa (```/```).
@@ -124,7 +124,7 @@ Esimerkiksi testikoneella tol-alkeet -kansio on löytyy polusta ```/Users/jonraj
 #### Suhteessa kotihakemistoon { #suhteellinen-polku }
 
 !!! abstract "Suhteessa kotihakemistoon"
-    :os-win: %userprofile%\\opetus\\tol-alkeet\\kuvia\\kuva-02.jpg<br>
+    :os-win: %userprofile%\\opetus\\tol-alkeet\\kuvia\\kuva-02.jpg<br>
     :os-mac::os-linux: ~/Koodi/opetus/tol-alkeet/kuvia/kuva-02.jpg
 
 Unix-pohjaisissa käyttöjärjestelmissä polun voi kirjoittaa myös suhteessa koneelle kirjautuneen käyttäjän kotihakemistoon. Jos polku alkaa aaltoviivalla ```~```, niin kyseessä on polku suhteessa käyttäjän kotihakemistoon.
@@ -138,7 +138,7 @@ Windows-koneilla on vastaavanlainen polkuoikotie: ```%userprofile%```. Sitä ei 
 #### Suhteessa aktiiviseen kansioon { #aktiivinen-polku }
 
 !!! abstract "Aktiivisen kansion polku"
-    :os-win: .\\kuvia\\kuva-02.jpg<br>
+    :os-win: .\\kuvia\\kuva-02.jpg<br>
     :os-mac::os-linux: ./kuvia/kuva-02.jpg
 
 Jokainen ohjelma suoritetaan aina jossain kansiossa. Yleensä tämä kansio on sama kuin missä ohjelman tiedosto on, mutta komentoriviltä ajaessa se voi olla myös se kansio, johon komentorivin ```cd```-komennolla on viimeisimmäksi menty.
