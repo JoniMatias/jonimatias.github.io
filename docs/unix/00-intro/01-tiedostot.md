@@ -25,7 +25,7 @@ Nykyään jotkin käyttöjärjestelmät piilottavat tiedostopäätteet oletuksen
     Windows-koneilla tiedostopäätteet saa näkyville tiedostoikkunan ylävalikosta Sort > Show > File name extensions
     ![](kuvat/Windows-file-extensions-korostus.png)
 === ":os-mac: MacOS"
-    MacOS-tietokoneille tiedostopäätteet saa näkyville Finderin asetuksista. Kun Finder-ikkuna on valittuna, paina <kbd>⌘ Command</kbd> + <kbd>,</kbd>. Uudessa ikkunassa valitse yläreunasta *Lisävalinnat*-välilehti. Välilehden ensimmäinen valinta on "Näytä kaikki tiedostotarkenteet"; jos se ei ole päällä, laita se päälle.
+    MacOS-tietokoneille tiedostopäätteet saa näkyville Finderin asetuksista. Kun Finder-ikkuna on valittuna, paina <nowrap><kbd>⌘ Command</kbd> + <kbd>,</kbd></nowrap>. Uudessa ikkunassa valitse yläreunasta *Lisävalinnat*-välilehti. Välilehden ensimmäinen valinta on "Näytä kaikki tiedostotarkenteet"; jos se ei ole päällä, laita se päälle.
     ![](kuvat/MacOS-file-extensions-korostus.png){ .half-width .center }
 
 #### Yleisimpiä tiedostopäätteitä

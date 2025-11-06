@@ -21,9 +21,9 @@ MkDocsin lisäpalikoista tällä sivustolla on käytössä:
 
 Osaa käytetyistä lisäosista on puukotettu vähän omalla css:llä, jotta ne taipuisivat sivuston tarpeisiin.
 
-### Admonition
+### Admonition - shell
 
-MkDocsin admonition lisäosa on näppärä palikka pienten korostusikkunoiden luomiseen tekstin sekaan. Tavallisen käytön lisäksi tällä sivustolla on käytössä ylimääräinen admonition-tyyppi: ```shell```. Se muotoilee sisällön komentorivin näköiseksi.
+MkDocsin admonition-lisäosa on näppärä palikka pienten korostusikkunoiden luomiseen tekstin sekaan. Tavallisen käytön lisäksi tällä sivustolla on käytössä ylimääräinen admonition-tyyppi: ```shell```. Se muotoilee sisällön komentorivin näköiseksi.
 
 Komentorivin sisällön saa tehtyä seuraavalla muotoilulla:
 
@@ -74,5 +74,28 @@ Sivusto käyttää [emoji-pluginia](https://jimandreas.github.io/mkdocs-material
 Uusia ikoneita voi lisätä laittamalla svg-tiedosto kansioon ```overrides/.icons/```. Sitten ikonin saa piirrettyä kirjoittamalla tiedoston polun suhteessa ```.icons```-kansioon kaksoispisteiden väliin, korvaamalla kaikki kauttamerkit (```/```) väliviivoilla (```-```) ja jättämällä tiedostopääte pois.
 
 Eli kansiossa ```overrides/.icons/os/win.svg``` oleva ikoni sijoitetaan tekstiin komennolla ```:os-win:```.
+
+
+### Omia html-tageja
+
+Sivustolla on annettu muutamalle epästandardille html-tagille erilliset css-muotoilut.
+
+#### <nowrap\>
+
+Rajaamalla tekstin ```<nowrap>``` -tagien väliin, tekstiä ei koskaan muotoilla laittamaan rivivälejä sisällön väliin. Tarkoitettu lähinnä käytettäväksi ```<kbd>``` -tagien kanssa.
+
+Esimerkiksi pikanäppäinyhdistelmä tulostamiseen Macilla voitaisiin kirjoittaa seuraavalla tavalla:
+
+```
+<nowrap><kbd>⌘ Command</kbd>+<kbd>P</kbd></nowrap>
+```
+
+Tarkoitus on lähinnä helpottaa luettavuutta siten, että kontekstissa yhteen liittyvät asiat olisivat aina samalla rivillä. Suuria määriä sisältöä ei kuitenkaan kannata laittaa ```<nowrap>```-tagien sisään, koska se muokkaa automaattirivitystä, ja voi saada tekstiä näyttämään oudolta tai lukukelvottomalta varsinkin puhelimen ruuduilla.
+
+Monessa kontekstissa pelkkä tavallinen ```U+00A0 NO-BREAK SPACE``` riittää. Jostain syystä se ei vain toimi ```<kbd>```-tagien kanssa.
+
+#### <pop\>
+
+```<pop>```-tagi toimii vain ```shell```-admonitioneiden kanssa. Lue siitä enemmän ylempää.
 
 
