@@ -451,7 +451,7 @@ Näiden lisäksi on käytössä muutamia muita erikoismuuttujia, kuten ```$@``` 
         **C54W4KDHGK**:tol-alkeet jonrajal$ <pop>sh komento.sh argumentti toinen</pop>
         komento.sh
     
-    $0 sisältää komentosarjatiedoston nimen tai polun siinä muodossa kuin sitä kutsuttiin.
+    ```$0``` sisältää komentosarjatiedoston nimen tai polun siinä muodossa kuin sitä kutsuttiin.
 
     Eli myös seuraava on mahdollinen:
 
