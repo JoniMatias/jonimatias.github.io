@@ -103,10 +103,41 @@ eli remove file. Komento poistaa argumenttina annetun tiedoston. ```rm``` ei tee
 Kuten kaikki komentorivin poistokomennot, ```rm``` ei käytä roskakoria. Kaikki tuhotut kansiot ja tiedostot häviävät kerralla, eikä niitä voi saada takaisin. Kannattaa siis olla varovainen tämän komennon kanssa.
 
 #### mv
+[**man mv**](https://man7.org/linux/man-pages/man1/mv.1.html){ .man-link }
 
-**TODO:** mv
+!!! shell html-whitespace "bash: mv siirto"
+    **C54W4KDHGK**:tol-alkeet jonrajal$ ls<br>
+    <span class="bash-table-element bash-red"><pop>hello*</pop></span>
+    <span class="bash-table-element bash-purple">kuvia/</span>
+    <span class="bash-table-element">teksti.txt</span>
+    <span class="bash-table-element bash-purple">html-kansio/</span>
+    <span class="bash-table-element">README.txt</span>
+    <span class="bash-table-element">toinen.tx</span><br><br>
+    <b>C54W4KDHGK</b>:tol-alkeet jonrajal$ <pop>mv hello html-kansio/hello</pop><br>
+    <b>C54W4KDHGK</b>:html-kansio jonrajal$ cd html-kansio<br>
+    <b>C54W4KDHGK</b>:tol-alkeet jonrajal$ ls<br>
+    <span class="bash-table-element bash-purple">alikansio/</span>
+    <span class="bash-table-element bash-red"><pop>hello*</pop></span>
+    <span class="bash-table-element">index.html</span>
 
-eli move. Tätä komentoa voi käyttää tiedoston siirtämiseen tai uudelleen nimeämiseen. 
+eli move. Tätä komentoa voi käyttää tiedoston siirtämiseen tai uudelleen nimeämiseen. Komento tarvitsee kaksi parametria: siirrettävän tiedoston nykyisen sijainnin ja tulevan sijainnin. Komento siirtää annetun tiedoston uuteen sijaintiin uudella nimellä.
+
+!!! shell html-whitespace "bash: mv nimeäminen"
+    **C54W4KDHGK**:tol-alkeet jonrajal$ ls<br>
+    <span class="bash-table-element bash-red">hello*</span>
+    <span class="bash-table-element bash-purple">kuvia/</span>
+    <span class="bash-table-element"><pop>teksti.txt</pop></span>
+    <span class="bash-table-element bash-purple">html-kansio/</span>
+    <span class="bash-table-element">README.txt</span>
+    <span class="bash-table-element">toinen.tx</span><br><br>
+    <b>C54W4KDHGK</b>:tol-alkeet jonrajal$ <pop>mv teksti.txt selitys.txt</pop><br>
+    <b>C54W4KDHGK</b>:tol-alkeet jonrajal$ ls<br>
+    <span class="bash-table-element bash-red">hello*</span>
+    <span class="bash-table-element bash-purple">kuvia/</span>
+    <span class="bash-table-element"><pop>selitys.txt</pop></span>
+    <span class="bash-table-element bash-purple">html-kansio/</span>
+    <span class="bash-table-element">README.txt</span>
+    <span class="bash-table-element">toinen.tx</span><br>
 
 #### cp
 [**man cp**](https://man7.org/linux/man-pages/man1/cp.1.html){ .man-link }
@@ -277,6 +308,8 @@ Kahden merkin versio lisää tulosteet tiedoston perään. Tällöin kaksi perä
 
 Jos taas yrittää käyttää yhtä merkkiä ```>``` siirtämiseen, niin uuden komennon tuloste korvaa tulostetiedoston sisällön kokonaan uudella tulosteella.
 
+Tulosteenohjausmerkeillä on muitakin erilaisia muotoja, joihin ei tällä sivustolla perehdytä tarkemmin. Niistä voit lukea tarkemmin [GNU:n sivuilta](https://www.gnu.org/software/bash/manual/html_node/Redirections.html).
+
 
 ### Muita komentoja
 
@@ -362,3 +395,8 @@ Jotkin komennot vaativat käyttäjältä erikoisoikeuksia. Tällaiset toiminnot 
 Komennot siis ajetaan muodossa ```sudo komento --valinta```. Tämän jälkeen ```sudo``` kysyy vielä käyttäjän salasanaa, jos komento tarvitsee pääkäyttäjän oikeuksia. 
 
 ```sudo``` on turvallisuustoiminto nakkisormia vastaan. Se ei estä käyttäjää tekemästä mitään, mihin käyttäjällä ei olisi valmiiksi oikeuksia, eikä se rajaa käytössä olevia toimintoja pois niiltä, joiden ei sitä pitäisi tehdä. Sitä varten on erilliset käyttäjätilit ja -oikeudet. ```sudo``` suojelee käyttäjää tekemästä haitallisia toimia vahingossa. Ajatuksena on se että, jos komento vaatii ```sudo```-lisäkomennon, käyttäjän kannattaa miettiä kahdesti, ja varmistaa komennon tekevän juuri sen mitä hän haluaa sen tekevän.
+
+
+
+## Tiedostonimet ja välilyönnit 
+
