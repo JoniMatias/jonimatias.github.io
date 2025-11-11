@@ -19,7 +19,7 @@ Komentorivin käynnistäminen on helppoa. Kaikissa tietokoneissa on valmiiksi as
 
     Kun saat pääteohjelman päälle, niin eteesi pitäisi avautua mustataustainen ikkuna valkoisella tekstillä.
 
-    **TODO:** Kuva cmd.exe:stä.
+    ![](./cmd-exe-alku.png)
 
 === ":os-mac: Pääte (MacOS)"
     Helpoin tapa käynnistää *Pääte* on käyttää MacOS spotlight-toimintoa. Paina oikean yläkulman suurennuslasia (tai paina yhtä aikaa <nowrap><kbd>⌘ Command</kbd> + <kbd> Välilyönti</kbd></nowrap>), ja kirjoita ilmestyvään hakukenttään Pääte (jos koneesi on englanniksi, niin kirjoita Terminal) ja paina enteriä.
@@ -80,14 +80,35 @@ Komentorivien käyttöä varten tietokone tarvitsee kolme eri komponenttia: pä�
 
 Samoin kuin graafisen käyttöliittymän tiedostoikkunoissa, komentorivillä on yksi aktiivinen kansio kerralla auki. Käytännössä kaikki komennot suoritetaan aktiivisessa kansiossa. Graafisella ikkunalla tämän kansion sisältö näkyy kerralla, mutta komentorivillä kansion sisällön tarkasteluun tarvitaan komento :os-win:```dir``` tai :os-mac::os-linux:```ls```. Se listaa kaikki tämänhetkisen kansion tiedostot.
 
-!!! shell html-whitespace "bash: ls"
-    **C54W4KDHGK**:tol-alkeet jonrajal$ <pop>ls</pop><br>
-    <span class="bash-table-element bash-purple">html-kansio/</span>
-    <span class="bash-table-element bash-purple">kuvia/</span>
-    <span class="bash-table-element">README.txt</span>
-    <span class="bash-table-element">teksti.txt</span>
-    <span class="bash-table-element">toinen.txt</span>
-    <span class="bash-table-element">uusi.txt</span>
+=== ":os-win: Windows"
+    !!! shell "cmd.exe: dir"
+        C:\\TOL-alkeet> <pop>dir</pop>
+        Volume in drive C has no label
+        Volume Serial Number is 1286-3C3D
+
+        Directory of C:\TOL-alkeet
+
+        11.11.2025  14.37    &lt;DIR&gt;          .
+        05.11.2025  13.42    &lt;DIR&gt;          ..
+        23.09.2021  13.38            48 609 hello.exe
+        05.11.2025  13.42    &lt;DIR&gt;          html-kansio
+        05.11.2025  16.06    &lt;DIR&gt;          kuvia
+        05.11.2025  14.02                 0 README.txt
+        05.11.2025  13.59                 0 teksti.txt
+        05.11.2025  16.18    &lt;DIR&gt;          toinen
+        05.11.2025  14.00                 0 toinen.txt
+        05.11.2025  14.00                 0 uusi.txt
+                       5 File(s)         48 609 bytes
+                       5 Dir(s)  5 122 010 853 376 bytes free
+=== ":os-mac::os-linux: bash"
+    !!! shell html-whitespace "bash: ls"
+        **C54W4KDHGK**:tol-alkeet jonrajal$ <pop>ls</pop><br>
+        <span class="bash-table-element bash-purple">html-kansio/</span>
+        <span class="bash-table-element bash-purple">kuvia/</span>
+        <span class="bash-table-element">README.txt</span>
+        <span class="bash-table-element">teksti.txt</span>
+        <span class="bash-table-element">toinen.txt</span>
+        <span class="bash-table-element">uusi.txt</span>
 
 Aktiivista kansiota voi vaihtaa ```cd```-komennolla. ```cd kansion_nimi``` vaihtaa aktiivisen kansion nykyisen aktiivisen kansion alikansioon, jolla on annettu nimi. :os-win:```cd..``` tai :os-mac::os-linux:```cd ..``` (huom. välilyönti) siirtää aktiivista kansiota yhden kansiota yhden askeleen ylöspäin; nykyisen aktiivisen kansion yläkansioon.
 
