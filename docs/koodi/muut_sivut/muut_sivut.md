@@ -18,3 +18,10 @@ Nykyään on joulukalenteri kaikille kiinnostuksen kohteille, joten miksei myös
 Aina on kiva keksiä jotain omia pikkuprojekteja. Omiksi ensimmäisiksi projekteiksi ei kannata yrittää keksiä mitään uutta ja mullistavaa, vaan kokeilla kopioida jotain helppoa ja yksinkertaista. Yleensä tällaiset ovat jotain pieniä peliprojekteja, kuten miinaharava, laivanupotus tai hertta. Tällaiset pelit voi helposti toteuttaa komentorivilläkin, jos ei halua graafista ohjelmointia opetella, mutta näitä projekteja voi myös käyttää hyvänä tekosyynä opetella erilaisten kirjastojen ja moottorien käyttöä. Tällaisia ovat esimerkiksi [Qt](https://www.qt.io/), [Unity](https://unity.com/) tai [Angular](https://angular.dev/). 
 
 Hyötyohjelmat ovat yleensä monimutkaisempia, joten niiden tekeminen harrastemielessä ensimmäisen vuoden opintojen aikana on vaikeampaa. Siihen tarkoitukseen voisi kuitenkin miettiä yksinkertaisten verkkosivujen tekemistä, tietokantaa tai parseria. Verkkosivuille voisi yrittää virittää esimerkiksi oman CV:n ja tietokantaan voisi kirjoitella vaikka reseptejä.
+
+
+## ASCII-merkistö
+
+Tältä sivustolta löytyy näppärä listaus siitä, miten tietokoneet käsittelee kirjaimia, numeroita ja muita erikoismerkkejä. Pohjimmiltaan kaikki merkistöjen koodaukset periytyvät Yhdysvaltalaisesta ASCII-järjestelmästä, joten se kannattaa sisäistää.
+
+[ASCII-merkistö](../../unix/ascii.md)

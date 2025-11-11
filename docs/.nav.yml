@@ -8,6 +8,8 @@ nav:
   - Komentorivi:
     - Aloitussivu: 'unix/00-intro/00-intro.md'
     - "unix/*"
+    - "Muuta":
+      - 'unix/ascii.md'
   - Muuta:
     - Muita ideoita: 'koodi/muut_sivut/muut_sivut.md'
 

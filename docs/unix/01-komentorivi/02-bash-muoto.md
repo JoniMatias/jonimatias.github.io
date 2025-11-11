@@ -177,7 +177,7 @@ Komennon suorittamisen sijasta komentorivillä voi myös käynnistää ohjelman.
 !!! shell "bash: Hello World"
     **C54W4KDHGK**:testikansio jonrajal$ ./hello
 
-Tämän lisäksi ohjelmien suorittaminen ei eroa komentorivillä muiden komentojen suorittamisesta mitenkään. Ohjelmille annetaan argumentit, lisävalinnat ja liput samalla tavoin kuin komennoilla.
+Tämän lisäksi ohjelmien suorittaminen ei eroa komentorivillä muiden komentojen suorittamisesta mitenkään. Ohjelmille annetaan argumentit, lisävalinnat ja liput samalla tavoin kuin komennoille.
 
 ## Päätteen kontrollointi
 

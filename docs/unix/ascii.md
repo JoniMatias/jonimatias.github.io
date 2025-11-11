@@ -1,8 +1,8 @@
 # ASCII-merkistö
 
-ASCII, eli amerikkalainen vakiokoodisto tiedonvälitykseen (eng. *American standard code for information interchange*), on 1960-luvulla kehitetty tapa koodata kirjaimet numeroiksi tietokoneille. Alunperin IBM:n koneille kehitetty järjestelmä vakiinnutettiin Amerikan kansallisen standardoimisinstituutin (ANSI)toimesta hyvin pian sen kehittämisen jälkeen. 
+ASCII, eli amerikkalainen tiedonvälityksen vakiokoodisto (eng. *American standard code for information interchange*), on 1960-luvulla kehitetty tapa koodata kirjaimet numeroiksi tietokoneille. Alunperin IBM:n koneille kehitetty järjestelmä vakiinnutettiin Amerikan kansallisen standardi-instituutin (ANSI) toimesta hyvin pian sen kehittämisen jälkeen. 
 
-Taustansa takia ASCII on rakennettu englantia puhuvan maailman, ja varsinkin Yhdysvaltain ehdoilla. Mitään kansainvälistä merkistöä ei ASCII:ssa ole. Koodistossa näkyy myös historian painolasti IBM:n 1960-luvun tietokoneiden ja tulostimien ohjauskoodistona, merkeissä on paljon nykyään turhia merkkejä, joita vanhat tulostimet ovat vaatineet.
+Taustansa takia ASCII on rakennettu englantia puhuvan maailman, ja varsinkin Yhdysvaltain ehdoilla. Mitään kansainvälistä merkistöä ei ASCII:ssa ole. Koodistossa näkyy myös historian painolasti IBM:n 1960-luvun tietokoneiden ja tulostimien ohjauskoodistona; merkeissä on paljon nykypäivänä turhia merkkejä, joita vanhat tulostimet ovat vaatineet toimiakseen.
 
 
 
@@ -11,12 +11,13 @@ Taustansa takia ASCII on rakennettu englantia puhuvan maailman, ja varsinkin Yhd
 ASCII-merkistön alkupää on varattu vanhanaikaisten kirjoitus- ja tulostuskoneiden ohjausmerkeille. Iso osa näistä merkeistä on nykyään poistunut käytöstä, mutta muutamaa niistä edelleen käytetään. Tärkeimmät edelleen käytössä olevat ovat **NUL**, **BS**, **LF** ja **CR**. 
 
  - **NUL** käytetään C:ssä merkkijonojen lopetusmerkkinä.
- - **BS** on askelpalautin. Poistaa kirjoitettuja merkkejä. Näppäimistöt edelleen käyttävät tätä merkkiä askelpalauttimen kanssa,
- - **LF** on yleinen Unix-tietokoneiden rivinvaihtomerkki. Kaikissa tekstitiedostoilla käytetään **LF**-merkkiä.
+ - **BS** poistaa kirjoitettuja merkkejä. Näppäimistöt edelleen käyttävät tätä merkkiä askelpalauttimen kanssa,
+ - **LF** on yleinen Unix-tietokoneiden rivinvaihtomerkki. Kaikissa tekstitiedostoissa käytetään **LF**-merkkiä.
  - **CR** on Windows-koneilla käytössä oleva rivinvaihtomerkki. Windows-koneilla jokainen rivivaihto merkitään kahdella merkillä, **CR** ja **LF** peräkkäin.
 
 
-Alla oleva taulukko näyttää ASCII-merkistön mukaiset kirjaimet ja niiden numeerisen ilmaisun kymmenjärjestelmässä, kahdeksanjärjestelmässä (oktaali) ja kuusitoistajärjestelmässä (heksadesimaali).
+Alla oleva taulukko näyttää ASCII-merkistön mukaiset kirjaimet ja niiden numeerisen ilmaisun kymmen-, kahdeksan- (oktaali) ja kuusitoistajärjestelmässä (heksadesimaali).
+
 
 | n<sub>10</sub> | n<sub>8</sub> | n<sub>16</sub> | Lyhenne | Kuvaus                     |
 |-----|-----|-----|---------|----------------------------|
@@ -57,12 +58,12 @@ Alla oleva taulukko näyttää ASCII-merkistön mukaiset kirjaimet ja niiden num
 
 ## Tavalliset kirjainmerkit
 
-ASCII-merkistössä on kaikki englanninkielen käyttämän kirjaimet ja yleisimmät erikoismerkit. Ääkköset ja muut eurooppalaiset kirjaimet puuttuvat näiden joukosta. 
+ASCII-merkistössä on kaikki englanninkielen käyttämän kirjaimet ja yleisimmät erikoismerkit. Ääkköset ja muut eurooppalaiset kirjaimet puuttuvat näiden joukosta, puhumattakaan kyrillisistä, intialaisista tai kiinalaisista merkeistä.
 
 Jos on kiinnostunut laajemmasta määrästä kirjaimia ja siitä miten tietokoneet käsittelevät niitä, kannattaa tutustua [Unicoden standardeihin](https://en.wikipedia.org/wiki/Unicode) ja [UTF-8-koodaukseen](https://en.wikipedia.org/wiki/UTF-8). Kaikki nämä standardit ovat täysin yhteensopivia ASCII-merkistön kanssa. Näiden taulukoiden numeroarvot vastaavat myös näiden muiden standardien merkkeihin.
 
 
-Alla oleva taulukko näyttää ASCII-merkistön mukaiset kirjaimet ja niiden numeerisen ilmaisun kymmenjärjestelmässä, kahdeksanjärjestelmässä (oktaali) ja kuusitoistajärjestelmässä (heksadesimaali).
+Alla oleva taulukko näyttää ASCII-merkistön mukaiset kirjaimet ja niiden numeerisen ilmaisun kymmen-, kahdeksan- (oktaali) ja kuusitoistajärjestelmässä (heksadesimaali).
 
 | n<sub>10</sub> | n<sub>8</sub> | n<sub>16</sub> | Kuvaus                    |
 |-----|-----|-----|---------------------------|
