@@ -48,9 +48,9 @@ Komentorivin käynnistäminen on helppoa. Kaikissa tietokoneissa on valmiiksi as
 Komentorivien käyttöä varten tietokone tarvitsee kolme eri komponenttia: päätteen, tulkin ja komentokehotteen.
 
 !!! warning inline end "Windows-käyttäjille"
-    Tämä sivu käsittelee *bashia*, joka on Unix-pohjaisten käyttöjärjestelmien yleisin tulkki. Jos haluat käyttää näitä komentoja Windows-koneella, niin sinun pitää asentaa koneellesi **wsl**, eli Windows Subsystem for Linux. wsl
+    Tämä sivu käsittelee ensisijaisesti *bashia*, joka on Unix-pohjaisten käyttöjärjestelmien yleisin tulkki. Jos haluat käyttää näitä komentoja Windows-koneella, niin sinun pitää asentaa koneellesi **wsl**, eli Windows Subsystem for Linux. wsl Windowsin komentokehotteen komentoja esitetään jonkin verran tässä myös rinnakkain bashin kanssa.
     
-    Jos haluat käyttää Windowsin omaa päätettä ja tulkkia, niin sen ohjeet löytyvät [täältä](./03-peruskomennot/windows-peruskomennot.md).
+    Jos haluat käyttää Windowsin omaa päätettä ja tulkkia, niin siitä löytyy enemmän asiaa [täältä](./03-peruskomennot/windows-peruskomennot.md).
 
 **Pääte** on ohjelma, jolla voi suorittaa tekstikomentoja. Pääte joko virtualisoi vanhemman käyttöjärjestelmäympäristön, tai se on rakennettu graafisen käyttöliittymän päälle. Käyttäjälle pääte näkyy yleensä ikkunana, johon komennot kirjoitetaan. Yleensä päätteen käyttäjä voi valita mitä tulkkia pääte käyttää. Aikaisemmassa luvun ohjeet kertoivatkin miten pääte käynnistetään. :os-win: Windows-koneilla pääte on Komentokehote, :os-mac: MacOS:llä se on Pääte ja :os-linux: Ubuntulla se on Terminal.
 
