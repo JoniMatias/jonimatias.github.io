@@ -60,8 +60,7 @@ Alla oleva taulukko näyttää ASCII-merkistön mukaiset kirjaimet ja niiden num
 
 ASCII-merkistössä on kaikki englanninkielen käyttämän kirjaimet ja yleisimmät erikoismerkit. Ääkköset ja muut eurooppalaiset kirjaimet puuttuvat näiden joukosta, puhumattakaan kyrillisistä, intialaisista tai kiinalaisista merkeistä.
 
-Jos on kiinnostunut laajemmasta määrästä kirjaimia ja siitä miten tietokoneet käsittelevät niitä, kannattaa tutustua [Unicoden standardeihin](https://en.wikipedia.org/wiki/Unicode) ja [UTF-8-koodaukseen](https://en.wikipedia.org/wiki/UTF-8). Kaikki nämä standardit ovat täysin yhteensopivia ASCII-merkistön kanssa. Näiden taulukoiden numeroarvot vastaavat myös näiden muiden standardien merkkeihin.
-
+Jos on kiinnostunut laajemmasta määrästä kirjaimia ja siitä miten tietokoneet käsittelevät niitä, kannattaa tutustua [Unicoden standardeihin](https://en.wikipedia.org/wiki/Unicode) ja [UTF-8-koodaukseen](https://en.wikipedia.org/wiki/UTF-8). Kaikki nämä standardit ovat täysin yhteensopivia ASCII-merkistön kanssa. Tällä sivulla esiteltyjen taulukkojen numeroarvot vastaavat myös näiden muiden standardien merkkeihin.
 
 Alla oleva taulukko näyttää ASCII-merkistön mukaiset kirjaimet ja niiden numeerisen ilmaisun kymmen-, kahdeksan- (oktaali) ja kuusitoistajärjestelmässä (heksadesimaali).
 
