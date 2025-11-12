@@ -1,4 +1,4 @@
-# Testisivu
+# Perustiedot tietojenkäsittelyn opiskelijoille
 
 Tervetuloa Oulun yliopiston tietojenkäsittelytieteen opiskelijoiden harrastesivustolle. Täältä löytyy kaikkea kivaa, mitä alaa opiskeleva voisi haluta tietää.
 

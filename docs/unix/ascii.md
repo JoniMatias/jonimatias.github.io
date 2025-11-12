@@ -6,12 +6,12 @@ Taustansa takia ASCII on rakennettu englantia puhuvan maailman, ja varsinkin Yhd
 
 
 
-## Näkymättömän erikoismerkit
+## Näkymättömän ohjausmerkit
 
-ASCII-merkistön alkupää on varattu vanhanaikaisten kirjoitus- ja tulostuskoneiden ohjausmerkeille. Iso osa näistä merkeistä on nykyään poistunut käytöstä, mutta muutamaa niistä edelleen käytetään. Tärkeimmät edelleen käytössä olevat ovat **NUL**, **BS**, **LF**, **CR** ja **ESC**. 
+ASCII-merkistön alkupää on varattu vanhanaikaisten kirjoitus- ja tulostuskoneiden ohjausmerkeille. Iso osa näistä merkeistä on nykyään poistunut käytöstä, mutta muutama on säilyttänyt hyödyllisyytensä. Tärkeimmät edelleen käytössä olevat ovat **NUL**, **BS**, **LF**, **CR** ja **ESC**. 
 
  - **NUL**:ia käytetään C:ssä merkkijonojen lopetusmerkkinä.
- - **BS** poistaa kirjoitettuja merkkejä. Näppäimistöt edelleen käyttävät tätä merkkiä askelpalauttimen kanssa,
+ - **BS** poistaa kirjoitettuja merkkejä. Näppäimistöltä merkille löytyy edelleen nappi: askelpalautin (<nowrap><kbd>← Backspace</kbd></nowrap>), ja joissain ohjelmissa näppäimistö oikeasti tuottaakin tämän merkin.
  - **LF** on yleinen Unix-tietokoneiden rivinvaihtomerkki. Kaikissa tekstitiedostoissa käytetään **LF**-merkkiä.
  - **CR** on Windows-koneilla käytössä oleva rivinvaihtomerkki. Windows-koneilla jokainen rivivaihto merkitään kahdella merkillä, **CR** ja **LF** peräkkäin.
  - **ESC** on menettänyt merkityksensä, mutta näppäimistöllä on edelleen sille nappi. **ESC**:n alkuperäinen tarkoitus oli toimia *pakomerkkinä*, eli kertoa ettei **ESC**:iä seuraavaa merkkiä pidä lukea sen tavallisessa ASCII-merkityksessä. Nykyään vastaavassa käytössä on yleensä kenoviiva ```\```.
@@ -162,4 +162,11 @@ Alla oleva taulukko näyttää ASCII-merkistön mukaiset kirjaimet ja niiden num
 |  124|  174|   7C| \|                        |
 |  125|  175|   7D| }                         |
 |  126|  176|   7E| ~                         |
-|  127|  177|   7F| (Delete)                  |
+
+## Ylimääräiset ohjausmerkit
+
+Jostain syystä ASCII-taulukon viimeinen arvo on myös näkymätön ohjausmerkki. Todennäköisesti merkki keksittiin lisätä koodistoon vasta myöhemmin, jolloin alkupäässä ei ollut enää tilaa.
+
+| n<sub>10</sub> | n<sub>8</sub> | n<sub>16</sub> | Lyhenne | Kuvaus                     |
+|-----|-----|-----|---------|----------------------------|
+|  127|  177|   7F| DEL     | (Poista merkki nauhalta)                  |
