@@ -1,19 +1,20 @@
 # ASCII-merkistö
 
-ASCII, eli amerikkalainen tiedonvälityksen vakiokoodisto (eng. *American standard code for information interchange*), on 1960-luvulla kehitetty tapa koodata kirjaimet numeroiksi tietokoneille. Alunperin IBM:n koneille kehitetty järjestelmä vakiinnutettiin Amerikan kansallisen standardi-instituutin (ANSI) toimesta hyvin pian sen kehittämisen jälkeen. 
+ASCII, eli amerikkalainen tiedonvälityksen vakiokoodisto (eng. *American standard code for information interchange*), on 1960-luvulla kehitetty tapa koodata kirjaimet numeroiksi tietokoneille. Alunperin IBM:n koneille kehitetty järjestelmä vakiinnutettiin Yhdysvaltain kansallisen standardointijärjestö (ANSI) toimesta hyvin pian sen kehittämisen jälkeen. 
 
-Taustansa takia ASCII on rakennettu englantia puhuvan maailman, ja varsinkin Yhdysvaltain ehdoilla. Mitään kansainvälistä merkistöä ei ASCII:ssa ole. Koodistossa näkyy myös historian painolasti IBM:n 1960-luvun tietokoneiden ja tulostimien ohjauskoodistona; merkeissä on paljon nykypäivänä turhia merkkejä, joita vanhat tulostimet ovat vaatineet toimiakseen.
+Taustansa takia ASCII on rakennettu englantia puhuvan maailman, ja varsinkin Yhdysvaltojen ehdoilla. Mitään kansainvälistä merkistöä ei ASCII:ssa ole. Koodistossa näkyy myös historian painolasti IBM:n 1960-luvun tietokoneiden ja tulostimien ohjauskoodistona; merkeissä on paljon nykypäivänä turhia merkkejä, joita vanhat tulostimet ovat vaatineet toimiakseen.
 
 
 
 ## Näkymättömän erikoismerkit
 
-ASCII-merkistön alkupää on varattu vanhanaikaisten kirjoitus- ja tulostuskoneiden ohjausmerkeille. Iso osa näistä merkeistä on nykyään poistunut käytöstä, mutta muutamaa niistä edelleen käytetään. Tärkeimmät edelleen käytössä olevat ovat **NUL**, **BS**, **LF** ja **CR**. 
+ASCII-merkistön alkupää on varattu vanhanaikaisten kirjoitus- ja tulostuskoneiden ohjausmerkeille. Iso osa näistä merkeistä on nykyään poistunut käytöstä, mutta muutamaa niistä edelleen käytetään. Tärkeimmät edelleen käytössä olevat ovat **NUL**, **BS**, **LF**, **CR** ja **ESC**. 
 
- - **NUL** käytetään C:ssä merkkijonojen lopetusmerkkinä.
+ - **NUL**:ia käytetään C:ssä merkkijonojen lopetusmerkkinä.
  - **BS** poistaa kirjoitettuja merkkejä. Näppäimistöt edelleen käyttävät tätä merkkiä askelpalauttimen kanssa,
  - **LF** on yleinen Unix-tietokoneiden rivinvaihtomerkki. Kaikissa tekstitiedostoissa käytetään **LF**-merkkiä.
  - **CR** on Windows-koneilla käytössä oleva rivinvaihtomerkki. Windows-koneilla jokainen rivivaihto merkitään kahdella merkillä, **CR** ja **LF** peräkkäin.
+ - **ESC** on menettänyt merkityksensä, mutta näppäimistöllä on edelleen sille nappi. **ESC**:n alkuperäinen tarkoitus oli toimia pakomerkkinä, eli kertoa ettei **ESC**:iä seuraavaa merkkiä pidä lukea sen tavallisessa ASCII-merkityksessä. Nykyään vastaavassa käytössä on yleensä kenoviiva ```\```.
 
 
 Alla oleva taulukko näyttää ASCII-merkistön mukaiset kirjaimet ja niiden numeerisen ilmaisun kymmen-, kahdeksan- (oktaali) ja kuusitoistajärjestelmässä (heksadesimaali).
@@ -28,7 +29,7 @@ Alla oleva taulukko näyttää ASCII-merkistön mukaiset kirjaimet ja niiden num
 |    4|    4|    4| EOT     | (Lähetyksen lopetusmerkki) |
 |    5|    5|    5| ENQ     | (Pyyntö)                   |
 |    6|    6|    6| ACK     | (Vahvistus)                |
-|    7|    7|    7| BEL     | (Kello / hälytys)          |
+|    7|    7|    7| BEL     | (Äänimerkki)               |
 |    8|   10|    8| BS      | (Askelpalautin)            |
 |    9|   11|    9| HT      | (Tabulaattori)             |
 |   10|   12|    a| LF      | (Rivin vaihto)             |
@@ -47,12 +48,12 @@ Alla oleva taulukko näyttää ASCII-merkistön mukaiset kirjaimet ja niiden num
 |   23|   27|   17| ETB     | (Lähetyssivun lopetusmerkki) |
 |   24|   30|   18| CAN     | (Peruutus)                   |
 |   25|   31|   19| EM      | (Syötteen loppu)             |
-|   26|   32|   1a| SUB     | (Korvaavuus)                 |
-|   27|   33|   1b| ESC     | (Escape / Pakomerkki)        |
-|   28|   34|   1c| FS      | (Tiedostoerotin)             |
-|   29|   35|   1d| GS      | (Ryhmäerotin)                |
-|   30|   36|   1e| RS      | (Tallenne-erotin)            |
-|   31|   37|   1f| US      | (Yksikköerotin)              |
+|   26|   32|   1A| SUB     | (Korvaavuus)                 |
+|   27|   33|   1B| ESC     | (Escape / Pakomerkki)        |
+|   28|   34|   1C| FS      | (Tiedostoerotin)             |
+|   29|   35|   1D| GS      | (Ryhmäerotin)                |
+|   30|   36|   1E| RS      | (Tallenne-erotin)            |
+|   31|   37|   1F| US      | (Yksikköerotin)              |
 
 
 
@@ -76,12 +77,12 @@ Alla oleva taulukko näyttää ASCII-merkistön mukaiset kirjaimet ja niiden num
 |   39|   47|   27| '                         |
 |   40|   50|   28| (                         |
 |   41|   51|   29| )                         |
-|   42|   52|   2a| *                         |
-|   43|   53|   2b| +                         |
-|   44|   54|   2c| ,                         |
-|   45|   55|   2d| -                         |
-|   46|   56|   2e| .                         |
-|   47|   57|   2f| /                         |
+|   42|   52|   2A| *                         |
+|   43|   53|   2B| +                         |
+|   44|   54|   2C| ,                         |
+|   45|   55|   2D| -                         |
+|   46|   56|   2E| .                         |
+|   47|   57|   2F| /                         |
 |   48|   60|   30| 0                         |
 |   49|   61|   31| 1                         |
 |   50|   62|   32| 2                         |
@@ -92,12 +93,12 @@ Alla oleva taulukko näyttää ASCII-merkistön mukaiset kirjaimet ja niiden num
 |   55|   67|   37| 7                         |
 |   56|   70|   38| 8                         |
 |   57|   71|   39| 9                         |
-|   58|   72|   3a| :                         |
-|   59|   73|   3b| ;                         |
-|   60|   74|   3c| <                         |
-|   61|   75|   3d| =                         |
-|   62|   76|   3e| >                         |
-|   63|   77|   3f| ?                         |
+|   58|   72|   3A| :                         |
+|   59|   73|   3B| ;                         |
+|   60|   74|   3C| <                         |
+|   61|   75|   3D| =                         |
+|   62|   76|   3E| >                         |
+|   63|   77|   3F| ?                         |
 |   64|  100|   40| @                         |
 |   65|  101|   41| A                         |
 |   66|  102|   42| B                         |
@@ -108,12 +109,12 @@ Alla oleva taulukko näyttää ASCII-merkistön mukaiset kirjaimet ja niiden num
 |   71|  107|   47| G                         |
 |   72|  110|   48| H                         |
 |   73|  111|   49| I                         |
-|   74|  112|   4a| J                         |
-|   75|  113|   4b| K                         |
-|   76|  114|   4c| L                         |
-|   77|  115|   4d| M                         |
-|   78|  116|   4e| N                         |
-|   79|  117|   4f| O                         |
+|   74|  112|   4A| J                         |
+|   75|  113|   4B| K                         |
+|   76|  114|   4C| L                         |
+|   77|  115|   4D| M                         |
+|   78|  116|   4E| N                         |
+|   79|  117|   4F| O                         |
 |   80|  120|   50| P                         |
 |   81|  121|   51| Q                         |
 |   82|  122|   52| R                         |
@@ -124,12 +125,12 @@ Alla oleva taulukko näyttää ASCII-merkistön mukaiset kirjaimet ja niiden num
 |   87|  127|   57| W                         |
 |   88|  130|   58| X                         |
 |   89|  131|   59| Y                         |
-|   90|  132|   5a| Z                         |
-|   91|  133|   5b| [                         |
-|   92|  134|   5c| \                         |
-|   93|  135|   5d| ]                         |
-|   94|  136|   5e| ^                         |
-|   95|  137|   5f| _                         |
+|   90|  132|   5A| Z                         |
+|   91|  133|   5B| [                         |
+|   92|  134|   5C| \                         |
+|   93|  135|   5D| ]                         |
+|   94|  136|   5E| ^                         |
+|   95|  137|   5F| _                         |
 |   96|  140|   60| `                         |
 |   97|  141|   61| a                         |
 |   98|  142|   62| b                         |
@@ -140,12 +141,12 @@ Alla oleva taulukko näyttää ASCII-merkistön mukaiset kirjaimet ja niiden num
 |  103|  147|   67| g                         |
 |  104|  150|   68| h                         |
 |  105|  151|   69| i                         |
-|  106|  152|   6a| j                         |
-|  107|  153|   6b| k                         |
-|  108|  154|   6c| l                         |
-|  109|  155|   6d| m                         |
-|  110|  156|   6e| n                         |
-|  111|  157|   6f| o                         |
+|  106|  152|   6A| j                         |
+|  107|  153|   6B| k                         |
+|  108|  154|   6C| l                         |
+|  109|  155|   6D| m                         |
+|  110|  156|   6E| n                         |
+|  111|  157|   6F| o                         |
 |  112|  160|   70| p                         |
 |  113|  161|   71| q                         |
 |  114|  162|   72| r                         |
@@ -156,9 +157,9 @@ Alla oleva taulukko näyttää ASCII-merkistön mukaiset kirjaimet ja niiden num
 |  119|  167|   77| w                         |
 |  120|  170|   78| x                         |
 |  121|  171|   79| y                         |
-|  122|  172|   7a| z                         |
-|  123|  173|   7b| {                         |
-|  124|  174|   7c| |                         |
-|  125|  175|   7d| }                         |
-|  126|  176|   7e| ~                         |
-|  127|  177|   7f|                            |
+|  122|  172|   7A| z                         |
+|  123|  173|   7B| {                         |
+|  124|  174|   7C| \|                        |
+|  125|  175|   7D| }                         |
+|  126|  176|   7E| ~                         |
+|  127|  177|   7F| (Delete)                  |
