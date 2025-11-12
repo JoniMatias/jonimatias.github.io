@@ -8,6 +8,8 @@ site_dir: _site
 copyright: Creative Commons Attribution Non Commercial
 theme:
   name: material
+  logo: assets/hex-logo-valkoinen.svg
+  favicon: assets/hex-logo.png
   # see https://squidfunk.github.io/mkdocs-material/getting-started/#color-palette
   custom_dir: overrides
   palette:
