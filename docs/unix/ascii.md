@@ -14,7 +14,7 @@ ASCII-merkistön alkupää on varattu vanhanaikaisten kirjoitus- ja tulostuskone
  - **BS** poistaa kirjoitettuja merkkejä. Näppäimistöt edelleen käyttävät tätä merkkiä askelpalauttimen kanssa,
  - **LF** on yleinen Unix-tietokoneiden rivinvaihtomerkki. Kaikissa tekstitiedostoissa käytetään **LF**-merkkiä.
  - **CR** on Windows-koneilla käytössä oleva rivinvaihtomerkki. Windows-koneilla jokainen rivivaihto merkitään kahdella merkillä, **CR** ja **LF** peräkkäin.
- - **ESC** on menettänyt merkityksensä, mutta näppäimistöllä on edelleen sille nappi. **ESC**:n alkuperäinen tarkoitus oli toimia pakomerkkinä, eli kertoa ettei **ESC**:iä seuraavaa merkkiä pidä lukea sen tavallisessa ASCII-merkityksessä. Nykyään vastaavassa käytössä on yleensä kenoviiva ```\```.
+ - **ESC** on menettänyt merkityksensä, mutta näppäimistöllä on edelleen sille nappi. **ESC**:n alkuperäinen tarkoitus oli toimia *pakomerkkinä*, eli kertoa ettei **ESC**:iä seuraavaa merkkiä pidä lukea sen tavallisessa ASCII-merkityksessä. Nykyään vastaavassa käytössä on yleensä kenoviiva ```\```.
 
 
 Alla oleva taulukko näyttää ASCII-merkistön mukaiset kirjaimet ja niiden numeerisen ilmaisun kymmen-, kahdeksan- (oktaali) ja kuusitoistajärjestelmässä (heksadesimaali).
@@ -38,7 +38,7 @@ Alla oleva taulukko näyttää ASCII-merkistön mukaiset kirjaimet ja niiden num
 |   13|   15|    d| CR      | (Kelkan palautus)          |
 |   14|   16|    e| SO      | (Värinauhan poisto)        |
 |   15|   17|    f| SI      | (Värinauhan syöttö)        |
-|   16|   20|   10| DLE     | Data Link Escape           |
+|   16|   20|   10| DLE     | (Verkon yli lähetettävä pakomerkki)    |
 |   17|   21|   11| DC1     | Device Control yksi        |
 |   18|   22|   12| DC2     | Device Control kaksi       |
 |   19|   23|   13| DC3     | Device Control kolme       |
@@ -46,9 +46,9 @@ Alla oleva taulukko näyttää ASCII-merkistön mukaiset kirjaimet ja niiden num
 |   21|   25|   15| NAK     | Kielteinen vahvistus       |
 |   22|   26|   16| SYN     | (Yhtäaikaisen kommunikaation täytemerkki) |
 |   23|   27|   17| ETB     | (Lähetyssivun lopetusmerkki) |
-|   24|   30|   18| CAN     | (Peruutus)                   |
+|   24|   30|   18| CAN     | (Komennon peruutus)          |
 |   25|   31|   19| EM      | (Syötteen loppu)             |
-|   26|   32|   1A| SUB     | (Korvaavuus)                 |
+|   26|   32|   1A| SUB     | (Täytemerkki)                |
 |   27|   33|   1B| ESC     | (Escape / Pakomerkki)        |
 |   28|   34|   1C| FS      | (Tiedostoerotin)             |
 |   29|   35|   1D| GS      | (Ryhmäerotin)                |
