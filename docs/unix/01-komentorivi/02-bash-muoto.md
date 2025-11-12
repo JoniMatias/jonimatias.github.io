@@ -49,7 +49,7 @@ Joillekin komennoille voi antaa tarkentavia käskyjä. Näitä voivat olla mm. k
  
  
 !!! shell html-whitespace "bash: ls -A"
-    **C54W4KDHGK**:jonimatias.github.io jonrajal$ <pop>ls -A</pop>
+    **C54W4KDHGK**:jonimatias.github.io jonrajal$ <pop>ls -A</pop><br>
     <span class="bash-table-element bash-purple">_site/</span>
     <span class="bash-table-element bash-purple">.github/</span>
     <span class="bash-table-element bash-purple">.vscode/</span>
