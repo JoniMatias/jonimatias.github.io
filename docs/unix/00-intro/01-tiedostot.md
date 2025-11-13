@@ -36,7 +36,7 @@ Koska tiedostopäätteet ovat vain osa tiedoston nimeä, niitä voi olla käytä
 
 | Tiedostopääte | Käyttötarkoitus                                                                                         |
 |---------------|---------------------------------------------------------------------------------------------------------|
-| .exe          | Windows-koneiden käyttämä tunniste suoritettavilla tiedostoille, eli ohjelmille.                        |
+| .exe          | Windows-koneiden käyttämä tunniste suoritettaville tiedostoille, eli ohjelmille.                        |
 | .txt          | Yksinkertainen tekstitiedosto. Sisältää vain tekstiä yksinkertaisella koodauksella.                     | 
 | .csv          | Yksinkertainen taulukkotiedosto. Käytännössä .txt-tiedosto, jossa taulukon solut on eroteltu pilkuilla. |
 | .jpg          | Yleisin kuvatiedoston muoto. Käyttää suhteellisen tehokasta pakkausalgoritmiä.                          |
@@ -129,13 +129,13 @@ Esimerkiksi testikoneella tol-alkeet -kansio on löytyy polusta ```/Users/jonraj
     :os-win: %userprofile%\\opetus\\tol-alkeet\\kuvia\\kuva-02.jpg<br>
     :os-mac::os-linux: ~/Koodi/opetus/tol-alkeet/kuvia/kuva-02.jpg
 
-Unix-pohjaisissa käyttöjärjestelmissä polun voi kirjoittaa myös suhteessa koneelle kirjautuneen käyttäjän kotihakemistoon. Jos polku alkaa aaltoviivalla ```~```, niin kyseessä on polku suhteessa käyttäjän kotihakemistoon.
+:os-mac::os-linux: Unix-pohjaisissa käyttöjärjestelmissä polun voi kirjoittaa myös suhteessa koneelle kirjautuneen käyttäjän kotihakemistoon. Jos polku alkaa aaltoviivalla ```~```, niin kyseessä on polku suhteessa käyttäjän kotihakemistoon.
 
 Tällaisella polulla on kaksi käyttötapausta. Yleisin hyöty on vain kirjoittamisen vähentäminen. On paljon helpompaa kirjoittaa ```~/Koodi/opetus/tol-alkeet```, kuin ```/Users/jonrajal/Koodi/opetus/tol-alkeet```. Unix-koneissa lähes kaikki käyttäjän tarvitsemat tiedostot ovat kuitenkin jossain kotihakemiston alihakemistoissa, joten polku on näppärämpi kirjoittaa lyhyemmässä muodossa.
 
 Toinen hyöty tällaisesta kirjoitusasusta on koneilla, joille voi kirjautua useita eri käyttäjiä eri käyttäjätileillä. Jos ohjelma tai [komentosarja](../01.2-komentorivin-jatkoa/02-komentosarjat/index.md) haluaa tallentaa, joka käyttäjälle eri tiedot tai ladata jotain käyttäjäkohtaisia tiedostoja, ohjelman ei tarvitse käyttää eri polkua jokaiselle eri käyttäjälle. ```~``` on aina aktiivisen käyttäjän kotihakemisto.
 
-Windows-koneilla on vastaavanlainen polkuoikotie: ```%userprofile%```. Sitä ei kuitenkaan käytetä läheskään yhtä usein sen pituuden vuoksi.
+:os-win: Windows-koneilla on vastaavanlainen polkuoikotie: ```%userprofile%```. Sitä ei kuitenkaan käytetä läheskään yhtä usein sen pituuden vuoksi. Windows myös oletuksena estää suoraan käyttäjähakemistoon tallentamisen ja muokkaamisen, jolloin siihen viittaaminen on ei ole yhtä hyödyllistä Windowsilla. 
 
 #### Suhteessa aktiiviseen kansioon { #aktiivinen-polku }
 

@@ -61,7 +61,7 @@ Komentorivien käyttöä varten tietokone tarvitsee kolme eri komponenttia: pä�
 ### Kehotteen muotoja
 
 === ":os-win: cmd.exe"
-    Windowsin komentorivitulkin kehotteessa näytetään vain [absoluuttinen polku](../00-intro/01-tiedostot.md#taysi-eli-absoluuttinen-polku) aktiiviseen kansioon.
+    Windowsin komentorivitulkin kehotteessa näytetään vain [absoluuttinen polku](../00-intro/01-tiedostot.md#täysi-eli-absoluuttinen-polku) aktiiviseen kansioon.
     !!! shell "cmd.exe"
         C:\Windows\System32>
     

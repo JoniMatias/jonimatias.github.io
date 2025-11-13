@@ -183,7 +183,7 @@ Silmukoita on kahdenlaisia *bashissa*. Niiden rakenteet ovat seuraavanlaisia:
 
     Yllä oleva komento käy kaikki kansion tiedostot (```*.*```) läpi, ja tulostaa jokaisen tiedoston nimen (```echo $tiedosto```), sisällön (```cat $tiedosto```) ja jokaisen tiedoston lopuksi tyhjän rivin (```echo ```). Jokainen erillinen komento erotetaan tässä tapauksessa puolipisteellä, mutta myös rivinvaihdot, eli enter-näppäimen painallukset, ovat sallittuja puolipisteiden sijasta.
 
-    Huomaa, että [tol-alkeet kansiorakenteessa](../../00-intro/01-tiedostot.md#hakemistorakenne) ei ole tiedostoja, joiden nimessä on välilyönti. Yllä oleva komento toimii sen takia täysin oikein. Välilyönnillisten tiedostonimien kanssa täytyy kuitenkin käyttää lainausmerkkejä (```"``` ) muuttujan nimen ympärille (```"$tiedosto"```), jottei kääntäjä mene sekaisin. Ilman lainausmerkkejä komennot etsisivät vain tiedostoa, joka vastaa tiedonstonnimen ensimmäiseen sanaan, ja sellaista tiedostoa tuskin kansiosta löytyy. Asiasta löytyy lisää [*bash*-peruskomentoja käsittelevästä osiosta](../../01-komentorivi/03-peruskomennot/bash-peruskomennot.md#tiedostonimet-ja-valilyonnit).
+    Huomaa, että [tol-alkeet kansiorakenteessa](../../00-intro/01-tiedostot.md#hakemistorakenne) ei ole tiedostoja, joiden nimessä on välilyönti. Yllä oleva komento toimii sen takia täysin oikein. Välilyönnillisten tiedostonimien kanssa täytyy kuitenkin käyttää lainausmerkkejä (```"``` ) muuttujan nimen ympärille (```"$tiedosto"```), jottei kääntäjä mene sekaisin. Ilman lainausmerkkejä komennot etsisivät vain tiedostoa, joka vastaa tiedonstonnimen ensimmäiseen sanaan, ja sellaista tiedostoa tuskin kansiosta löytyy. Asiasta löytyy lisää [*bash*-peruskomentoja käsittelevästä osiosta](../../01-komentorivi/03-peruskomennot/bash-peruskomennot.md#tiedostonimet-ja-välilyönnit).
 
 
 
@@ -431,7 +431,7 @@ Kannattaa kuitenkin huomioida se, että graafisen käyttöliittymän puolelta su
 
 ### Komentosarjan argumentit
 
-Koska komentosarjoja suoritetaan samalla tavalla kuin muitakin komentoja, komentosarjoille voi antaa [argumentteja ja valintoja](../../01-komentorivi/02-bash-muoto.md#argumentit-lisavalinnat-ja-liput) kuten tavallisesti. Annettujen lisävalintojen käyttö standardien mukaisesti on hiukan vaikeaa, mutta jos haluaa lukea kaiken pelkkinä argumentteina, niin elämä on suhteellisen helppoa. 
+Koska komentosarjoja suoritetaan samalla tavalla kuin muitakin komentoja, komentosarjoille voi antaa [argumentteja ja valintoja](../../01-komentorivi/02-bash-muoto.md#argumentit-lisävalinnat-ja-liput) kuten tavallisesti. Annettujen lisävalintojen käyttö standardien mukaisesti on hiukan vaikeaa, mutta jos haluaa lukea kaiken pelkkinä argumentteina, niin elämä on suhteellisen helppoa. 
 
 Komentosarjat saavat jokaisen sille annetun argumentin erikoismuuttujina. Näiden erikoismuuttujien arvot saa luettua tekstimuotoisina numeroiduista muuttujista ```$0```, ```$1```, ```$2```, ```$3``` jne. Muuttujan numero kertoo, kuinka mones argumentti oli.
 

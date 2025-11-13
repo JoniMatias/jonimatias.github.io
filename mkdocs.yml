@@ -30,6 +30,8 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/vega-embed@6
 extra_css:
   - style.css
+  - style-shell.css
+  - style-tabbed-shell.css
 
 
 markdown_extensions:
@@ -53,6 +55,9 @@ markdown_extensions:
       guess_lang: false
   - toc:
       permalink: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
   - pymdownx.superfences:
       custom_fences:
         - name: vegalite

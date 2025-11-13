@@ -147,24 +147,6 @@ p > code {
     display: block;
 }
 
-.admonition:hover pop {
-  color: rgb(51, 57, 52);
-  font-weight: bold;
-  background-color: greenyellow;
-}
-
-.admonition:hover .bash-red pop {
-  color: rgb(51, 57, 52);
-  font-weight: bold;
-  background-color: rgb(239, 47, 85);
-}
-
-.admonition:hover .bash-purple pop {
-  color: rgb(51, 57, 52);
-  font-weight: bold;
-  background-color: rgb(212, 24, 212);
-}
-
 .md-typeset .tabbed-labels {
   border-width: 1mm;
   border-top-left-radius: 3mm;
@@ -172,6 +154,11 @@ p > code {
   background-color: #ccf1f9;
   padding: 2mm;
 }
+
+.md-typeset .twemoji {
+  break-after: avoid;
+}
+
 
 .md-typeset .tabbed-content {
   border-width: 1mm;
@@ -208,36 +195,3 @@ a.md-button[href*="//"]:not([href*="jonimatias.github.io"]) {
 
 
 
-
-
-:root {
-  --md-admonition-icon--shell: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm0-80h640v-400H160v400Zm140-40-56-56 103-104-104-104 57-56 160 160-160 160Zm180 0v-80h240v80H480Z"/></svg>')
-}
-.md-typeset .admonition.shell,
-.md-typeset details.shell {
-  border-color: rgb(51, 57, 52);
-  background-color: rgb(51, 57, 52);
-}
-.md-typeset .shell > .admonition-title,
-.md-typeset .shell > summary {
-  background-color:  rgb(77, 90, 79);
-  border-color: rgb(51, 57, 52);
-  color:greenyellow;
-}
-.md-typeset .shell > .admonition-title::before,
-.md-typeset .shell > summary::before {
-  background-color: greenyellow;
-  -webkit-mask-image: var(--md-admonition-icon--shell);
-          mask-image: var(--md-admonition-icon--shell);
-}
-
-.md-typeset .shell > :not(.admonition-title) {
-  color: greenyellow;
-  font-family: "Source Code Pro", monospace;
-  font-optical-sizing: auto;
-  white-space: pre-wrap;
-}
-
-.md-typeset .shell.html-whitespace > :not(.admonition-title) {
-  white-space: normal;
-}

@@ -15,7 +15,7 @@ Windowsin tavallinen komentotulkki on *cmd.exe*. Sen käyttämät peruskomennot 
     **C54W4KDHGK**:jonimatias.github.io jonrajal$ <pop>pwd</pop>
     /Users/jonrajal/Koodi/web/jonimatias.github.io
 
-eli print working directory. Näyttää aktiivisen kansion sijainnin [absoluuttisena polkuna](../../00-intro/01-tiedostot.md#taysi-eli-absoluuttinen-polku), eli reittinä tiedostojärjestelmän juuresta kansio kerrallaan aktiiviseen kansioon. Absoluuttinen polku eroaa sen kumppanista suhteellisesta polusta siten, että suhteellinen polku on aina suhteessa johonkin: yleensä joko aktiiviseen kansioon tai kotihakemistoon.
+eli print working directory. Näyttää aktiivisen kansion sijainnin [absoluuttisena polkuna](../../00-intro/01-tiedostot.md#täysi-eli-absoluuttinen-polku), eli reittinä tiedostojärjestelmän juuresta kansio kerrallaan aktiiviseen kansioon. Absoluuttinen polku eroaa sen kumppanista suhteellisesta polusta siten, että suhteellinen polku on aina suhteessa johonkin: yleensä joko aktiiviseen kansioon tai kotihakemistoon.
 
 
 #### ls 
