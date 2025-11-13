@@ -8,7 +8,7 @@ Jokaisella tietokoneella on ympäristömuuttujia. Nämä ovat tietokoneen taltee
 
 Osaa ympäristömuuttujista ei välttämättä edes voi muokata, sillä käyttöjärjestelmä muokkaa niiden sisältöä automaattisesti ja itsekseen. Tällaisia ovat mm. <nowrap>:os-mac::os-linux: *bashin*</nowrap> muuttujat ```PWD``` ja ```OLDPWD```, joihin on tallennettu päätteen tämänhetkinen aktiivinen kansio ja edellinen aktiivinen kansio.
 
-Ympäristömuuttujia käytetään aivan kuten tavallisia [muuttujia](02-komentosarjat/02-bash_script.md#muuttujat). Käytön kannalta niillä ei ole suurta ja merkittävää eroa, kunhan vain muistaa, että monet muutkin ohjelmat, jopa ne jotka ovat ennakkoasennettu koneelle, käyttävät ympäristömuuttujia omaan toimintaansa.
+Ympäristömuuttujia käytetään aivan kuten tavallisia [muuttujia](02-komentosarjat/02-bash_script.md#muuttujat). Toiminnan kannalta ne itseasiassa ovat samoja asioita; ne tallennetaan samaan paikkaan ja niitä luetaan samalla tavalla. Ympäristömuuttujissa on vain se jippo, että monet muutkin ohjelmat, jopa ne jotka ovat ennakkoasennettu koneelle, käyttävät ympäristömuuttujia omaan toimintaansa. Satunnaiset itse nimetyt muuttujat tuskin vaikuttavat muiden ohjelmien toimintaan merkittävästi.
 
 Alla on lista muutamasta yleisimmästä ympäristömuuttujasta:
 
@@ -137,31 +137,31 @@ Ongelmia tulee kuitenkin, jos ympäristömuuttujaa yrittää muokata esimerkin m
 
     Avaimia on myös enemmän, joten komentorivistä saa melko helposti haluamansa näköisen. Varsinkin hakasulkuavaimien (```\[``` ja ```\]```) väliin voi laittaa erikoismerkkejä, jotka muuttavat toimintaa merkittävästi.
 
-    Alla muutama esimerkkipääte.
+    ??? info "Muutama esimerkkipääte"
 
-    ```
-    PS1="[\d \t \u@\h:\w ] $ "
-    ``` 
-    !!! shell "bash: PS1="[\d \t \u@\h:\w ] $ "
-        [To Mar 13 20:11:32 jonrajal@C54W4KDHGK:~ ] $
-    -------
-    ```
-    PS1="\u@\h:\w\$ "
-    ```
-    !!! shell "bash: PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ ""
-        jonrajal@C54W4KDHGK:~/Koodi/opetus/tol-alkeet/kuvia$
-    -------
-    ```
-    PS1="Tämä on pääte > "
-    ```
-    !!! shell "bash: PS1=\"Tämä on pääte\""
-        Tämä on pääte > 
-    -------
-    ```
-    PS1="$PWD> "
-    ```
-    !!! shell "bash: PS1=$PWD"
-        /Users/jonrajal> 
+        ```
+        PS1="[\d \t \u@\h:\w ] $ "
+        ``` 
+        !!! shell "bash: PS1="[\d \t \u@\h:\w ] $ "
+            [To Mar 13 20:11:32 jonrajal@C54W4KDHGK:~ ] $
+        -------
+        ```
+        PS1="\u@\h:\w\$ "
+        ```
+        !!! shell "bash: "\u@\h:\w\$ ""
+            jonrajal@C54W4KDHGK:~/Koodi/opetus/tol-alkeet/kuvia$
+        -------
+        ```
+        PS1="Tämä on pääte > "
+        ```
+        !!! shell "bash: PS1=\"Tämä on pääte\""
+            Tämä on pääte > 
+        -------
+        ```
+        PS1="$PWD> "
+        ```
+        !!! shell "bash: PS1=$PWD"
+            /Users/jonrajal> 
 
 
 ## Päätteen käynnistystiedostot
@@ -189,11 +189,26 @@ Näitä varten komentotulkit käyttävät käynnistystiedostoja. Nämä käynnis
 
 ### Alias
 
-Käynnistystiedostot ovat näppäriä paikkoja kirjoittaa aikaisemmin esitellyt [PATHin lisäykset](#path) ja [kehotteen muotoilut](#kehotteen-muokkaus), mutta niitä voi käyttää myös muuhun. Toinen yleinen tarkoitus niille on esitellä ```alias```-komennot: vaihtoehtoiset nimet kutsua komentoja. 
+Käynnistystiedostot ovat näppäriä paikkoja kirjoittaa aikaisemmin esitellyt [PATHin lisäykset](#path) ja [kehotteen muotoilut](#kehotteen-muokkaus), mutta niitä voi käyttää myös muuhun. Toinen yleinen tarkoitus niille on esitellä komentojen synonyymeja tai pienoiskomentoja. Tapoja kirjoittaa lyhenteitä monimutkaisemmille komennoille.
 
-```alias``` luo uuden avainsanan komentoriville, joka aina kirjoitettaessa laajenee annettuun merkitykseensä. Esimerkiksi ```alias vaihdakansio=cd``` luo käyttäjälle uuden komennon nimeltä ```vaihdakansio```, joka toimii kuin ```cd```.
+=== ":os-win: Windows doskey"
+    **TODO** doskey
 
-Toinen näppärä käyttö aliaksille on muuttaa olemassa olevia komentoja toimimaan haluamallaan tavalla. Esimerkiksi komento ```alias ls='ls -GFh'``` muuttaa ```ls```-komennon toiminnan siten, että siinä on aina liput ```-GHf``` päällä.
+=== ":os-mac::os-linux: bash alias"
+
+    *Bashilla* pienoiskomennot saa luotua ```alias```-komennolla.
+
+    ```alias``` luo uuden avainsanan komentoriville, joka aina kirjoitettaessa laajenee annettuun merkitykseensä. Esimerkiksi ```alias vaihdakansio=cd``` luo käyttäjälle uuden komennon nimeltä ```vaihdakansio```, joka toimii kuin ```cd```.
+
+    !!! shell "bash: alias vaihdakansio=cd"
+        **C54W4KDHGK**:tol-alkeet jonrajal$ <pop>alias vaihdakansio=cd</pop>
+        **C54W4KDHGK**:tol-alkeet jonrajal$ pwd
+        /Users/jonrajal/Koodi/opetus/tol-alkeet
+        **C54W4KDHGK**:tol-alkeet jonrajal$ <pop>vaihdakansio kuvia</pop>
+        **C54W4KDHGK**:kuvia jonrajal$ pwd
+        /Users/jonrajal/Koodi/opetus/tol-alkeet/kuvia
+
+    Toinen näppärä käyttö aliaksille on muuttaa olemassa olevia komentoja toimimaan haluamallaan tavalla. Esimerkiksi komento ```alias ls='ls -GFh'``` muuttaa ```ls```-komennon toiminnan siten, että siinä on aina liput ```-GFh``` päällä.
 
 
 
