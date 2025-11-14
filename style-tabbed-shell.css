@@ -1,0 +1,56 @@
+/*
+Tässä tiedostossa on yritys rakentaa välilehdellinen shell. Työ on vielä jokseenkin kesken.
+
+Tarkoitus olisi, että syntaksi menisi jotenkin näin:
+
+!!! shell "otsikko"
+    === "1. välilehden otsikko"
+        Sisältöä
+    === "2. välilehden otsikko"
+        Sisältöä
+*/
+
+.md-typeset .shell .tabbed-content {
+  background-color: var(--shell-background-color);
+  display:flow-root;
+}
+
+.md-typeset .shell .tabbed-content .tabbed-block {
+  margin-top: 2px;
+  text-align: start;
+}
+
+.md-typeset .shell .tabbed-content .tabbed-block p {
+  margin-top: 0px;
+  text-align: start;
+}
+
+.md-typeset .shell .tabbed-labels {
+  margin-top: -21px;
+  margin-left: -8px;
+  padding-bottom: 0px;
+  background-color: transparent;
+}
+
+.md-typeset .shell .tabbed-labels label {
+  background-color: var(--shell-header-background-color);
+  color: rgb(141, 167, 41);
+  font-weight: normal;
+}
+
+.md-typeset .shell .tabbed-set>input:first-child:checked~.tabbed-content>:first-child,
+.md-typeset .shell .tabbed-set>input:nth-child(2):checked~.tabbed-content>:nth-child(2),
+.md-typeset .shell .tabbed-set>input:nth-child(2):checked~.tabbed-content>:nth-child(3),
+.md-typeset .shell .tabbed-set>input:nth-child(2):checked~.tabbed-content>:nth-child(4) {
+  display:flow-root;
+}
+
+
+.md-typeset .shell .tabbed-set>input:first-child:checked~.tabbed-labels>:first-child,
+.md-typeset .shell .tabbed-set>input:nth-child(2):checked~.tabbed-labels>:nth-child(2),
+.md-typeset .shell .tabbed-set>input:nth-child(2):checked~.tabbed-labels>:nth-child(3),
+.md-typeset .shell .tabbed-set>input:nth-child(2):checked~.tabbed-labels>:nth-child(4) {
+  background-color: var(--shell-header-background-color);
+  color: var(--shell-text-color);
+  font-weight: bold;
+}
