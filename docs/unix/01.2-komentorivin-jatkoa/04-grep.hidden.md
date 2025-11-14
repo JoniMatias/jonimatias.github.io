@@ -14,4 +14,6 @@
 
 
 
-
+more less
+locate whereis
+pbcopy pbpaste

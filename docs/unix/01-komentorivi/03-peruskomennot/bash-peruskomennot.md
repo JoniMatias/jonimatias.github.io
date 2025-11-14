@@ -107,7 +107,7 @@ Kuten kaikki komentorivin poistokomennot, ```rm``` ei käytä roskakoria. Kaikki
 
 !!! shell html-whitespace "bash: mv siirto"
     **C54W4KDHGK**:tol-alkeet jonrajal$ ls<br>
-    <span class="bash-table-element bash-red"><pop>hello*</pop></span>
+    <span class="bash-table-element bash-red"><pop>hello\*</pop></span>
     <span class="bash-table-element bash-purple">kuvia/</span>
     <span class="bash-table-element">teksti.txt</span>
     <span class="bash-table-element bash-purple">html-kansio/</span>

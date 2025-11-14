@@ -38,9 +38,9 @@ Jokainen sääntö tarvitsee vain kolme asiaa: nimen, ehdon ja toiminnan.
 
 ### Sähköpostin uudelleenohjaus
 
-Yksi yleinen sähköpostiautomaatio on sähköpostin uudelleen ohjaus, eli osan tai kaikkien vastaanotettujen sähköpostien lähettäminen toiseen osoitteeseen. Se on käytännöllinen, jos itsellä on käytössä useampia sähköpostiosoitteita, joita kaikkia ei jaksa seurata. Tällöin harvemmin käytössä olevasta osoitteesta voi ohjata kaiken postin yleisemmin käytössä olleeseen osoitteeseen, josta näitä voi lukea.
+Yksi yleinen sähköpostiautomaatio on sähköpostin uudelleen ohjaus, eli osan tai kaikkien vastaanotettujen sähköpostien lähettäminen toiseen osoitteeseen. Se on käytännöllinen, jos itsellä on käytössä useampia sähköpostiosoitteita, joita kaikkia ei jaksa seurata. Tällöin harvemmin käytössä olevasta osoitteesta voi ohjata kaiken postin yleisemmin käytössä olleeseen osoitteeseen, josta kaikki viestit voi lukea.
 
-Yliopisto-opiskelijana tämä voi olla käytännöllinen ominaisuus, jos sinulla on jo käytössä oma henkilökohtainen sähköposti. Jos ohjaat kaiken yliopiston opiskelijasähköpostiin tulleen viestit itsellesi, niin sinun ei tarvitse seurata yliopiston postilaatikkoa erikseen.
+Yliopisto-opiskelijana tämä voi olla käytännöllinen ominaisuus, jos sinulla on jo käytössä oma henkilökohtainen sähköposti. Jos ohjaat kaiken yliopiston opiskelijasähköpostiin tulleet viestit itsellesi, niin sinun ei tarvitse seurata yliopiston postilaatikkoa erikseen.
 
 Yliopiston sähköpostissa uudelleenohjauksen voi luoda säännöillä.
 
