@@ -10,7 +10,7 @@ Jokaisella tietokoneella on ympäristömuuttujia. Nämä ovat tietokoneen taltee
 
 Osaa ympäristömuuttujista ei välttämättä kannata tai voi muokata, sillä käyttöjärjestelmä muokkaa niiden sisältöä automaattisesti ja itsekseen. Tällaisia ovat mm. <nowrap>:os-mac::os-linux: *bashin*</nowrap> muuttujat ```PWD``` ja ```OLDPWD```, joihin on tallennettu päätteen tämänhetkinen aktiivinen kansio ja edellinen aktiivinen kansio.
 
-Ympäristömuuttujia käytetään aivan kuten tavallisia [muuttujia](02-komentosarjat/02-bash_script.md#muuttujat). Toiminnan kannalta ne itseasiassa ovat samoja asioita; ne tallennetaan samaan paikkaan ja niitä luetaan samalla tavalla. Ympäristömuuttujissa on vain se jippo, että monet muutkin ohjelmat, jopa ne jotka ovat ennakkoasennettu koneelle, käyttävät ympäristömuuttujia omaan toimintaansa. Satunnaiset itse nimetyt muuttujat tuskin vaikuttavat muiden ohjelmien toimintaan merkittävästi.
+Ympäristömuuttujia käytetään aivan kuten tavallisia [muuttujia](02-komentosarjat/02-bash_script.md#muuttujat). Toiminnan kannalta ne itseasiassa ovat samoja asioita; ne tallennetaan samaan paikkaan ja niitä luetaan samalla tavalla. Ympäristömuuttujissa on vain se jippo, että monet muutkin ohjelmat, jopa ne jotka ovat ennakkoasennettu koneelle, käyttävät ympäristömuuttujia omaan toimintaansa. Itse nimettyjen muuttujien kanssa voi luottaa siihen, etteivät ne sekoita muiden ohjelmien toimintaan merkittävästi.
 
 Alla on lista muutamasta yleisimmästä ympäristömuuttujasta:
 
@@ -101,7 +101,7 @@ Ongelmia tulee kuitenkin, jos ympäristömuuttujaa yrittää muokata esimerkin m
     export PATH=$PATH:/täysi/polku/omaan/kansioon
     ```
 
-    Tämä on lähes sama komento kuin komentorivillekin annettu, mutta alussa on lisäksi avainsana ```export```. Tämä siksi, koska .bash_profile on [komentosarjatiedosto](02-komentosarjat/02-bash_script.md#bash-komentosarjat). Komentosarjojen muokkaamat muuttujat tavallisesti jäävät vain komentosarjan sisäiseksi muutokseksi. Komento ```export``` laajentaa muuttujan muutoksen koko päätteelle näkyväksi.
+    Tämä on lähes sama komento kuin komentorivillekin kirjoitettaessa, mutta alussa on lisäksi avainsana ```export```. Tämä avainsana lisätään, koska ```.bash_profile``` on [komentosarjatiedosto](02-komentosarjat/02-bash_script.md#bash-komentosarjat). Komentosarjojen muokkaamat muuttujat tavallisesti jäävät vain komentosarjan sisäiseksi muutokseksi. Komento ```export``` laajentaa muuttujan muutoksen koko päätteelle näkyväksi.
 
     Voit lukea lisää ```.bash_profile```-tiedoston muokkaamisesta ja avaamista [alta](#päätteen-käynnistystiedostot), mutta helppo tapa lisätä tiedostoon uusi rivi on käyttää [tulosteenohjausmerkkejä](../01-komentorivi/03-peruskomennot/bash-peruskomennot.md#tuloste-tiedostoon). 
 

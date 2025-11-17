@@ -33,7 +33,7 @@ Komentorivi muistaa kaikki sille asetetut muuttujat niin kauan kun pääte on p�
 
 Kaikki käyttöjärjestelmät ja tulkit tukevat myös yleisiä oletusmuuttujia, joihin on asetettu arvo jo heti käyttöjärjestelmän tai tulkin käynnistyessä. Näitä kutsutaan [ympäristömuuttujiksi](../03-environment.md). Nämä muuttujat on kertovat käyttöjärjestelmän tilasta ja sen asetuksista. Yksi yleisimmistä näistä on [```PATH```](../03-environment.md#path), joka listaa kaikki kansiot, joista komentorivitulkki etsii suoritettavia komentoja ja ohjelmia.
 
-Jos muuttujia haluaa käsitellä numeroina, ja käyttää niitä osana matemaattisia lausekkeita, lausekkeet pitää kääriä kaksien sulkeiden sisään. Näiden sulkeiden sisällä muuttujalle voi tehdä tavallisten sijoitus- ja laskuoperaatioiden lisäksi vertailuoperaatioita. Kaksoissulkeita käyttäessä dollarimerkki (```$```) ei ole tarpeellinen muuttujan arvoon viitatessa. Ainakin seuraavan operaatiot ovat mahdollisia:
+Jos muuttujia haluaa käsitellä numeroina, ja käyttää niitä osana matemaattisia lausekkeita, lausekkeet pitää kääriä kaksien sulkeiden (```((``` ja ```))```) sisään. Näiden sulkeiden sisällä muuttujalle voi tehdä tavallisten sijoitus- ja laskuoperaatioiden lisäksi vertailuoperaatioita. Kaksoissulkeita käyttäessä dollarimerkki (```$```) ei ole tarpeellinen muuttujan arvoon viitatessa. Ainakin seuraavan operaatiot ovat mahdollisia:
 
 | Operaattori    |  Toiminto                       | Esimerkki           |
 |----------------|---------------------------------|---------------------|
@@ -52,7 +52,7 @@ Jos muuttujia haluaa käsitellä numeroina, ja käyttää niitä osana matemaatt
 | &&             | Looginen **ja**                 | ((i>0 && i<100))    |
 | \|\|           | Looginen **tai**                | ((i<10 \|\| i>200)) |
 
-Kaikki kaksoissulkeiden sisällä olevat matemaattiset operaattorit toimivat samalla tavalla kuin ohjelmointikielissä. Näiden käyttöä käsitellään enemmän  Ohjelmointi 1 -kurssilla.
+Kaikki kaksoissulkeiden sisällä olevat matemaattiset operaattorit toimivat samalla tavalla kuin ohjelmointikielissä. Näiden käyttöä käsitellään enemmän Ohjelmointi 1 -kurssilla.
 
 Jos muuttujan arvo on tekstiä, sen arvona käytetään 0 laskutoimituksissa kaksoissulkeiden sisällä. Jos muuttujan arvo on tekstiä, joka alkaa numerolla, *bash* keskeyttää komennon, ja antaa virheilmoituksen. Vertailuoperaattoreiden kanssa voidaan käyttää myös tekstiä.
 
