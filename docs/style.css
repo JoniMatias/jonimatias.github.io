@@ -24,11 +24,16 @@
   width: 49%;
 }
 
+.subtitle {
+  margin-top: -40px;
+  color: rgb(123, 193, 220);
+  font-weight: bold;
+}
+
 .center {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 40%;
 }
 
 .md-sidebar--secondary {

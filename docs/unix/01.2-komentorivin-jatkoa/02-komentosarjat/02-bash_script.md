@@ -382,11 +382,13 @@ Kun komentosarjatiedosto on kirjoitettu ja tallennettu tietokoneelle, sitä voi 
 
 #### sh-komento
 
-Yksinkertaisin tapa suorittaa komentosarja on käyttää ```sh```-komentoa. Komento ottaa argumentiksi yhden tiedoston, ja yrittää suorittaa sen sisältöä komentosarjana. 
+Yksinkertaisin tapa suorittaa komentosarja on käyttää ```sh```-komentoa. Komento ottaa argumentiksi yhden tiedoston, ja yrittää suorittaa sen sisältöä komentosarjana.
 
 !!! shell "bash: sh"
     **C54W4KDHGK**:tol-alkeet jonrajal$ <pop>sh komento.sh</pop>
     Komentosarja suoritettu
+
+Tätä kautta komentosarjan ajaminen luo uuden suoritusympäristön tulkin sisälle. Kaikki komentosarjan tekemät muutokset tulkin asetuksiin tai [ympäristömuuttujiin](../03-environment.md#ympäristömuuttujat) jäävät vain komentosarjan sisäiseksi.
 
 Tämä onnistuu käytännössä aina ilman ongelmia, mutta joskus voi tuntua turhalta kirjoittaa ylimääräinen komento vain komentojen suorittamista varten.
 
@@ -415,6 +417,7 @@ Kun komentosarjatiedostolle on annettu suoritusoikeudet, sitä voi käyttää ku
     **C54W4KDHGK**:tol-alkeet jonrajal$ ./komento.sh
     Komentosarja suoritettu
 
+Kuten ```sh```-komennon kanssa, tätä kautta ajetut komentosarjat luovat uuden suoritusympäristön tulkin sisälle. Kaikki komentosarjan tekemät muutokset tulkkiin tai [ympäristömuuttujiin](../03-environment.md#ympäristömuuttujat) jäävät vain komentosarjan sisäiseksi.
 
 #### Graafisen käyttöliittymän kautta
 
@@ -426,7 +429,56 @@ Monet käyttöjärjestelmät tukevat komentosarjojen suorittamista myös graafis
     Ubuntu tukee komentosarjatiedostoja luontaisesti. Kunhan komentosarjatiedoston pääte on ```.sh```, Ubuntu osaa suorittaa komentosarjan kaksoisklikkaamalla tiedostoa graafisen käyttöliittymän puolella.
 
 
-Kannattaa kuitenkin huomioida se, että graafisen käyttöliittymän puolelta suoritetut komentosarjat ajavat päätteen ja tulkin kevyemmässä muodossa. Tämä tarkoittaa sitä, ettei kaikkia tulkin [alustusscriptejä](../03-environment.md#bash_profile) ajeta. Tämä on tietysti merkityksellistä vain, jos olet itse määrittänyt alustustoimintoja ```.bash-profile```, ```.bash-login```, ```.profile``` tai ```.bashrc``` -tiedostoihin. Näissä tiedostoissa usein lisätään [```PATH```](../03-environment.md#path)-ympäristömuuttujaan lisäpolkuja, jolloin nämä muutokset eivät ole graafisen käyttöliittymän käytössä.
+Kannattaa kuitenkin huomioida se, että graafisen käyttöliittymän puolelta suoritetut komentosarjat ajavat päätteen ja tulkin kevyemmässä (epäinteraktiivisessa) muodossa. Tämä tarkoittaa sitä, ettei kaikkia tulkin [alustusscriptejä](../03-environment.md#bash_profile) ajeta. Tämä on tietysti merkityksellistä vain, jos olet itse määrittänyt alustustoimintoja ```.bash-profile```, ```.bash-login```, ```.profile``` tai ```.bashrc``` -tiedostoihin. Näissä tiedostoissa usein lisätään [```PATH```](../03-environment.md#path)-ympäristömuuttujaan lisäpolkuja, jolloin nämä muutokset eivät ole graafisen käyttöliittymän käytössä. Tämän voi korjata alla esitellyllä [```source```-komennolla](#source-komento).
+
+
+#### source-komento
+
+Toinen komentorivin komento, jolla komentosarjoja voi ajaa on ```source```. Toisin kuin [```sh```](#sh-komento) tai tiedoston suora suorittaminen, ```source``` ei luo uutta suoritusympäristöä komentosarjalle. Tämä mahdollistaa sen, että komentosarjan tekemät muutokset tulkkiin tai [ympäristömuuttujiin](../03-environment.md#ympäristömuuttujat) jäävät voimaan myös komennon suorittajan kontekstissa.
+
+Yleisin käyttötarkoitus tälle komennolle on muiden komentosarjojen alussa, jossa halutaan varmistaa [päätteen käynnistystiedostojen](../03-environment.md#päätteen-käynnistystiedostot) ajaminen myös silloin, kun komentosarja suoritetaan ilman interaktiivista tulkkia. Toisin sanoen tämän komennon pääasiallinen tarkoitus on ajaa komentosarjoja toisten komentosarjojen sisällä.
+
+Yleisin paikka ```source```-kutsulle on siis seuraavanlainen (tai vastaava) rivi jonkin komentosarjan alussa:
+
+```
+#! /bin/bash
+
+source ~/.bash_profile
+
+... tämän jälkeen tulee muita komentoja
+```
+
+??? info "sh vs source"
+    Jos jotenkin jäi epäselväksi mikä ero on komennoilla ```sh``` ja ```source```, niin toivottavasti tämä esimerkki valaisee vähän.
+
+    Oletetaan, että meillä on komentosarjatiedosto nimeltä ```komento.sh```, jossa on seuraava sisältö:
+
+    ```
+    #! /bin/bash
+
+    muuttuja=55
+    echo $muuttuja
+    ```
+
+    Jos tätä tiedostoa kutsutaan käyttäen ```sh``` tai ```source``` komentoa, niin komentosarjan suorituksessa ei ole mitään eroa. Mutta jos sen jälkeen kirjoitetaan suoraan komentoriville komento ```echo $muuttuja```, niin eron huomaa.
+
+    === "sh"
+        !!! shell "bash: sh"
+            **C54W4KDHGK**:tol-alkeet jonrajal$ <pop>sh komento.sh</pop>
+            55
+            **C54W4KDHGK**:tol-alkeet jonrajal$ echo $muuttuja
+
+            **C54W4KDHGK**:tol-alkeet jonrajal$
+    === "source"
+        !!! shell "bash: source"
+            **C54W4KDHGK**:tol-alkeet jonrajal$ <pop>source komento.sh</pop>
+            55
+            **C54W4KDHGK**:tol-alkeet jonrajal$ echo $muuttuja
+            55
+            **C54W4KDHGK**:tol-alkeet jonrajal$
+    
+    Kuten esimerkeistä näkee, tulkki muistaa komentosarjan tekemät muutokset muuttujiin ```source```-komennon kanssa, mutta ei muista niitä ```sh```-komennon kanssa.
+
 
 
 ### Komentosarjan argumentit
@@ -437,23 +489,28 @@ Komentosarjat saavat jokaisen sille annetun argumentin erikoismuuttujina. Näide
 
 ```$0``` on viittaus komentosarjaan itseensä. Sen jälkeen ```$1``` ensimmäiseen argumenttiin ja ```$2```toiseen ja niin edespäin. Annetut argumentit erotetaan toisistaan välilyönnillä, kuten tavallisestikin.
 
-Näiden lisäksi on käytössä muutamia muita erikoismuuttujia, kuten ```$@``` ja ```$#```. Alla on muutama yksinkertainen esimerkki niiden käytöstä.
+Näiden lisäksi on käytössä muutamia muita erikoismuuttujia, kuten ```$@``` ja ```$#```, joista voi lukea kaikki argumentit kerralla ja argumenttien määrän. 
+
+Alla on muutama yksinkertainen esimerkki argumentti käytöstä komentosarjojen kanssa. Esimerkeissä komentosarjatiedoston sisältö muuttuu, mutta sitä aina kutsutaan samoilla argumenteilla. Suoritettava komento on aina ```sh komento.sh argumentti toinen```.
 
 === "$0"
-    komento.sh tiedoston sisältö:
+    **```$0``` sisältää komentosarjatiedoston nimen tai polun siinä muodossa kuin sitä kutsuttiin.**
+    
+    Jos ```komento.sh``` tiedoston sisältö on:
     ```
     #! /bin/bash
 
     echo $0
     ```
 
+    niin tulkki tuottaisi seuraavalla kutsulla tällaisen tuloksen:
+
     !!! shell "bash: komentosarjan suoritus"
         **C54W4KDHGK**:tol-alkeet jonrajal$ <pop>sh komento.sh argumentti toinen</pop>
         komento.sh
     
-    ```$0``` sisältää komentosarjatiedoston nimen tai polun siinä muodossa kuin sitä kutsuttiin.
 
-    Eli myös seuraava on mahdollinen:
+    Myös seuraava on mahdollinen:
 
     !!! shell "bash: komentosarjan suoritus eri kansiossa"
         **C54W4KDHGK**:tol-alkeet jonrajal$ cd ..
@@ -461,59 +518,71 @@ Näiden lisäksi on käytössä muutamia muita erikoismuuttujia, kuten ```$@``` 
         tol-alkeet/komento.sh
 
 === "$1"
-    komento.sh tiedoston sisältö:
+    **```$1``` sisältää ensimmäisen argumentin arvon.**
+    
+    Jos ```komento.sh``` tiedoston sisältö on:
     ```
     #! /bin/bash
 
     echo $1
     ```
 
+    niin tulkki tuottaisi seuraavalla kutsulla tällaisen tuloksen:
+
     !!! shell "bash: komentosarjan suoritus"
         **C54W4KDHGK**:tol-alkeet jonrajal$ <pop>sh komento.sh argumentti toinen</pop>
         argumentti
 
-    ```$1``` sisältää ensimmäisen argumentin arvon.
     
 === "$2"
-    komento.sh tiedoston sisältö:
+    **```$2``` sisältää toisen annetun argumentin arvon. **
+    
+    Jos ```komento.sh``` tiedoston sisältö on:
     ```
     #! /bin/bash
 
     echo $2
     ```
 
+    niin tulkki tuottaisi seuraavalla kutsulla tällaisen tuloksen:
+
     !!! shell "bash: komentosarjan suoritus"
         **C54W4KDHGK**:tol-alkeet jonrajal$ <pop>sh komento.sh argumentti toinen</pop>
         toinen
 
-    ```$2``` sisältää toisen annetun argumentin arvon. 
     
 === "$@"
-    komento.sh tiedoston sisältö:
+    **```$@``` sisältää kaikki annetut argumentit yhdessä.**
+    
+    Jos ```komento.sh``` tiedoston sisältö on:
     ```
     #! /bin/bash
 
     echo $@
     ```
 
+    niin tulkki tuottaisi seuraavalla kutsulla tällaisen tuloksen:
+
     !!! shell "bash: komentosarjan suoritus"
         **C54W4KDHGK**:tol-alkeet jonrajal$ <pop>sh komento.sh argumentti toinen</pop>
         argumentti toinen
 
-    ```$@``` sisältää kaikki annetut argumentit yhdessä.
     
 === "$#"
-    komento.sh tiedoston sisältö:
+    **```$#``` sisältää annettujen argumenttien määrän.**
+    
+    Jos ```komento.sh``` tiedoston sisältö on:
     ```
     #! /bin/bash
 
     echo $#
     ```
 
+    niin tulkki tuottaisi seuraavalla kutsulla tällaisen tuloksen:
+
     !!! shell "bash: komentosarjan suoritus"
         **C54W4KDHGK**:tol-alkeet jonrajal$ <pop>sh komento.sh argumentti toinen</pop>
         2
 
-    ```$#``` sisältää annettujen argumenttien määrän.
 
 
