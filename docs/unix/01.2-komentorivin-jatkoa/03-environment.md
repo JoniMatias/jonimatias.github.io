@@ -2,16 +2,17 @@
 
 Komentojen ja automaatioiden lisäksi komentorivillä voi hallita tietokoneen asetuksia. Näiden asetuksien muokkaaminen muuttaa komentorivin, muiden ohjelmien tai koko käyttöjärjestelmän toimintaa.
 
+
+
 ## Ympäristömuuttujat
 
 Jokaisella tietokoneella on ympäristömuuttujia. Nämä ovat tietokoneen talteen tallentamia arvoja, joita monet ohjelmat käyttävät saadakseen tietoa tietokoneen ja käyttäjätilin tilasta. Ympäristömuuttujien muokkaaminen on tehokas tapa saada muutettua tietokoneen toimintaa, mutta samalla kannattaa olla tarkkana, ettei sotke tietokonetta, jos niitä lähtee muuttamaan.
 
-Osaa ympäristömuuttujista ei välttämättä edes voi muokata, sillä käyttöjärjestelmä muokkaa niiden sisältöä automaattisesti ja itsekseen. Tällaisia ovat mm. <nowrap>:os-mac::os-linux: *bashin*</nowrap> muuttujat ```PWD``` ja ```OLDPWD```, joihin on tallennettu päätteen tämänhetkinen aktiivinen kansio ja edellinen aktiivinen kansio.
+Osaa ympäristömuuttujista ei välttämättä kannata tai voi muokata, sillä käyttöjärjestelmä muokkaa niiden sisältöä automaattisesti ja itsekseen. Tällaisia ovat mm. <nowrap>:os-mac::os-linux: *bashin*</nowrap> muuttujat ```PWD``` ja ```OLDPWD```, joihin on tallennettu päätteen tämänhetkinen aktiivinen kansio ja edellinen aktiivinen kansio.
 
-Ympäristömuuttujia käytetään aivan kuten tavallisia [muuttujia](02-komentosarjat/02-bash_script.md#muuttujat). Toiminnan kannalta ne itseasiassa ovat samoja asioita; ne tallennetaan samaan paikkaan ja niitä luetaan samalla tavalla. Ympäristömuuttujissa on vain se jippo, että monet muutkin ohjelmat, jopa ne jotka ovat ennakkoasennettu koneelle, käyttävät ympäristömuuttujia omaan toimintaansa. Satunnaiset itse nimetyt muuttujat tuskin vaikuttavat muiden ohjelmien toimintaan merkittävästi.
+Ympäristömuuttujia käytetään aivan kuten tavallisia [muuttujia](02-komentosarjat/02-bash_script.md#muuttujat). Toiminnan kannalta ne itseasiassa ovat samoja asioita; ne tallennetaan samaan paikkaan ja niitä luetaan samalla tavalla. Ympäristömuuttujissa on vain se jippo, että monet muutkin ohjelmat, jopa ne jotka ovat ennakkoasennettu koneelle, käyttävät ympäristömuuttujia omaan toimintaansa. Itse nimettyjen muuttujien kanssa voi luottaa siihen, etteivät ne sekoita muiden ohjelmien toimintaan merkittävästi.
 
 Alla on lista muutamasta yleisimmästä ympäristömuuttujasta:
-
 
 | :os-win: Nimi Windowsissa | :os-mac::os-linux: Nimi bashissa | Kuvaus                                |
 |---------------------------|----------------------------------|---------------------------------------|
@@ -36,6 +37,10 @@ Kaikki ympäristömuuttujat voi saada näkyviin seuraavalla komennolla:
         **C54W4KDHGK**:~ jonrajal$ <pop>declare -p</pop>
 
 Alla käydään muutama ympäristömuuttuja tarkemmin läpi.
+
+
+
+
 
 ### $PATH
 
@@ -96,12 +101,18 @@ Ongelmia tulee kuitenkin, jos ympäristömuuttujaa yrittää muokata esimerkin m
     export PATH=$PATH:/täysi/polku/omaan/kansioon
     ```
 
-    Tämä on lähes sama komento kuin komentorivillekin annettu, mutta alussa on lisäksi avainsana ```export```. Tämä siksi, koska .bash_profile on [komentosarjatiedosto](02-komentosarjat/02-bash_script.md#bash-komentosarjat). Komentosarjojen muokkaamat muuttujat tavallisesti jäävät vain komentosarjan sisäiseksi muutokseksi. Komento ```export``` laajentaa muuttujan muutoksen koko päätteelle näkyväksi.
+    Tämä on lähes sama komento kuin komentorivillekin kirjoitettaessa, mutta alussa on lisäksi avainsana ```export```. Tämä avainsana lisätään, koska ```.bash_profile``` on [komentosarjatiedosto](02-komentosarjat/02-bash_script.md#bash-komentosarjat). Komentosarjojen muokkaamat muuttujat tavallisesti jäävät vain komentosarjan sisäiseksi muutokseksi. Komento ```export``` laajentaa muuttujan muutoksen koko päätteelle näkyväksi.
 
     Voit lukea lisää ```.bash_profile```-tiedoston muokkaamisesta ja avaamista [alta](#päätteen-käynnistystiedostot), mutta helppo tapa lisätä tiedostoon uusi rivi on käyttää [tulosteenohjausmerkkejä](../01-komentorivi/03-peruskomennot/bash-peruskomennot.md#tuloste-tiedostoon). 
 
     !!! shell "bash: PATH >>"
         **C54W4KDHGK**:~ jonrajal$ <pop>echo PATH=$PATH:/Users/jonrajal/Koodi/scripts >> ~/.bash_profile</pop>
+
+
+
+
+
+
 
 ### Kehotteen muokkaus
 
@@ -135,33 +146,42 @@ Ongelmia tulee kuitenkin, jos ympäristömuuttujaa yrittää muokata esimerkin m
     | \W      | Aktiivisen kansion nimi |
     | \$      | Näyttää ```$```, ellei käyttäjä ole pääkäyttäjä. Pääkäyttäjälle ```#```. |
 
-    Avaimia on myös enemmän, joten komentorivistä saa melko helposti haluamansa näköisen. Varsinkin hakasulkuavaimien (```\[``` ja ```\]```) väliin voi laittaa erikoismerkkejä, jotka muuttavat toimintaa merkittävästi.
+    Avaimia on myös enemmän, joten komentorivistä saa melko helposti haluamansa näköisen. Muuttujaan voi kirjoittaa myös vapaamuotoista tekstiä, tai laittaa muuttujien arvoja käyttämällä dollarimerkkiä (```$```).
+    
+    Varsinkin hakasulkuavaimien (```\[``` ja ```\]```) väliin voi laittaa erikoismerkkejä, jotka muuttavat toimintaa merkittävästi.
 
-    ??? info "Muutama esimerkkipääte"
-
+    ??? info "Muutama esimerkkikehote"
+        Kehote voi näyttää kellonajan ja päivän. Näppärä, jos pitää kirjaa ajamistaan komennoista kopioimalla päätteen tulosteet erilliseen tekstitiedostoon.
         ```
         PS1="[\d \t \u@\h:\w ] $ "
         ``` 
         !!! shell "bash: PS1="[\d \t \u@\h:\w ] $ "
             [To Mar 13 20:11:32 jonrajal@C54W4KDHGK:~ ] $
         -------
+        Kehote voi näyttää polun vakiintuneessa URL-muodossa. 
         ```
         PS1="\u@\h:\w\$ "
         ```
         !!! shell "bash: "\u@\h:\w\$ ""
             jonrajal@C54W4KDHGK:~/Koodi/opetus/tol-alkeet/kuvia$
         -------
+        Kehotteen muotoiluun voi kirjoittaa myös vapaamuotoista tekstiä.
         ```
-        PS1="Tämä on pääte > "
+        PS1="Tämä on kehote > "
         ```
-        !!! shell "bash: PS1=\"Tämä on pääte\""
-            Tämä on pääte > 
+        !!! shell "bash: PS1=\"Tämä on kehote\""
+            Tämä on kehote > 
         -------
+        Kehotteessa saa käyttää myös muuttujia. Tässä on käytettä muuttujaa ```PWD```, jotta *bashin* kehote näyttäisi samalta kuin Windowsin cmd.exen kehote.
         ```
         PS1="$PWD> "
         ```
         !!! shell "bash: PS1=$PWD"
             /Users/jonrajal> 
+
+
+
+
 
 
 ## Päätteen käynnistystiedostot
@@ -173,16 +193,34 @@ Näitä varten komentotulkit käyttävät käynnistystiedostoja. Nämä käynnis
 === ":os-win: Windows"
 
 
-=== ":os-mac::os-linux: Bash"
+=== ":os-mac: MacOS"
+    !!! warning inline end ".bashrc"
+        *Bash* joskus lukee käynnistyessään tiedoston ```~/.bashrc``` muiden tiedostojen sijasta. Tämä tiedosto luetaan vain niissä tapauksissa, jos tulkki käynnistyy ilman sisäänkirjautumista. MacOS:llä tämä on kuitenkin harvinaista.
+    
     *Bash* aina käynnistyessään suorittaa yhden käynnistystiedoston, riippuen siitä, minkä tiedoston se löytää ensimmäisenä. *Bash* hakee ensin tiedostoa ```~/.bash_profile``` ja suorittaa sen; jos sitä ei löydy, niin *bash* etsii tiedoston ```~/.bash_login```. Senkin puuttuessa etsitään vielä tiedosto ```~/.profile```. Jos mitään näistä ei löydy, *bash* ei suorita mitään käynnistystiedostoa.
 
-    Jotkin epästandardit päätteet saattavat lukea näiden tiedostojen sijasta tiedoston ```~/.bashrc```. Speksien mukaan ```~/.bashrc``` luetaan vain, jos tulkki käynnistyy ilman sisäänkirjautumista.
 
     ```.bash_profile``` ja sen kaverit ovat piilotettuja tekstitiedostoja, joten niiden avaaminen komentorivin kautta voi olla vaikeaa. Kokeile jotain seuraavista komennoista sen avaamiseksi:
 
-    - :os-mac: ```open -t ~/.bash_profile``` avaa Texturin (eng. *TextEdit*) tiedoston muokkaamista varten.
-    - :os-mac::os-linux: ```nano ~/.bash_profile``` avaa tekstitiedoston Nanolla, joka on komentorivillä toimiva tekstieditori.
-    - :os-mac::os-linux: Jos haluat vain lisätä tekstiä tiedoston perään, voit käyttää [tulosteenohjausmerkkejä](../01-komentorivi/03-peruskomennot/bash-peruskomennot.md#tuloste-tiedostoon). ```echo PATH=$PATH:/täysi/polku/omaan/kansioon >> ~/.bash_profile``` lisää halutun rivin tiedoston perään.
+    - ```open -t ~/.bash_profile``` avaa Texturin (eng. *TextEdit*) tiedoston muokkaamista varten.
+    - ```nano ~/.bash_profile``` avaa tekstitiedoston Nanolla, joka on komentorivillä toimiva tekstieditori.
+    - Jos haluat vain lisätä tekstiä tiedoston perään, voit käyttää [tulosteenohjausmerkkejä](../01-komentorivi/03-peruskomennot/bash-peruskomennot.md#tuloste-tiedostoon). ```echo PATH=$PATH:/täysi/polku/omaan/kansioon >> ~/.bash_profile``` lisää halutun rivin tiedoston perään.
+
+    Käynnistystiedostojen kanssa kannattaa myös huomioida se, että ne suoritetaan vain *interaktiivisen* tulkin käynnistyessä, eli tilanteissa jossa tulkki näyttää komentokehotteen. Jos suoritat komentosarjoja tai komentoriviohjelmia graafisen käyttöliittymän kautta, näitä käynnistystiedostossa esiteltyjä ```PATH```-muutoksia tai ```alias```-määrittelyjä ei suoriteta.
+
+=== ":os-linux: Ubuntu"
+    !!! warning inline end ".bash_profile"
+        *Bashilla* on paljon erilaisia käynnistystiedostoja eri käyttötapauksiin. Ubuntun oletuspääte ei kirjaa käyttäjää sisään tulkkiin, joten se käyttää ```.bashrc```-tiedostoa. Toisaalta *bash* käyttää myös tiedostoja ```.bash_profile```, ```.bash_login``` ja ```.profile```, jos kirjautunut käyttäjä käynnistää tulkin. Näiden kanssa kannattaa olla tarkkana.
+    
+    *Bash* aina käynnistyessään suorittaa tiedoston ```~/.bashrc``` sisällön komentosarjana. Jos tiedostoa ei ole käyttäjän kotihakemistossa, niin mitään ei suoriteta.
+
+    ```.bashrc``` ja sen kaverit ovat piilotettuja tekstitiedostoja (niiden nimi alkaa pisteellä), joten niiden avaaminen komentorivin kautta voi olla vaikeaa. Kokeile jotain seuraavista komennoista sen avaamiseksi:
+
+    - ```xdg-open ~/.bashrc``` avaa käyttöjärjestelmän oletustekstieditorin tiedoston muokkaamista varten. Pahimmassa tapauksessa se voi olla *vim*.
+    - ```nano ~/.bashrc``` avaa tekstitiedoston Nanolla, joka on komentorivillä toimiva tekstieditori.
+    - Jos haluat vain lisätä tekstiä tiedoston perään, voit käyttää [tulosteenohjausmerkkejä](../01-komentorivi/03-peruskomennot/bash-peruskomennot.md#tuloste-tiedostoon). ```echo PATH=$PATH:/täysi/polku/omaan/kansioon >> ~/.bashrc``` lisää halutun rivin tiedoston perään.
+
+    Käynnistystiedostojen kanssa kannattaa myös huomioida se, että ne suoritetaan vain *interaktiivisen* tulkin käynnistyessä, eli tilanteissa jossa tulkki näyttää komentokehotteen. Jos suoritat komentosarjoja tai komentoriviohjelmia graafisen käyttöliittymän kautta, näitä käynnistystiedostossa esiteltyjä ```PATH```-muutoksia tai ```alias```-määrittelyjä ei suoriteta.
 
 
 
@@ -192,9 +230,9 @@ Näitä varten komentotulkit käyttävät käynnistystiedostoja. Nämä käynnis
 Käynnistystiedostot ovat näppäriä paikkoja kirjoittaa aikaisemmin esitellyt [PATHin lisäykset](#path) ja [kehotteen muotoilut](#kehotteen-muokkaus), mutta niitä voi käyttää myös muuhun. Toinen yleinen tarkoitus niille on esitellä komentojen synonyymeja tai pienoiskomentoja. Tapoja kirjoittaa lyhenteitä monimutkaisemmille komennoille.
 
 === ":os-win: Windows doskey"
-    **TODO** doskey
+    Windows ei tue aliasta tai vastaavaa järjestelmää. cmd.exe voi luoda macroja komennolla ```doskey```, mutta niiden käyttö on huomattavan monimutkaista.
 
-=== ":os-mac::os-linux: bash alias"
+=== ":os-mac::os-linux: *Bash* alias"
 
     *Bashilla* pienoiskomennot saa luotua ```alias```-komennolla.
 

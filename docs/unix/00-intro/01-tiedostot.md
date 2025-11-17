@@ -135,7 +135,7 @@ Tällaisella polulla on kaksi käyttötapausta. Yleisin hyöty on vain kirjoitta
 
 Toinen hyöty tällaisesta kirjoitusasusta on koneilla, joille voi kirjautua useita eri käyttäjiä eri käyttäjätileillä. Jos ohjelma tai [komentosarja](../01.2-komentorivin-jatkoa/02-komentosarjat/index.md) haluaa tallentaa, joka käyttäjälle eri tiedot tai ladata jotain käyttäjäkohtaisia tiedostoja, ohjelman ei tarvitse käyttää eri polkua jokaiselle eri käyttäjälle. ```~``` on aina aktiivisen käyttäjän kotihakemisto.
 
-:os-win: Windows-koneilla on vastaavanlainen polkuoikotie: ```%userprofile%```. Sitä ei kuitenkaan käytetä läheskään yhtä usein sen pituuden vuoksi. Windows myös oletuksena estää suoraan käyttäjähakemistoon tallentamisen ja muokkaamisen, jolloin siihen viittaaminen on ei ole yhtä hyödyllistä Windowsilla. 
+:os-win: Windows-koneilla on vastaavanlainen polkuoikotie: ```%userprofile%```. Sitä ei kuitenkaan käytetä läheskään yhtä usein sen pituuden vuoksi. Windows myös oletuksena estää suoraan käyttäjähakemistoon tallentamisen ja muokkaamisen, jolloin siihen viittaaminen on ei ole yhtä hyödyllistä. 
 
 #### Suhteessa aktiiviseen kansioon { #aktiivinen-polku }
 

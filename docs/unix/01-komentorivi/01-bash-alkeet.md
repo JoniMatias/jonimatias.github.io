@@ -2,10 +2,10 @@
 
 Ennen kuin 1980-luvulla tietokoneille kehitettiin graafiset, ikkunoihin pohjautuvat käyttöliittymät, tietokoneita käytettiin ainoastaan tekstipohjaisen komentorivin kautta. Kun graafiset käyttöliittymät yleistyivät, komentorivit kuitenkin jäivät osaksi tietokoneita muutamasta eri syystä:
 
- - Paljon ohjelmia oli jo luotu käyttämään vain komentoriviä
- - Komentorivisovellusten ohjelmoiminen oli helpompaa, koska visuaalista puolta ei tarvinnut miettiä.
+ - Paljon ohjelmia oli jo luotu käyttämään komentoriviä
+ - Komentorivisovellusten ohjelmoiminen on helpompaa, koska visuaalista puolta ei tarvinnut miettiä.
  - Monet ohjelmat ovat vain taustasovelluksia, jotka eivät edes tarvitse visuaalista esitystapaa.
- - Komentorivillä oli paljon sisäänrakennettuja automaatio-ominaisuuksia, joille ei ole vielä nykyäänkään standardoitua vaihtoehtoa graafisille käyttöliittymille.
+ - Komentorivillä on paljon sisäänrakennettuja automaatio-ominaisuuksia, joille ei ole vielä nykyäänkään standardoitua vaihtoehtoa graafisille käyttöliittymille.
  - Komentorivi on tehokas työkalu ohjelmien väliseen kommunikaatioon. 
 
 Näistä syistä komentorivi on edelleenkin hyvin tärkeä työkalu ohjelmoijille ja tietokoneiden kanssa työskenteleville. Jos tietokoneesta haluaa ottaa kaiken hyödyn irti, komentorivi on käytännössä pakollinen.
@@ -22,7 +22,7 @@ Komentorivin käynnistäminen on helppoa. Kaikissa tietokoneissa on valmiiksi as
     ![](./kuvat/cmd-exe-alku.png)
 
 === ":os-mac: Pääte (MacOS)"
-    Helpoin tapa käynnistää *Pääte* on käyttää MacOS spotlight-toimintoa. Paina oikean yläkulman suurennuslasia (tai paina yhtä aikaa <nowrap><kbd>⌘ Command</kbd> + <kbd> Välilyönti</kbd></nowrap>), ja kirjoita ilmestyvään hakukenttään Pääte (jos koneesi on englanniksi, niin kirjoita Terminal) ja paina enteriä.
+    Helpoin tapa käynnistää *Pääte* on käyttää MacOS:n spotlight-toimintoa. Paina oikean yläkulman suurennuslasia (tai paina yhtä aikaa <nowrap><kbd>⌘ Command</kbd> + <kbd> Välilyönti</kbd></nowrap>), ja kirjoita ilmestyvään hakukenttään Pääte (jos koneesi on englanniksi, niin kirjoita Terminal) ja paina enteriä.
 
     Toinen tapa avata *Pääte* on mennä Finderilla Apit-kansioon (eng. *Apps*), löytää sieltä Apuohjelmat-kansio (eng. *Utilities*) ja käynnistää *Pääte.app* sieltä.
 
@@ -32,7 +32,7 @@ Komentorivin käynnistäminen on helppoa. Kaikissa tietokoneissa on valmiiksi as
 
     MacOS:n oletustulkki on nykyään *zsh*, ja tämä sivusto käsittelee pääasiallisesti *bashia*. Tämän sivuston näkökulmasta näillä kahdella ei ole merkittäviä eroja, mutta jos haluat vaihtaa tulkin samaksi kuin mitä tällä kurssilla käytetään, aja komento ```chsh -s /bin/bash``` ja syötä salasanasi sitä pyydettäessä. ```chsh```-komento vaihtaa käyttäjän perusasetuksia, ja ```-s```-lippu kertoo komennolle, että kyseessä on tulkin (eng. *shell*) vaihto.
 
-    Jos päätät vaihtaa tulkin *bashiksi*, kannattaa huomioida että Applen koneilla oleva *bashin* versio on jo kohta 20 vuotta vanha. Toiminnallisuuteen se ei suuresti vaikuta, mutta uusimpia tietoturvapäivityksiä siinä ei ole mukana. Jos haluat asentaa *bashin* uudemman version koneellesi, kannattaa lukea ohjeet [komentoriviohjelmien asentamisesta](../01-komentorivi/04-asennus.md), ja sitten ladata Homebrewillä *bashin*.
+    Jos päätät vaihtaa tulkin *bashiksi*, kannattaa huomioida että Applen koneilla oleva *bashin* versio on jo kohta 20 vuotta vanha. Toiminnallisuuteen se ei suuresti vaikuta, mutta uusimpia tietoturvapäivityksiä siinä ei ole mukana. Jos haluat asentaa *bashin* uudemman version koneellesi, kannattaa lukea ohjeet [komentoriviohjelmien asentamisesta](../01-komentorivi/04-asennus.md), ja sitten ladata Homebrewillä *bashin* uusin versio.
 
 === ":os-linux: Terminal (Ubuntu)"
     **TODO:** Miten Terminal käynnistetään Ubuntussa.
@@ -78,7 +78,7 @@ Komentorivien käyttöä varten tietokone tarvitsee kolme eri komponenttia: pä�
 
 ## Aktiivinen kansio
 
-Samoin kuin graafisen käyttöliittymän tiedostoikkunoissa, komentorivillä on yksi aktiivinen kansio kerralla auki. Käytännössä kaikki komennot suoritetaan aktiivisessa kansiossa. Graafisella ikkunalla tämän kansion sisältö näkyy kerralla, mutta komentorivillä kansion sisällön tarkasteluun tarvitaan komento :os-win:```dir``` tai :os-mac::os-linux:```ls```. Se listaa kaikki tämänhetkisen kansion tiedostot.
+Samoin kuin graafisen käyttöliittymän tiedostoikkunoissa, komentorivillä on yksi kansio kerralla auki. Tämä aktiivinen kansio on se, missä oletuksena kaikki komennot suoritetaan. Graafisella ikkunalla tämän kansion sisältö näkyy kerralla, mutta komentorivillä kansion sisällön tarkasteluun tarvitaan komento :os-win:```dir``` tai :os-mac::os-linux:```ls```. Se listaa kaikki tämänhetkisen kansion tiedostot.
 
 === ":os-win: Windows"
     !!! shell "cmd.exe: dir"
