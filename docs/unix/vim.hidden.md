@@ -3,26 +3,30 @@
 - eli kuinka lakkasin olemasta huolissani ja opin sulkemaan sen.
 </div>
 
-Jonain kauniina päivänä olet käyttämässä komentoriviä, ja eteesi yhtäkkiä pamahtaa seuraavanlainen ruutu:
+Jonain kauniina päivänä olet käyttämässä komentoriviä, ja yhtäkkiä eteesi pamahtaa seuraavanlainen ruutu:
 
-![Vim näyttämässä tol-alkeet-kansion README.md-tiedoston sisältöä.](./kuvia/Vim-readme.png){ .center }
+![Vim näyttämässä tol-alkeet-kansion README.txt-tiedoston sisältöä.](./kuvia/Vim-readme.png){ .center }
 
-Pahoitteluni. Olet juuri avannut Vimin. Vim on komentorivillä toimiva tekstinkäsittelyohjelma, jonka suunnittelijat eivät ole koskaan kuulleet käytettävyydestä tai käytettävyystestaamisesta. Paras esimerkki tästä on se, ettei Vimillä voi suoraan kirjoittaa tekstiä painamalla näppäimistön kirjainnäppäimiä, sillä jokainen näppäimistön kirjainnäppäin on varattu jollekin pikakomennolle tekstinkirjoittamisen sijasta. Mitenkäs muuten.
+Pahoitteluni. Olet juuri avannut Vimin. Vim on komentorivillä toimiva tekstinkäsittelyohjelma, jonka suunnittelijat eivät ole koskaan kuulleet käytettävyydestä tai käytettävyystestaamisesta. Paras esimerkki tästä on se, ettei Vimillä voi kirjoittaa tekstiä painamalla näppäimistön kirjainnäppäimiä, vaan jokainen kirjainnäppäin on varattu jollekin pikakomennolle. Mitenkäs muuten.
 
 Jotta Vimillä voi kirjoittaa tekstiä, ensin pitää painaa <kbd>i</kbd>, jotta Vim vaihtaa sijoitus- (eng. *insert*) eli kirjoitustilaan. Ja tästä tilasta pääsee takaisin komentotilaan painamalla <kbd>Esc</kbd>. Mitenkäs muuten.
 
-Vimin käytön helppoudesta kielii jotain se, että Googlen suosituimmat haut, jotka alkavat "Vim how" ovat: "Vim how to quit and save" ja "Vim how to edit". Vim on siis tekstinkäsittelyohjelma, jonka kaksi yleisintä käyttäjien kysymystä ovat miten tästä pääsee eroon ja miten tällä muokataan tekstiä.
+Vimin käytön helppoudesta kielii jotain se, että Googlen suosituimmat haut, jotka alkavat "Vim how" ovat: *"Vim how to save and exit"* ja *"Vim how to edit"*. Vim on siis tekstinkäsittelyohjelma, jonka kaksi yleisintä käyttäjien kysymystä ovat miten tästä pääsee eroon ja miten tällä muokataan tekstiä.
 
 !["Vim how" -Google-hakuehdotukset](./kuvia/Vim-google.png){ .center }
 
-Todennäköisesti tässä vaiheessa haluat tietää vastauksen tuohon ensimmäiseen Google osumaan, eli miten ruudusta päästään eroon? Se tapahtuu kirjoittamalla ```:quit!``` ja painamalla <kbd>⏎ Enter</kbd>. Mitenkäs muuten.
+### Miten se suljetaan?
+
+Todennäköisesti tässä vaiheessa haluat tietää vastauksen tuohon ensimmäiseen Google-kysymykseen, eli miten ruudusta päästään eroon? Se tapahtuu kirjoittamalla ```:quit!``` ja painamalla <kbd>⏎ Enter</kbd>. Mitenkäs muuten.
 
 ??? info "```:quit!```? WTF?"
     Tuo Vimin komento ```:quit!``` voi näyttää oudolta, joten puretaanpa se osiin.
 
-    Kaksoipiste (```:```) aloittaa Vimin komentoparserin, johon voit kirjoittaa Vimille pidempiä komentoja. ```quit``` sammuttaa ohjelman ja ```!``` antaa sammuttaa Vimin, vaikka tiedostossa olisi tallentamattomia muutoksia. 
+    - Kaksoispiste (```:```) aloittaa Vimin komentoparserin, johon voit kirjoittaa pidempiä komentoja Vimille.
+    - ```quit``` (tai lyhyempi ```q```) sammuttaa ohjelman.
+    -  ```!``` antaa sammuttaa Vimin, vaikka tiedostossa olisi tallentamattomia muutoksia. 
     
-    Jos tämä on ensimmäinen kertasi kun käytät Vimiä, siinä on todennäköisesti tahattomia muutoksia, eli haluat tuon huutomerkin (```!```).
+    Jos tämä on ensimmäinen kertasi kun käytät Vimiä, olet todennäköisesti tehnyt siihen tahattomia muutoksia, eli haluat tuon huutomerkin (```!```).
 
 
  

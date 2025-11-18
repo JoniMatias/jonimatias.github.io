@@ -61,13 +61,15 @@ Paketinhallintaohjelmat ovat erillisiä asennettavia komentoriviohjelmia, jotka 
 
 ## Omien ohjelmien korottaminen komennoiksi
 
-Tavallisesti ohjelman ajaminen tapahtuu tietämällä ohjelman sijainti. Ohjelma käynnistetään aina tietämällä minkä tahansa polun suoritettavaan tiedostoon, ja kutsumalla ohjelmaa polun kautta. Joskus käyttäjä voi kuitenkin haluta ajaa omia ohjelmiaan samalla tavalla kuin komentoja, eli missä tahansa kansiossa ja välittämättä ohjelman sijainnista.
+Tavallisesti ohjelman ajaminen tapahtuu tietämällä ohjelman sijainnin. Ohjelma käynnistetään aina tietämällä polku suoritettavaan tiedostoon, ja kutsumalla ohjelmaa polun kautta. Joskus käyttäjä voi kuitenkin haluta ajaa omia ohjelmiaan samalla tavalla kuin komentoja, eli missä tahansa kansiossa ja välittämättä ohjelman sijainnista.
 
 Jos olet tehnyt itse ohjelman, jota haluaisit käyttää kuten komentoja, niin kannattaa tutustua ympäristömuuttujiin ja ohjelmien oikeuksiin [niistä kertovalla sivulla](../01.2-komentorivin-jatkoa/03-environment.md).
 
 Pääasiallisesti prosessi kuitenkin toimii seuraavalla tavalla:
 
- 1. Siirrä käännetty ohjelman johonkin sellaiseen kansioon, joka on määritelty ympäristömuuttujassa ```$PATH```. ```$PATH``` kertoo mistä kansioista etsitään suoritettavia komentoja. Oman koneesi ```$PATH```-kansiot löydät komennolla ```echo $PATH```. Vaihtoehtoisesti voit lisätä ohjelman kansion $PATHiin, mutta se on vähemmän suositeltavaa. Tilapäisesti kansion voi lisätä ```$PATH```iin  komennolla ```export PATH=$PATH:/absoluuttinen/polku/kansioon```. Pysyvästi sen tekemiseen tarvitaan [.bash_profile-tiedosto](../01.2-komentorivin-jatkoa/03-environment.md#bash_profile).
+ 1. Siirrä käännetty ohjelman johonkin sellaiseen kansioon, joka on määritelty ympäristömuuttujassa ```$PATH```. ```$PATH``` kertoo mistä kansioista etsitään suoritettavia komentoja. Oman koneesi ```$PATH```-kansiot löydät komennolla ```echo $PATH```. 
+    
+    1.1. Vaihtoehtoisesti voit lisätä ohjelman kansion ```$PATH```iin. Tilapäisesti kansion voi lisätä ```$PATH```iin  komennolla ```PATH=$PATH:/absoluuttinen/polku/kansioon```. Pysyvästi sen tekemiseen tarvitaan [päätteen käynnistystiedoston muokkaamista](../01.2-komentorivin-jatkoa/03-environment.md#päätteen-käynnistystiedostot).
 
  2. Varmista, että komennolla on [suoritusoikeudet](../01.2-komentorivin-jatkoa/03-environment.md#oikeudet).
 
