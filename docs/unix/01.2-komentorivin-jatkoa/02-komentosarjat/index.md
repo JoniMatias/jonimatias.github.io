@@ -10,3 +10,5 @@ Komentosarjojen kirjoittaminen riippuu täysin käytössä olevasta komentotulki
 
 [:os-win: Windows .bat-tiedostot](02-cmd_script.md){ .md-button .md-button--primary }
 [:os-mac::os-linux: Bash-komentosarjat](02-bash_script.md){ .md-button .md-button--primary }
+
+

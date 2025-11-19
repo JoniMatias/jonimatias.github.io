@@ -110,5 +110,5 @@ Samoin kuin graafisen käyttöliittymän tiedostoikkunoissa, komentorivillä on 
         <span class="bash-table-element">toinen.txt</span>
         <span class="bash-table-element">uusi.txt</span>
 
-Aktiivista kansiota voi vaihtaa ```cd```-komennolla. ```cd kansion_nimi``` vaihtaa aktiivisen kansion nykyisen aktiivisen kansion alikansioon, jolla on annettu nimi. :os-win:```cd..``` tai :os-mac::os-linux:```cd ..``` (huom. välilyönti) siirtää aktiivista kansiota yhden kansiota yhden askeleen ylöspäin; nykyisen aktiivisen kansion yläkansioon.
+Aktiivista kansiota voi vaihtaa ```cd```-komennolla. ```cd kansion_nimi``` vaihtaa aktiivisen kansion nykyisen aktiivisen kansion alikansioon, jolla on annettu nimi. :os-win:```cd..``` tai :os-mac::os-linux:```cd ..``` (huom. välilyönti) siirtää aktiivista kansiota yhden askeleen ylöspäin; nykyisen aktiivisen kansion yläkansioon.
 
