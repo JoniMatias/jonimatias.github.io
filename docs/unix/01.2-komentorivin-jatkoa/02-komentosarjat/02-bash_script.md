@@ -4,7 +4,9 @@ Komentosarjoja kutsutaan yleisemmin nimellä **bash-skripti**. Komentosarjat yle
 
 ## Komentosarjatiedostot
 
-Skriptitiedosto on vain tavallinen tekstitiedosto, johon on kirjoitettu ajettavat komennot erillisille riveille siinä järjestyksessä kun ne halutaan ajaa. Yksinkertaisimmillaan tiedostossa voi olla vain muutama komento ilman minkäänlaisia kontrollirakenteita. Esimerkiksi tätä nettisivua varten on tehty yksinkertainen komentosarja, jolla sivua voi testata paikallisesti omalla koneella.
+Skriptitiedosto on vain tavallinen tekstitiedosto, johon on kirjoitettu ajettavat komennot erillisille riveille siinä järjestyksessä kun ne halutaan ajaa. Komentosarjatiedostolle perinteisesti on annettu [tiedostopäätteeksi](../../00-intro/01-tiedostot.md#tiedostopäätteet) ```.sh```, mutta mikä tahansa pääse – tai ei päätettä ollenkaan – kelpaa myös.
+
+Yksinkertaisimmillaan tiedostossa voi olla vain muutama komento ilman minkäänlaisia kontrollirakenteita. Esimerkiksi tätä nettisivua varten on tehty yksinkertainen komentosarja, jolla sivua voi testata paikallisesti omalla koneella.
 
 ??? abstract "Komentosarja verkkosivun testaamiseen"
     ```
@@ -118,12 +120,12 @@ Monet käyttöjärjestelmät tukevat komentosarjojen suorittamista myös graafis
     Ubuntu tukee komentosarjatiedostoja luontaisesti. Kunhan komentosarjatiedoston pääte on ```.sh```, Ubuntu osaa suorittaa komentosarjan kaksoisklikkaamalla tiedostoa graafisen käyttöliittymän puolella.
 
 
-Kannattaa kuitenkin huomioida se, että graafisen käyttöliittymän puolelta suoritetut komentosarjat ajavat päätteen ja tulkin kevyemmässä (epäinteraktiivisessa) muodossa. Tämä tarkoittaa sitä, ettei kaikkia tulkin [alustusscriptejä](../03-environment.md#bash_profile) ajeta. Tämä on tietysti merkityksellistä vain, jos olet itse määrittänyt alustustoimintoja ```.bash-profile```, ```.bash-login```, ```.profile``` tai ```.bashrc``` -tiedostoihin. Näissä tiedostoissa usein lisätään [```PATH```](../03-environment.md#path)-ympäristömuuttujaan lisäpolkuja, jolloin nämä muutokset eivät ole graafisen käyttöliittymän käytössä. Tämän voi korjata alla esitellyllä [```source```-komennolla](#source-komento).
+Kannattaa kuitenkin huomioida se, että graafisen käyttöliittymän puolelta suoritetut komentosarjat ajavat päätteen ja tulkin kevyemmässä (epäinteraktiivisessa) muodossa. Tämä tarkoittaa sitä, ettei kaikkia tulkin [alustusscriptejä](../03-environment.md#bash_profile) ajeta, eikä niissä tehdyt muutokset siis ole voimassa. Tämä on tietysti merkityksellistä vain, jos olet itse määrittänyt alustustoimintoja ```.bash-profile```, ```.bash-login```, ```.profile``` tai ```.bashrc``` -tiedostoihin. Tämän voi korjata aloittamalla komentosarja alla esitellyllä [```source```-komennolla](#source-komento).
 
 
 #### source-komento
 
-Toinen komentorivin komento, jolla komentosarjoja voi ajaa on ```source```. Toisin kuin [```sh```](#sh-komento) tai tiedoston suora suorittaminen, ```source``` ei luo uutta suoritusympäristöä komentosarjalle. Tämä mahdollistaa sen, että komentosarjan tekemät muutokset tulkkiin tai [ympäristömuuttujiin](../03-environment.md#ympäristömuuttujat) jäävät voimaan myös komennon suorittajan kontekstissa.
+Komentosarjoja voi ajaa myös komennolla ```source```. Toisin kuin [```sh```](#sh-komento) tai tiedoston suora suorittaminen, ```source``` ei luo uutta suoritusympäristöä komentosarjalle. Tämä mahdollistaa sen, että komentosarjan tekemät muutokset tulkkiin tai [ympäristömuuttujiin](../03-environment.md#ympäristömuuttujat) jäävät voimaan myös komennon suorittajan kontekstissa.
 
 Yleisin käyttötarkoitus tälle komennolle on muiden komentosarjojen alussa, jossa halutaan varmistaa [päätteen käynnistystiedostojen](../03-environment.md#päätteen-käynnistystiedostot) ajaminen myös silloin, kun komentosarja suoritetaan ilman interaktiivista tulkkia. Toisin sanoen tämän komennon pääasiallinen tarkoitus on ajaa komentosarjoja toisten komentosarjojen sisällä.
 

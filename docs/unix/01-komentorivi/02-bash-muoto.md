@@ -45,7 +45,7 @@ Komennon nimet ovat yleensä lyhyitä yhden sanan tai muutaman kirjaimen mittais
         <div class="bash-table-element bash-red">test.command\*</div>
         <div class="bash-table-element bash-red">vidresize.sh\*</div>
 
-Joillekin komennoille voi antaa tarkentavia käskyjä. Näitä voivat olla mm. käytettävän tiedoston nimi, lisäargumentit ja ohjausliput. Tarkentavat käskyt kirjoitetaan komennon perään, yleensä vapaassa järjestyksessä. :os-win: Windows-ympäristön liput tai valitsimet kirjoitetaan yleensä komennon loppuun /-merkillä erotettuna. Esimerkiksi komento ```dir```voi muuttaa tulostuksensa ns. leveään muotoon valitsimella ```/w```. :os-mac::os-linux: Unix-koneilla komento ```ls``` tukee mm. lippua ```-A```, joka näyttää kaikki piilotetut tiedostot. Unix-pohjaisissa järjestelmissä tiedostot ovat piilotettuja, jos niiden nimi alkaa pisteellä. 
+Joillekin komennoille voi antaa tarkentavia käskyjä. Näitä voivat olla mm. käytettävän tiedoston nimi, lisäargumentit ja ohjausliput. Tarkentavat käskyt kirjoitetaan komennon perään, yleensä vapaassa järjestyksessä. :os-win: Windows-ympäristön liput tai valitsimet kirjoitetaan yleensä komennon loppuun /-merkillä erotettuna. Esimerkiksi komento :os-win: ```dir```voi muuttaa tulostuksensa ns. leveään muotoon valitsimella ```/w```. :os-mac::os-linux: Unix-koneilla komento ```ls``` tukee mm. lippua ```-A```, joka näyttää kaikki piilotetut tiedostot. Unix-pohjaisissa järjestelmissä tiedostot ovat piilotettuja, jos niiden nimi alkaa pisteellä. 
  
 === ":os-win: Windows"
     !!! shell "cmd.exe: dir /w"
@@ -122,7 +122,8 @@ Lippuja, valintoja ja argumentteja voi olla niin paljon kuin käyttäjä niitä 
 
 Argumentti on komennon vastaanottama tieto, yleensä tiedoston tai kansion nimi. Argumentti kirjoitetaan yleisesti suoraan komennon perään tai valintalistan loppuun. Jos komennon argumentiksi annetaan tiedosto, siihen yleensä riittää pelkkä tiedostonimi, ellei käsiteltävä tiedosto ole jossain muualla kuin aktiivisessa kansiossa. Muualla oleviin tiedostoihin pitää viitata joko [absoluuttisella polulla](../00-intro/01-tiedostot.md#täysi-eli-absoluuttinen-polku) tai jollain [suhteellisella polulla](../00-intro/01-tiedostot.md#tiedostopolut).
 
-Argumenttien määrää ei ole mitenkään rajattu, ja jotkin ohjelman ja komennot edellyttävät useampia argumentteja. Tällaisessa tapauksessa argumenttien järjestyksellä voi olla suuri merkitys. Esimerkiksi tiedostoja kopioiva :os-win: ```copy``` :os-mac::os-linux: ```cp```-komento haluaa kaksi argumenttia: kopioitavan lähdetiedoston ja uuden luotavan tiedoston nimen. Lähdetiedosto pitää :os-win: ```copy``` :os-mac::os-linux: ```cp``` komennolle antaa ensin ja uusi tiedosto sitten.
+Argumenttien määrää ei ole mitenkään rajattu, ja jotkin ohjelman ja komennot edellyttävät useampia argumentteja. Tällaisessa tapauksessa argumenttien järjestyksellä voi olla suuri merkitys. Esimerkiksi tiedostoja kopioiva <nowrap>:os-win: ```copy```</nowrap> <nowrap>:os-mac::os-linux: ```cp```</nowrap>-komento haluaa kaksi argumenttia: kopioitavan lähdetiedoston ja uuden luotavan tiedoston nimen. Lähdetiedosto pitää <nowrap>:os-win: ```copy```</nowrap> <nowrap>:os-mac::os-linux: ```cp```</nowrap>-komennolle antaa ensin ja uusi tiedosto sitten.
+
 === ":os-win: Windows"
     !!! shell "cmd.exe: kopioi usealla argumentilla"
         C:\TOL-alkeet>copy foo.txt bar.txt
@@ -135,7 +136,7 @@ Argumenttien määrää ei ole mitenkään rajattu, ja jotkin ohjelman ja komenn
 
 #### Lisävalinnat
 
-Joidenkin komentojen suoritusta voi ohjata lisäksi komennolle annettavilla lisävalinnoilla. Lisävalinnat eroavat argumenteista siten, että ne alkavat valintaa merkkaavalla merkillä. Usein :os-win: *Windowsilla* se on kauttaviiva ```/```; :os-mac::os-linux: *bashissa* käytetään käytännössä aina yhtä tai kahta väliviivaa (```-``` tai ```--```). Toisin kuin argumentit, joita käytetään ohjelman syötteenä, lisävalinnoilla vain muutetaan ohjelman suoritustapaa. Toisin sanoen, lisävalinnat kertovat mitä ohjelma/komento tekee, ja argumentti kertoo mille se tehdään.
+Joidenkin komentojen suoritusta voi ohjata lisäksi komennolle annettavilla lisävalinnoilla. Lisävalinnat eroavat argumenteista siten, että ne alkavat valintaa merkkaavalla merkillä. Usein <nowrap>:os-win: Windowsilla</nowrap> se on kauttaviiva ```/```; <nowrap>:os-mac::os-linux: *bashissa*</nowrap> käytetään käytännössä aina yhtä tai kahta väliviivaa (```-``` tai ```--```). Toisin kuin argumentit, joita käytetään ohjelman syötteenä, lisävalinnoilla vain muutetaan ohjelman suoritustapaa. Toisin sanoen, lisävalinnat kertovat mitä ohjelma/komento tekee, ja argumentti kertoo mille se tehdään.
 
 Lisävalinnan edessä olevien väliviivojen määrä perinteisesti riippuu siitä, kuinka monimerkkinen tunnus lisävalinnalla on. Kaikilla yksikirjaimisilla lisävalinnoilla on usein vain yksi väliviiva, kuten vaikka aikaisemmin ```ls -A```. Jos taas tunnus on pidempi sana, väliviivoja on yleensä kaksi, kuten vaikka [gitin](../02-ohjelmointi/02-git.md) komennossa ```git commit --message "Viesti"```. Joillakin valinnoilla voi olla myös pitkä ja lyhyt muoto, jossa lyhyt on yhden merkin mittainen ja tiivis, ja pitkä on kuvaavampi. Esimerkiksi tuo aikaisempi git-komennon voi kirjoittaa myös muodossa ```git commit -m "viesti"```.
 
@@ -145,18 +146,20 @@ Lisävalintoja on pääasiallisesti kahta erilaista: lippuja ja parametrillisiä
 
 ##### Liput
 
-Liput (eng. *flag*) ovat yksinkertaisin lisävalintatyyppi, ja lähes kaikki ohjelmat ja komennot tukevat niitä. Muun muassa yllä olevassa ```ls -A``` esimerkissä käytettiin ```-A```-lippua. Se lippu muutti komennon suorittamista siten, että se tulostaa myös kaikkien piilotiedostojen nimet.
+Liput (eng. *flag*) ovat yksinkertaisin lisävalintatyyppi, ja lähes kaikki ohjelmat ja komennot tukevat niitä. Muun muassa yllä olevassa ```ls -A``` esimerkissä käytettiin ```-A```-lippua. Lippu muutti komennon suorittamista siten, että se tulostaa myös kaikkien piilotiedostojen nimet.
+
+Yksinkertaisin lippu, joita lähes kaikki komentoriviohjelmat tukevat on ```--version``` tai jokin vastaava. Tällä lipulla ohjelma tulostaa ohjelman versionumeron, ja keskeyttää sen jälkeen ohjelman suorittamisen siten, ettei mitään muuta tapahdu.
+
 === ":os-win: Windows"
-    !!! shell "cmd.exe: git --version"
-        C:\TOL-alkeet>git <pop>--version</pop>
+    !!! shell "cmd.exe: git \-\-version"
+        C:\TOL-alkeet>git <pop>\-\-version</pop>
         git version 2.33.1.windows.1
 
 === ":os-mac::os-linux: bash"
-    !!! shell "bash: git --version"
+    !!! shell "bash: git \-\-version"
         **C54W4KDHGK**:jonimatias.github.io jonrajal$ git <pop>\-\-version</pop>
         git version 2.39.5 (Apple Git-154)
 
-Yksinkertaisin lippu, joita lähes kaikki komentoriviohjelmat tukevat on ```--version``` tai jokin vastaava. Tällä lipulla ohjelma tulostaa ohjelman versionumeron, ja keskeyttää sen jälkeen ohjelman suorittamisen siten, ettei mitään muuta tapahdu.
 
 
 ##### Parametrilliset lisävalinnat
@@ -241,22 +244,27 @@ Lisävalintoja ja lippuja voi laittaa myös useampia samalle komennolle.
 Toisin kuin komennot, jotka on saatavilla kaikissa kansioissa, tiedostoihin ja ohjelmiin päästäkseen pitää tietää niiden sijainti. Tiedoston sijainnin voi joko antaa [absoluuttisena polkuna](../00-intro/01-tiedostot.md#täysi-eli-absoluuttinen-polku) tai suhteessa *aktiiviseen kansioon*. Aktiivinen kansio viittaa siihen paikkaan, jossa käyttäjä tällä hetkellä "on". Kaikki komennot ja ohjelmat oletuksena suoritetaan aktiivisessa kansiossa, ellei toisin määritetä. Aktiivista kansiota voi vaihtaa käyttämällä ```cd```-komentoa ([:os-win: Windows](./03-peruskomennot/windows-peruskomennot.md#cd) tai [:os-mac::os-linux: bash](./03-peruskomennot/bash-peruskomennot.md#cd)).
 
 Komennon suorittamisen sijasta komentorivillä voi myös käynnistää ohjelman. Ohjelman käynnistäminen tapahtuu samalla tavoin kuin komennon suorittaminen, mutta komennon sijasta ensimmäiseksi sanaksi kirjoitetaan suoritettavan ohjelman tiedostonimi tai -polku. 
-
- - :os-mac::os-linux: bash Mikäli suoritettava ohjelmatiedosto on aktiivisessa kansiossa, pitää tiedostonimen eteen lisätä ```./```. Tämä siksi, etteivät komentojen nimet ole varattuja avainsanoja, eli tiedostot voi nimetä myös komentoja vastaavilla nimillä. *Bash* ei siis pysty erottamaan komentoa tiedostosta, ellei tiedostoa ole kirjoitettu polkumuodossa. 
- - :os-win: Windows: Kunhan tiedosto ei ole jonkin komennon niminen, niin aktiivisessa kansiossa olevan ohjelman voi käynnistää kirjoittamalla ohjelmatiedoston nimen, yleensä ilman tarkennintakin.
  
 === ":os-win: Windows"
-    !!! shell "os-win: cmd.exe Hello World"
-        C:\TOL-alkeet><pop>hello</pop>
+    Kunhan tiedosto ei ole jonkin komennon niminen, niin aktiivisessa kansiossa olevan ohjelman voi käynnistää kirjoittamalla ohjelmatiedoston nimen.
+
+    !!! shell "cmd.exe: Hello World .exe"
+        C:\TOL-alkeet><pop>hello.exe</pop>
 
         Hello, World!
         Terve, maailma!
-        C:\TOL-alkeet><pop>hello.exe</pop>
+    
+    Suoritettavan ohjelman tiedostonimen voi kirjoittaa myös ilman tiedostotarkenninta.
+
+    !!! shell "cmd.exe: Hello World"
+        C:\TOL-alkeet><pop>hello</pop>
 
         Hello, World!
         Terve, maailma!
         C:\TOL-alkeet>
 === ":os-mac::os-linux: bash"
+    Mikäli suoritettava ohjelmatiedosto on aktiivisessa kansiossa, pitää tiedostonimen eteen lisätä ```./```. Tämä siksi, etteivät komentojen nimet ole varattuja avainsanoja, eli tiedostot voi nimetä myös komentoja vastaavilla nimillä. *Bash* ei siis pysty erottamaan komentoa tiedostosta, ellei tiedostoa ole kirjoitettu polkumuodossa.
+
     !!! shell "bash: Hello World"
         **C54W4KDHGK**:testikansio jonrajal$ ./hello
         Hello, World!

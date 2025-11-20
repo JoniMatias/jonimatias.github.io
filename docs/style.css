@@ -161,7 +161,7 @@ p > code {
 }
 
 .md-typeset .twemoji {
-  break-after: avoid;
+  white-space: nowrap;
 }
 
 
