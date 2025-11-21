@@ -1,0 +1,202 @@
+
+
+.md-typeset h1 {
+  margin-left: 10px;
+  font-weight: bold;
+  color: skyblue;
+}
+
+.md-typeset h2 {
+  margin-left: 15px;
+  font-weight: bold;
+}
+
+.md-typeset h3 {
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+.button-icon img {
+  top: 10px;
+}
+
+.half-width {
+  width: 49%;
+}
+
+.subtitle {
+  margin-top: -40px;
+  color: rgb(123, 193, 220);
+  font-weight: bold;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.md-sidebar--secondary {
+  opacity: 0%;
+  pointer-events: none;
+}
+
+.md-content__inner {
+  position: relative;
+}
+
+.md-tag {
+  height: 20px;
+}
+
+.md-nav__item--section {
+  margin-top: 8mm;
+}
+
+.md-nav__item--section>.md-nav__link:not(.md-nav__container) {
+  color: black;
+}
+
+.info-card {
+  position: relative;
+  text-align: left;
+  top: -15px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 80%;
+}
+
+@media (min-width: 960px) {
+  .info-card {
+    position: absolute;
+    right: -260px;
+    top: 0px;
+    text-align: left;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-right: 0px;
+    width: 240px;
+  }
+}
+
+.bash-table-element {
+  float: left;
+  width: 32%;
+}
+
+@media (min-width: 960px) {
+  .bash-table-element {
+    float: left;
+    width: 24%;
+  }
+}
+
+.auto-width {
+  width: auto;
+}
+
+.bash-red {
+  color: rgb(239, 47, 85);
+}
+
+nowrap {
+  white-space: nowrap;
+}
+
+
+
+
+.bash-purple {
+  color: rgb(212, 24, 212);
+}
+
+p > code {
+  white-space: pre;
+}
+
+
+.full-width {
+  width: 100%;
+}
+
+.md-button.full-width {
+  width: 100%;
+  text-align: center;
+}
+
+
+.hoverable {
+    position: relative;
+    cursor: pointer;
+}
+ 
+.popup {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    background-color: #f9f9f9;
+    color: darkgray;
+    border: 1px solid #ccc;
+    padding: 10px;
+    z-index: 1;
+}
+ 
+.hoverable:hover .popup {
+    display: block;
+}
+
+.md-typeset .tabbed-labels {
+  border-width: 1mm;
+  border-top-left-radius: 3mm;
+  border-top-right-radius: 3mm;
+  background-color: #ccf1f9;
+  padding: 2mm;
+}
+
+.md-typeset .twemoji {
+  white-space: nowrap;
+}
+
+
+.md-typeset .tabbed-content {
+  border-width: 1mm;
+  border-bottom-left-radius: 3mm;
+  border-bottom-right-radius: 3mm;
+  border-color: #ccf1f9;
+  border-style: solid;
+  background-color: #fafeff;
+  padding: 2mm;
+}
+
+p:has(.man-link) {
+  margin-top: -4mm;
+  font-size: 85%;
+  margin-bottom: -2mm;
+}
+
+
+
+
+a[href*="//"]:not([href*="jonimatias.github.io"]) {
+  background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M440-280H280q-83 0-141.5-58.5T80-480q0-83 58.5-141.5T280-680h160v80H280q-50 0-85 35t-35 85q0 50 35 85t85 35h160v80ZM320-440v-80h320v80H320Zm200 160v-80h160q50 0 85-35t35-85q0-50-35-85t-85-35H520v-80h160q83 0 141.5 58.5T880-480q0 83-58.5 141.5T680-280H520Z"/></svg>');
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding-left: 25px;
+}
+
+a.md-button[href*="//"]:not([href*="jonimatias.github.io"]) {
+  background-image: none;
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding-left: 20px;
+}
+
+
+
