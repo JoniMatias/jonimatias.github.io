@@ -152,7 +152,7 @@ Yleensä ```PATH```in käyttämät oletuskansiot ovat piilossa, vaikeasti pääs
     | $b      | \| (pystyviiva) |
     | $q      | = (yhtäsuuruusmerkki)      |
     | $_      | rivinvaihto      |
-    | $e      | ANSI-escape -koodi (0x27)  |
+    | $e      | ANSI-escape -koodi (koodi 27, tai 0x1B -katso [ASCII-koodit](/unix/ascii))  |
     | $h      | askelpalautin l. backspace (poistaa merkin, joka on kirjoitettu näytölle)   |
     | $a      | &-merkki ("ampresand")      |
     | $c      | (-merkki (avaava sulje)      |
