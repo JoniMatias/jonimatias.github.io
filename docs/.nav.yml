@@ -12,6 +12,7 @@ nav:
     - "unix/*"
     - "Muuta":
       - 'unix/ascii.md'
+      - 'unix/glossaari.md'
   - Muuta:
     - Muita ideoita: 'koodi/muut_sivut/muut_sivut.md'
 

@@ -117,7 +117,7 @@ Tiedostopolkuja voidaan kirjoittaa useammalla eri tavalla. Yleensä aikaisemman 
 
 !!! abstract "Täysi polku"
     :os-win: C:\\Users\\jonrajal\\Koodi\\opetus\\tol-alkeet\\kuvia\\kuva-02.jpg<br>
-    :os-mac: /Users/jonrajal/Koodi/opetus/tol-alkeet/kuvia/kuva-02.jpg
+    :os-mac: /Users/jonrajal/Koodi/opetus/tol-alkeet/kuvia/kuva-02.jpg<br>
     :os-linux: /home/jonrajal/Koodi/opetus/tol-alkeet/kuvia/kuva-02.jpg
 
 Absoluuttinen polku on aikaisemmissa esimerkeissä mainittu alimmaisimmasta hakemistosta – juurihakemistosta – lähtevä polku. Tällaiset polut alkavat joko kovalevyn nimellä Windows-koneissa (```C:\```), tai nimettömällä juurihakemistolla Unix-koneissa (```/```).
