@@ -8,7 +8,7 @@ Komentojen ja automaatioiden lisäksi komentorivillä voi hallita tietokoneen as
 
 Jokaisella tietokoneella on ympäristömuuttujia. Nämä ovat tietokoneen talteen tallentamia arvoja, joita monet ohjelmat käyttävät saadakseen tietoa tietokoneen ja käyttäjätilin tilasta. Ympäristömuuttujien muokkaaminen on tehokas tapa saada muutettua tietokoneen toimintaa, mutta samalla kannattaa olla tarkkana, ettei sotke tietokonetta, jos niitä lähtee muuttamaan.
 
-Osaa ympäristömuuttujista ei välttämättä kannata tai voi muokata, sillä käyttöjärjestelmä muokkaa niiden sisältöä automaattisesti ja itsekseen. Tällaisia ovat mm. <nowrap>:os-mac::os-linux: *bashin*</nowrap> muuttujat ```PWD``` ja ```OLDPWD```, joihin on tallennettu päätteen tämänhetkinen aktiivinen kansio ja edellinen aktiivinen kansio.
+Osaa ympäristömuuttujista ei välttämättä kannata tai voi muokata, sillä käyttöjärjestelmä muokkaa niiden sisältöä automaattisesti ja itsekseen. Tällaisia ovat mm. <nowrap>:os-mac::os-linux: *bashin*</nowrap> muuttujat ```PWD``` ja ```OLDPWD```, joihin on tallennettu päätteen tämänhetkinen aktiivinen kansio ja edellinen aktiivinen kansio tai <nowrap>:os-win:*Windowsin*</nowrap> muuttujat ```APPDATA``` ja ```SystemRoot```, joihin on tallennettu sovelluksien käyttämä, profiiliin liittyvä roaming-hakemisto ja käyttöjärjestelmän asennushakemisto (ei todellakaan kannata mennä muokkaamaan noita itse käyttäjänä).
 
 Ympäristömuuttujia käytetään aivan kuten tavallisia [muuttujia](02-komentosarjat/02-bash_script.md#muuttujat). Toiminnan kannalta ne itseasiassa ovat samoja asioita; ne tallennetaan samaan paikkaan ja niitä luetaan samalla tavalla. Ympäristömuuttujissa on vain se jippo, että monet muutkin ohjelmat, jopa ne jotka ovat ennakkoasennettu koneelle, käyttävät ympäristömuuttujia omaan toimintaansa. Itse nimettyjen muuttujien kanssa voi luottaa siihen, etteivät ne sekoita muiden ohjelmien toimintaan merkittävästi.
 
@@ -16,14 +16,15 @@ Alla on lista muutamasta yleisimmästä ympäristömuuttujasta:
 
 | :os-win: Nimi Windowsissa | :os-mac::os-linux: Nimi bashissa | Kuvaus                                |
 |---------------------------|----------------------------------|---------------------------------------|
-| %HOMEDIR%                 | $HOME                            | Polku kotihakemistoon                 |
+| %USERPROFILE%                 | $HOME                            | Polku kotihakemistoon                 |
 | %PATH%                    | $PATH                            | Polku komentoriviohjelmien oletushakemistoon |
 | **(Ei ole)**              | $SHELL                           | Polku oletustulkkiin, joka käynnistetään päätteen mukana. |
-| %USER%                    | $USER                            | Kirjautuneen käyttäjän käyttäjätunnus. |
+| %USERNAME%                    | $USER                            | Kirjautuneen käyttäjän käyttäjätunnus. |
 | **(Ei ole)**              | $LANG                            | Kieliasetukset                         |
 | %PROMPT%                  | $PS1                             | Komentokehotteen muoto                 |
+| %OneDrive%                  | **(Ei ole)**                     | Hakemisto, johon OneDrive-verkkolevyn sisältö on yhdistetty.                 |
 
-Myös monet ohjelmat tallentavat ympäristömuuttujia yleiseen käyttöön. Esimerkiksi <nowrap>:os-win: Windows-</nowrap>koneilla Java määrittelee kääntäjän ja virtuaalikoneen sijainnin ```%JAVA_HOME%``` muuttujalla <nowrap>(:os-mac::os-linux: muilla</nowrap> koneilla ne löytyvät $PATH:istä). Samoin <nowrap>:os-mac: MacOS-koneilla</nowrap> käytettävä [Homebrew](../01-komentorivi/04-asennus.md#pakettien-asentaminen) asentaa kaikki ohjelmat polkuun, joka on määritelty muuttujassa ```$HOMEBREW_PREFIX```.
+Myös monet ohjelmat tallentavat ympäristömuuttujia yleiseen käyttöön. Esimerkiksi Java määrittelee kääntäjän ja virtuaalikoneen sijainnin ```%JAVA_HOME%``` muuttujalla muita Javaa hyödyntäviä työkaluohjelmia (esim. Maven) varten. Samoin <nowrap>:os-mac: MacOS-koneilla</nowrap> käytettävä [Homebrew](../01-komentorivi/04-asennus.md#pakettien-asentaminen) asentaa kaikki ohjelmat polkuun, joka on määritelty muuttujassa ```$HOMEBREW_PREFIX```.
 
 
 Kaikki ympäristömuuttujat voi saada näkyviin seuraavalla komennolla:
@@ -69,7 +70,7 @@ Yleensä ```PATH```in käyttämät oletuskansiot ovat piilossa, vaikeasti pääs
     Komento voi näyttää pelottavalta, joten puretaanpa se osiin:
 
     - ```SET PATH=``` vaihtaa PATH-muuttujan arvon yhtäsuuruusmerkin oikealla puolella olevaksi arvoksi.
-    - ```%PATH%``` ensimmäinen asia, mitä uuteen PATH-muuttujaan lisätään, on koko vanhan PATH-muuttujan arvo. Tällöin mitään ei jää pois.
+    - ```%PATH%``` ensimmäinen asia, mitä uuteen PATH-muuttujaan lisätään, on koko vanhan PATH-muuttujan arvo. **Tällöin mitään ei jää pois.** Jos tämän kohdan ohittaa, käytännössä voi sotkea koko koneen toiminnan, joten **ole tarkkana tämän kohdan kanssa**, ettei muokattu, uusi versio PATH-muuttujan sisällöstä jää esim. kirjoitusvirheen takia sisällöltään puutteelliseksi (missä tilanteessa koko koneen toiminnallisuus saattaa sekoittua).
     - ```;``` seuraavaksi lisätään muuttujaan puolipiste, koska jokainen PATH-muuttujan polku on eroteltu puolipisteellä.
     - ```\Users\jonrajal\Koodi\scripts``` viimeisenä laitetaan oma polku osaksi PATH-muuttujaan asetettavaa arvoa.
 
@@ -86,16 +87,9 @@ Yleensä ```PATH```in käyttämät oletuskansiot ovat piilossa, vaikeasti pääs
     - ```:``` seuraavaksi lisätään muuttujaan kaksoispiste, koska jokainen PATH-muuttujan polku on eroteltu kaksoispisteellä.
     - ```/Users/jonrajal/Koodi/scripts``` viimeisenä laitetaan oma polku osaksi PATH-muuttujaan asetettavaa arvoa.
 
-Ongelmia tulee kuitenkin, jos ympäristömuuttujaa yrittää muokata esimerkin mukaisesti suoraan komentokehotteesta. Jokainen komentokehotteessa muokattu muuttuja säilyy muistissa vain siitä [päätteessä](../01-komentorivi/01-bash-alkeet.md#komentorivin-osat), ja vain niin kauan kuin pääte on käynnissä. Jotta komentoa ei tarvitsisi ajaa joka kerta uudestaan, se kannattaa sijoittaa [päätteen käynnistystiedostoon](#päätteen-käynnistystiedostot), jossa se suoritetaan automaattisesti aina päätteen käynnistyessä.
+    Ongelmia tulee kuitenkin, jos ympäristömuuttujaa yrittää muokata esimerkin mukaisesti suoraan komentokehotteesta. Jokainen komentokehotteessa muokattu muuttuja säilyy muistissa vain siitä [päätteessä](../01-komentorivi/01-bash-alkeet.md#komentorivin-osat), ja vain niin kauan kuin pääte on käynnissä. Jotta komentoa ei tarvitsisi ajaa joka kerta uudestaan, se kannattaa sijoittaa [päätteen käynnistystiedostoon](#päätteen-käynnistystiedostot), jossa se suoritetaan automaattisesti aina päätteen käynnistyessä.
 
 
-
-=== ":os-win: AUTOEXEC.BAT"
-    ```PATH```-muuttujan saa nopeasti käynnistystiedostoon lisäämällä seuraava rivi ```AUTOEXEC.BAT```-tiedostoon:
-
-    **TODO:** Miten muutetaan PATHia AUTOEXECissa?
-
-=== ":os-mac::os-linux: .bash_profile"
     ```PATH```-muuttujan saa nopeasti käynnistystiedostoon lisäämällä seuraava rivi ```.bash_profile```-tiedostoon (tiedosto on kotihakemistossa ```~```):
     ```
     export PATH=$PATH:/täysi/polku/omaan/kansioon
@@ -119,7 +113,81 @@ Ongelmia tulee kuitenkin, jos ympäristömuuttujaa yrittää muokata esimerkin m
 [Komentokehotteen](../01-komentorivi/01-bash-alkeet.md#komentorivin-osat) ulkoasua voi muokata haluamansalaiseksi ympäristömuuttujilla. Joka komentotulkilla on oma tapansa kehotteen muotoiluksi, joten käydään tässä molemmat läpi.
 
 === ":os-win: Windows %PROMPT%"
-    **TODO:** %PROMPT%in muokkaus
+    *Windowsissa* voi komentokehotteen muotoa (siis sitä kohtaa, joka tulostuu aina uudelle riville aluksi kun on antamassa jotain komentoa ```cmd.exe```-ikkunassa) voi muokata ympäristömuuttujan ```PROMPT``` kautta. Nykyään (aina ei näin ole ollut) oletuksena kehotteen muoto on:
+    ```asematunnuskirjain:aktiivinen_kansio> ```
+
+    eli mikä on tämänkin sivuston esimerkeissä näkynyt kehotteissa:
+
+    !!! shell "cmd.exe: kehotteen oletusmuoto"
+        <pop>C:\TOL-alkeet></pop>
+
+    Mutta: mikäli oletuskehotemuoto alkaa kyllästyttämään, tai yleisemmin: mikäli kehotteeseen haluaa näkymään jotain muuta tietoa, voi asettaa ```PROMPT```-muuttujaan erilaisia kohtia tekstiparametreilla. 
+
+    Oletuskehotteen muodon saa näkymään (mahdollisesti takaisin, mikäli kokeilut eivät ole olleet onnistuneita ja/tai mieleisiä) asettamalla ```PROMPT```-muuttujan sisällöksi tekstiparametrin ```$P$G```, eli ```SET PROMPT=$P$G```
+
+    !!! shell "cmd.exe: kehotteen muuttaminen takaisin oletusmuotoon"
+        DFDGMA34341::-30.2: <pop>SET PROMPT=$P$G</pop>
+
+        C:\TOL-alkeet>
+
+    Edellä olevassa komennossa on seuraavat osat:
+
+    - ```SET``` muuttaa siis ympäristömuuttujaa
+    - ```PROMPT``` on ympäristömuuttuja, jota halutaan muokata. Tässä tapauksessa siis komentokehotteen muotoilu-muuttuja
+    - ```$P``` dollarimerkillä ilmaistaan että halutaan ottaa käyttöön tätä tarkoitusta varten määriteltyjä esiasetuksia, ja tässä yhteydessä asetusta ```P``` eli nykyisen aseman tunnus ja aktiivinen hakemisto -tietoa.
+    - ```$G``` sama juttu kuin edellä dollarimerkin osalta, mutta nyt käytä asetusta mikä tulostaa ```>``` eli suurempi kuin -merkin.
+
+    Tekstiparametrille voi antaa toki myös ns. vakioita ja hyödyntää muita ympäristömuuttujia ```%```-merkkejä käyttäen, mutta seuraavat osat on samalla tavalla "sisäänrakennettu" hyödynnettäviksi kuten nuo ```$P``` ja ```$G``` ovat:
+
+    | Avain   | Merkitys                                                |
+    |---------|---------------------------------------------------------|
+    | $$      | $ (Dollarimerkki) |
+    | $t      | Kellonaika  |
+    | $d      | Päivämäärä |
+    | $p      | Nykyinen asema ja aktiivinen hakemisto |
+    | $v      | Windowsin versio |
+    | $n      | Nykyinen asema|
+    | $g      | > (suurempi kuin -merkki) |
+    | $l      | < (pienempi kuin -merkki) |
+    | $b      | \| (pystyviiva) |
+    | $q      | = (yhtäsuuruusmerkki)      |
+    | $_      | rivinvaihto      |
+    | $e      | ANSI-escape -koodi (0x27)  |
+    | $h      | askelpalautin l. backspace (poistaa merkin, joka on kirjoitettu näytölle)   |
+    | $a      | &-merkki ("ampresand")      |
+    | $c      | (-merkki (avaava sulje)      |
+    | $f      | )-merkki (sulkeva sulje)      |
+    | $s      | välilyönti      |
+
+    ??? info "Muutama esimerkkikehote"
+        Kehote voi näyttää myös kellonajan ja päivän. Näppärä, jos pitää kirjaa ajamistaan komennoista kopioimalla päätteen tulosteet erilliseen tekstitiedostoon.
+
+        ```SET PROMPT=$t$s$d$s$p$g```
+
+        !!! shell "cmd.exe: SET PROMPT=$t$s$d$s$p$g"
+            C:\TOL-alkeet>set PROMPT=$t$s$d$s$p$g
+
+            20.42.35,09 ma 24.11.2025 C:\TOL-alkeet> 
+        -------
+        Mikäli haluaa, niin kehotteen saa enemmän <nowrap>:os-mac::os-linux:*bash:n*</nowrap> näköiseksi myös <nowrap>:os-win:cmd.exe</nowrap>-puolella asettamalla aktiivisen käyttäjän käyttäjänimen ja tietokoneennimen ympäristömuuttujista, sekä muuttamalla viimeisimmäksi tulostettavan merkin ```$```-merkiksi komennolla
+
+        ```SET PROMPT=%USERNAME%@%COMPUTERNAME%:$p$$```
+
+        !!! shell "cmd.exe: SET PROMPT=%USERNAME%@%COMPUTERNAME%:$p$$"
+            C:\TOL-alkeet>set PROMPT=%USERNAME%@%COMPUTERNAME%:$p$$
+
+            Jouni@JL-DESKTOP:C:\TOL-alkeet$
+        -------
+        Komentokehotteen muokkaamiseen voi hyödyntää myös tuota edellä olevassa listassa olevaa, kryptiseltä kuulostavaa ```$e``` eli "ANSI escape-merkkiä" ja muokata esim. käytössä olevia tekstivärejä. Komento
+
+        ```C:\TOL-alkeet>set PROMPT=$E[1;32;40m%USERNAME%@%COMPUTERNAME%$E[1;37;40m:$E[1;34;40m$p$E[1;37;40m$$```   
+
+        !!! shell "cmd.exe: SET PROMPT väreissä"
+            C:\TOL-alkeet>set PROMPT=$E[1;32;40m%USERNAME%@%COMPUTERNAME%$E[1;37;40m:$E[1;34;40m$p$E[1;37;40m$$
+
+            <span style="color:green">Jouni@JL-DESKTOP</span><span style="color:white">:</span><span style="color:blue">C:\TOL-alkeet</span><span style="color:white">$</span>
+
+        muuttaa tulostusvärit tekstille kehotteen eri osiin (ensimmäinen osio käyttäjännimi@koneennimi vihreällä tekstillä, kaksoispiste ja lopun ```$```-merkit valkoisella ja aktiivisen hakemiston polku sinisellä). Lisää värityksiä ja muita muotoiluja löytyy [Microsoftin learn-resursseista](https://learn.microsoft.com/en-us/windows/console/console-virtual-terminal-sequences#text-formatting)
 
 === ":os-mac::os-linux: bash $PS1"
     *Bashissa* on itseasiassa useampi ympäristömuuttuja kehotteen muodolle, riippuen käyttäjän ajamasta komennosta. ```PS1``` muokkaa peruskehotetta, joten siihen voidaan perehtyä lähemmin. Muuttujia ```PS2```, ```PS3``` ja ```PS4``` käytetään erikoistapaukissa.
@@ -191,7 +259,23 @@ Usein komentoriviä käyttäessä tulee vastaan tilanteita, joissa aina haluaisi
 Näitä varten komentotulkit käyttävät käynnistystiedostoja. Nämä käynnistystiedostot ovat aivan tavallisia [komentosarjotiedostoja](02-komentosarjat/index.md#komentosarjat), jotka tulkki suorittaa aina käynnistyessään.
 
 === ":os-win: Windows"
+    Toisin kuin <nowrap>:os-mac:mac-ympäristössä</nowrap> ja <nowrap>:os-linux:linux-puolella</nowrap> *bash*-komentotulkissa, <nowrap>:os-win:Windowsissa</nowrap> komentokehotteen käynnistämisen yhteydessä ei automaattisesti ajeta mitään käyttäjän muokattavaksi tarkoitettuja asetustiedostoja, joita muokkaamalla voisi suorittaa haluamiaan komentosarjoja. Pieni kiertotie on muuttaa Windowsin terminaaliohjelman asetuksista ```Komentokehote```-ohjelman (engl. ```Command Prompt```) käynnistyskomentoa, ja lisätä siihen ```/k``` -valitsin ja halutun komentosarjatiedoston nimi polkuineen (ikäänkuin rakentaa oma, *bash*-puolen ```~/.bashrc```:tä vastaava tiedosto ja systeemi). Esimerkiksi, mikäli tiedosto ```C:\TOL-alkeet\oma.bat``` sisältäisi tuon aiemmin käytetyn ```SET PROMPT```-komennon, jolla muutetaan kehoteteksti "*bash*-maiseksi" ja väritetyksi:
 
+    ```
+    @ECHO OFF
+    SET PROMPT=$E[1;32;40m%USERNAME%@%COMPUTERNAME%$E[1;37;40m:$E[1;34;40m$p$E[1;37;40m$$
+    ```
+    sen voisi asettaa automaattisesti käynnistyksen yhteydessä ajettavaksi asettamalla komentorivin käynnistyskomennon muotoon
+
+    ```
+    %SystemRoot%\System32\cmd.exe /k C:\TOL-alkeet\oma.bat
+    ```
+
+    ![](./kuvat/win-terminal-settings.png)
+
+    ![](./kuvat/win-terminal-startupfile.png)
+
+    ![](./kuvat/win-terminal-custom-startup.png)
 
 === ":os-mac: MacOS"
     !!! warning inline end ".bashrc"
@@ -230,7 +314,39 @@ Näitä varten komentotulkit käyttävät käynnistystiedostoja. Nämä käynnis
 Käynnistystiedostot ovat näppäriä paikkoja kirjoittaa aikaisemmin esitellyt [PATHin lisäykset](#path) ja [kehotteen muotoilut](#kehotteen-muokkaus), mutta niitä voi käyttää myös muuhun. Toinen yleinen tarkoitus niille on esitellä komentojen synonyymeja tai pienoiskomentoja. Tapoja kirjoittaa lyhenteitä monimutkaisemmille komennoille.
 
 === ":os-win: Windows doskey"
-    Windows ei tue aliasta tai vastaavaa järjestelmää. cmd.exe voi luoda macroja komennolla ```doskey```, mutta niiden käyttö on huomattavan monimutkaista.
+    Windows ei tue aliasta tai vastaavaa järjestelmää, mutta cmd.exe:ssä voi luoda makroja komennolla ```doskey```. Tällä tekniikalla voi tavallaan antaa komennoille vaihtoehtoisia nimiä. Esimerkiksi ```doskey ls=dir``` tekee dir-komennosta sellaisen, jonka voi suorittaa joko kirjoittamalla ```dir``` tai ```ls```. 
+
+    !!! shell "cmd.exe: doskey"
+        C:\TOL-alkeet><pop>doskey ls=dir /w</pop>
+
+        C:\TOL-alkeet><pop>ls</pop>
+         Volume in drive C has no label.
+         Volume Serial Number is 1028-66AE
+
+         Directory of C:\TOL-alkeet
+
+        [.]               fibo.bat          hello.exe         [html-kansio]     [kuvia]            README.txt        teksti.txt        test.txt          testi.bat         [toinen]          toinen.txt        toinen.zip        uusi.txt
+                      16 File(s)         51 456 bytes
+                       4 Dir(s)  1 310 752 272 384 bytes free
+
+        C:\TOL-alkeet>
+
+
+    Tällöin tosin menettää kyvyn antaa dir-komennolle kuuluvia valitsimia ```ls```-nimen kautta käytettäessä. Toisaalta, ```doskey```-makroa voi käyttää lyhyenä oikotienä komennolle, jolle haluaa antaa useita ja/tai pitkiä argumentti- ja valitsinyhdistelmiä.
+
+    Kaikki sillä hetkellä määritellyt ```doskey```-makrot saa listattua komennolla ```doskey /macros```, ja mikäli makroasetuksista haluaa pysyvämpiä kuin vain senhetkisen komentokehoteistunnon aikaisia, voi soveltaa [päätteen käynnistystiedostot](#päätteen-käynnistystiedostot)-kohdassa esitettyä ```/k```-valitsinta ja komentosarjatiedostoa doskey-makrojen luontiin joka komentokehotteen käynnistyksen yhteydessä.
+
+    Jos komento, jolle ```doskey```-makron haluaa luoda ottaa argumentteja, ne voi välittää makron nimelle käyttämällä joko yksittäistä parametria ```$1```-```$9``` makron ```=```-merkin oikealla puolella olevalle alkuperäiselle komennolle, tai (kuten monesti on tarve) välittää vain "loput" parametrit makrolle ```$*```-merkinnällä.
+
+    !!! shell "cmd.exe: doskey $*"
+        C:\TOL-alkeet><pop>doskey cat=type $*</pop>
+
+        C:\TOL-alkeet>cat teksti.txt
+        Tõmõ on tekstitiedoston sisõlt÷. Tõtõ kõytetõõn tol-alkeet-materiaalin esimerkkitiedostona.
+
+        Tekstitiedosto sisõltõõ tekstiõ, kuten kirjaimia, numeroita ja muita erikoismerkkejõ.
+
+    ```doskey```-makroihin löytyy lisätietoa [Microsoftin learn-portaalista](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/doskey).
 
 === ":os-mac::os-linux: *Bash* alias"
 
