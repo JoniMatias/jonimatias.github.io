@@ -1,3 +1,5 @@
+sort:
+  by: asd
 nav:
   - Tehtävät:
     - Aloitussivu: 'koodi/koodi_toc.md'
