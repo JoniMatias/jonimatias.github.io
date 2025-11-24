@@ -75,6 +75,18 @@ Tulkki oletuksena käyttää paettuja välilyöntejä tiedostojen nimissä, kun 
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 
+### Muita ratkaisuja
+
+Koska välilyönnit tuottavat komentorivilla harmaita hiuksia, useat komentorivin käyttäjät välttävät välilyöntejä tiedostojen nimissä. Yksinkertaisimmillaan kaikki tiedostot voi nimetä vain yhdellä sanalla, jolloin sanavälejä ei tarvita, mutta yleensä tiedoston nimen kannattaa olla kuvaavampi.
+
+Monisanaisesta tiedostonimestä saa yksisanaisen merkitsemällä sanavälin jollain muulla tavalla kuin välilyönnillä. Yleisimpiä ratkaisuja siihen on mm.:
+
+ - **PascalCase**, jossa jokaisen sanan ensimmäinen kirjain kirjoitetaan isolla.
+ - **snake_case**, jossa jokainen sanaväli korvataan alaviivalla ```_```.
+ - **kebab-case***, jossa jokainen sanaväli korvataa väliviivalla ```-```.
+
+Jokainen saa valita tyylinsä itse, mutta valittu tyyli yleensä kertoo käyttäjästään jotain. *PascalCase* on yleensä ohjelmoijien suosiossa, *snake_case* komentorivivelhojen ja *kebab-case* verkkokehittäjien. Tämä johtuu vakiintuneista tavoista, joilla kunkin käyttäjien työkalut ja niiden dokumentaatio on perinteisesti yhdistettyjä sanoja käyttänyt.
+
 ## Pistetiedostot
 
 :os-mac::os-linux: Unix-järjestelmissä kaikki tiedostot, joiden nimi alkaa pisteellä piilotetaan käyttäjältä. Komentorivillä piilotiedostot saa näkyville komennolla ```ls -A```, ja graafisen käyttöliittymän puolella ne saadaan näkyville pikanäppäimellä <nowrap>:os-mac: <kbd>:key-shift: Shift</kbd>+<kbd>:key-cmd: Command</kbd>+<kbd>.</kbd></nowrap> tai <nowrap>:os-linux: <kbd>:key-ctrl: Control</kbd>+<kbd>H</kbd></nowrap>.
@@ -102,11 +114,15 @@ Vaikka tiedostot ovatkin piilotettuja, ne voidaan avata komentorivillä tavallis
 
 :os-win: Windows-koneet eivät piilota pisteellä alkavia tiedostoja, minkä vuoksi muiden käyttöjärjestelmien koneilta siirretyissä kansiossa joskus näkyy ylimääräisiä tiedostoja. Yleisin näistä taitaa olla MacOS:n käyttämä ```.DS_Store```-tiedosto, jonka MacOS laittaa jokaiseen kansioon.
 
-## Tiedostopäätteet
-
-
-
-
 
 ## Skandit ja erikoismerkit
 
+Nykytietokoneet tukevat käytännössä koko ihmisten kirjoitustapojen kirjoa. Unicode tukee käytännössä kaikkia merkkejä, mitä ihmiskunta on koskaan halunnut painaa kirjaan tai verkkosivulle. 
+
+Nykyiset käyttöjärjestelmät ja sitä kautta myös komentorivit tukevat Unicodea, sen kaikkia mahdollisia merkkejä. Tästä näkökulmasta asiassa ei pitäisi olla mitään epäselvyyksiä.
+
+Ongelmaksi kuitenkin muodostuu se, että Unicoden tukeminen ohjelmien sisällö on työläämpää kuin yksinkertaisen [ASCII-merkistön](../ascii.md#ascii-merkistö) tukeminen, jossa ei ole kuin englanninkielen käytössä olevat merkit. Siten monet komentorivillä käytettävät ohjelmat – joskus myös graafisetkin ohjelmat – eivät tue erikoismerkkejä.
+
+Tämä tuottaa ongelmia aika ajoin, kun komentorivillä yrittää rakentaa näppärää automaatiota. Kaikki tuntuu toimivan, ja menevän oikein hyvin, kunnes yhtäkkiä vastaan tuleekin tiedosto, jossa on ääkkösiä, ja jokin yksi työvaihe automaatiossa pettää. Tällaisia ongelmia on nykypäivänä vähemmän kuin vielä 10-20 vuotta sitten, mutta niihin edelleen törmää varsinkin vanhoja ohjelmia käyttäessä.
+
+Potentiaalisten ongelmatilanteiden vähentämiseksi useat komentorivin käyttäjät välttävät siksi ääkkösten käyttöä tiedostojen nimissä.
