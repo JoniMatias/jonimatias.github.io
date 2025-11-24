@@ -25,7 +25,7 @@ Nykyään jotkin käyttöjärjestelmät piilottavat tiedostopäätteet oletuksen
     Windows 11 lähtien tiedostopäätteet pitäisi olla oletuksena näkyvissä. Jos näin ei kuitenkaan ole, niin Windows-koneilla tiedostopäätteet saa näkyville tiedostoikkunan ylävalikosta Sort > Show > File name extensions
     ![](kuvat/Windows-file-extensions-korostus.png)
 === ":os-mac: MacOS"
-    MacOS-tietokoneille tiedostopäätteet saa näkyville Finderin asetuksista. Kun Finder-ikkuna on valittuna, paina <nowrap><kbd>⌘ Command</kbd> + <kbd>,</kbd></nowrap> avataksesi Finderin asetukset. Uudessa ikkunassa valitse yläreunasta *Lisävalinnat*-välilehti. Välilehden ensimmäinen valinta on "Näytä kaikki tiedostotarkenteet"; jos se ei ole päällä, laita se päälle.
+    MacOS-tietokoneille tiedostopäätteet saa näkyville Finderin asetuksista. Kun Finder-ikkuna on valittuna, paina <nowrap><kbd>:key-cmd: Command</kbd> + <kbd>,</kbd></nowrap> avataksesi Finderin asetukset. Uudessa ikkunassa valitse yläreunasta *Lisävalinnat*-välilehti. Välilehden ensimmäinen valinta on "Näytä kaikki tiedostotarkenteet"; jos se ei ole päällä, laita se päälle.
     ![](kuvat/MacOS-file-extensions-korostus.png){ .half-width .center }
 === ":os-linux: Ubuntu"
     Ubuntulla tiedostopäätteet ovat aina olleet oletuksena näkyvillä, joten niitä ei tarvitse erikseen laittaa näkyville.

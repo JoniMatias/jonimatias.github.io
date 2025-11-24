@@ -91,7 +91,7 @@ Rajaamalla tekstin ```<nowrap>``` -tagien väliin, tekstiä ei koskaan muotoilla
 Esimerkiksi pikanäppäinyhdistelmä tulostamiseen Macilla voitaisiin kirjoittaa seuraavalla tavalla:
 
 ```
-<nowrap><kbd>⌘ Command</kbd>+<kbd>P</kbd></nowrap>
+<nowrap><kbd>:key-cmd: Command</kbd>+<kbd>P</kbd></nowrap>
 ```
 
 Tarkoitus on lähinnä helpottaa luettavuutta siten, että kontekstissa yhteen liittyvät asiat olisivat aina samalla rivillä. Suuria määriä sisältöä ei kuitenkaan kannata laittaa ```<nowrap>```-tagien sisään, koska se muokkaa automaattirivitystä, ja voi saada tekstiä näyttämään oudolta tai lukukelvottomalta varsinkin puhelimen ruuduilla.
