@@ -62,13 +62,17 @@ Toisin kuin muut admonitionit, ```shell``` oletuksena säilyttää kaikki tyhjä
 
 ### Omat ikonit
 
-Sivusto käyttää [emoji-pluginia](https://jimandreas.github.io/mkdocs-material/reference/icons-emojis/) piirtämään omia ikoneita tekstin sekaan. Ikonit kirjoitetaan muodossa ```:<ikonin-nimi>:``` Tällä hetkellä käytössä on vain kolme käyttöjärjestelmäikonia:
+Sivusto käyttää [emoji-pluginia](https://jimandreas.github.io/mkdocs-material/reference/icons-emojis/) piirtämään omia ikoneita tekstin sekaan. Ikonit kirjoitetaan muodossa ```:<ikonin-nimi>:``` Tällä hetkellä käytössä on kolme käyttöjärjestelmäikonia, ja neljä näppäinikonia.
 
-| avain        |  Ikoni                     |
-|--------------|----------------------------|
-| :os-win:     | Windows-logo               |
-| :os-mac:     | Applen logo                |
-| :os-linux:   | Ubuntun logo               |
+| avain        |  Ikoni                          |
+|--------------|---------------------------------|
+| :os-win:     | Windows-logo                    |
+| :os-mac:     | Applen logo                     |
+| :os-linux:   | Ubuntun logo                    |
+| :key-ctrl:   | Control-napin ikoni (^)         |
+| :key-shift:  | Shiftin ikoni (nuoli)           |
+| :key-cmd:    | Commandin ikoni (hannunvaakuna) |
+| :key-mac-opt:| Macin optionin ikoni            |
 
 
 Uusia ikoneita voi lisätä laittamalla svg-tiedosto kansioon ```overrides/.icons/```. Sitten ikonin saa piirrettyä kirjoittamalla tiedoston polun suhteessa ```.icons```-kansioon kaksoispisteiden väliin, korvaamalla kaikki kauttamerkit (```/```) väliviivoilla (```-```) ja jättämällä tiedostopääte pois.
@@ -87,7 +91,7 @@ Rajaamalla tekstin ```<nowrap>``` -tagien väliin, tekstiä ei koskaan muotoilla
 Esimerkiksi pikanäppäinyhdistelmä tulostamiseen Macilla voitaisiin kirjoittaa seuraavalla tavalla:
 
 ```
-<nowrap><kbd>⌘ Command</kbd>+<kbd>P</kbd></nowrap>
+<nowrap><kbd>:key-cmd: Command</kbd>+<kbd>P</kbd></nowrap>
 ```
 
 Tarkoitus on lähinnä helpottaa luettavuutta siten, että kontekstissa yhteen liittyvät asiat olisivat aina samalla rivillä. Suuria määriä sisältöä ei kuitenkaan kannata laittaa ```<nowrap>```-tagien sisään, koska se muokkaa automaattirivitystä, ja voi saada tekstiä näyttämään oudolta tai lukukelvottomalta varsinkin puhelimen ruuduilla.

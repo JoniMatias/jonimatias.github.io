@@ -1,3 +1,5 @@
+sort:
+  by: asd
 nav:
   - Tehtävät:
     - Aloitussivu: 'koodi/koodi_toc.md'
@@ -10,6 +12,7 @@ nav:
     - "unix/*"
     - "Muuta":
       - 'unix/ascii.md'
+      - 'unix/glossaari.md'
   - Muuta:
     - Muita ideoita: 'koodi/muut_sivut/muut_sivut.md'
 

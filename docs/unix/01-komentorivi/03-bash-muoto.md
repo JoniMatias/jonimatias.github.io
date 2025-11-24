@@ -278,4 +278,4 @@ Joskus ohjelma tai komento ei sammu itsekseen käynnistymisen jälkeen. Tällais
 
 Joskus myös ohjelmassa on bugi, jonka takia se jää ikuiseen silmukkaan, eikä lopu ikinä. Joskus taas voit huomata käynnistäneesi väärän ohjelman, ja haluat sammuttaa sen ennen kuin se ehtii tehdä liikaa tuhoja.
 
-Näitä ongelmia varten on olemassa näppäinyhdistelmä <nowrap><kbd>^ Control</kbd>+<kbd>c</kbd></nowrap>. Kun tätä näppäinyhdistelmää painetaan, :os-win: *komentokehote* :os-mac::os-linux: *bash* sammuttaa tällä hetkellä suorituksen alaisen ohjelman heti. Se ei jää kyselemään tai odottamaan käyttäjältä lisäsyötteitä, ohjelma vaan keskeytetään suoraan siihen, ja sen toiminta jätetään kesken.
+Näitä ongelmia varten on olemassa näppäinyhdistelmä <nowrap><kbd>:key-ctrl: Control</kbd>+<kbd>c</kbd></nowrap>. Kun tätä näppäinyhdistelmää painetaan, :os-win: *komentokehote* :os-mac::os-linux: *bash* sammuttaa tällä hetkellä suorituksen alaisen ohjelman heti. Se ei jää kyselemään tai odottamaan käyttäjältä lisäsyötteitä, ohjelma vaan keskeytetään suoraan siihen, ja sen toiminta jätetään kesken.

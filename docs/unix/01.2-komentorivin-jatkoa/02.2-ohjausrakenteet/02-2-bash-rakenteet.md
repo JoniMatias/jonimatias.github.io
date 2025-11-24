@@ -202,7 +202,7 @@ Silmukoita on kahdenlaisia *bashissa*. Niiden rakenteet ovat seuraavanlaisia:
 
     - Käyttämällä ehtolauseessa komentoa, jonka tulos vaihtelee itsekseen. Tällaisia ovat mm. ```RANDOM```-muuttuja, joka tuottaa satunnaisluvun tai ```read```-komento, joka lukee annettua tiedostoa rivi kerrallaan.
     - Luomalla muuttujan, jonka arvo muuttuu silmukan sisällä.
-    - Luomalla tietoisesti ikuisen silmukan, joka toistaa komentoa kunnes käyttäjä keskeyttää komentosarjan painamalla <nowrap><kbd>^ Control</kbd>+<kbd>C</kbd></nowrap>.
+    - Luomalla tietoisesti ikuisen silmukan, joka toistaa komentoa kunnes käyttäjä keskeyttää komentosarjan painamalla <nowrap><kbd>:key-ctrl: Control</kbd>+<kbd>C</kbd></nowrap>.
 
     !!! shell "bash: while - numeroita"
         **C54W4KDHGK**:tol-alkeet jonrajal$ i=0

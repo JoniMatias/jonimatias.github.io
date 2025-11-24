@@ -22,7 +22,7 @@ Komentorivin käynnistäminen on helppoa. Kaikissa tietokoneissa on valmiiksi as
     ![](./kuvat/cmd-exe-alku.png)
 
 === ":os-mac: Pääte (MacOS)"
-    Helpoin tapa käynnistää *Pääte* on käyttää MacOS:n spotlight-toimintoa. Paina oikean yläkulman suurennuslasia (tai paina yhtä aikaa <nowrap><kbd>⌘ Command</kbd> + <kbd> Välilyönti</kbd></nowrap>), ja kirjoita ilmestyvään hakukenttään Pääte (jos koneesi on englanniksi, niin kirjoita Terminal) ja paina enteriä.
+    Helpoin tapa käynnistää *Pääte* on käyttää MacOS:n spotlight-toimintoa. Paina oikean yläkulman suurennuslasia (tai paina yhtä aikaa <nowrap><kbd>:key-cmd: Command</kbd> + <kbd> Välilyönti</kbd></nowrap>), ja kirjoita ilmestyvään hakukenttään Pääte (jos koneesi on englanniksi, niin kirjoita Terminal) ja paina enteriä.
 
     Toinen tapa avata *Pääte* on mennä Finderilla Apit-kansioon (eng. *Apps*), löytää sieltä Apuohjelmat-kansio (eng. *Utilities*) ja käynnistää *Pääte.app* sieltä.
 
