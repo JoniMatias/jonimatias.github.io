@@ -77,7 +77,7 @@ Tulkki oletuksena käyttää paettuja välilyöntejä tiedostojen nimissä, kun 
 
 ## Pistetiedostot
 
-:os-mac::os-linux: Unix-järjestelmissä kaikki tiedostot, joiden nimi alkaa pisteellä piilotetaan käyttäjältä. Komentorivillä piilotiedostot saa näkyville komennolla ```ls -A```, ja graafisen käyttöliittymän puolella ne saadaan näkyville pikanäppäimellä <nowrap>:os-mac: <kbd>:material-apple-keyboard-shift: Shift</kbd>+<kbd>:material-apple-keyboard-command: Command</kbd>+<kbd>.</kbd></nowrap> tai <nowrap>:os-linux: <kbd>^ Control</kbd>+<kbd>H</kbd></nowrap>.
+:os-mac::os-linux: Unix-järjestelmissä kaikki tiedostot, joiden nimi alkaa pisteellä piilotetaan käyttäjältä. Komentorivillä piilotiedostot saa näkyville komennolla ```ls -A```, ja graafisen käyttöliittymän puolella ne saadaan näkyville pikanäppäimellä <nowrap>:os-mac: <kbd>:key-shift: Shift</kbd>+<kbd>:key-cmd: Command</kbd>+<kbd>.</kbd></nowrap> tai <nowrap>:os-linux: <kbd>:key-ctrl: Control</kbd>+<kbd>H</kbd></nowrap>.
 
 Vaikka tiedostot ovatkin piilotettuja, ne voidaan avata komentorivillä tavallisesti, eli kirjoittamalla niiden nimi (piste mukaan luettuna).  
 
