@@ -259,7 +259,7 @@ Usein komentoriviä käyttäessä tulee vastaan tilanteita, joissa aina haluaisi
 Näitä varten komentotulkit käyttävät käynnistystiedostoja. Nämä käynnistystiedostot ovat aivan tavallisia [komentosarjotiedostoja](02-komentosarjat/index.md#komentosarjat), jotka tulkki suorittaa aina käynnistyessään.
 
 === ":os-win: Windows"
-    Toisin kuin <nowrap>:os-mac:mac-ympäristössä</nowrap> ja <nowrap>:os-linux:linux-puolella</nowrap> *bash*-komentotulkissa, <nowrap>:os-win:Windowsissa</nowrap> komentokehotteen käynnistämisen yhteydessä ei automaattisesti ajeta mitään käyttäjän muokattavaksi tarkoitettuja asetustiedostoja, joita muokkaamalla voisi suorittaa haluamiaan komentosarjoja. Pieni kiertotie on muuttaa Windowsin terminaaliohjelman asetuksista ```Komentokehote```-ohjelman (engl. ```Command Prompt```) käynnistyskomentoa, ja lisätä siihen ```/k``` -valitsin ja halutun komentosarjatiedoston nimi polkuineen (ikäänkuin rakentaa oma, *bash*-puolen ```~/.bashrc```:tä vastaava tiedosto ja systeemi). Esimerkiksi, mikäli tiedosto ```C:\TOL-alkeet\oma.bat``` sisältäisi tuon aiemmin käytetyn ```SET PROMPT```-komennon, jolla muutetaan kehoteteksti "*bash*-maiseksi" ja väritetyksi:
+    Toisin kuin <nowrap>:os-mac:mac-ympäristössä</nowrap> ja <nowrap>:os-linux:linux-puolella</nowrap> *bash*-komentotulkissa, <nowrap>:os-win:Windowsissa</nowrap> komentokehotteen käynnistämisen yhteydessä ei automaattisesti ajeta mitään käyttäjän muokattavaksi tarkoitettuja asetustiedostoja, joita muokkaamalla voisi suorittaa haluamiaan komentosarjoja. Pieni kiertotie on muuttaa Windowsin terminaaliohjelman asetuksista ```Komentokehote```-ohjelman (eng. ```Command Prompt```) käynnistyskomentoa, ja lisätä siihen ```/k``` -valitsin ja halutun komentosarjatiedoston nimi polkuineen (ikään kuin rakentaa oma, *bash*-puolen ```~/.bashrc```:tä vastaava tiedosto ja systeemi). Esimerkiksi, mikäli tiedosto ```C:\TOL-alkeet\oma.bat``` sisältäisi tuon aiemmin käytetyn ```SET PROMPT```-komennon, jolla muutetaan kehoteteksti "*bash*-maiseksi" ja väritetyksi:
 
     ```
     @ECHO OFF
@@ -277,10 +277,14 @@ Näitä varten komentotulkit käyttävät käynnistystiedostoja. Nämä käynnis
 
     ![](./kuvat/win-terminal-custom-startup.png)
 
-=== ":os-mac: MacOS"
+=== ":os-mac: MacOS (bash)"
+    
+    !!! danger "Bash ei ole oletustulkki"
+        *Jos olet vaihtanut MacOS:n tulkin Zsh:sta Bashiin, niin lue tämä osio. Jos käytät käyttöjärjestelmän määrittelemää oletustulkkia – *Zsh* – niin lue sitä käsittelevä osio.*
+
     !!! warning inline end ".bashrc"
         *Bash* joskus lukee käynnistyessään tiedoston ```~/.bashrc``` muiden tiedostojen sijasta. Tämä tiedosto luetaan vain niissä tapauksissa, jos tulkki käynnistyy ilman sisäänkirjautumista. MacOS:llä tämä on kuitenkin harvinaista.
-    
+
     *Bash* aina käynnistyessään suorittaa yhden käynnistystiedoston, riippuen siitä, minkä tiedoston se löytää ensimmäisenä. *Bash* hakee ensin tiedostoa ```~/.bash_profile``` ja suorittaa sen; jos sitä ei löydy, niin *bash* etsii tiedoston ```~/.bash_login```. Senkin puuttuessa etsitään vielä tiedosto ```~/.profile```. Jos mitään näistä ei löydy, *bash* ei suorita mitään käynnistystiedostoa.
 
 
@@ -290,7 +294,22 @@ Näitä varten komentotulkit käyttävät käynnistystiedostoja. Nämä käynnis
     - ```nano ~/.bash_profile``` avaa tekstitiedoston Nanolla, joka on komentorivillä toimiva tekstieditori.
     - Jos haluat vain lisätä tekstiä tiedoston perään, voit käyttää [tulosteenohjausmerkkejä](../01-komentorivi/03-peruskomennot/bash-peruskomennot.md#tuloste-tiedostoon). ```echo PATH=$PATH:/täysi/polku/omaan/kansioon >> ~/.bash_profile``` lisää halutun rivin tiedoston perään.
 
+    Kun käynnistystiedostoa on muokattu se suoritetaan sellaisenaan seuraavan kerran tulkin käynnistyessä, eli komentorivi-ikkunan auetessa. Jos muutokset haluaa nykyiseen tulkkiin, niin kannattaa ajaa komento ```source ~/.bash_profile```(vaihtaen tiedostonimeksi muokatun käynnistystiedoston nimi), jotta nykyinen tulkki suorittaisi käynnistystiedoston.
+
     Käynnistystiedostojen kanssa kannattaa myös huomioida se, että ne suoritetaan vain *interaktiivisen* tulkin käynnistyessä, eli tilanteissa jossa tulkki näyttää komentokehotteen. Jos suoritat komentosarjoja tai komentoriviohjelmia graafisen käyttöliittymän kautta, näitä käynnistystiedostossa esiteltyjä ```PATH```-muutoksia tai ```alias```-määrittelyjä ei suoriteta.
+
+=== ":os-mac: MacOS (zsh)"
+    *Zsh* suorittaa yhden käynnistystiedoston käynnistyessään: ```~/.zshenv```.
+
+    ```.zshenv``` ja on piilotettu tekstitiedosto, joten niiden avaaminen komentorivin kautta voi olla vaikeaa. Kokeile jotain seuraavista komennoista sen avaamiseksi:
+
+    - ```open -t ~/.zshenv``` avaa Texturin (eng. *TextEdit*) tiedoston muokkaamista varten.
+    - ```nano ~/.zshenv``` avaa tekstitiedoston Nanolla, joka on komentorivillä toimiva tekstieditori.
+    - Jos haluat vain lisätä tekstiä tiedoston perään, voit käyttää [tulosteenohjausmerkkejä](../01-komentorivi/03-peruskomennot/bash-peruskomennot.md#tuloste-tiedostoon). ```echo PATH=$PATH:/täysi/polku/omaan/kansioon >> ~/.zshenv``` lisää halutun rivin tiedoston perään.
+
+    Kun käynnistystiedostoa on muokattu se suoritetaan sellaisenaan seuraavan kerran tulkin käynnistyessä, eli komentorivi-ikkunan auetessa. Jos muutokset haluaa nykyiseen tulkkiin, niin kannattaa ajaa komento ```source ~/.zshenv```, jotta nykyinen tulkki suorittaisi käynnistystiedoston.
+
+    Toisin kuin *Bash*, *Zsh* suorittaa käynnistystiedoston myös epäinteraktiivisissa tiloissa. Tämä tarkoittaa sitä, että myös graafisen käyttöliittymän kautta ajetut komentosarjat näkevät muutokset käynnistystiedostoihin.
 
 === ":os-linux: Ubuntu"
     !!! warning inline end ".bash_profile"
@@ -300,11 +319,15 @@ Näitä varten komentotulkit käyttävät käynnistystiedostoja. Nämä käynnis
 
     ```.bashrc``` ja sen kaverit ovat piilotettuja tekstitiedostoja (niiden nimi alkaa pisteellä), joten niiden avaaminen komentorivin kautta voi olla vaikeaa. Kokeile jotain seuraavista komennoista sen avaamiseksi:
 
-    - ```xdg-open ~/.bashrc``` avaa käyttöjärjestelmän oletustekstieditorin tiedoston muokkaamista varten. Pahimmassa tapauksessa se voi olla *vim*.
+    - ```xdg-open ~/.bashrc``` avaa käyttöjärjestelmän oletustekstieditorin tiedoston muokkaamista varten. Pahimmassa tapauksessa se voi olla [*vim*](../vim.hidden.md).
     - ```nano ~/.bashrc``` avaa tekstitiedoston Nanolla, joka on komentorivillä toimiva tekstieditori.
     - Jos haluat vain lisätä tekstiä tiedoston perään, voit käyttää [tulosteenohjausmerkkejä](../01-komentorivi/03-peruskomennot/bash-peruskomennot.md#tuloste-tiedostoon). ```echo PATH=$PATH:/täysi/polku/omaan/kansioon >> ~/.bashrc``` lisää halutun rivin tiedoston perään.
 
+    Kun käynnistystiedostoa on muokattu se suoritetaan sellaisenaan seuraavan kerran tulkin käynnistyessä, eli komentorivi-ikkunan auetessa. Jos muutokset haluaa nykyiseen tulkkiin, niin kannattaa ajaa komento ```source ~/.bashrc```, jotta nykyinen tulkki suorittaisi käynnistystiedoston.
+
     Käynnistystiedostojen kanssa kannattaa myös huomioida se, että ne suoritetaan vain *interaktiivisen* tulkin käynnistyessä, eli tilanteissa jossa tulkki näyttää komentokehotteen. Jos suoritat komentosarjoja tai komentoriviohjelmia graafisen käyttöliittymän kautta, näitä käynnistystiedostossa esiteltyjä ```PATH```-muutoksia tai ```alias```-määrittelyjä ei suoriteta.
+
+
 
 
 
