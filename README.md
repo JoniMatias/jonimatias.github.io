@@ -62,7 +62,7 @@ Toisin kuin muut admonitionit, ```shell``` oletuksena säilyttää kaikki tyhjä
 
 ### Omat ikonit
 
-Sivusto käyttää [emoji-pluginia](https://jimandreas.github.io/mkdocs-material/reference/icons-emojis/) piirtämään omia ikoneita tekstin sekaan. Ikonit kirjoitetaan muodossa ```:<ikonin-nimi>:``` Tällä hetkellä käytössä on kolme käyttöjärjestelmäikonia, ja neljä näppäinikonia.
+Sivusto käyttää [emoji-pluginia](https://jimandreas.github.io/mkdocs-material/reference/icons-emojis/) piirtämään omia ikoneita tekstin sekaan. Ikonit kirjoitetaan muodossa ```:<ikonin-nimi>:``` Tällä hetkellä käytössä on kolme käyttöjärjestelmäikonia, ja kasa näppäinikoneita.
 
 | avain           |  Ikoni                          |
 |-----------------|---------------------------------|

@@ -1,14 +1,16 @@
 # ASCII-merkistö
 
-ASCII, eli amerikkalainen tiedonvälityksen vakiokoodisto (eng. *American standard code for information interchange*), on 1960-luvulla kehitetty tapa koodata kirjaimet numeroiksi tietokoneille. Alunperin IBM:n koneille kehitetty järjestelmä vakiinnutettiin Yhdysvaltain kansallisen standardointijärjestö (ANSI) toimesta hyvin pian sen kehittämisen jälkeen. 
+ASCII, eli amerikkalainen tiedonvälityksen vakiokoodisto (eng. *American standard code for information interchange*), on 1960-luvulla kehitetty tapa koodata kirjaimet numeroiksi tietokoneille. Alunperin IBM:n koneille kehitetty järjestelmä vakiinnutettiin Yhdysvaltain kansallisen standardointijärjestön (ANSI) toimesta hyvin pian sen kehittämisen jälkeen. 
 
 Taustansa takia ASCII on rakennettu englantia puhuvan maailman, ja varsinkin Yhdysvaltojen ehdoilla. Mitään kansainvälistä merkistöä ei ASCII:ssa ole. Koodistossa näkyy myös historian painolasti IBM:n 1960-luvun tietokoneiden ja tulostimien ohjauskoodistona; merkeissä on paljon nykypäivänä turhia merkkejä, joita vanhat tulostimet ovat vaatineet toimiakseen.
+
+Jokainen ASCII-merkki vastaa jotain numeroa väliltä 0-127, eli sen tallentamiseen binäärimuodossa tarvitaan 7 bittiä. Tämä on tietokoneiden kannalta käytännöllistä, sillä jokainen ASCII-merkki mahtuu hyvin 8-bittiseen tavuun. Ensimmäiset 32 merkkiä (numerot 0-31) on näkymättömiä ohjausmerkkejä. 
 
 
 
 ## Näkymättömän ohjausmerkit
 
-ASCII-merkistön alkupää on varattu vanhanaikaisten kirjoitus- ja tulostuskoneiden ohjausmerkeille. Iso osa näistä merkeistä on nykyään poistunut käytöstä, mutta muutama on säilyttänyt hyödyllisyytensä. Tärkeimmät edelleen käytössä olevat ovat **NUL**, **BS**, **LF**, **CR** ja **ESC**. 
+ASCII-merkistön alkupää on varattu vanhanaikaisten kirjoitus- ja tulostuskoneiden ohjausmerkeille. Iso osa näistä merkeistä on nykyään poistunut käytöstä, mutta muutama on säilyttänyt hyödyllisyytensä. Tärkeimmät edelleen käytössä olevat ovat **NUL** (0), **BS** (8), **LF** (10), **CR** (13) ja **ESC** (27). 
 
  - **NUL**:ia käytetään C:ssä merkkijonojen lopetusmerkkinä.
  - **BS** poistaa kirjoitettuja merkkejä. Näppäimistöltä merkille löytyy edelleen nappi: askelpalautin (<nowrap><kbd>:key-backspace: Backspace</kbd></nowrap>), ja joissain ohjelmissa näppäimistö oikeasti tuottaakin tämän merkin.
