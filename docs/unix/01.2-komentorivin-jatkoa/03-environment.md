@@ -309,7 +309,7 @@ Näitä varten komentotulkit käyttävät käynnistystiedostoja. Nämä käynnis
 
     Kun käynnistystiedostoa on muokattu se suoritetaan sellaisenaan seuraavan kerran tulkin käynnistyessä, eli komentorivi-ikkunan auetessa. Jos muutokset haluaa nykyiseen tulkkiin, niin kannattaa ajaa komento ```source ~/.zshenv```, jotta nykyinen tulkki suorittaisi käynnistystiedoston.
 
-    Toisin kuin *Bash*, *Zsh* suorittaa käynnistystiedoston myös epäinteraktiivisissa tiloissa. Tämä tarkoittaa sitä, että myös graafisen käyttöliittymän kautta ajetut komentosarjat näkevät muutokset käynnistystiedostoihin.
+    Toisin kuin *Bash*, *Zsh* suorittaa käynnistystiedoston myös epäinteraktiivisissa tiloissa. Tämä tarkoittaa sitä, että myös graafisen käyttöliittymän kautta ajetut komentosarjat näkevät muutokset käynnistystiedostoihin. Jos haluaa määritellä komentoja, joita ajetaan vain interaktiivisessa tulkissa sisään kirjautuneelle käyttäjälle, niin Zsh tukee myös tiedostoja ```~/.zprofile``` ja ```~/.zlogin``` siihen tarkoitukseen.
 
 === ":os-linux: Ubuntu"
     !!! warning inline end ".bash_profile"
