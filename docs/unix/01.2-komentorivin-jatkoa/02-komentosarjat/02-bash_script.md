@@ -120,7 +120,7 @@ Monet käyttöjärjestelmät tukevat komentosarjojen suorittamista myös graafis
     Ubuntu tukee komentosarjatiedostoja luontaisesti. Kunhan komentosarjatiedoston pääte on ```.sh```, Ubuntu osaa suorittaa komentosarjan kaksoisklikkaamalla tiedostoa graafisen käyttöliittymän puolella.
 
 
-Kannattaa kuitenkin huomioida se, että graafisen käyttöliittymän puolelta suoritetut komentosarjat ajavat päätteen ja tulkin kevyemmässä (epäinteraktiivisessa) muodossa. Tämä tarkoittaa sitä, ettei kaikkia tulkin [alustusscriptejä](../03-environment.md#bash_profile) ajeta, eikä niissä tehdyt muutokset siis ole voimassa. Tämä on tietysti merkityksellistä vain, jos olet itse määrittänyt alustustoimintoja ```.bash-profile```, ```.bash-login```, ```.profile``` tai ```.bashrc``` -tiedostoihin. Tämän voi korjata aloittamalla komentosarja alla esitellyllä [```source```-komennolla](#source-komento).
+Kannattaa kuitenkin huomioida se, että graafisen käyttöliittymän puolelta suoritetut komentosarjat ajavat päätteen ja tulkin kevyemmässä (epäinteraktiivisessa) muodossa. Tämä tarkoittaa sitä, ettei kaikkia tulkin [käynnistyskomentosarjoja](../03-environment.md#päätteen-käynnistystiedostot) ajeta, eikä niissä tehdyt muutokset siis ole voimassa. Tämä on tietysti merkityksellistä vain, jos olet itse määrittänyt alustustoimintoja ```.bash-profile```, ```.bash-login```, ```.profile``` tai ```.bashrc``` -tiedostoihin. Tämän voi korjata aloittamalla komentosarja alla esitellyllä [```source```-komennolla](#source-komento).
 
 
 #### source-komento
