@@ -11,7 +11,7 @@ Taustansa takia ASCII on rakennettu englantia puhuvan maailman, ja varsinkin Yhd
 ASCII-merkistön alkupää on varattu vanhanaikaisten kirjoitus- ja tulostuskoneiden ohjausmerkeille. Iso osa näistä merkeistä on nykyään poistunut käytöstä, mutta muutama on säilyttänyt hyödyllisyytensä. Tärkeimmät edelleen käytössä olevat ovat **NUL**, **BS**, **LF**, **CR** ja **ESC**. 
 
  - **NUL**:ia käytetään C:ssä merkkijonojen lopetusmerkkinä.
- - **BS** poistaa kirjoitettuja merkkejä. Näppäimistöltä merkille löytyy edelleen nappi: askelpalautin (<nowrap><kbd>← Backspace</kbd></nowrap>), ja joissain ohjelmissa näppäimistö oikeasti tuottaakin tämän merkin.
+ - **BS** poistaa kirjoitettuja merkkejä. Näppäimistöltä merkille löytyy edelleen nappi: askelpalautin (<nowrap><kbd>:key-backspace: Backspace</kbd></nowrap>), ja joissain ohjelmissa näppäimistö oikeasti tuottaakin tämän merkin.
  - **LF** on yleinen Unix-tietokoneiden rivinvaihtomerkki ("**L**ine **F**eed", eli "paperin" syöttö eteenpäin yhden rivin verran). Kaikissa tekstitiedostoissa käytetään **LF**-merkkiä.
  - **CR** on Windows-koneilla käytössä oleva rivinvaihtomerkki ("**C**arriage **R**eturn", eli "kirjoituspään kelkan" siirto alkuasemaansa eli rivin alkuun). Windows-koneilla jokainen rivivaihto merkitään kahdella merkillä, **CR** ja **LF** peräkkäin.
  - **ESC** on menettänyt merkityksensä, mutta näppäimistöllä on edelleen sille nappi. **ESC**:n alkuperäinen tarkoitus oli toimia *pakomerkkinä*, eli kertoa ettei **ESC**:iä seuraavaa merkkiä pidä lukea sen tavallisessa ASCII-merkityksessä. Nykyään vastaavassa käytössä on yleensä kenoviiva ```\```.
