@@ -1,14 +1,19 @@
 # Tiedostonimet
 
-Joskus vanhoina hyvinä aikoina, kun tietokoneen muisti mitattiin muutamissa tuhansissa tavuissa, tiedostojen nimet oli rajattu kahdeksaan merkkiin, ja mitään erikoismerkkejä niissä ei saanut olla. Niistä päivistä on kuitenkin jo kohta puolikas ihmisen elinikä, ja tietokoneet ovat kehittyneet runsaasti. Muistin lisääntyessä tiedostonimiä rajaavat säännöt ovat vapautunueet, ja nykyään tiedostot saa nimetä melkein millä tahansa nimellä, käyttäen melkein mitä tahansa merkkejä.
+Joskus vanhoina hyvinä aikoina, kun tietokoneen muisti mitattiin vain muutamissa tuhansissa tavuissa, tiedostojen nimet oli rajattu kahdeksaan merkkiin, ja mitään erikoismerkkejä niissä ei saanut olla. Niistä päivistä on kuitenkin jo kohta puolikas ihmisen elinikä, ja tietokoneet ovat kehittyneet runsaasti. Muistin lisääntyessä tiedostonimiä rajaavat säännöt ovat vapautuneet, ja nykyään tiedostot saa nimetä melkein millä tahansa nimellä, käyttäen melkein mitä tahansa merkkejä.
 
-Joitain erikoistapauksia kuitenkin vielä on. Osa näistä johtuu vanhoista käytänteistä, joita ei ole päivitetty nykypäivään, osa taas on mielenkiintoisia teknisiä rajoitteita tai ratkaisuja, joita kehitysvaiheessa on päätetty. Tällä sivulla esitellään muutama asia, joka tiedostonimistä on hyvä tietää. Varsinkin komentoriviä käyttäessä.
+Joitain erikoistapauksia kuitenkin vielä on. Osa näistä johtuu vanhoista käytänteistä, joita ei ole päivitetty nykypäivään. Osa taas on teknisiä rajoitteita tai ratkaisuja, joita kehittäjät ovat suunnitellessaan pähkäilleet. Tällä sivulla esitellään muutama asia, joka tiedostonimistä on hyvä tietää; varsinkin komentoriviä käyttäessä.
 
 
 ## Automaattinen täydennys
 
-**TODO: Kirjoita**
-Tabilla.
+Komentorivillä pitää aina muistaa komentojen nimet tai tiedostojen nimet, ja ne pitää kirjoittaa aina täysin oikeassa muodossa. Tämä tuottaa välillä ongelmia, kun yhdenkin kirjaimen kirjoittaminen väärin saa komentorivin valittamaan virheistä, tai pahimmassa tapauksessa tekemään jotain ihan väärää.
+
+Tätä varten komentorivi tarjoaa automaattisen täydennyksen mahdollisuuden. Kun kirjoitat komennon tai aktiivisessa kansiossa olevan tiedostonimen muutaman ensimmäisen kirjaimen, voit painaa <kbd>:key-tab: Tab</kbd>-näppäintä, niin komentorivi kirjoittaa loput annetusta tekstistä. Jos samalla aloituksella on useampi vaihtoehto, niin komentorivi ei täydennä mitään, mutta päästää varoitusäänen. 
+
+Useamman mahdollisen tiedostonimen tai komennon kanssa on mahdollista painaa <kbd>:key-tab: Tab</kbd> kaksi kertaa, jolloin komentorivi näyttää kaikki mahdolliset vaihtoehdot. Komentorivi pyrkii myös päättelemään kontekstista mitä ollaan täydentämässä. Ensimmäiseksi sanaksi se hyväksyy vain komentoja, kansioita tai suoritettavia tiedostoja, argumenteiksi vain kansioita ja mitä vain tiedostoja.
+
+Automaattinen täydennys toimii myös polkujen kanssa. Jos ```tol-alkeet```-kansiossa aloittaa kirjoittamaan polkua ```cat ./html-kansio/ind``` ja sen jälkeen painaa <kbd>:key-tab: Tab</kbd>, niin komentorivi osaa täydentää polun muotoon ```cat ./html-kansio/index.html```.
 
 ## Isot ja pienet kirjaimet
 

@@ -64,16 +64,19 @@ Toisin kuin muut admonitionit, ```shell``` oletuksena säilyttää kaikki tyhjä
 
 Sivusto käyttää [emoji-pluginia](https://jimandreas.github.io/mkdocs-material/reference/icons-emojis/) piirtämään omia ikoneita tekstin sekaan. Ikonit kirjoitetaan muodossa ```:<ikonin-nimi>:``` Tällä hetkellä käytössä on kolme käyttöjärjestelmäikonia, ja neljä näppäinikonia.
 
-| avain        |  Ikoni                          |
-|--------------|---------------------------------|
-| :os-win:     | Windows-logo                    |
-| :os-mac:     | Applen logo                     |
-| :os-linux:   | Ubuntun logo                    |
-| :key-ctrl:   | Control-napin ikoni (^)         |
-| :key-shift:  | Shiftin ikoni (nuoli)           |
-| :key-cmd:    | Commandin ikoni (hannunvaakuna) |
-| :key-mac-opt:| Macin optionin ikoni            |
-
+| avain           |  Ikoni                          |
+|-----------------|---------------------------------|
+| :os-win:        | Windows-logo                    |
+| :os-mac:        | Applen logo                     |
+| :os-linux:      | Ubuntun logo                    |
+| :key-ctrl:      | Control-napin ikoni (^)         |
+| :key-shift:     | Shiftin ikoni (nuoli)           |
+| :key-cmd:       | Commandin ikoni (hannunvaakuna) |
+| :key-mac-opt:   | Macin optionin ikoni            |
+| :key-tab:       | Tabulaattorin ikoni (Macin)     |
+| :key-caps:      | Caps-lockin ikoni               |
+| :key-backspace: | Askelpalauttimen ikoni          |
+| :key-enter:     | Enter-näppäimen ikoni           |
 
 Uusia ikoneita voi lisätä laittamalla svg-tiedosto kansioon ```overrides/.icons/```. Sitten ikonin saa piirrettyä kirjoittamalla tiedoston polun suhteessa ```.icons```-kansioon kaksoispisteiden väliin, korvaamalla kaikki kauttamerkit (```/```) väliviivoilla (```-```) ja jättämällä tiedostopääte pois.
 
