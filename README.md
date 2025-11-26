@@ -1,7 +1,7 @@
 # Tämä on testisivu TOL:n lisäopetusmateriaalin rakentamiseksi
 
 
-Sivusto on kirjoitettu kokonaan markdownlinna, ja käyttää MkDocsia tiedostojen kääntämiseksi. Sivuston muokkaamisen kannalta kannattaa osata ainakin markdownin ja MkDocsin alkeet.
+Sivusto on kirjoitettu kokonaan markdownilla, ja käyttää MkDocsia tiedostojen kääntämiseksi. Sivuston muokkaamisen kannalta kannattaa osata ainakin markdownin ja MkDocsin alkeet.
 
 MkDocsin lisäpalikoista tällä sivustolla on käytössä:
 
@@ -39,10 +39,10 @@ Komentorivin sisältö pitää sisentää neljän välilyönnin verran, jotta Mk
 
 #### Kummallisuuksia
 
-Toisin kuin muut admonitionit, ```shell``` oletuksena säilyttää kaikki tyhjät merkit (whitespace), eikä tiivisstä niitä tavallisen html:n tavoin. Jos haluat säilyttää html-muotoilun teksillä, laita ```shell```ille lisätagi ```html-whitespace```. 
+Toisin kuin muut admonitionit, ```shell``` oletuksena säilyttää kaikki tyhjät merkit (whitespace), eikä tiivistä niitä tavallisen html:n tavoin. Jos haluat säilyttää tekstin html-muotoilun, laita ```shell```ille lisätagi ```html-whitespace```. 
 
 ```
-!!! shell html-whitepace "otsikko lainausmerkkien sisällä"
+!!! shell html-whitespace "otsikko lainausmerkkien sisällä"
     C54W4KDHGK:kuvia jonrajal$ for tiedosto in kuva-[0-9][0-9].jpg; do echo $tiedosto; done<br>
     kuva-08.jpg<br>
     kuva-10.jpg<br>
