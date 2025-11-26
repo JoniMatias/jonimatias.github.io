@@ -5,16 +5,6 @@ Joskus vanhoina hyvinä aikoina, kun tietokoneen muisti mitattiin vain muutamiss
 Joitain erikoistapauksia kuitenkin vielä on. Osa näistä johtuu vanhoista käytänteistä, joita ei ole päivitetty nykypäivään. Osa taas on teknisiä rajoitteita tai ratkaisuja, joita kehittäjät ovat suunnitellessaan pähkäilleet. Tällä sivulla esitellään muutama asia, joka tiedostonimistä on hyvä tietää; varsinkin komentoriviä käyttäessä.
 
 
-## Automaattinen täydennys
-
-Komentorivillä pitää aina muistaa komentojen nimet tai tiedostojen nimet, ja ne pitää kirjoittaa aina täysin oikeassa muodossa. Tämä tuottaa välillä ongelmia, kun yhdenkin kirjaimen kirjoittaminen väärin saa komentorivin valittamaan virheistä, tai pahimmassa tapauksessa tekemään jotain ihan väärää.
-
-Tätä varten komentorivi tarjoaa automaattisen täydennyksen mahdollisuuden. Kun kirjoitat komennon tai aktiivisessa kansiossa olevan tiedostonimen muutaman ensimmäisen kirjaimen, voit painaa <kbd>:key-tab: Tab</kbd>-näppäintä, niin komentorivi kirjoittaa loput annetusta tekstistä. Jos samalla aloituksella on useampi vaihtoehto, niin komentorivi ei täydennä mitään, mutta päästää varoitusäänen. 
-
-Useamman mahdollisen tiedostonimen tai komennon kanssa on mahdollista painaa <kbd>:key-tab: Tab</kbd> kaksi kertaa, jolloin komentorivi näyttää kaikki mahdolliset vaihtoehdot. Komentorivi pyrkii myös päättelemään kontekstista mitä ollaan täydentämässä. Ensimmäiseksi sanaksi se hyväksyy vain komentoja, kansioita tai suoritettavia tiedostoja, argumenteiksi vain kansioita ja mitä vain tiedostoja.
-
-Automaattinen täydennys toimii myös polkujen kanssa. Jos ```tol-alkeet```-kansiossa aloittaa kirjoittamaan polkua ```cat ./html-kansio/ind``` ja sen jälkeen painaa <kbd>:key-tab: Tab</kbd>, niin komentorivi osaa täydentää polun muotoon ```cat ./html-kansio/index.html```.
-
 ## Isot ja pienet kirjaimet
 
 Tietokoneet eroavat toisistaan miten ne käsittelevät isoja ja pieniä kirjaimia tiedostojen nimissä. Jos tiedostojärjestelmä erottaa isot kirjaimet toisistaan, niin tiedostot ```teksti.txt``` ja ```Teksti.txt``` ovat järjestelmän mielestä eri tiedostoja. Jos kirjainkokoa taas ei erotella, niin järjestelmä tulkitsee tiedostot saman nimisiksi, jolloin tiedostot eivät voi olla samassa kansiossa.
@@ -89,9 +79,9 @@ Monisanaisesta tiedostonimestä saa yksisanaisen merkitsemällä sanavälin joll
 
  - **PascalCase**, jossa jokaisen sanan ensimmäinen kirjain kirjoitetaan isolla.
  - **snake_case**, jossa jokainen sanaväli korvataan alaviivalla ```_```.
- - **kebab-case***, jossa jokainen sanaväli korvataa väliviivalla ```-```.
+ - **kebab-case**, jossa jokainen sanaväli korvataa väliviivalla ```-```.
 
-Jokainen saa valita tyylinsä itse, mutta valittu tyyli yleensä kertoo käyttäjästään jotain. *PascalCase* on yleensä ohjelmoijien suosiossa, *snake_case* komentorivivelhojen ja *kebab-case* verkkokehittäjien. Tämä johtuu vakiintuneista tavoista, joilla kunkin käyttäjien työkalut ja niiden dokumentaatio on perinteisesti yhdistettyjä sanoja käyttänyt.
+Jokainen saa valita tyylinsä itse, mutta valittu tyyli yleensä kertoo käyttäjästään jotain. *PascalCase* on yleensä ohjelmoijien suosiossa, *snake_case* komentorivivelhojen ja *kebab-case* verkkokehittäjien. Tämä johtuu vakiintuneista tavoista, joilla kunkin käyttäjäryhmän työkalut ja niiden dokumentaatio on perinteisesti yhdistänyt sanoja.
 
 ## Pistetiedostot
 
@@ -125,10 +115,21 @@ Vaikka tiedostot ovatkin piilotettuja, ne voidaan avata komentorivillä tavallis
 
 Nykytietokoneet tukevat käytännössä koko ihmisten kirjoitustapojen kirjoa. Unicode tukee käytännössä kaikkia merkkejä, mitä ihmiskunta on koskaan halunnut painaa kirjaan tai verkkosivulle. 
 
-Nykyiset käyttöjärjestelmät ja sitä kautta myös komentorivit tukevat Unicodea, sen kaikkia mahdollisia merkkejä. Tästä näkökulmasta asiassa ei pitäisi olla mitään epäselvyyksiä.
+Nykyiset käyttöjärjestelmät ja sitä kautta myös komentorivit tukevat Unicodea, sen kaikkia mahdollisia merkkejä. Tämän vuoksi on täysin ymmärrettävää, jos joku luulee ääkkösten käytön olevan täysin ongelmatonta tietokoneella.
 
-Ongelmaksi kuitenkin muodostuu se, että Unicoden tukeminen ohjelmien sisällö on työläämpää kuin yksinkertaisen [ASCII-merkistön](../ascii.md#ascii-merkistö) tukeminen, jossa ei ole kuin englanninkielen käytössä olevat merkit. Siten monet komentorivillä käytettävät ohjelmat – joskus myös graafisetkin ohjelmat – eivät tue erikoismerkkejä.
+Ongelmaksi kuitenkin muodostuu se, että Unicoden tukeminen ohjelmien sisällä on työläämpää kuin yksinkertaisen [ASCII-merkistön](../ascii.md#ascii-merkistö) tukeminen, jossa ei ole kuin englanninkielen käytössä olevat merkit. Siten monet komentorivillä käytettävät ohjelmat – joskus myös graafisetkin ohjelmat – eivät tue erikoismerkkejä.
 
-Tämä tuottaa ongelmia aika ajoin, kun komentorivillä yrittää rakentaa näppärää automaatiota. Kaikki tuntuu toimivan, ja menevän oikein hyvin, kunnes yhtäkkiä vastaan tuleekin tiedosto, jossa on ääkkösiä, ja jokin yksi työvaihe automaatiossa pettää. Tällaisia ongelmia on nykypäivänä vähemmän kuin vielä 10-20 vuotta sitten, mutta niihin edelleen törmää varsinkin vanhoja ohjelmia käyttäessä.
+Tämä tuottaa päänvaivaa aika ajoin, kun komentorivillä yrittää rakentaa näppärää automaatiota. Kaikki tuntuu toimivan, ja menevän oikein hyvin, kunnes yhtäkkiä vastaan tuleekin tiedosto, jossa on ääkkösiä, ja jokin yksi työvaihe automaatiossa pettää. Tällaisia ongelmia on nykypäivänä vähemmän kuin vielä 10-20 vuotta sitten, mutta niihin edelleen törmää varsinkin vanhoja ja vakiintuneita ohjelmia käyttäessä.
 
 Potentiaalisten ongelmatilanteiden vähentämiseksi useat komentorivin käyttäjät välttävät siksi ääkkösten käyttöä tiedostojen nimissä.
+
+
+## Automaattinen täydennys
+
+Komentorivillä pitää aina muistaa komentojen nimet tai tiedostojen nimet, ja ne pitää kirjoittaa aina täysin oikeassa muodossa. Tämä tuottaa välillä ongelmia, kun yhdenkin kirjaimen kirjoittaminen väärin saa komentorivin valittamaan virheistä, tai pahimmassa tapauksessa tekemään jotain ihan väärää.
+
+Tätä varten komentorivi tarjoaa automaattisen täydennyksen mahdollisuuden. Kun kirjoitat komennon tai aktiivisessa kansiossa olevan tiedostonimen muutaman ensimmäisen kirjaimen, voit painaa <kbd>:key-tab: Tab</kbd>-näppäintä, niin komentorivi kirjoittaa loput annetusta tekstistä. Jos samalla aloituksella on useampi vaihtoehto, niin komentorivi täydentää vain niin pitkälle, kunnes eriävä kohta löytyy.
+
+Kun komentorivi huomaa useamman mahdollisen tiedostonimen tai komennon, on mahdollista painaa <kbd>:key-tab: Tab</kbd> kaksi kertaa nopeasti, jolloin komentorivi näyttää kaikki mahdolliset vaihtoehdot. Komentorivi pyrkii myös päättelemään kontekstista mitä ollaan täydentämässä. Ensimmäiseksi sanaksi se hyväksyy vain komentoja, kansioita tai suoritettavia tiedostoja, argumenteiksi vain kansioita ja mitä vain tiedostoja.
+
+Automaattinen täydennys toimii myös polkujen kanssa. Jos ```tol-alkeet```-kansiossa aloittaa kirjoittamaan polkua ```cat ./html-kansio/ind``` ja sen jälkeen painaa <kbd>:key-tab: Tab</kbd>, niin komentorivi osaa täydentää polun muotoon ```cat ./html-kansio/index.html```.

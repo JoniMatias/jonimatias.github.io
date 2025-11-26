@@ -394,9 +394,6 @@ Jotkin komennot vaativat käyttäjältä erikoisoikeuksia. Tällaiset toiminnot 
 
 Komennot siis ajetaan muodossa ```sudo komento --valinta```. Tämän jälkeen ```sudo``` kysyy vielä käyttäjän salasanaa, jos komento tarvitsee pääkäyttäjän oikeuksia. 
 
-```sudo``` on turvallisuustoiminto nakkisormia vastaan. Se ei estä käyttäjää tekemästä mitään, mihin käyttäjällä ei olisi valmiiksi oikeuksia, eikä se rajaa käytössä olevia toimintoja pois niiltä, joiden ei sitä pitäisi tehdä. Sitä varten on erilliset käyttäjätilit ja -oikeudet. ```sudo``` suojelee käyttäjää tekemästä haitallisia toimia vahingossa. Ajatuksena on se että, jos komento vaatii ```sudo```-lisäkomennon, käyttäjän kannattaa miettiä kahdesti, ja varmistaa komennon tekevän juuri sen mitä hän haluaa sen tekevän.
+```sudo``` on käytännössä vain turvallisuustoiminto nakkisormia vastaan. Se ei estä käyttäjää tekemästä mitään, mihin käyttäjällä ei olisi valmiiksi oikeuksia, eikä se rajaa käytössä olevia toimintoja pois niiltä, joiden ei sitä pitäisi tehdä. Sitä varten on erilliset käyttäjätilit ja -oikeudet. ```sudo``` suojelee käyttäjää tekemästä haitallisia toimia vahingossa. Ajatuksena on että, jos komento vaatii ```sudo```-lisäkomennon, käyttäjän kannattaa miettiä kahdesti, ja varmistaa komennon tekevän juuri sen mitä hän haluaa sen tekevän.  
 
-
-
-## Tiedostonimet ja välilyönnit 
 
