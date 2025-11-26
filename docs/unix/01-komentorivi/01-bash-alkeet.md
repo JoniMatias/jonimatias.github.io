@@ -78,7 +78,7 @@ Komentorivien käyttöä varten tietokone tarvitsee kolme eri komponenttia: pä�
 
 Samoin kuin graafisen käyttöliittymän tiedostoikkunoissa, komentorivillä on yksi kansio kerralla auki. Tämä aktiivinen kansio on se, missä oletuksena kaikki komennot suoritetaan. Graafisella ikkunalla tämän kansion sisältö näkyy kerralla, mutta komentorivillä kansion sisällön tarkasteluun tarvitaan komento :os-win:```dir``` tai :os-mac::os-linux:```ls```. Se listaa kaikki tämänhetkisen kansion tiedostot.
 
-=== ":os-win: Windows"
+=== ":os-win: cmd.exe"
     !!! shell "cmd.exe: dir"
         C:\\TOL-alkeet> <pop>dir</pop>
         Volume in drive C has no label

@@ -52,7 +52,7 @@ Yleisimmin muokattu ympäristömuuttuja on ```PATH```. Se määrittelee kaikki h
         C:\\> <pop>echo %PATH%</pop>
         C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem
 
-=== ":os-mac::os-linux: echo %PATH%"
+=== ":os-mac::os-linux: bash"
     !!! shell "bash: echo $PATH"
         **C54W4KDHGK**:~ jonrajal$ <pop>echo $PATH</pop>
         /opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/opt/homebrew/opt/python@3.13/libexec/bin:/Users/jonrajal/.local/bin
@@ -112,7 +112,7 @@ Yleensä ```PATH```in käyttämät oletuskansiot ovat piilossa, vaikeasti pääs
 
 [Komentokehotteen](../01-komentorivi/01-bash-alkeet.md#komentorivin-osat) ulkoasua voi muokata haluamansalaiseksi ympäristömuuttujilla. Joka komentotulkilla on oma tapansa kehotteen muotoiluksi, joten käydään tässä molemmat läpi.
 
-=== ":os-win: Windows %PROMPT%"
+=== ":os-win: Windows"
     *Windowsissa* voi komentokehotteen muotoa (siis sitä kohtaa, joka tulostuu aina uudelle riville aluksi kun on antamassa jotain komentoa ```cmd.exe```-ikkunassa) voi muokata ympäristömuuttujan ```PROMPT``` kautta. Nykyään (aina ei näin ole ollut) oletuksena kehotteen muoto on:
     ```asematunnuskirjain:aktiivinen_kansio> ```
 
@@ -189,7 +189,7 @@ Yleensä ```PATH```in käyttämät oletuskansiot ovat piilossa, vaikeasti pääs
 
         muuttaa tulostusvärit tekstille kehotteen eri osiin (ensimmäinen osio käyttäjännimi@koneennimi vihreällä tekstillä, kaksoispiste ja lopun ```$```-merkit valkoisella ja aktiivisen hakemiston polku sinisellä). Lisää värityksiä ja muita muotoiluja löytyy [Microsoftin learn-resursseista](https://learn.microsoft.com/en-us/windows/console/console-virtual-terminal-sequences#text-formatting)
 
-=== ":os-mac::os-linux: bash $PS1"
+=== ":os-mac::os-linux: bash"
     *Bashissa* on itseasiassa useampi ympäristömuuttuja kehotteen muodolle, riippuen käyttäjän ajamasta komennosta. ```PS1``` muokkaa peruskehotetta, joten siihen voidaan perehtyä lähemmin. Muuttujia ```PS2```, ```PS3``` ja ```PS4``` käytetään erikoistapaukissa.
 
     Kuten [komentorivin perusteissa](../01-komentorivi/01-bash-alkeet.md#kehotteen-muotoja) esiteltiin, *bashin* kehote on oletuksena muotoa:
@@ -309,7 +309,7 @@ Näitä varten komentotulkit käyttävät käynnistystiedostoja. Nämä käynnis
 
     Kun käynnistystiedostoa on muokattu se suoritetaan sellaisenaan seuraavan kerran tulkin käynnistyessä, eli komentorivi-ikkunan auetessa. Jos muutokset haluaa nykyiseen tulkkiin, niin kannattaa ajaa komento ```source ~/.zshenv```, jotta nykyinen tulkki suorittaisi käynnistystiedoston.
 
-    Toisin kuin *Bash*, *Zsh* suorittaa käynnistystiedoston myös epäinteraktiivisissa tiloissa. Tämä tarkoittaa sitä, että myös graafisen käyttöliittymän kautta ajetut komentosarjat näkevät muutokset käynnistystiedostoihin. Jos haluaa määritellä komentoja, joita ajetaan vain interaktiivisessa tulkissa sisään kirjautuneelle käyttäjälle, niin Zsh tukee myös tiedostoja ```~/.zprofile``` ja ```~/.zlogin``` siihen tarkoitukseen.
+    Toisin kuin *Bash*, *Zsh* suorittaa käynnistystiedoston myös epäinteraktiivisissa tiloissa. Tämä tarkoittaa sitä, että myös graafisen käyttöliittymän kautta ajetut komentosarjat näkevät muutokset käynnistystiedostoihin. Jos haluaa määritellä komentoja, joita ajetaan vain interaktiivisessa tulkissa ja kirjautuneelle käyttäjälle, niin Zsh tukee myös tiedostoja ```~/.zprofile``` ja ```~/.zlogin``` siihen tarkoitukseen.
 
 === ":os-linux: Ubuntu"
     !!! warning inline end ".bash_profile"
