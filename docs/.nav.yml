@@ -1,5 +1,5 @@
 sort:
-  by: asd
+  sections: mixed
 nav:
   - Tehtävät:
     - Aloitussivu: 'koodi/koodi_toc.md'
@@ -8,16 +8,26 @@ nav:
     - Aloitussivu: 'koodi/apufunktiot.md'
     - "koodi/apufunktiot/*.md"
   - Komentorivi:
-    - Aloitussivu: 'unix/00-intro/00-intro.md'
-    - "unix/*"
+    - 'tol-alkeet/index.md'
+    - Tietokoneen käytön perusteet:
+      - 'tol-alkeet/intro/01-tiedostot.md'
+      - 'tol-alkeet/intro/01.2-perustiedostot.md'
+      - 'tol-alkeet/intro/02-email.md'
+    - Komentorivin alkeet:
+      - 'tol-alkeet/komentorivi/01-bash-alkeet.md'
+      - 'tol-alkeet/komentorivi/02-peruskomennot'
+      - 'tol-alkeet/komentorivi/03-bash-muoto.md'
+      - 'tol-alkeet/komentorivi/04-tiedostonimet.md'
+      - 'tol-alkeet/komentorivi/05-asennus.md'
+    - Komentorivin tehokäyttö:
+      - 'tol-alkeet/komentorivin-jatkoa/02-komentosarjat'
+      - 'tol-alkeet/komentorivin-jatkoa/02.2-ohjausrakenteet'
+      - 'tol-alkeet/komentorivin-jatkoa/03-environment.md'
     - "Muuta":
-      - 'unix/ascii.md'
-      - 'unix/glossaari.md'
+      - 'tol-alkeet/ascii.md'
+      - 'tol-alkeet/glossaari.md'
   - Muuta:
     - Muita ideoita: 'koodi/muut_sivut/muut_sivut.md'
 
 ignore:
   - "*.hidden.md"
-
-sort:
-  sections: mixed
