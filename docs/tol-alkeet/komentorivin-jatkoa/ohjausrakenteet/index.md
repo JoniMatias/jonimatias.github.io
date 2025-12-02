@@ -6,5 +6,5 @@ Ohjausrakenteiden tarkoitus on muuttaa ohjelman kulkua aina, kun jokin ehto täy
 
 Kuten tavallista, Microsoft on kehitellyt Windowsille täysin omanlaisen tyylin ohjausrakenteille. Tämän vuoksi alla on linkit <nowrap>:os-win: .bat</nowrap>-tiedostojen ohjausrakenteisiin ja <nowrap>:os-mac::os-linux: bashin</nowrap> Unix-standardeja noudattaviin ohjausrakenteisiin.
 
-[:os-win: .bat-tiedoston ohjausrakenteet](./02-2-bat-rakenteet.md){ .md-button .md-button--primary }
-[:os-mac::os-linux: Bashin ohjausrakenteet](./02-2-bash-rakenteet.md){ .md-button .md-button--primary }
+[:os-win: .bat-tiedoston ohjausrakenteet](./bat-rakenteet.md){ .md-button .md-button--primary }
+[:os-mac::os-linux: Bashin ohjausrakenteet](./bash-rakenteet.md){ .md-button .md-button--primary }

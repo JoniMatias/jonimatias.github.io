@@ -1,6 +1,6 @@
 # Bashin peruskomennot
 
-Tässä listataan muutama yleisin *bashin* tukema komento, mitä ne tekevät ja miten niitä käytetään. Jos haluat tietää enemmän näiden toiminnasta, niin tarkemmat ohjeet saa ```man```-komennolla. *Bashiä* (tai läheistä korviketta) voi käyttää suoraan :os-mac: MacOS-koneilla ja :os-linux: Linux-koneilla. :os-win: Windowsilla *bashin* käyttö vaatii *Windows Subsystem for Linuxin* asentamisen.
+Tässä listataan muutama yleisin *bashin* tukema komento, mitä ne tekevät ja miten niitä käytetään. Jos haluat tietää enemmän näiden toiminnasta, niin tarkemmat ohjeet saa ```man```-komennolla. *Bashia* (tai läheistä korviketta) voi käyttää suoraan :os-mac: MacOS-koneilla ja :os-linux: Linux-koneilla. :os-win: Windowsilla *bashin* käyttö vaatii *Windows Subsystem for Linuxin* asentamisen.
 
 Windowsin tavallinen komentotulkki on *cmd.exe*. Sen käyttämät peruskomennot alla olevasta linkistä. 
 
@@ -15,7 +15,7 @@ Windowsin tavallinen komentotulkki on *cmd.exe*. Sen käyttämät peruskomennot 
     **C54W4KDHGK**:jonimatias.github.io jonrajal$ <pop>pwd</pop>
     /Users/jonrajal/Koodi/web/jonimatias.github.io
 
-eli print working directory. Näyttää aktiivisen kansion sijainnin [absoluuttisena polkuna](../../00-intro/01-tiedostot.md#täysi-eli-absoluuttinen-polku), eli reittinä tiedostojärjestelmän juuresta kansio kerrallaan aktiiviseen kansioon. Absoluuttinen polku eroaa sen kumppanista suhteellisesta polusta siten, että suhteellinen polku on aina suhteessa johonkin: yleensä joko aktiiviseen kansioon tai kotihakemistoon.
+eli print working directory. Näyttää aktiivisen kansion sijainnin [absoluuttisena polkuna](../../intro/tiedostot.md#täysi-eli-absoluuttinen-polku), eli reittinä tiedostojärjestelmän juuresta kansio kerrallaan aktiiviseen kansioon. Absoluuttinen polku eroaa sen kumppanista suhteellisesta polusta siten, että suhteellinen polku on aina suhteessa johonkin: yleensä joko aktiiviseen kansioon tai kotihakemistoon.
 
 
 #### ls 
@@ -38,7 +38,7 @@ eli list directory, näyttää aktiivisen kansion tiedostot ja alikansiot. Ilman
 
  - Niistä näkee tiedostojen tiedostopäätteen, eli tiedostotyypin.
  - Jos nimi loppuu kauttamerkkiin ```/```, niin kyseessä on kansio.
- - Jos nimen perässä on tähtimerkki ```*```, niin kyseessä on [suoritettava tiedosto](../../01.2-komentorivin-jatkoa/02-komentosarjat/index.md).
+ - Jos nimen perässä on tähtimerkki ```*```, niin kyseessä on [suoritettava tiedosto](../../komentorivin-jatkoa/komentosarjat/index.md).
 
 Kuten tämän sivun esimerkeistä myös näkee, ```ls``` usein myös värjää erilaiset tiedostot eri väreillä. Tämä värjäys on kuitenkin pääte- ja tulkkikohtaista, joten kannattaa tutustua siihen, miten komento toimii omalla koneellasi.
 
@@ -148,7 +148,7 @@ eli move. Tätä komentoa voi käyttää tiedoston siirtämiseen tai uudelleen n
     **C54W4KDHGK**:testikansio jonrajal$ ls
     bar.txt  foo.txt
 
-eli copy. Komento ottaa vastaan kaksi tiedostoa argumentteina. Ensimmäinen tiedosto pitää olla olemassa oleva tiedosto, jonka sisältö kopiodaan sellaisenaan toiseen tiedostoon. Jos toisena argumenttina annettua tiedostoa ei ole olemassa, niin se luodaan, muuten ```cp``` korvaa tiedoston uudella. Kannattaa siis olla tarkkana, ettei tällä tuhoa olemassa olevia tiedostoja.
+eli copy. Komento ottaa vastaan kaksi tiedostoa argumentteina. Ensimmäinen tiedosto pitää olla olemassa oleva tiedosto, jonka sisältö kopioidaan sellaisenaan toiseen tiedostoon. Jos toisena argumenttina annettua tiedostoa ei ole olemassa, niin se luodaan, muuten ```cp``` korvaa tiedoston uudella. Kannattaa siis olla tarkkana, ettei tällä tuhoa olemassa olevia tiedostoja.
 
 
 ### Kansioiden hallinta
@@ -228,7 +228,7 @@ Kuten kaikki komentorivin poistokomennot, ```rmdir``` ei käytä roskakoria. Kai
     jonrajal@C54W4KDHGK:~/testikansio$ <pop>echo Hello World!</pop>
     Hello World!
 
-Tämä komento tulostaa vastaukseksi sille annetun argumentin. Näppärä [komentosarjojen](../../01.2-komentorivin-jatkoa/02-komentosarjat/index.md) kanssa, jos haluaa saada tilannepäivityksiä. 
+Tämä komento tulostaa vastaukseksi sille annetun argumentin. Näppärä [komentosarjojen](../../komentorivin-jatkoa/komentosarjat/index.md) kanssa, jos haluaa saada tilannepäivityksiä. 
 
 #### cat 
 [**man cat**](https://man7.org/linux/man-pages/man1/cat.1.html){ .man-link }

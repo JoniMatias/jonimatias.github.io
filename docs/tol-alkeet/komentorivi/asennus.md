@@ -2,7 +2,7 @@
 
 Internet on pullollaan erilaisia komentorivillä suoritettavia ohjelmia. Osan niistä voi ladata ja asentaa kuin tavallisen graafisen käyttöliittymän ohjelman, mutta monet eivät tue graafisen puolen asennusohjelmia. Silloin käyttäjälle jää vain muutama vaihtoehto:
 
- - Ladata ohjelma itse, ja laittaa se kansioon, joka on määritelty [ympäristömuuttujissa](../01.2-komentorivin-jatkoa/03-environment.md). Tämä kuitenkin voi tuottaa ongelmia, jos asennettava ohjelma tarvitsee toimiakseen muita ohjelmia, joita sinulla ei ole asennettuna.
+ - Ladata ohjelma itse, ja laittaa se kansioon, joka on määritelty [ympäristömuuttujissa](../komentorivin-jatkoa/ymparisto.md). Tämä kuitenkin voi tuottaa ongelmia, jos asennettava ohjelma tarvitsee toimiakseen muita ohjelmia, joita sinulla ei ole asennettuna.
  - Käyttää paketinhallintaohjelmaa, joka lataa ja asentaa tarvittavan ohjelman koneellesi ja kaikki sen riippuvuudet.
 
 
@@ -183,7 +183,7 @@ Paketinhallintaohjelmat ovat erillisiä asennettavia komentoriviohjelmia, jotka 
 
 Tavallisesti ohjelman ajaminen tapahtuu tietämällä ohjelman sijainnin. Ohjelma käynnistetään aina tietämällä polku suoritettavaan tiedostoon, ja kutsumalla ohjelmaa polun kautta. Joskus käyttäjä voi kuitenkin haluta ajaa omia ohjelmiaan samalla tavalla kuin komentoja, eli missä tahansa kansiossa ja välittämättä ohjelman sijainnista.
 
-Jos olet tehnyt itse ohjelman, jota haluaisit käyttää kuten komentoja, niin kannattaa tutustua ympäristömuuttujiin ja ohjelmien oikeuksiin [niistä kertovalla sivulla](../01.2-komentorivin-jatkoa/03-environment.md).
+Jos olet tehnyt itse ohjelman, jota haluaisit käyttää kuten komentoja, niin kannattaa tutustua ympäristömuuttujiin ja ohjelmien oikeuksiin [niistä kertovalla sivulla](../komentorivin-jatkoa/ymparisto.md).
 
 Pääasiallisesti prosessi kuitenkin toimii seuraavalla tavalla:
 === ":os-win: PATH-ympäristömuuttuja"
@@ -199,9 +199,9 @@ Pääasiallisesti prosessi kuitenkin toimii seuraavalla tavalla:
 === ":os-linux::os-mac: $PATH-ympäristömuuttuja"
      1. Siirrä käännetty ohjelman johonkin sellaiseen kansioon, joka on määritelty ympäristömuuttujassa ```$PATH```. ```$PATH``` kertoo mistä kansioista etsitään suoritettavia komentoja. Oman koneesi ```$PATH```-kansiot löydät komennolla ```echo $PATH```. 
     
-    1.1. Vaihtoehtoisesti voit lisätä ohjelman kansion ```$PATH```iin. Tilapäisesti kansion voi lisätä ```$PATH```iin  komennolla ```PATH=$PATH:/absoluuttinen/polku/kansioon```. Pysyvästi sen tekemiseen tarvitaan [päätteen käynnistystiedoston muokkaamista](../01.2-komentorivin-jatkoa/03-environment.md#päätteen-käynnistystiedostot).
+    1.1. Vaihtoehtoisesti voit lisätä ohjelman kansion ```$PATH```iin. Tilapäisesti kansion voi lisätä ```$PATH```iin  komennolla ```PATH=$PATH:/absoluuttinen/polku/kansioon```. Pysyvästi sen tekemiseen tarvitaan [päätteen käynnistystiedoston muokkaamista](../komentorivin-jatkoa/ymparisto.md#päätteen-käynnistystiedostot).
 
-     2. Varmista, että komennolla on [suoritusoikeudet](../01.2-komentorivin-jatkoa/03-environment.md#oikeudet).
+     2. Varmista, että komennolla on [suoritusoikeudet](../komentorivin-jatkoa/ymparisto.md#oikeudet).
 
      3. Tämän jälkeen komennon voi ajaa kirjoittamalla pelkästään ohjelmatiedoston nimen missä tahansa kansiossa.
 

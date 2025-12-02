@@ -4,7 +4,7 @@ Komentosarjoja kutsutaan yleisemmin nimellä **bash-skripti**. Komentosarjat yle
 
 ## Komentosarjatiedostot
 
-Skriptitiedosto on vain tavallinen tekstitiedosto, johon on kirjoitettu ajettavat komennot erillisille riveille siinä järjestyksessä kun ne halutaan ajaa. Komentosarjatiedostolle perinteisesti on annettu [tiedostopäätteeksi](../../00-intro/01-tiedostot.md#tiedostopäätteet) ```.sh```, mutta mikä tahansa pääse – tai ei päätettä ollenkaan – kelpaa myös.
+Skriptitiedosto on vain tavallinen tekstitiedosto, johon on kirjoitettu ajettavat komennot erillisille riveille siinä järjestyksessä kun ne halutaan ajaa. Komentosarjatiedostolle perinteisesti on annettu [tiedostopäätteeksi](../../intro/tiedostot.md#tiedostopäätteet) ```.sh```, mutta mikä tahansa pääse – tai ei päätettä ollenkaan – kelpaa myös.
 
 Yksinkertaisimmillaan tiedostossa voi olla vain muutama komento ilman minkäänlaisia kontrollirakenteita. Esimerkiksi tätä nettisivua varten on tehty yksinkertainen komentosarja, jolla sivua voi testata paikallisesti omalla koneella.
 
@@ -79,7 +79,7 @@ Yksinkertaisin tapa suorittaa komentosarja on käyttää ```sh```-komentoa. Kome
     **C54W4KDHGK**:tol-alkeet jonrajal$ <pop>sh komento.sh</pop>
     Komentosarja suoritettu
 
-Tätä kautta komentosarjan ajaminen luo uuden suoritusympäristön tulkin sisälle. Kaikki komentosarjan tekemät muutokset tulkin asetuksiin tai [ympäristömuuttujiin](../03-environment.md#ympäristömuuttujat) jäävät vain komentosarjan sisäiseksi.
+Tätä kautta komentosarjan ajaminen luo uuden suoritusympäristön tulkin sisälle. Kaikki komentosarjan tekemät muutokset tulkin asetuksiin tai [ympäristömuuttujiin](../ymparisto.md#ympäristömuuttujat) jäävät vain komentosarjan sisäiseksi.
 
 Tämä onnistuu käytännössä aina ilman ongelmia, mutta joskus voi tuntua turhalta kirjoittaa ylimääräinen komento vain komentojen suorittamista varten.
 
@@ -108,7 +108,7 @@ Kun komentosarjatiedostolle on annettu suoritusoikeudet, sitä voi käyttää ku
     **C54W4KDHGK**:tol-alkeet jonrajal$ ./komento.sh
     Komentosarja suoritettu
 
-Kuten ```sh```-komennon kanssa, tätä kautta ajetut komentosarjat luovat uuden suoritusympäristön tulkin sisälle. Kaikki komentosarjan tekemät muutokset tulkkiin tai [ympäristömuuttujiin](../03-environment.md#ympäristömuuttujat) jäävät vain komentosarjan sisäiseksi.
+Kuten ```sh```-komennon kanssa, tätä kautta ajetut komentosarjat luovat uuden suoritusympäristön tulkin sisälle. Kaikki komentosarjan tekemät muutokset tulkkiin tai [ympäristömuuttujiin](../ymparisto.md#ympäristömuuttujat) jäävät vain komentosarjan sisäiseksi.
 
 #### Graafisen käyttöliittymän kautta
 
@@ -120,14 +120,14 @@ Monet käyttöjärjestelmät tukevat komentosarjojen suorittamista myös graafis
     Ubuntu tukee komentosarjatiedostoja luontaisesti. Kunhan komentosarjatiedoston pääte on ```.sh```, Ubuntu osaa suorittaa komentosarjan kaksoisklikkaamalla tiedostoa graafisen käyttöliittymän puolella.
 
 
-Kannattaa kuitenkin huomioida se, että graafisen käyttöliittymän puolelta suoritetut komentosarjat ajavat päätteen ja tulkin kevyemmässä (epäinteraktiivisessa) muodossa. Tämä tarkoittaa sitä, ettei kaikkia tulkin [käynnistyskomentosarjoja](../03-environment.md#päätteen-käynnistystiedostot) ajeta, eikä niissä tehdyt muutokset siis ole voimassa. Tämä on tietysti merkityksellistä vain, jos olet itse määrittänyt alustustoimintoja ```.bash-profile```, ```.bash-login```, ```.profile``` tai ```.bashrc``` -tiedostoihin. Tämän voi korjata aloittamalla komentosarja alla esitellyllä [```source```-komennolla](#source-komento).
+Kannattaa kuitenkin huomioida se, että graafisen käyttöliittymän puolelta suoritetut komentosarjat ajavat päätteen ja tulkin kevyemmässä (epäinteraktiivisessa) muodossa. Tämä tarkoittaa sitä, ettei kaikkia tulkin [käynnistyskomentosarjoja](../ymparisto.md#päätteen-käynnistystiedostot) ajeta, eikä niissä tehdyt muutokset siis ole voimassa. Tämä on tietysti merkityksellistä vain, jos olet itse määrittänyt alustustoimintoja ```.bash-profile```, ```.bash-login```, ```.profile``` tai ```.bashrc``` -tiedostoihin. Tämän voi korjata aloittamalla komentosarja alla esitellyllä [```source```-komennolla](#source-komento).
 
 
 #### source-komento
 
-Komentosarjoja voi ajaa myös komennolla ```source```. Toisin kuin [```sh```](#sh-komento) tai tiedoston suora suorittaminen, ```source``` ei luo uutta suoritusympäristöä komentosarjalle. Tämä mahdollistaa sen, että komentosarjan tekemät muutokset tulkkiin tai [ympäristömuuttujiin](../03-environment.md#ympäristömuuttujat) jäävät voimaan myös komennon suorittajan kontekstissa.
+Komentosarjoja voi ajaa myös komennolla ```source```. Toisin kuin [```sh```](#sh-komento) tai tiedoston suora suorittaminen, ```source``` ei luo uutta suoritusympäristöä komentosarjalle. Tämä mahdollistaa sen, että komentosarjan tekemät muutokset tulkkiin tai [ympäristömuuttujiin](../ymparisto.md#ympäristömuuttujat) jäävät voimaan myös komennon suorittajan kontekstissa.
 
-Yleisin käyttötarkoitus tälle komennolle on muiden komentosarjojen alussa, jossa halutaan varmistaa [päätteen käynnistystiedostojen](../03-environment.md#päätteen-käynnistystiedostot) ajaminen myös silloin, kun komentosarja suoritetaan ilman interaktiivista tulkkia. Toisin sanoen tämän komennon pääasiallinen tarkoitus on ajaa komentosarjoja toisten komentosarjojen sisällä.
+Yleisin käyttötarkoitus tälle komennolle on muiden komentosarjojen alussa, jossa halutaan varmistaa [päätteen käynnistystiedostojen](../ymparisto.md#päätteen-käynnistystiedostot) ajaminen myös silloin, kun komentosarja suoritetaan ilman interaktiivista tulkkia. Toisin sanoen tämän komennon pääasiallinen tarkoitus on ajaa komentosarjoja toisten komentosarjojen sisällä.
 
 Yleisin paikka ```source```-kutsulle on siis seuraavanlainen (tai vastaava) rivi jonkin komentosarjan alussa:
 
@@ -174,7 +174,7 @@ source ~/.bash_profile
 
 ## Komentosarjan argumentit
 
-Koska komentosarjoja suoritetaan samalla tavalla kuin muitakin komentoja, komentosarjoille voi antaa [argumentteja ja valintoja](../../01-komentorivi/02-bash-muoto.md#argumentit-lisävalinnat-ja-liput) kuten tavallisesti. Annettujen lisävalintojen käyttö standardien mukaisesti on hiukan vaikeaa, mutta jos haluaa lukea kaiken pelkkinä argumentteina, niin elämä on suhteellisen helppoa. 
+Koska komentosarjoja suoritetaan samalla tavalla kuin muitakin komentoja, komentosarjoille voi antaa [argumentteja ja valintoja](../../komentorivi/bash-muoto.md#argumentit-lisävalinnat-ja-liput) kuten tavallisesti. Annettujen lisävalintojen käyttö standardien mukaisesti on hiukan vaikeaa, mutta jos haluaa lukea kaiken pelkkinä argumentteina, niin elämä on suhteellisen helppoa. 
 
 Komentosarjat saavat jokaisen sille annetun argumentin erikoismuuttujina. Näiden erikoismuuttujien arvot saa luettua tekstimuotoisina numeroiduista muuttujista ```$0```, ```$1```, ```$2```, ```$3``` jne. Muuttujan numero kertoo, kuinka mones argumentti oli.
 
@@ -287,4 +287,4 @@ Alla muutama esimerkki yksinkertaisista komentosarjoista.
 ??? 
 
 
-Joskus komentosarjat tarvitsevat monimutkaisempia rakenteita, jossa tarkkaillaan toimintaympäristön tilaa, tai työskennellään useampien tiedostojen kanssa. Sellaiseen käyttötarkoitukseen on hyvä tuntea myös komentorivin [muuttujat ja ohjausrakenteet](../02.2-ohjausrakenteet/02-2-bash-rakenteet.md#bashin-ohjausrakenteet), jotka käsitellään seuraavassa osiossa.
+Joskus komentosarjat tarvitsevat monimutkaisempia rakenteita, jossa tarkkaillaan toimintaympäristön tilaa, tai työskennellään useampien tiedostojen kanssa. Sellaiseen käyttötarkoitukseen on hyvä tuntea myös komentorivin [muuttujat ja ohjausrakenteet](../ohjausrakenteet/bash-rakenteet.md#bashin-ohjausrakenteet), jotka käsitellään seuraavassa osiossa.

@@ -10,7 +10,7 @@ Jokaisella tietokoneella on ympäristömuuttujia. Nämä ovat tietokoneen taltee
 
 Osaa ympäristömuuttujista ei välttämättä kannata tai voi muokata, sillä käyttöjärjestelmä muokkaa niiden sisältöä automaattisesti ja itsekseen. Tällaisia ovat mm. <nowrap>:os-mac::os-linux: *bashin*</nowrap> muuttujat ```PWD``` ja ```OLDPWD```, joihin on tallennettu päätteen tämänhetkinen aktiivinen kansio ja edellinen aktiivinen kansio tai <nowrap>:os-win:*Windowsin*</nowrap> muuttujat ```APPDATA``` ja ```SystemRoot```, joihin on tallennettu sovelluksien käyttämä, profiiliin liittyvä roaming-hakemisto ja käyttöjärjestelmän asennushakemisto (ei todellakaan kannata mennä muokkaamaan noita itse käyttäjänä).
 
-Ympäristömuuttujia käytetään aivan kuten tavallisia muuttujia ([:os-win: Windows](02.2-ohjausrakenteet/02-2-bat-rakenteet.md#muuttujat) / [:os-mac::os-linux: Bash](02.2-ohjausrakenteet/02-2-bash-rakenteet.md#muuttujat)). Toiminnan kannalta ne itseasiassa ovat samoja asioita; ne tallennetaan samaan paikkaan ja niitä luetaan samalla tavalla. Ympäristömuuttujissa on vain se jippo, että monet muutkin ohjelmat, jopa ne jotka ovat ennakkoasennettu koneelle, käyttävät ympäristömuuttujia omaan toimintaansa. Itse nimettyjen muuttujien kanssa voi luottaa siihen, etteivät ne sekoita muiden ohjelmien toimintaan merkittävästi.
+Ympäristömuuttujia käytetään aivan kuten tavallisia muuttujia ([:os-win: Windows](ohjausrakenteet/bat-rakenteet.md#muuttujat) / [:os-mac::os-linux: Bash](ohjausrakenteet/bash-rakenteet.md#muuttujat)). Toiminnan kannalta ne itseasiassa ovat samoja asioita; ne tallennetaan samaan paikkaan ja niitä luetaan samalla tavalla. Ympäristömuuttujissa on vain se jippo, että monet muutkin ohjelmat, jopa ne jotka ovat ennakkoasennettu koneelle, käyttävät ympäristömuuttujia omaan toimintaansa. Itse nimettyjen muuttujien kanssa voi luottaa siihen, etteivät ne sekoita muiden ohjelmien toimintaan merkittävästi.
 
 Alla on lista muutamasta yleisimmästä ympäristömuuttujasta:
 
@@ -24,7 +24,7 @@ Alla on lista muutamasta yleisimmästä ympäristömuuttujasta:
 | %PROMPT%                  | $PS1                             | Komentokehotteen muoto                 |
 | %OneDrive%                  | **(Ei ole)**                     | Hakemisto, johon OneDrive-verkkolevyn sisältö on yhdistetty.                 |
 
-Myös monet ohjelmat tallentavat ympäristömuuttujia yleiseen käyttöön. Esimerkiksi Java määrittelee kääntäjän ja virtuaalikoneen sijainnin ```%JAVA_HOME%``` muuttujalla muita Javaa hyödyntäviä työkaluohjelmia (esim. Maven) varten. Samoin <nowrap>:os-mac: MacOS-koneilla</nowrap> käytettävä [Homebrew](../01-komentorivi/04-asennus.md#pakettien-asentaminen) asentaa kaikki ohjelmat polkuun, joka on määritelty muuttujassa ```$HOMEBREW_PREFIX```.
+Myös monet ohjelmat tallentavat ympäristömuuttujia yleiseen käyttöön. Esimerkiksi Java määrittelee kääntäjän ja virtuaalikoneen sijainnin ```%JAVA_HOME%``` muuttujalla muita Javaa hyödyntäviä työkaluohjelmia (esim. Maven) varten. Samoin <nowrap>:os-mac: MacOS-koneilla</nowrap> käytettävä [Homebrew](../komentorivi/asennus.md#pakettien-asentaminen) asentaa kaikki ohjelmat polkuun, joka on määritelty muuttujassa ```$HOMEBREW_PREFIX```.
 
 
 Kaikki ympäristömuuttujat voi saada näkyviin seuraavalla komennolla:
@@ -45,7 +45,7 @@ Alla käydään muutama ympäristömuuttuja tarkemmin läpi.
 
 ### $PATH
 
-Yleisimmin muokattu ympäristömuuttuja on ```PATH```. Se määrittelee kaikki hakemistot, joista komentorivitulkki hakee suoritettavat tiedostot kaikille komennoille ja komentojen lailla ajettaville ohjelmille. ```PATH``` on lista [absoluuttisia polkuja](../00-intro/01-tiedostot.md#täysi-eli-absoluuttinen-polku) kansioihin, joista komentoa vastaavaa tiedostoa etsitään. ```PATH``` listaa kaikki nämä polut yhdessä pötkössä, ja jokainen polku on erotettu <nowrap>:os-win: puolipisteellä</nowrap> ```;``` tai <nowrap>:os-mac::os-linux: kaksoispisteellä</nowrap> ```:```.
+Yleisimmin muokattu ympäristömuuttuja on ```PATH```. Se määrittelee kaikki hakemistot, joista komentorivitulkki hakee suoritettavat tiedostot kaikille komennoille ja komentojen lailla ajettaville ohjelmille. ```PATH``` on lista [absoluuttisia polkuja](../intro/tiedostot.md#täysi-eli-absoluuttinen-polku) kansioihin, joista komentoa vastaavaa tiedostoa etsitään. ```PATH``` listaa kaikki nämä polut yhdessä pötkössä, ja jokainen polku on erotettu <nowrap>:os-win: puolipisteellä</nowrap> ```;``` tai <nowrap>:os-mac::os-linux: kaksoispisteellä</nowrap> ```:```.
 
 === ":os-win: Windows"
     !!! shell "cmd.exe: echo %PATH%"
@@ -87,7 +87,7 @@ Yleensä ```PATH```in käyttämät oletuskansiot ovat piilossa, vaikeasti pääs
     - ```:``` seuraavaksi lisätään muuttujaan kaksoispiste, koska jokainen PATH-muuttujan polku on eroteltu kaksoispisteellä.
     - ```/Users/jonrajal/Koodi/scripts``` viimeisenä laitetaan oma polku osaksi PATH-muuttujaan asetettavaa arvoa.
 
-    Ongelmia tulee kuitenkin, jos ympäristömuuttujaa yrittää muokata esimerkin mukaisesti suoraan komentokehotteesta. Jokainen komentokehotteessa muokattu muuttuja säilyy muistissa vain siitä [päätteessä](../01-komentorivi/01-bash-alkeet.md#komentorivin-osat), ja vain niin kauan kuin pääte on käynnissä. Jotta komentoa ei tarvitsisi ajaa joka kerta uudestaan, se kannattaa sijoittaa [päätteen käynnistystiedostoon](#päätteen-käynnistystiedostot), jossa se suoritetaan automaattisesti aina päätteen käynnistyessä.
+    Ongelmia tulee kuitenkin, jos ympäristömuuttujaa yrittää muokata esimerkin mukaisesti suoraan komentokehotteesta. Jokainen komentokehotteessa muokattu muuttuja säilyy muistissa vain siitä [päätteessä](../komentorivi/01-bash-alkeet.md#komentorivin-osat), ja vain niin kauan kuin pääte on käynnissä. Jotta komentoa ei tarvitsisi ajaa joka kerta uudestaan, se kannattaa sijoittaa [päätteen käynnistystiedostoon](#päätteen-käynnistystiedostot), jossa se suoritetaan automaattisesti aina päätteen käynnistyessä.
 
 
     ```PATH```-muuttujan saa nopeasti käynnistystiedostoon lisäämällä seuraava rivi ```.bash_profile```-tiedostoon (tiedosto on kotihakemistossa ```~```):
@@ -95,9 +95,9 @@ Yleensä ```PATH```in käyttämät oletuskansiot ovat piilossa, vaikeasti pääs
     export PATH=$PATH:/täysi/polku/omaan/kansioon
     ```
 
-    Tämä on lähes sama komento kuin komentorivillekin kirjoitettaessa, mutta alussa on lisäksi avainsana ```export```. Tämä avainsana lisätään, koska ```.bash_profile``` on [komentosarjatiedosto](02-komentosarjat/02-bash_script.md#bash-komentosarjat). Komentosarjojen muokkaamat muuttujat tavallisesti jäävät vain komentosarjan sisäiseksi muutokseksi. Komento ```export``` laajentaa muuttujan muutoksen koko päätteelle näkyväksi.
+    Tämä on lähes sama komento kuin komentorivillekin kirjoitettaessa, mutta alussa on lisäksi avainsana ```export```. Tämä avainsana lisätään, koska ```.bash_profile``` on [komentosarjatiedosto](komentosarjat/02-bash_script.md#bash-komentosarjat). Komentosarjojen muokkaamat muuttujat tavallisesti jäävät vain komentosarjan sisäiseksi muutokseksi. Komento ```export``` laajentaa muuttujan muutoksen koko päätteelle näkyväksi.
 
-    Voit lukea lisää ```.bash_profile```-tiedoston muokkaamisesta ja avaamista [alta](#päätteen-käynnistystiedostot), mutta helppo tapa lisätä tiedostoon uusi rivi on käyttää [tulosteenohjausmerkkejä](../01-komentorivi/03-peruskomennot/bash-peruskomennot.md#tuloste-tiedostoon). 
+    Voit lukea lisää ```.bash_profile```-tiedoston muokkaamisesta ja avaamista [alta](#päätteen-käynnistystiedostot), mutta helppo tapa lisätä tiedostoon uusi rivi on käyttää [tulosteenohjausmerkkejä](../komentorivi/peruskomennot/bash-peruskomennot.md#tuloste-tiedostoon). 
 
     !!! shell "bash: PATH >>"
         **C54W4KDHGK**:~ jonrajal$ <pop>echo PATH=$PATH:/Users/jonrajal/Koodi/scripts >> ~/.bash_profile</pop>
@@ -110,7 +110,7 @@ Yleensä ```PATH```in käyttämät oletuskansiot ovat piilossa, vaikeasti pääs
 
 ### Kehotteen muokkaus
 
-[Komentokehotteen](../01-komentorivi/01-bash-alkeet.md#komentorivin-osat) ulkoasua voi muokata haluamansalaiseksi ympäristömuuttujilla. Joka komentotulkilla on oma tapansa kehotteen muotoiluksi, joten käydään tässä molemmat läpi.
+[Komentokehotteen](../komentorivi/bash-alkeet.md#komentorivin-osat) ulkoasua voi muokata haluamansalaiseksi ympäristömuuttujilla. Joka komentotulkilla on oma tapansa kehotteen muotoiluksi, joten käydään tässä molemmat läpi.
 
 === ":os-win: Windows"
     *Windowsissa* voi komentokehotteen muotoa (siis sitä kohtaa, joka tulostuu aina uudelle riville aluksi kun on antamassa jotain komentoa ```cmd.exe```-ikkunassa) voi muokata ympäristömuuttujan ```PROMPT``` kautta. Nykyään (aina ei näin ole ollut) oletuksena kehotteen muoto on:
@@ -154,7 +154,7 @@ Yleensä ```PATH```in käyttämät oletuskansiot ovat piilossa, vaikeasti pääs
     | $_      | rivinvaihto      |
     | $e      | ANSI-escape -koodi (koodi 27, tai 0x1B -katso [ASCII-koodit](/unix/ascii))  |
     | $h      | askelpalautin l. backspace (poistaa merkin, joka on kirjoitettu näytölle)   |
-    | $a      | &-merkki ("ampresand")      |
+    | $a      | &-merkki ("ampersand")      |
     | $c      | (-merkki (avaava sulje)      |
     | $f      | )-merkki (sulkeva sulje)      |
     | $s      | välilyönti      |
@@ -169,7 +169,7 @@ Yleensä ```PATH```in käyttämät oletuskansiot ovat piilossa, vaikeasti pääs
 
             20.42.35,09 ma 24.11.2025 C:\TOL-alkeet> 
         -------
-        Mikäli haluaa, niin kehotteen saa enemmän <nowrap>:os-mac::os-linux:*bash:n*</nowrap> näköiseksi myös <nowrap>:os-win:cmd.exe</nowrap>-puolella asettamalla aktiivisen käyttäjän käyttäjänimen ja tietokoneennimen ympäristömuuttujista, sekä muuttamalla viimeisimmäksi tulostettavan merkin ```$```-merkiksi komennolla
+        Mikäli haluaa, niin kehotteen saa enemmän <nowrap>:os-mac::os-linux:*bash:n*</nowrap> näköiseksi myös <nowrap>:os-win:cmd.exe</nowrap>-puolella asettamalla aktiivisen käyttäjän käyttäjänimen ja tietokoneen nimen ympäristömuuttujista, sekä muuttamalla viimeisimmäksi tulostettavan merkin ```$```-merkiksi komennolla
 
         ```SET PROMPT=%USERNAME%@%COMPUTERNAME%:$p$$```
 
@@ -187,12 +187,12 @@ Yleensä ```PATH```in käyttämät oletuskansiot ovat piilossa, vaikeasti pääs
 
             <span style="color:green">Jouni@JL-DESKTOP</span><span style="color:white">:</span><span style="color:blue">C:\TOL-alkeet</span><span style="color:white">$</span>
 
-        muuttaa tulostusvärit tekstille kehotteen eri osiin (ensimmäinen osio käyttäjännimi@koneennimi vihreällä tekstillä, kaksoispiste ja lopun ```$```-merkit valkoisella ja aktiivisen hakemiston polku sinisellä). Lisää värityksiä ja muita muotoiluja löytyy [Microsoftin learn-resursseista](https://learn.microsoft.com/en-us/windows/console/console-virtual-terminal-sequences#text-formatting)
+        muuttaa tulostusvärit tekstille kehotteen eri osiin (ensimmäinen osio käyttäjänimi@koneen_nimi vihreällä tekstillä, kaksoispiste ja lopun ```$```-merkit valkoisella ja aktiivisen hakemiston polku sinisellä). Lisää värityksiä ja muita muotoiluja löytyy [Microsoftin learn-resursseista](https://learn.microsoft.com/en-us/windows/console/console-virtual-terminal-sequences#text-formatting)
 
 === ":os-mac::os-linux: bash"
     *Bashissa* on itseasiassa useampi ympäristömuuttuja kehotteen muodolle, riippuen käyttäjän ajamasta komennosta. ```PS1``` muokkaa peruskehotetta, joten siihen voidaan perehtyä lähemmin. Muuttujia ```PS2```, ```PS3``` ja ```PS4``` käytetään erikoistapaukissa.
 
-    Kuten [komentorivin perusteissa](../01-komentorivi/01-bash-alkeet.md#kehotteen-muotoja) esiteltiin, *bashin* kehote on oletuksena muotoa:
+    Kuten [komentorivin perusteissa](../komentorivi/01-bash-alkeet.md#kehotteen-muotoja) esiteltiin, *bashin* kehote on oletuksena muotoa:
     
     ```tietokoneen_nimi:aktiivinen_kansio käyttäjätunnus$ ```. 
     
@@ -256,10 +256,10 @@ Yleensä ```PATH```in käyttämät oletuskansiot ovat piilossa, vaikeasti pääs
 
 Usein komentoriviä käyttäessä tulee vastaan tilanteita, joissa aina haluaisi suorittaa samat komennot, riippumatta mistään. Jos haluaa asettaa ympäristömuuttujat aina kohdalleen, tai vaihtaa komentorivi aloittamaan aina tietysti kansiosta.
 
-Näitä varten komentotulkit käyttävät käynnistystiedostoja. Nämä käynnistystiedostot ovat aivan tavallisia [komentosarjotiedostoja](02-komentosarjat/index.md#komentosarjat), jotka tulkki suorittaa aina käynnistyessään.
+Näitä varten komentotulkit käyttävät käynnistystiedostoja. Nämä käynnistystiedostot ovat aivan tavallisia [komentosarjatiedostoja](komentosarjat/index.md#komentosarjat), jotka tulkki suorittaa aina käynnistyessään.
 
 === ":os-win: Windows"
-    Toisin kuin <nowrap>:os-mac:mac-ympäristössä</nowrap> ja <nowrap>:os-linux:linux-puolella</nowrap> *bash*-komentotulkissa, <nowrap>:os-win:Windowsissa</nowrap> komentokehotteen käynnistämisen yhteydessä ei automaattisesti ajeta mitään käyttäjän muokattavaksi tarkoitettuja asetustiedostoja, joita muokkaamalla voisi suorittaa haluamiaan komentosarjoja. Pieni kiertotie on muuttaa Windowsin terminaaliohjelman asetuksista ```Komentokehote```-ohjelman (eng. ```Command Prompt```) käynnistyskomentoa, ja lisätä siihen ```/k``` -valitsin ja halutun komentosarjatiedoston nimi polkuineen (ikään kuin rakentaa oma, *bash*-puolen ```~/.bashrc```:tä vastaava tiedosto ja systeemi). Esimerkiksi, mikäli tiedosto ```C:\TOL-alkeet\oma.bat``` sisältäisi tuon aiemmin käytetyn ```SET PROMPT```-komennon, jolla muutetaan kehoteteksti "*bash*-maiseksi" ja väritetyksi:
+    Toisin kuin <nowrap>:os-mac:mac-ympäristössä</nowrap> ja <nowrap>:os-linux:linux-puolella</nowrap> *bash*-komentotulkissa, <nowrap>:os-win:Windowsissa</nowrap> komentokehotteen käynnistämisen yhteydessä ei automaattisesti ajeta mitään käyttäjän muokattavaksi tarkoitettuja asetustiedostoja, joita muokkaamalla voisi suorittaa haluamiaan komentosarjoja. Pieni kiertotie on muuttaa Windowsin pääteohjelman asetuksista ```Komentokehote```-ohjelman (eng. ```Command Prompt```) käynnistyskomentoa, ja lisätä siihen ```/k``` -valitsin ja halutun komentosarjatiedoston nimi polkuineen (ikään kuin rakentaa oma, *bash*-puolen ```~/.bashrc```:tä vastaava tiedosto ja systeemi). Esimerkiksi, mikäli tiedosto ```C:\TOL-alkeet\oma.bat``` sisältäisi tuon aiemmin käytetyn ```SET PROMPT```-komennon, jolla muutetaan kehoteteksti "*bash*-maiseksi" ja väritetyksi:
 
     ```
     @ECHO OFF
@@ -292,7 +292,7 @@ Näitä varten komentotulkit käyttävät käynnistystiedostoja. Nämä käynnis
 
     - ```open -t ~/.bash_profile``` avaa Texturin (eng. *TextEdit*) tiedoston muokkaamista varten.
     - ```nano ~/.bash_profile``` avaa tekstitiedoston Nanolla, joka on komentorivillä toimiva tekstieditori.
-    - Jos haluat vain lisätä tekstiä tiedoston perään, voit käyttää [tulosteenohjausmerkkejä](../01-komentorivi/03-peruskomennot/bash-peruskomennot.md#tuloste-tiedostoon). ```echo PATH=$PATH:/täysi/polku/omaan/kansioon >> ~/.bash_profile``` lisää halutun rivin tiedoston perään.
+    - Jos haluat vain lisätä tekstiä tiedoston perään, voit käyttää [tulosteenohjausmerkkejä](../komentorivi/peruskomennot/bash-peruskomennot.md#tuloste-tiedostoon). ```echo PATH=$PATH:/täysi/polku/omaan/kansioon >> ~/.bash_profile``` lisää halutun rivin tiedoston perään.
 
     Kun käynnistystiedostoa on muokattu se suoritetaan sellaisenaan seuraavan kerran tulkin käynnistyessä, eli komentorivi-ikkunan auetessa. Jos muutokset haluaa nykyiseen tulkkiin, niin kannattaa ajaa komento ```source ~/.bash_profile```(vaihtaen tiedostonimeksi muokatun käynnistystiedoston nimi), jotta nykyinen tulkki suorittaisi käynnistystiedoston.
 
@@ -305,7 +305,7 @@ Näitä varten komentotulkit käyttävät käynnistystiedostoja. Nämä käynnis
 
     - ```open -t ~/.zshenv``` avaa Texturin (eng. *TextEdit*) tiedoston muokkaamista varten.
     - ```nano ~/.zshenv``` avaa tekstitiedoston Nanolla, joka on komentorivillä toimiva tekstieditori.
-    - Jos haluat vain lisätä tekstiä tiedoston perään, voit käyttää [tulosteenohjausmerkkejä](../01-komentorivi/03-peruskomennot/bash-peruskomennot.md#tuloste-tiedostoon). ```echo PATH=$PATH:/täysi/polku/omaan/kansioon >> ~/.zshenv``` lisää halutun rivin tiedoston perään.
+    - Jos haluat vain lisätä tekstiä tiedoston perään, voit käyttää [tulosteenohjausmerkkejä](../komentorivi/peruskomennot/bash-peruskomennot.md#tuloste-tiedostoon). ```echo PATH=$PATH:/täysi/polku/omaan/kansioon >> ~/.zshenv``` lisää halutun rivin tiedoston perään.
 
     Kun käynnistystiedostoa on muokattu se suoritetaan sellaisenaan seuraavan kerran tulkin käynnistyessä, eli komentorivi-ikkunan auetessa. Jos muutokset haluaa nykyiseen tulkkiin, niin kannattaa ajaa komento ```source ~/.zshenv```, jotta nykyinen tulkki suorittaisi käynnistystiedoston.
 
@@ -321,7 +321,7 @@ Näitä varten komentotulkit käyttävät käynnistystiedostoja. Nämä käynnis
 
     - ```xdg-open ~/.bashrc``` avaa käyttöjärjestelmän oletustekstieditorin tiedoston muokkaamista varten. Pahimmassa tapauksessa se voi olla [*vim*](../vim.hidden.md).
     - ```nano ~/.bashrc``` avaa tekstitiedoston Nanolla, joka on komentorivillä toimiva tekstieditori.
-    - Jos haluat vain lisätä tekstiä tiedoston perään, voit käyttää [tulosteenohjausmerkkejä](../01-komentorivi/03-peruskomennot/bash-peruskomennot.md#tuloste-tiedostoon). ```echo PATH=$PATH:/täysi/polku/omaan/kansioon >> ~/.bashrc``` lisää halutun rivin tiedoston perään.
+    - Jos haluat vain lisätä tekstiä tiedoston perään, voit käyttää [tulosteenohjausmerkkejä](../komentorivi/peruskomennot/bash-peruskomennot.md#tuloste-tiedostoon). ```echo PATH=$PATH:/täysi/polku/omaan/kansioon >> ~/.bashrc``` lisää halutun rivin tiedoston perään.
 
     Kun käynnistystiedostoa on muokattu se suoritetaan sellaisenaan seuraavan kerran tulkin käynnistyessä, eli komentorivi-ikkunan auetessa. Jos muutokset haluaa nykyiseen tulkkiin, niin kannattaa ajaa komento ```source ~/.bashrc```, jotta nykyinen tulkki suorittaisi käynnistystiedoston.
 

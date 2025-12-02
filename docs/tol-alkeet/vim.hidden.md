@@ -37,9 +37,9 @@ Jos komentoriville haluaa jonkin helppokäyttöisen tekstieditorin, niin suositt
 #### Komentorivin oletustekstieditori
 
 === ":os-mac: MacOS"
-    MacOS-tietokoneiden oletustekstieditori on Texturi (eng. TextEdit), joka on graafisen käyttöliittymän ohjelma. Jotkin komentoriviohjelmat eivät kuitenkaan tykkää käynnistellä graafisen käyttöliittymän ohjelmia, joten ne käyttävät Unix-standardia [ympäristömuuttujaa](01.2-komentorivin-jatkoa/03-environment.md#ympäristömuuttujat) ```$EDITOR``` etsiäkseen jonkin käynnistettävän ohjelman. MacOS ei ole asettanut tähän mitään arvoa, joten jokainen ohjelma valitsee siis itsekseen jonkin satunnaisen tekstinkäsittelyohjelman. Asettamalla ympäristömuuttujaan ```$EDITOR``` arvon, voi monet ohjelmat saada käyttämään haluamaansa tekstieditoria.
+    MacOS-tietokoneiden oletustekstieditori on Texturi (eng. TextEdit), joka on graafisen käyttöliittymän ohjelma. Jotkin komentoriviohjelmat eivät kuitenkaan tykkää käynnistellä graafisen käyttöliittymän ohjelmia, joten ne käyttävät Unix-standardia [ympäristömuuttujaa](komentorivin-jatkoa/ymparisto.md#ympäristömuuttujat) ```$EDITOR``` etsiäkseen jonkin käynnistettävän ohjelman. MacOS ei ole asettanut tähän mitään arvoa, joten jokainen ohjelma valitsee siis itsekseen jonkin satunnaisen tekstinkäsittelyohjelman. Asettamalla ympäristömuuttujaan ```$EDITOR``` arvon, voi monet ohjelmat saada käyttämään haluamaansa tekstieditoria.
 
-    Lisää siis [käynnistystiedostoon](01.2-komentorivin-jatkoa/03-environment.md#päätteen-käynnistystiedostot) ```.bash-profile``` seuraava rivi:
+    Lisää siis [käynnistystiedostoon](komentorivin-jatkoa/ymparisto.md#päätteen-käynnistystiedostot) ```.bash-profile``` seuraava rivi:
 
     ```
     EDITOR=/usr/bin/nano
@@ -48,9 +48,9 @@ Jos komentoriville haluaa jonkin helppokäyttöisen tekstieditorin, niin suositt
     Jos et halua käyttää Nanoa, voit vaihtaa polun joksikin toiseksi.
 
 === ":os-linux: Ubuntu"
-    Unix-koneiden oletustekstieditori on nimetty [ympäristömuuttujassa](01.2-komentorivin-jatkoa/03-environment.md#ympäristömuuttujat) ```$EDITOR```. Siinä pitäisi olla [absoluuttinen polku](00-intro/01-tiedostot.md#täysi-eli-absoluuttinen-polku) siihen ohjelmaan, jolla tekstitiedosto pitäisi avata.
+    Unix-koneiden oletustekstieditori on nimetty [ympäristömuuttujassa](komentorivin-jatkoa/ymparisto.md#ympäristömuuttujat) ```$EDITOR```. Siinä pitäisi olla [absoluuttinen polku](intro/tiedostot.md#täysi-eli-absoluuttinen-polku) siihen ohjelmaan, jolla tekstitiedosto pitäisi avata.
 
-    Lisää siis [käynnistystiedostoon](01.2-komentorivin-jatkoa/03-environment.md#päätteen-käynnistystiedostot) ```.bashrc``` seuraava rivi:
+    Lisää siis [käynnistystiedostoon](komentorivin-jatkoa/ymparisto.md#päätteen-käynnistystiedostot) ```.bashrc``` seuraava rivi:
 
     ```
     EDITOR=/usr/bin/nano

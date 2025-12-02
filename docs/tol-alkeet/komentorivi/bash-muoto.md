@@ -81,7 +81,7 @@ Joillekin komennoille voi antaa tarkentavia käskyjä. Näitä voivat olla mm. k
         <span class="bash-table-element">requirements.txt</span>
 
 
-Jokaisen komennon argumentteihin ja toimintatapaan voi tutustua paremmin komennolla [```man```](03-peruskomennot/bash-peruskomennot.md#man), joka avaa pyydetyn komennon manuaalin. Esimerkiksi ```man ls``` kertoo tarkemmin ls-komennon toiminnasta.
+Jokaisen komennon argumentteihin ja toimintatapaan voi tutustua paremmin komennolla [```man```](peruskomennot/bash-peruskomennot.md#man), joka avaa pyydetyn komennon manuaalin. Esimerkiksi ```man ls``` kertoo tarkemmin ls-komennon toiminnasta.
 
 
 ## Argumentit, lisävalinnat ja liput
@@ -120,7 +120,7 @@ Lippuja, valintoja ja argumentteja voi olla niin paljon kuin käyttäjä niitä 
             </body\>
         </html\>
 
-Argumentti on komennon vastaanottama tieto, yleensä tiedoston tai kansion nimi. Argumentti kirjoitetaan yleisesti suoraan komennon perään tai valintalistan loppuun. Jos komennon argumentiksi annetaan tiedosto, siihen yleensä riittää pelkkä tiedostonimi, ellei käsiteltävä tiedosto ole jossain muualla kuin aktiivisessa kansiossa. Muualla oleviin tiedostoihin pitää viitata joko [absoluuttisella polulla](../00-intro/01-tiedostot.md#täysi-eli-absoluuttinen-polku) tai jollain [suhteellisella polulla](../00-intro/01-tiedostot.md#tiedostopolut).
+Argumentti on komennon vastaanottama tieto, yleensä tiedoston tai kansion nimi. Argumentti kirjoitetaan yleisesti suoraan komennon perään tai valintalistan loppuun. Jos komennon argumentiksi annetaan tiedosto, siihen yleensä riittää pelkkä tiedostonimi, ellei käsiteltävä tiedosto ole jossain muualla kuin aktiivisessa kansiossa. Muualla oleviin tiedostoihin pitää viitata joko [absoluuttisella polulla](../intro/tiedostot.md#täysi-eli-absoluuttinen-polku) tai jollain [suhteellisella polulla](../intro/tiedostot.md#tiedostopolut).
 
 Argumenttien määrää ei ole mitenkään rajattu, ja jotkin ohjelman ja komennot edellyttävät useampia argumentteja. Tällaisessa tapauksessa argumenttien järjestyksellä voi olla suuri merkitys. Esimerkiksi tiedostoja kopioiva <nowrap>:os-win: ```copy```</nowrap> <nowrap>:os-mac::os-linux: ```cp```</nowrap>-komento haluaa kaksi argumenttia: kopioitavan lähdetiedoston ja uuden luotavan tiedoston nimen. Lähdetiedosto pitää <nowrap>:os-win: ```copy```</nowrap> <nowrap>:os-mac::os-linux: ```cp```</nowrap>-komennolle antaa ensin ja uusi tiedosto sitten.
 
@@ -138,7 +138,7 @@ Argumenttien määrää ei ole mitenkään rajattu, ja jotkin ohjelman ja komenn
 
 Joidenkin komentojen suoritusta voi ohjata lisäksi komennolle annettavilla lisävalinnoilla. Lisävalinnat eroavat argumenteista siten, että ne alkavat valintaa merkkaavalla merkillä. Usein <nowrap>:os-win: Windowsilla</nowrap> se on kauttaviiva ```/```; <nowrap>:os-mac::os-linux: *bashissa*</nowrap> käytetään käytännössä aina yhtä tai kahta väliviivaa (```-``` tai ```--```). Toisin kuin argumentit, joita käytetään ohjelman syötteenä, lisävalinnoilla vain muutetaan ohjelman suoritustapaa. Toisin sanoen, lisävalinnat kertovat mitä ohjelma/komento tekee, ja argumentti kertoo mille se tehdään.
 
-Lisävalinnan edessä olevien väliviivojen määrä perinteisesti riippuu siitä, kuinka monimerkkinen tunnus lisävalinnalla on. Kaikilla yksikirjaimisilla lisävalinnoilla on usein vain yksi väliviiva, kuten vaikka aikaisemmin ```ls -A```. Jos taas tunnus on pidempi sana, väliviivoja on yleensä kaksi, kuten vaikka [gitin](../02-ohjelmointi/02-git.md) komennossa ```git commit --message "Viesti"```. Joillakin valinnoilla voi olla myös pitkä ja lyhyt muoto, jossa lyhyt on yhden merkin mittainen ja tiivis, ja pitkä on kuvaavampi. Esimerkiksi tuo aikaisempi git-komennon voi kirjoittaa myös muodossa ```git commit -m "viesti"```.
+Lisävalinnan edessä olevien väliviivojen määrä perinteisesti riippuu siitä, kuinka monimerkkinen tunnus lisävalinnalla on. Kaikilla yksikirjaimisilla lisävalinnoilla on usein vain yksi väliviiva, kuten vaikka aikaisemmin ```ls -A```. Jos taas tunnus on pidempi sana, väliviivoja on yleensä kaksi, kuten vaikka [gitin](../ohjelmointi/02-git.md) komennossa ```git commit --message "Viesti"```. Joillakin valinnoilla voi olla myös pitkä ja lyhyt muoto, jossa lyhyt on yhden merkin mittainen ja tiivis, ja pitkä on kuvaavampi. Esimerkiksi tuo aikaisempi git-komennon voi kirjoittaa myös muodossa ```git commit -m "viesti"```.
 
 Nämä säännöt ovat kuitenkin vain yleisiä käytänteitä, jotka voivat vaihdella ohjelmasta, komennosta ja tulkista toiseen. Suoritettavan ohjelman kooditasolla valinnat ja argumentit eivät eroa toisistaan mitenkään.
 
@@ -241,7 +241,7 @@ Lisävalintoja ja lippuja voi laittaa myös useampia samalle komennolle.
 
 ## Ohjelmien suorittaminen
 
-Toisin kuin komennot, jotka on saatavilla kaikissa kansioissa, tiedostoihin ja ohjelmiin päästäkseen pitää tietää niiden sijainti. Tiedoston sijainnin voi joko antaa [absoluuttisena polkuna](../00-intro/01-tiedostot.md#täysi-eli-absoluuttinen-polku) tai suhteessa *aktiiviseen kansioon*. Aktiivinen kansio viittaa siihen paikkaan, jossa käyttäjä tällä hetkellä "on". Kaikki komennot ja ohjelmat oletuksena suoritetaan aktiivisessa kansiossa, ellei toisin määritetä. Aktiivista kansiota voi vaihtaa käyttämällä ```cd```-komentoa ([:os-win: Windows](./03-peruskomennot/windows-peruskomennot.md#cd) tai [:os-mac::os-linux: bash](./03-peruskomennot/bash-peruskomennot.md#cd)).
+Toisin kuin komennot, jotka on saatavilla kaikissa kansioissa, tiedostoihin ja ohjelmiin päästäkseen pitää tietää niiden sijainti. Tiedoston sijainnin voi joko antaa [absoluuttisena polkuna](../intro/tiedostot.md#täysi-eli-absoluuttinen-polku) tai suhteessa *aktiiviseen kansioon*. Aktiivinen kansio viittaa siihen paikkaan, jossa käyttäjä tällä hetkellä "on". Kaikki komennot ja ohjelmat oletuksena suoritetaan aktiivisessa kansiossa, ellei toisin määritetä. Aktiivista kansiota voi vaihtaa käyttämällä ```cd```-komentoa ([:os-win: Windows](./peruskomennot/windows-peruskomennot.md#cd) tai [:os-mac::os-linux: bash](./peruskomennot/bash-peruskomennot.md#cd)).
 
 Komennon suorittamisen sijasta komentorivillä voi myös käynnistää ohjelman. Ohjelman käynnistäminen tapahtuu samalla tavoin kuin komennon suorittaminen, mutta komennon sijasta ensimmäiseksi sanaksi kirjoitetaan suoritettavan ohjelman tiedostonimi tai -polku. 
  

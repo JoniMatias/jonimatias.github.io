@@ -16,7 +16,7 @@ Graafisen käyttöliittymän näkökulmasta kirjainkoon erottelulla ei ole suurt
 
 ## Välilyönnit
 
-Tiedostonimissä saa olla välilyöntejä. Tämä on kuitenkin ristiriidassa komentotulkkien yleisen säännön kanssa, jonka mukaan [komennot, argumentit ja valinnat](03-bash-muoto.md#argumentit-lisävalinnat-ja-liput) erotetaan toisistaan välilyönneillä. Tämän vuoksi komento ```cat monisanainen tiedostonimi.txt``` yrittää avata tiedostoja nimeltä ```monisanainen``` ja ```tiedostonimi.txt```, ja sekoaa.
+Tiedostonimissä saa olla välilyöntejä. Tämä on kuitenkin ristiriidassa komentotulkkien yleisen säännön kanssa, jonka mukaan [komennot, argumentit ja valinnat](bash-muoto.md#argumentit-lisävalinnat-ja-liput) erotetaan toisistaan välilyönneillä. Tämän vuoksi komento ```cat monisanainen tiedostonimi.txt``` yrittää avata tiedostoja nimeltä ```monisanainen``` ja ```tiedostonimi.txt```, ja sekoaa.
 
 !!! shell "bash: cat monisanainen tiedostonimi.txt"
     **C54W4KDHGK**:testikansio jonrajal$ <pop>cat monisanainen tiedostonimi.txt</pop>
@@ -49,7 +49,7 @@ Komentotulkki erottaa aina argumentit toiseksi vain kohdatessaan tavallisen väl
 Tulkki oletuksena käyttää paettuja välilyöntejä tiedostojen nimissä, kun tiedostojen nimiä [täydennetään automaattisesti](#automaattinen-täydennys). Tästä voisi tulkita, että Bash tukisi paettuja välilyöntejä paremmin. Näin ei kuitenkaan aina ole.
 
 ??? info "Kehittyneempi esimerkki"
-    Kannattaa huomioida, että [muuttujiin](../01.2-komentorivin-jatkoa/02.2-ohjausrakenteet/02-2-bash-rakenteet.md#muuttujat) tallennettava kenoviiva ```\``` paetaan heti muuttujaan asetettaessa. Tällöin tulevat komennot näkevät sen tilalla vain tavallisen välilyönnin.
+    Kannattaa huomioida, että [muuttujiin](../komentorivin-jatkoa/ohjausrakenteet/bash-rakenteet.md#muuttujat) tallennettava kenoviiva ```\``` paetaan heti muuttujaan asetettaessa. Tällöin tulevat komennot näkevät sen tilalla vain tavallisen välilyönnin.
 
     !!! shell "bash: pakomerkki muuttujassa"
         **C54W4KDHGK**:testikansio jonrajal$ muuttuja=monisanainen tiedosto.txt

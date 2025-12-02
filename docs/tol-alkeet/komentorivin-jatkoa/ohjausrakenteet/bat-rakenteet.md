@@ -97,7 +97,7 @@ Jokerimerkkejä voi käyttää siis joko suoraan komentoriviltä tai komentosarj
 
 ## Ohjausrakenteet
 
-Usein yksinkertaiset listamuotoiset komentosarjat eivät riitä, vaan komentojen pitää myös pystyä tekemään päätöksiä, reagoimaan löydettyihin tuloksiin ja toistamaan toiminta useammalle tiedostolle kerralla. BAT-tiedostojen tukema syntaksi on kuitenkin joiltain osin rajoittuneempaa kuin esimerkiksi [bash-skriptauksen](../../02-komentosarjat/02-bash_script/) vastaavat, tai mitä on käytössä varsinaisissa ohjelmointikielissä. Joissakin tapauksissa BAT-ohjausrakenteetkin ovat kuitenkin käyttökelpoisiakin.
+Usein yksinkertaiset listamuotoiset komentosarjat eivät riitä, vaan komentojen pitää myös pystyä tekemään päätöksiä, reagoimaan löydettyihin tuloksiin ja toistamaan toiminta useammalle tiedostolle kerralla. BAT-tiedostojen tukema syntaksi on kuitenkin joiltain osin rajoittuneempaa kuin esimerkiksi [bash-skriptauksen](../komentosarjat/bash_script.md) vastaavat, tai mitä on käytössä varsinaisissa ohjelmointikielissä. Joissakin tapauksissa BAT-ohjausrakenteetkin ovat kuitenkin käyttökelpoisiakin.
 
 ### Silmukat 
 
@@ -212,4 +212,4 @@ Yksittäisen haarauman muoto on seuraavanlainen:
 		C:\TOL-alkeet>ifif
 		Kaiken tarkoitus on: 42
 
-Tämä ei ole missään nimessä kaikenkattava katsaus Windows-puolen komentosarjoihin, mutta mikäli automatisointi komentosarjoilla kiinnostaa enemmän, niin suosittelen erittäin painavasti tutustumaan mieluummin [bash-puolen skriptaukseen](../../02-komentosarjat/02-bash_script/), jos se vain ympäristön puolesta on mahdollista (WSL on nykyään olemassa).
+Tämä ei ole missään nimessä kaikenkattava katsaus Windows-puolen komentosarjoihin, mutta mikäli automatisointi komentosarjoilla kiinnostaa enemmän, niin suosittelen erittäin painavasti tutustumaan mieluummin [bash-puolen skriptaukseen](../komentosarjat/bash_script.md), jos se vain ympäristön puolesta on mahdollista (WSL on nykyään olemassa).

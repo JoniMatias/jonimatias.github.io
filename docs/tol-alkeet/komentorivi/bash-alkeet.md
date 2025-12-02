@@ -32,7 +32,7 @@ Komentorivin käynnistäminen on helppoa. Kaikissa tietokoneissa on valmiiksi as
 
     MacOS:n oletustulkki on nykyään *zsh*, ja tämä sivusto käsittelee pääasiallisesti *bashia*. Tämän sivuston näkökulmasta näillä kahdella ei ole merkittäviä eroja, mutta jos haluat vaihtaa tulkin samaksi kuin mitä tällä kurssilla käytetään, aja komento ```chsh -s /bin/bash``` ja syötä salasanasi sitä pyydettäessä. ```chsh```-komento vaihtaa käyttäjän perusasetuksia, ja ```-s```-lippu kertoo komennolle, että kyseessä on tulkin (eng. *shell*) vaihto.
 
-    Jos päätät vaihtaa tulkin *bashiksi*, kannattaa huomioida että Applen koneilla oleva *bashin* versio on jo kohta 20 vuotta vanha. Toiminnallisuuteen se ei suuresti vaikuta, mutta uusimpia tietoturvapäivityksiä siinä ei ole mukana. Jos haluat asentaa *bashin* uudemman version koneellesi, kannattaa lukea ohjeet [komentoriviohjelmien asentamisesta](../01-komentorivi/04-asennus.md), ja sitten ladata Homebrewillä *bashin* uusin versio.
+    Jos päätät vaihtaa tulkin *bashiksi*, kannattaa huomioida että Applen koneilla oleva *bashin* versio on jo kohta 20 vuotta vanha. Toiminnallisuuteen se ei suuresti vaikuta, mutta uusimpia tietoturvapäivityksiä siinä ei ole mukana. Jos haluat asentaa *bashin* uudemman version koneellesi, kannattaa lukea ohjeet [komentoriviohjelmien asentamisesta](../komentorivi/04-asennus.md), ja sitten ladata Homebrewillä *bashin* uusin versio.
 
 === ":os-linux: Terminal (Ubuntu)"
     **TODO:** Miten Terminal käynnistetään Ubuntussa.
@@ -59,7 +59,7 @@ Komentorivien käyttöä varten tietokone tarvitsee kolme eri komponenttia: pä�
 ### Kehotteen muotoja
 
 === ":os-win: cmd.exe"
-    Windowsin komentorivitulkin kehotteessa näytetään vain [absoluuttinen polku](../00-intro/01-tiedostot.md#täysi-eli-absoluuttinen-polku) aktiiviseen kansioon.
+    Windowsin komentorivitulkin kehotteessa näytetään vain [absoluuttinen polku](../intro/tiedostot.md#täysi-eli-absoluuttinen-polku) aktiiviseen kansioon.
     !!! shell "cmd.exe"
         C:\Windows\System32>
     

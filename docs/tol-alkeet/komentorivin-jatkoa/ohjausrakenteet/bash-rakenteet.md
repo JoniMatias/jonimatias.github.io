@@ -19,7 +19,7 @@ Muuttujiin tallennettua arvoa voi käsitellä sitten missä tahansa myöhemmäss
     pilipom
 
 
-Komentorivi käsittelee aina pelkästään tekstiä, joten muuttujatkin ovat aina tekstiä. Tekstissä voi joskus olla myös sanavälejä, eli välilyöntejä. *Bash* ei kuitenkaan pidä ylimääräisistä välilyönneistä, sillä se tulkitsee välilyönnit [argumenttien ja valintojen](../../01-komentorivi/02-bash-muoto.md#argumentit) jakajiksi. Jotta tulkki ymmärtäisi monisanaisen argumentin yhdeksi, se täytyy kirjoittaa lainausmerkkien väliin.
+Komentorivi käsittelee aina pelkästään tekstiä, joten muuttujatkin ovat aina tekstiä. Tekstissä voi joskus olla myös sanavälejä, eli välilyöntejä. *Bash* ei kuitenkaan pidä ylimääräisistä välilyönneistä, sillä se tulkitsee välilyönnit [argumenttien ja valintojen](../../komentorivi/bash-muoto.md#argumentit) jakajiksi. Jotta tulkki ymmärtäisi monisanaisen argumentin yhdeksi, se täytyy kirjoittaa lainausmerkkien väliin.
 
 !!! shell "bash: echo muuttuja"
     **C54W4KDHGK**:~ jonrajal$ teksti="pili pom"
@@ -28,7 +28,7 @@ Komentorivi käsittelee aina pelkästään tekstiä, joten muuttujatkin ovat ain
 
 Komentorivi muistaa kaikki sille asetetut muuttujat niin kauan kun pääte on päällä, tai kunnes muuttujan päälle kirjoitetaan uusi arvo. Muuttujat eivät ole siis hyviä tiedon pitkäaikaiseen säilytykseen, mutta toimivat tiedon laittamiseen pikaiseen muistiin.
 
-Kaikki käyttöjärjestelmät ja tulkit tukevat myös yleisiä oletusmuuttujia, joihin on asetettu arvo jo heti käyttöjärjestelmän tai tulkin käynnistyessä. Näitä kutsutaan [ympäristömuuttujiksi](../03-environment.md). Nämä muuttujat on kertovat käyttöjärjestelmän tilasta ja sen asetuksista. Yksi yleisimmistä näistä on [```PATH```](../03-environment.md#path), joka listaa kaikki kansiot, joista komentorivitulkki etsii suoritettavia komentoja ja ohjelmia.
+Kaikki käyttöjärjestelmät ja tulkit tukevat myös yleisiä oletusmuuttujia, joihin on asetettu arvo jo heti käyttöjärjestelmän tai tulkin käynnistyessä. Näitä kutsutaan [ympäristömuuttujiksi](../ymparisto.md). Nämä muuttujat on kertovat käyttöjärjestelmän tilasta ja sen asetuksista. Yksi yleisimmistä näistä on [```PATH```](../ymparisto.md#path), joka listaa kaikki kansiot, joista komentorivitulkki etsii suoritettavia komentoja ja ohjelmia.
 
 Jos muuttujia haluaa käsitellä numeroina, ja käyttää niitä osana matemaattisia lausekkeita, lausekkeet pitää kääriä kaksien sulkeiden (```((``` ja ```))```) sisään. Näiden sulkeiden sisällä muuttujalle voi tehdä tavallisten sijoitus- ja laskuoperaatioiden lisäksi vertailuoperaatioita. Kaksoissulkeita käyttäessä dollarimerkki (```$```) ei ole tarpeellinen muuttujan arvoon viitatessa. Ainakin seuraavan operaatiot ovat mahdollisia:
 
@@ -179,7 +179,7 @@ Silmukoita on kahdenlaisia *bashissa*. Niiden rakenteet ovat seuraavanlaisia:
 
     Yllä oleva komento käy kaikki kansion tiedostot (```*.*```) läpi, ja tulostaa jokaisen tiedoston nimen (```echo $tiedosto```), sisällön (```cat $tiedosto```) ja jokaisen tiedoston lopuksi tyhjän rivin (```echo ```). Jokainen erillinen komento erotetaan tässä tapauksessa puolipisteellä, mutta myös rivinvaihdot, eli enter-näppäimen painallukset, ovat sallittuja puolipisteiden sijasta.
 
-    Huomaa, että [tol-alkeet kansiorakenteessa](../../00-intro/01-tiedostot.md#hakemistorakenne) ei ole tiedostoja, joiden nimessä on välilyönti. Yllä oleva komento toimii sen takia täysin oikein. Välilyönnillisten tiedostonimien kanssa täytyy kuitenkin käyttää lainausmerkkejä (```"``` ) muuttujan nimen ympärille (```"$tiedosto"```), jottei kääntäjä mene sekaisin. Ilman lainausmerkkejä komennot etsisivät vain tiedostoa, joka vastaa tiedonstonnimen ensimmäiseen sanaan, ja sellaista tiedostoa tuskin kansiosta löytyy. Asiasta löytyy lisää [*bash*-peruskomentoja käsittelevästä osiosta](../../01-komentorivi/03-peruskomennot/bash-peruskomennot.md#tiedostonimet-ja-välilyönnit).
+    Huomaa, että [tol-alkeet kansiorakenteessa](../../intro/tiedostot.md#hakemistorakenne) ei ole tiedostoja, joiden nimessä on välilyönti. Yllä oleva komento toimii sen takia täysin oikein. Välilyönnillisten tiedostonimien kanssa täytyy kuitenkin käyttää lainausmerkkejä (```"``` ) muuttujan nimen ympärille (```"$tiedosto"```), jottei kääntäjä mene sekaisin. Ilman lainausmerkkejä komennot etsisivät vain tiedostoa, joka vastaa tiedonstonnimen ensimmäiseen sanaan, ja sellaista tiedostoa tuskin kansiosta löytyy. Asiasta löytyy lisää [*bash*-peruskomentoja käsittelevästä osiosta](../../komentorivi/peruskomennot/bash-peruskomennot.md#tiedostonimet-ja-välilyönnit).
 
 
 
@@ -214,7 +214,7 @@ Silmukoita on kahdenlaisia *bashissa*. Niiden rakenteet ovat seuraavanlaisia:
         4
         5
     
-    Yksi yleinen ```while```-silmukan käyttötapaus on tiedostojen sisällön läpikäynti. Siihen tarvitaan ```read```-komentoa ja syötteenohjaumerkkiä ```<```. Syötteenohjausmerkki toimii pitkälti samalla tavalla kuin [tulosteenohjausmerkit](../../01-komentorivi/03-peruskomennot/bash-peruskomennot.md#tuloste-tiedostoon), mutta ne muokkaavat syötettä tulosteen sijasta. Syötteenohjausta tarvitaan komennoissa, jotka odottavat käyttäjältä syötettä komennon ajamisen jälkeen. 
+    Yksi yleinen ```while```-silmukan käyttötapaus on tiedostojen sisällön läpikäynti. Siihen tarvitaan ```read```-komentoa ja syötteenohjaumerkkiä ```<```. Syötteenohjausmerkki toimii pitkälti samalla tavalla kuin [tulosteenohjausmerkit](../../komentorivi/peruskomennot/bash-peruskomennot.md#tuloste-tiedostoon), mutta ne muokkaavat syötettä tulosteen sijasta. Syötteenohjausta tarvitaan komennoissa, jotka odottavat käyttäjältä syötettä komennon ajamisen jälkeen. 
 
     !!! shell "bash: while - lue rivi kerrallaan"
         **C54W4KDHGK**:tol-alkeet jonrajal$ <pop>while read -r rivi; do echo "Rivi: $rivi"; done < README.txt</pop>

@@ -47,7 +47,7 @@ Koska tiedostopäätteet ovat vain osa tiedoston nimeä, niitä voi olla käytä
 | .pdf          | Tulostukseen, painamiseen ja jakamiseen tarkoitettu tiedostomuoto. Hyvin vaikea muokata.                |
 
 
-Tiedosto pääte yleensä kertoo minkälaisesta tiedostosta on kyse, ja tämän vuoksi monet ohjelmat käyttävätkin sitä tunnisteena. Tiedostopääte on kuitenkin vain osa tiedoston nimeä, joten tiedostopääte voi helposti vaihtua vahingossa toiseksi. Päätteen vaihtaminen ei kuitenkaan muuta tiedoston sisältöä, joten jpg-tiedosto ei muutu pdf-tiedostoksi pelkkää päätettä vaihtamalla. Eikä myöskään kansiosta saa pakattua zip-tiedostoa vain kirjoittamalla sen nimen perään ```.zip```. Zip-tiedoston tekemiseen on [erilliset ohjeet](01.2-perustiedostot.md#zip-tiedoston-luominen).  
+Tiedosto pääte yleensä kertoo minkälaisesta tiedostosta on kyse, ja tämän vuoksi monet ohjelmat käyttävätkin sitä tunnisteena. Tiedostopääte on kuitenkin vain osa tiedoston nimeä, joten tiedostopääte voi helposti vaihtua vahingossa toiseksi. Päätteen vaihtaminen ei kuitenkaan muuta tiedoston sisältöä, joten jpg-tiedosto ei muutu pdf-tiedostoksi pelkkää päätettä vaihtamalla. Eikä myöskään kansiosta saa pakattua zip-tiedostoa vain kirjoittamalla sen nimen perään ```.zip```. Zip-tiedoston tekemiseen on [erilliset ohjeet](perustiedostot.md#zip-tiedoston-luominen).  
 
 ## Hakemistorakenne
 
@@ -134,7 +134,7 @@ Esimerkiksi testikoneella tol-alkeet -kansio on löytyy polusta ```/Users/jonraj
 
 Tällaisella polulla on kaksi käyttötapausta. Yleisin hyöty on vain kirjoittamisen vähentäminen. On paljon helpompaa kirjoittaa ```~/Koodi/opetus/tol-alkeet```, kuin ```/Users/jonrajal/Koodi/opetus/tol-alkeet```. Unix-koneissa lähes kaikki käyttäjän tarvitsemat tiedostot ovat kuitenkin jossain kotihakemiston alihakemistoissa, joten polku on näppärämpi kirjoittaa lyhyemmässä muodossa.
 
-Toinen hyöty tällaisesta kirjoitusasusta on koneilla, joille voi kirjautua useita eri käyttäjiä eri käyttäjätileillä. Jos ohjelma tai [komentosarja](../01.2-komentorivin-jatkoa/02-komentosarjat/index.md) haluaa tallentaa, joka käyttäjälle eri tiedot tai ladata jotain käyttäjäkohtaisia tiedostoja, ohjelman ei tarvitse käyttää eri polkua jokaiselle eri käyttäjälle. ```~``` on aina aktiivisen käyttäjän kotihakemisto.
+Toinen hyöty tällaisesta kirjoitusasusta on koneilla, joille voi kirjautua useita eri käyttäjiä eri käyttäjätileillä. Jos ohjelma tai [komentosarja](../komentorivin-jatkoa/komentosarjat/index.md) haluaa tallentaa, joka käyttäjälle eri tiedot tai ladata jotain käyttäjäkohtaisia tiedostoja, ohjelman ei tarvitse käyttää eri polkua jokaiselle eri käyttäjälle. ```~``` on aina aktiivisen käyttäjän kotihakemisto.
 
 :os-win: Windows-koneilla on vastaavanlainen polkuoikotie: ```%userprofile%```. Sitä ei kuitenkaan käytetä läheskään yhtä usein sen pituuden vuoksi. Windows myös oletuksena estää suoraan käyttäjähakemistoon tallentamisen ja muokkaamisen, jolloin siihen viittaaminen on ei ole yhtä hyödyllistä. 
 

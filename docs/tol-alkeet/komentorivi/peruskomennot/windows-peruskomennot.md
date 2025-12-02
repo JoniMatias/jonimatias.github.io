@@ -90,7 +90,7 @@ Kansiorakenteessa voi nousta ylöspäin, komennolla ```cd ..``` Tämä vaihtaa a
 	               4 Dir(s)  1 310 827 470 848 bytes free
 
 
-Mikäli komennon antaa ilman mitään argumenttia, eli pelkästään ```cd```, niin komento käyttäytyy kuten bash-puolen [:os-mac::os-linux: ```pwd```](./bash-peruskomennot.md#pwd) , eli näyttää aktiivisen hakemiston sijainnin  [absoluuttisena polkuna](../../00-intro/01-tiedostot.md#täysi-eli-absoluuttinen-polku), eli reittinä tiedostojärjestelmän juuresta kansio kerrallaan aktiiviseen kansioon. Absoluuttinen polku eroaa sen kumppanista suhteellisesta polusta siten, että suhteellinen polku on aina suhteessa johonkin: yleensä joko aktiiviseen kansioon tai kotihakemistoon.
+Mikäli komennon antaa ilman mitään argumenttia, eli pelkästään ```cd```, niin komento käyttäytyy kuten bash-puolen [:os-mac::os-linux: ```pwd```](./bash-peruskomennot.md#pwd) , eli näyttää aktiivisen hakemiston sijainnin  [absoluuttisena polkuna](../../intro/tiedostot.md#täysi-eli-absoluuttinen-polku), eli reittinä tiedostojärjestelmän juuresta kansio kerrallaan aktiiviseen kansioon. Absoluuttinen polku eroaa sen kumppanista suhteellisesta polusta siten, että suhteellinen polku on aina suhteessa johonkin: yleensä joko aktiiviseen kansioon tai kotihakemistoon.
 
 !!! shell "cmd.exe: cd "
 	c:\TOL-alkeet\toinen><pop>cd</pop>
@@ -451,7 +451,7 @@ Kuten kaikki komentorivin poistokomennot, ```rmdir``` ei käytä roskakoria. Kai
 
 	c:\TOL-alkeet>
 
-Tämä komento tulostaa vastaukseksi sille annetun argumentin. Se on näppärä [komentosarjojen](../../01.2-komentorivin-jatkoa/02-komentosarjat/index.md) kanssa, jos haluaa saada tekstiä tulostettua näytölle. 
+Tämä komento tulostaa vastaukseksi sille annetun argumentin. Se on näppärä [komentosarjojen](../../komentorivin-jatkoa/komentosarjat/index.md) kanssa, jos haluaa saada tekstiä tulostettua näytölle. 
 
 Tämän komennon toinen käyttötapa on komentosarjatiedostojen alussa oleva ```@ECHO OFF```-rivi, mikä aiheuttaa komentojen suorittamisen  komentosarjatiedostosta ilman, että niitä kirjoitetaan näkyville komentokehoteikkunaan.
 
