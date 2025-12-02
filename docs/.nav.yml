@@ -10,19 +10,19 @@ nav:
   - Komentorivi:
     - 'tol-alkeet/index.md'
     - Tietokoneen käytön perusteet:
-      - 'tol-alkeet/intro/01-tiedostot.md'
-      - 'tol-alkeet/intro/01.2-perustiedostot.md'
-      - 'tol-alkeet/intro/02-email.md'
+      - 'tol-alkeet/intro/tiedostot.md'
+      - 'tol-alkeet/intro/perustiedostot.md'
+      - 'tol-alkeet/intro/email.md'
     - Komentorivin alkeet:
-      - 'tol-alkeet/komentorivi/01-bash-alkeet.md'
-      - 'tol-alkeet/komentorivi/02-peruskomennot'
-      - 'tol-alkeet/komentorivi/03-bash-muoto.md'
-      - 'tol-alkeet/komentorivi/04-tiedostonimet.md'
-      - 'tol-alkeet/komentorivi/05-asennus.md'
+      - 'tol-alkeet/komentorivi/bash-alkeet.md'
+      - 'tol-alkeet/komentorivi/peruskomennot'
+      - 'tol-alkeet/komentorivi/bash-muoto.md'
+      - 'tol-alkeet/komentorivi/tiedostonimet.md'
+      - 'tol-alkeet/komentorivi/asennus.md'
     - Komentorivin tehokäyttö:
-      - 'tol-alkeet/komentorivin-jatkoa/02-komentosarjat'
-      - 'tol-alkeet/komentorivin-jatkoa/02.2-ohjausrakenteet'
-      - 'tol-alkeet/komentorivin-jatkoa/03-environment.md'
+      - 'tol-alkeet/komentorivin-jatkoa/komentosarjat'
+      - 'tol-alkeet/komentorivin-jatkoa/ohjausrakenteet'
+      - 'tol-alkeet/komentorivin-jatkoa/ymparisto.md'
     - "Muuta":
       - 'tol-alkeet/ascii.md'
       - 'tol-alkeet/glossaari.md'
