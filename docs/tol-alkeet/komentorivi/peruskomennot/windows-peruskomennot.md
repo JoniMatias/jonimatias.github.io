@@ -96,7 +96,7 @@ Mikäli komennon antaa ilman mitään argumenttia, eli pelkästään ```cd```, n
 	c:\TOL-alkeet\toinen><pop>cd</pop>
 	c:\TOL-alkeet\toinen
 
-Edelläolevasta voidaan toki myös huomata, että Windowsin komentokehote on oletuksena muotoiltu näyttämään aina aktiivisen hakemiston absoluuttisen polun, eli periaatteessa juuri saman tiedon minkä ```cd```ilman argumentteja näyttää.
+Edellä olevasta voidaan toki myös huomata, että Windowsin komentokehote on oletuksena muotoiltu näyttämään aina aktiivisen hakemiston absoluuttisen polun, eli periaatteessa juuri saman tiedon minkä ```cd```ilman argumentteja näyttää.
 
 ### Tiedostojen hallinta
 
@@ -187,7 +187,7 @@ eli siirrä (tiedosto). Tätä komentoa voi käyttää tiedoston siirtämiseen. 
 	[.]           bar.txt       foo.txt       hello.exe     [html-kansio] [kuvia]       README.txt    teksti.txt	test.txt      [toinen]      toinen.txt    toinen.zip    uusi.txt
 	               9 File(s)         50 169 bytes
 	               4 Dir(s)  1 310 575 509 504 bytes free
-Komento ottaa vastaan kaksi tiedostoa argumentteina. Ensimmäinen tiedosto pitää olla olemassa oleva tiedosto, jonka sisältö kopiodaan sellaisenaan toiseen tiedostoon. Jos toisena argumenttina annettua tiedostoa ei ole olemassa, niin se luodaan, muuten ```copy``` kysyy, että korvataanko tiedosto uudella. Kannattaa siis olla tarkkana, ettei tällä tuhoa olemassa olevia tiedostoja.
+Komento ottaa vastaan kaksi tiedostoa argumentteina. Ensimmäinen tiedosto pitää olla olemassa oleva tiedosto, jonka sisältö kopioidaan sellaisenaan toiseen tiedostoon. Jos toisena argumenttina annettua tiedostoa ei ole olemassa, niin se luodaan, muuten ```copy``` kysyy, että korvataanko tiedosto uudella. Kannattaa siis olla tarkkana, ettei tällä tuhoa olemassa olevia tiedostoja.
 
 #### xcopy
 [**xcopy reference**](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/xcopy){ .man-link }
@@ -296,7 +296,7 @@ Komento ottaa vastaan kaksi tiedostoa argumentteina. Ensimmäinen tiedosto pitä
 
 	Toisin sanoen, copy ei ymmärrä tehdä kohteesta hakemistoa, vaan koettaa kopioida kolmea tiedostoa yhdeksi, mikä onnistuu vaihtelevan huonoin tuloksin.
 
-eli eXtended copy. Komento on monipuolisempi kuin pelkkä ```copy```, ja tukee esim. kokonaisten hakemistojen ja hakemistorakenteitten kopiointia kerralla. Kaiken mitä ```copy``` tekee, pystyy tekemään myös ```xcopy```:lla, ja sen lisäksi paljon muutakin.
+eli eXtended copy. Komento on monipuolisempi kuin pelkkä ```copy```, ja tukee esim. kokonaisten hakemistojen ja hakemistorakenteiden kopiointia kerralla. Kaiken mitä ```copy``` tekee, pystyy tekemään myös ```xcopy```:lla, ja sen lisäksi paljon muutakin.
 
 #### ren
 [**ren reference**](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/ren){ .man-link }
@@ -324,7 +324,7 @@ eli eXtended copy. Komento on monipuolisempi kuin pelkkä ```copy```, ja tukee e
 	               8 File(s)         50 169 bytes
 	               4 Dir(s)  1 310 572 761 088 bytes free
 
-eli rename. Komento ottaa kaksi argumenttia, uudelleennimettävän tiedoston (polun ja-) nimen, sekä tiedostolle annettavan uuden nimen. 
+eli rename. Komento ottaa kaksi argumenttia, uudelleen nimettävän tiedoston (polun ja-) nimen, sekä tiedostolle annettavan uuden nimen. 
 
 ### Kansioiden hallinta
 

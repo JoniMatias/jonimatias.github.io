@@ -32,7 +32,7 @@ Office365-paketissa sähköpostiautomaatiota kutsutaan *säännöiksi*. Uusia s�
 Jokainen sääntö tarvitsee vain kolme asiaa: nimen, ehdon ja toiminnan.
 
  - **Nimi** on täysin vapaavalintainen kuvaus, jolla voit tunnistaa luomasi säännön. Hyödyllinen, jos sinulla on paljon sääntöjä.
- - **Ehto** kertoo milloin sääntö tulee voimaan. Alasvetovalikossa on paljon valittavia ehtoja joita o365 tukee. Osa ehdoista voi tarvia lisätietoja.
+ - **Ehto** kertoo milloin sääntö tulee voimaan. Alasvetovalikossa on paljon valittavia ehtoja joita o365 tukee. Osa ehdoista voi tarvita lisätietoja.
  - **Toiminto** valitsee mitä tapahtuu aina, kun ehto tapahtuu. Alasvetovalikosta löytyy monia tuettuja toimintoja.
 
 

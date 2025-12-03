@@ -7,9 +7,9 @@ Joitain erikoistapauksia kuitenkin vielä on. Osa näistä johtuu vanhoista käy
 
 ## Isot ja pienet kirjaimet
 
-Tietokoneet eroavat toisistaan miten ne käsittelevät isoja ja pieniä kirjaimia tiedostojen nimissä. Jos tiedostojärjestelmä erottaa isot kirjaimet toisistaan, niin tiedostot ```teksti.txt``` ja ```Teksti.txt``` ovat järjestelmän mielestä eri tiedostoja. Jos kirjainkokoa taas ei erotella, niin järjestelmä tulkitsee tiedostot saman nimisiksi, jolloin tiedostot eivät voi olla samassa kansiossa.
+Tietokoneet eroavat toisistaan siinä, miten ne käsittelevät isoja ja pieniä kirjaimia tiedostojen nimissä. Jos tiedostojärjestelmä erottaa isot kirjaimet toisistaan, niin tiedostot ```teksti.txt``` ja ```Teksti.txt``` ovat järjestelmän mielestä eri tiedostoja. Jos kirjainkokoa taas ei erotella, niin järjestelmä tulkitsee tiedostot saman nimisiksi, jolloin tiedostot eivät voi olla samassa kansiossa.
 
-Erottelu ei ole täysin käyttöjärjestelmästä riippuvaista, vaan pikemminkin tallennusmedian ja sen käyttämän [tiedostojärjestelmän](https://fi.wikipedia.org/wiki/Tiedostoj%C3%A4rjestelm%C3%A4) mukaan. Pääasiallisesti kuitenkin <nowrap>:os-win: Windowsin</nowrap> oletuksena käyttämä NTFS ei erottele kirjainkokoja, kun taas <nowrap>:os-mac: MacOS:n</nowrap> APF ja <nowrap>:os-linux: Ubuntun</nowrap> ext3 erottelevat kirjainkoot. Erottelu voi kuitenkin vaihdella eri asemien, kovalevyjen ja tallennusmedioiden mukaan, eli tietokoneen sisäisen kovalevy voi erotella kirjaimet samalla kun koneeseen kytketty ulkoinen kovalevy ei tee niin.
+Erottelu ei ole täysin käyttöjärjestelmästä riippuvaista, vaan se määräytyy tallennusmedian ja sen käyttämän [tiedostojärjestelmän](https://fi.wikipedia.org/wiki/Tiedostoj%C3%A4rjestelm%C3%A4) mukaan. Pääasiallisesti kuitenkin <nowrap>:os-win: Windowsin</nowrap> oletuksena käyttämä NTFS ei erottele kirjainkokoja, kun taas <nowrap>:os-mac: MacOS:n</nowrap> APF ja <nowrap>:os-linux: Ubuntun</nowrap> ext3 erottelevat kirjainkoot. Erottelu voi kuitenkin vaihdella eri asemien, kovalevyjen ja tallennusmedioiden mukaan, eli tietokoneen sisäisen kovalevy voi erotella kirjainkoot samalla kun koneeseen kytketty ulkoinen kovalevy ei tee niin.
 
 Graafisen käyttöliittymän näkökulmasta kirjainkoon erottelulla ei ole suurta merkitystä. Lähinnä vain aina tiedostoa nimetessä pitää huomioida muidenkin tiedostojen nimet. Komentorivillä tällä on suurempi vaikutus, sillä kaikkien tiedostojen nimet pitää kirjoittaa siinä muodossa, kun tietokone ne tunnistaa.
 
@@ -105,10 +105,10 @@ Vaikka tiedostot ovatkin piilotettuja, ne voidaan avata komentorivillä tavallis
         <span class="bash-table-element">README.txt</span>
         <span class="bash-table-element">teksti.txt</span>
         <span class="bash-table-element">toinen.txt</span><br><br>
-    **C54W4KDHGK**:tol-alkeet jonrajal$ cat <opo>.hidden</pop><br>
+    **C54W4KDHGK**:tol-alkeet jonrajal$ <pop>cat .hidden</pop><br>
     Tämä on piilotiedoston ".hidden.txt" sisältö.
 
-:os-win: Windows-koneet eivät piilota pisteellä alkavia tiedostoja, minkä vuoksi muiden käyttöjärjestelmien koneilta siirretyissä kansiossa joskus näkyy ylimääräisiä tiedostoja. Yleisin näistä taitaa olla MacOS:n käyttämä ```.DS_Store```-tiedosto, jonka MacOS laittaa jokaiseen kansioon.
+:os-win: Windows-koneet eivät piilota pisteellä alkavia tiedostoja, minkä vuoksi muista käyttöjärjestelmistä siirretyissä kansiossa joskus näkyy ylimääräisiä tiedostoja. Yleisin näistä taitaa olla MacOS:n käyttämä ```.DS_Store```-tiedosto, jonka MacOS laittaa jokaiseen kansioon.
 
 
 ## Skandit ja erikoismerkit
@@ -128,8 +128,8 @@ Potentiaalisten ongelmatilanteiden vähentämiseksi useat komentorivin käyttäj
 
 Komentorivillä pitää aina muistaa komentojen nimet tai tiedostojen nimet, ja ne pitää kirjoittaa aina täysin oikeassa muodossa. Tämä tuottaa välillä ongelmia, kun yhdenkin kirjaimen kirjoittaminen väärin saa komentorivin valittamaan virheistä, tai pahimmassa tapauksessa tekemään jotain ihan väärää.
 
-Tätä varten komentorivi tarjoaa automaattisen täydennyksen mahdollisuuden. Kun kirjoitat komennon tai aktiivisessa kansiossa olevan tiedostonimen muutaman ensimmäisen kirjaimen, voit painaa <kbd>:key-tab: Tab</kbd>-näppäintä, niin komentorivi kirjoittaa loput annetusta tekstistä. Jos samalla aloituksella on useampi vaihtoehto, niin komentorivi täydentää vain niin pitkälle, kunnes eriävä kohta löytyy.
+Tätä varten komentorivi tarjoaa automaattisen täydennyksen mahdollisuuden. Kun kirjoitat komennon tai aktiivisessa kansiossa olevan tiedostonimen muutaman ensimmäisen kirjaimen, voit painaa <kbd>:key-tab: Tab</kbd>-näppäintä, jolloin komentorivi kirjoittaa loput annetusta tekstistä. Jos samalla aloituksella on useampi vaihtoehto, niin komentorivi täydentää vain niin pitkälle, kunnes eriävä kohta löytyy.
 
-Kun komentorivi huomaa useamman mahdollisen tiedostonimen tai komennon, on mahdollista painaa <kbd>:key-tab: Tab</kbd> kaksi kertaa nopeasti, jolloin komentorivi näyttää kaikki mahdolliset vaihtoehdot. Komentorivi pyrkii myös päättelemään kontekstista mitä ollaan täydentämässä. Ensimmäiseksi sanaksi se hyväksyy vain komentoja, kansioita tai suoritettavia tiedostoja, argumenteiksi vain kansioita ja mitä vain tiedostoja.
+Kun komentorivi huomaa useamman mahdollisen tiedostonimen tai komennon, on mahdollista painaa <kbd>:key-tab: Tab</kbd> kaksi kertaa nopeasti, jolloin komentorivi näyttää kaikki mahdolliset vaihtoehdot. Komentorivi pyrkii myös päättelemään kontekstista mitä ollaan täydentämässä. Ensimmäiseksi sanaksi se hyväksyy vain komentoja, kansioita tai suoritettavia tiedostoja, argumenteiksi vain kansioita ja tiedostoja.
 
 Automaattinen täydennys toimii myös polkujen kanssa. Jos ```tol-alkeet```-kansiossa aloittaa kirjoittamaan polkua ```cat ./html-kansio/ind``` ja sen jälkeen painaa <kbd>:key-tab: Tab</kbd>, niin komentorivi osaa täydentää polun muotoon ```cat ./html-kansio/index.html```.

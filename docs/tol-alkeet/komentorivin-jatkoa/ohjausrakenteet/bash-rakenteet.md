@@ -317,25 +317,25 @@ Posix-test käyttää seuraavia operaattoreita:
 
 | Operaattori        | Tarkoitus                                            | Esimerkki                          |
 |--------------------|------------------------------------------------------|------------------------------------|
-| =                  | Molemmissa arvoissa on sama teksti                   | [ $x = README.txt ]                |
-| !=                 | Molemmissa arvoissa on eri teksti                    | [ $x != README.txt ]               |
-| -z                 | Arvon kirjainten määrä on 0                          | [ -z $x ]                          |
-| -n                 | Arvon kirjainten määrä on suurempi kuin 0            | [ -n $x ]                          |
-| (ei mitään)        | Arvo on määritelty                                   | [ $x ]                             |
-| -d                 | Arvo on polku, ja polku osoittaa hakemistoon         | [ -d $x ]                          |
-| -e                 | Arvo on polku, ja polku osoittaa tiedostoon          | [ -e $x ]                          |
-| -eq                | Arvo on numero, ja se on yhtä suuri kuin toinen arvo | [ $x -eq 10 ]                      |
-| -ne                | Arvo on numero, ja se on eri suuri kuin toinen arvo  | [ $x -ne 10 ]                      |
-| -gt                | Arvo on numero, ja se on suurempi kuin toinen arvo   | [ $x -gt 10 ]                      |
-| -ge                | Arvo on numero, ja se on suurempi tai yhtä suuri kuin| [ $x -ge 10 ]                      |
-| -lt                | Arvo on numero, ja se on pienempi kuin toinen arvo   | [ $x -lt 10 ]                      |
-| -le                | Arvo on numero, ja se on pienempi tai yhtä suuri kuin| [ $x -le 10 ]                      |
+| =                  | Molemmissa arvoissa on sama teksti                   | \[ $x = README.txt ]                |
+| !=                 | Molemmissa arvoissa on eri teksti                    | \[ $x != README.txt ]               |
+| -z                 | Arvon kirjainten määrä on 0                          | \[ -z $x ]                          |
+| -n                 | Arvon kirjainten määrä on suurempi kuin 0            | \[ -n $x ]                          |
+| (ei mitään)        | Arvo on määritelty                                   | \[ $x ]                             |
+| -d                 | Arvo on polku, ja polku osoittaa hakemistoon         | \[ -d $x ]                          |
+| -e                 | Arvo on polku, ja polku osoittaa tiedostoon          | \[ -e $x ]                          |
+| -eq                | Arvo on numero, ja se on yhtä suuri kuin toinen arvo | \[ $x -eq 10 ]                      |
+| -ne                | Arvo on numero, ja se on eri suuri kuin toinen arvo  | \[ $x -ne 10 ]                      |
+| -gt                | Arvo on numero, ja se on suurempi kuin toinen arvo   | \[ $x -gt 10 ]                      |
+| -ge                | Arvo on numero, ja se on suurempi tai yhtä suuri kuin| \[ $x -ge 10 ]                      |
+| -lt                | Arvo on numero, ja se on pienempi kuin toinen arvo   | \[ $x -lt 10 ]                      |
+| -le                | Arvo on numero, ja se on pienempi tai yhtä suuri kuin| \[ $x -le 10 ]                      |
 
 Hakasulkeilla olevaa ehtolausetta voi käyttää vaikka sen tarkistamiseen, onko tiedostoa olemassa. Joskus tämä kannattaa tehdä ennen kuin alkaa suorittamaan toimintoa, joka käyttää sitä tiedostoa.
 
 !!! shell "bash: POSIX test"
     **C54W4KDHGK**:tol-alkeet jonrajal$ i=./README.txt
-    **C54W4KDHGK**:tol-alkeet jonrajal$ <pop>if [ -e $i ]; then cat $i; else echo "Ei ole tiedosto."; fi</pop>
+    **C54W4KDHGK**:tol-alkeet jonrajal$ <pop>if \[ -e $i ]; then cat $i; else echo "Ei ole tiedosto."; fi</pop>
     \# jonimatias.github.io repo
 
     jonimatias.github.io on epämääräinen kokoelma tietojenkäsittelytieteen opintoihin liittyviä asioita. Tässä repossa on verkkosivujen uusin versio, ja tänne tehtävät muutokset ladataan verkkosivuille GitHub Actionsien avulla.
