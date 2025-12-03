@@ -1,0 +1,2780 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Tältä sivustolta löytyy kaikki tarvittava tieto, mitä Oulun yliopistossa aloittava tietojenkäsittelytieteen opiskelijan kannattaa tietokoneesta tietää. Ja vähän enemmän.">
+      
+      
+        <meta name="author" content="Joni Matias Rajala">
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../bat-rakenteet/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/hex-logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Bashin ohjausrakenteet - Perustiedot tietojenkäsittelytieteen opiskelijalle</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../../style.css">
+    
+      <link rel="stylesheet" href="../../../../style-shell.css">
+    
+      <link rel="stylesheet" href="../../../../style-tabbed-shell.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#bashin-ohjausrakenteet" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+  Tämä sivusto on vielä työn alla, joten sivuilta voi vielä puuttua asioita. Eivätköhän ne sinne ilmaannu syksyn 2025 aikana.
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Perustiedot tietojenkäsittelytieteen opiskelijalle" class="md-header__button md-logo" aria-label="Perustiedot tietojenkäsittelytieteen opiskelijalle" data-md-component="logo">
+      
+  <img src="../../../../assets/hex-logo-valkoinen.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Perustiedot tietojenkäsittelytieteen opiskelijalle
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Bashin ohjausrakenteet
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../koodi/koodi_toc/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Tehtävät
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../koodi/apufunktiot/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Apufunktiot
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Komentorivi
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../koodi/muut_sivut/muut_sivut/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Muuta
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Perustiedot tietojenkäsittelytieteen opiskelijalle" class="md-nav__button md-logo" aria-label="Perustiedot tietojenkäsittelytieteen opiskelijalle" data-md-component="logo">
+      
+  <img src="../../../../assets/hex-logo-valkoinen.svg" alt="logo">
+
+    </a>
+    Perustiedot tietojenkäsittelytieteen opiskelijalle
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tehtävät
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tehtävät
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../koodi/koodi_toc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aloitussivu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../koodi/haasteet/aakkostus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aakkostus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../koodi/haasteet/boggle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Boggle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../koodi/haasteet/duplikaatti/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Duplikaatit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../koodi/haasteet/palindromi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Palindromit 1: Tunnistaminen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../koodi/haasteet/palindromi2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Palindromit 2: Palindromiprosentti
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../koodi/haasteet/palindromi3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Palindromit 3: Alipalindromit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../koodi/haasteet/roomalaiset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rooma
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../koodi/haasteet/sanakirja/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sanakirja
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apufunktiot
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Apufunktiot
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../koodi/apufunktiot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aloitussivu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../koodi/apufunktiot/tiedoston_lukeminen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tiedostojen lukeminen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../koodi/apufunktiot/unicode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ääkköset
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Komentorivi
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Komentorivi
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tietokoneen käytön perusteet
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tietokoneen käytön perusteet
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../intro/tiedostot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tiedostot ja tiedostojärjestelmät
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../intro/perustiedostot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Yleisimmät tiedostotyypit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../intro/email/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Opiskelijan sähköposti
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Komentorivin alkeet
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Komentorivin alkeet
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../komentorivi/bash-alkeet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Komentorivin esittely
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../komentorivi/peruskomennot/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Yleisimmät peruskomennot
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3_2" id="__nav_3_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Yleisimmät peruskomennot
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../komentorivi/peruskomennot/bash-peruskomennot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bashin peruskomennot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../komentorivi/peruskomennot/windows-peruskomennot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Yleisimmät Windowsin komennot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../komentorivi/bash-muoto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Komentojen rakenne
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../komentorivi/tiedostonimet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tiedostonimet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../komentorivi/asennus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ohjelmien asentaminen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Komentorivin tehokäyttö
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Komentorivin tehokäyttö
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../komentosarjat/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Komentosarjat
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4_1" id="__nav_3_4_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Komentosarjat
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../komentosarjat/bash_script/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bash-komentosarjat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../komentosarjat/bat_script/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windowsin BAT-komentosarjat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ohjausrakenteet
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4_2" id="__nav_3_4_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ohjausrakenteet
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bashin ohjausrakenteet
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bashin ohjausrakenteet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tiedonkäsittely" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tiedonkäsittely
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tiedonkäsittely">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#muuttujat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Muuttujat
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jokerimerkit-wildcard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Jokerimerkit (wildcard)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ohjausrakenteet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ohjausrakenteet
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ohjausrakenteet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#silmukat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Silmukat
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ehtolauseet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ehtolauseet
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ehtolauseet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ehtolauseen-muoto---kaksoissulkeet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ehtolauseen muoto - kaksoissulkeet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ehtolauseen-muoto---hakasulkeet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ehtolauseen muoto - hakasulkeet
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bat-rakenteet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows ohjausrakenteet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ymparisto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Komentorivin ympäristö
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Muuta
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Muuta
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ascii/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ASCII-merkistö
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../glossaari/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossaari
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Muuta
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Muuta
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../koodi/muut_sivut/muut_sivut/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Muita ideoita
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tiedonkäsittely" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tiedonkäsittely
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tiedonkäsittely">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#muuttujat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Muuttujat
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jokerimerkit-wildcard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Jokerimerkit (wildcard)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ohjausrakenteet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ohjausrakenteet
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ohjausrakenteet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#silmukat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Silmukat
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ehtolauseet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ehtolauseet
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ehtolauseet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ehtolauseen-muoto---kaksoissulkeet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ehtolauseen muoto - kaksoissulkeet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ehtolauseen-muoto---hakasulkeet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ehtolauseen muoto - hakasulkeet
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="bashin-ohjausrakenteet">Bashin ohjausrakenteet<a class="headerlink" href="#bashin-ohjausrakenteet" title="Permanent link">&para;</a></h1>
+<p>Automaatiota varten bashin pitää pystyä käsittelemään, säilyttämään ja siirtämään tietoa eri muodoissa. Tätä varten komentorivillä on käytössä useampia erilaisia työkaluja, joista osa on yhteisiä ohjelmointikielten kanssa. </p>
+<h2 id="tiedonkäsittely">Tiedonkäsittely<a class="headerlink" href="#tiedonkäsittely" title="Permanent link">&para;</a></h2>
+<p>Ohjausrakenteet tarvitsevat toimiakseen tiedonmurusia, joiden perusteella ohjausrakenteet ohjaavat komentojen suoritusta. Tähän käytetään muuttujia, jotka tallentavat tietoa tilapäisesti, ja jokerimerkkejä, joilla etsitään joukosta sopivia osumia.</p>
+<h3 id="muuttujat">Muuttujat<a class="headerlink" href="#muuttujat" title="Permanent link">&para;</a></h3>
+<p>Bashissa voi tallentaa mitä tahansa tietoa tilapäisesti muuttujiin, jotta sitä voi käyttää jossain myöhemmässä komennossa. Muuttujiin tallennetaan arvo kirjoittamalla komento muodossa <code>muuttujan_nimi=asetettava_arvo</code>, eli esimerkiksi <code>kerros=4</code>. Muuttujan nimi voi olla mikä tahansa käyttäjän valitsema nimi, kunhan se on vain yksi sana ilman välilyöntejä. Välilyöntejä ei myöskään saa olla yhtä suuri kuin -merkin (<code>=</code>) merkin kummallakaan puolella.</p>
+<p>Muuttujiin tallennettua arvoa voi käsitellä sitten missä tahansa myöhemmässä komennossa kirjoittamalla muuttujan nimen, jonka edessä on dollarimerkki (<code>$</code>). Eli seuraavat komentorivikomennot ovat täysin mahdollisia:</p>
+<div class="admonition shell">
+<p class="admonition-title">bash: echo muuttuja</p>
+<p><strong>C54W4KDHGK</strong>:~ jonrajal$ teksti=pilipom
+<strong>C54W4KDHGK</strong>:~ jonrajal$ echo $teksti
+pilipom</p>
+</div>
+<p>Komentorivi käsittelee aina pelkästään tekstiä, joten muuttujatkin ovat aina tekstiä. Tekstissä voi joskus olla myös sanavälejä, eli välilyöntejä. <em>Bash</em> ei kuitenkaan pidä ylimääräisistä välilyönneistä, sillä se tulkitsee välilyönnit <a href="../../../komentorivi/bash-muoto/#argumentit">argumenttien ja valintojen</a> jakajiksi. Jotta tulkki ymmärtäisi monisanaisen argumentin yhdeksi, se täytyy kirjoittaa lainausmerkkien väliin.</p>
+<div class="admonition shell">
+<p class="admonition-title">bash: echo muuttuja</p>
+<p><strong>C54W4KDHGK</strong>:~ jonrajal$ teksti=&rdquo;pili pom&rdquo;
+<strong>C54W4KDHGK</strong>:~ jonrajal$ echo $teksti
+pili pom</p>
+</div>
+<p>Komentorivi muistaa kaikki sille asetetut muuttujat niin kauan kun pääte on päällä, tai kunnes muuttujan päälle kirjoitetaan uusi arvo. Muuttujat eivät ole siis hyviä tiedon pitkäaikaiseen säilytykseen, mutta toimivat tiedon laittamiseen pikaiseen muistiin.</p>
+<p>Kaikki käyttöjärjestelmät ja tulkit tukevat myös yleisiä oletusmuuttujia, joihin on asetettu arvo jo heti käyttöjärjestelmän tai tulkin käynnistyessä. Näitä kutsutaan <a href="../../ymparisto/">ympäristömuuttujiksi</a>. Nämä muuttujat on kertovat käyttöjärjestelmän tilasta ja sen asetuksista. Yksi yleisimmistä näistä on <a href="../../ymparisto/#path"><code>PATH</code></a>, joka listaa kaikki kansiot, joista komentorivitulkki etsii suoritettavia komentoja ja ohjelmia.</p>
+<p>Jos muuttujia haluaa käsitellä numeroina, ja käyttää niitä osana matemaattisia lausekkeita, lausekkeet pitää kääriä kaksien sulkeiden (<code>((</code> ja <code>))</code>) sisään. Näiden sulkeiden sisällä muuttujalle voi tehdä tavallisten sijoitus- ja laskuoperaatioiden lisäksi vertailuoperaatioita. Kaksoissulkeita käyttäessä dollarimerkki (<code>$</code>) ei ole tarpeellinen muuttujan arvoon viitatessa. Ainakin seuraavan operaatiot ovat mahdollisia:</p>
+<table>
+<thead>
+<tr>
+<th>Operaattori</th>
+<th>Toiminto</th>
+<th>Esimerkki</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>=</td>
+<td>Sijoitus</td>
+<td>((i=10))</td>
+</tr>
+<tr>
+<td>-</td>
+<td>Miinuslasku</td>
+<td>((i=i-2))</td>
+</tr>
+<tr>
+<td>+</td>
+<td>Pluslasku</td>
+<td>((i=i+4))</td>
+</tr>
+<tr>
+<td>*</td>
+<td>Kertolasku</td>
+<td>((i=i*2))</td>
+</tr>
+<tr>
+<td>/</td>
+<td>Jakolasku</td>
+<td>((i=i/2))</td>
+</tr>
+<tr>
+<td>%</td>
+<td>Modulo, tai jakojäännös</td>
+<td>((i=i%10))</td>
+</tr>
+<tr>
+<td>==</td>
+<td>On yhtä suuri kuin</td>
+<td>((i==12))</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>On eri suuri kuin</td>
+<td>((i!=42))</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>On pienempi kuin</td>
+<td>((i&lt;20))</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>On suurempi kuin </td>
+<td>((i&gt;0))</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>On suurempi tai yhtä suuri kuin</td>
+<td>((i&gt;=11))</td>
+</tr>
+<tr>
+<td> &lt;=</td>
+<td>On pienempi tai yhtä pieni kuin</td>
+<td>((i&lt;=15))</td>
+</tr>
+<tr>
+<td>&amp;&amp;</td>
+<td>Looginen <strong>ja</strong></td>
+<td>((i&gt;0 &amp;&amp; i&lt;100))</td>
+</tr>
+<tr>
+<td>||</td>
+<td>Looginen <strong>tai</strong></td>
+<td>((i&lt;10 || i&gt;200))</td>
+</tr>
+</tbody>
+</table>
+<p>Kaikki kaksoissulkeiden sisällä olevat matemaattiset operaattorit toimivat samalla tavalla kuin ohjelmointikielissä. Näiden käyttöä käsitellään enemmän Ohjelmointi 1 -kurssilla.</p>
+<p>Jos muuttujan arvo on tekstiä, sen arvona käytetään 0 laskutoimituksissa kaksoissulkeiden sisällä. Jos muuttujan arvo on tekstiä, joka alkaa numerolla, <em>bash</em> keskeyttää komennon, ja antaa virheilmoituksen. Vertailuoperaattoreiden kanssa voidaan käyttää myös tekstiä.</p>
+<h3 id="jokerimerkit-wildcard">Jokerimerkit (wildcard)<a class="headerlink" href="#jokerimerkit-wildcard" title="Permanent link">&para;</a></h3>
+<p>Jokerimerkit ovat erikoismerkkejä, joita voidaan käyttää tekstin etsimiseen. Komentosarjojen tapauksessa niiden pääasiallinen käyttötarkoitus on etsiä useita tiedostoja, joiden nimet ovat lähellä toisiaan tai joilla on sama tiedostopääte. Esimerkiksi komento <code>echo *.txt</code> tulostaa kaikki aktiivisessa kansiossa olevat <code>.txt</code>-päätteiset tiedostot.</p>
+<p><em>Bash</em> tukee kolmea erilaista jokerimerkkiä. Nämä merkit ovat <code>*</code>, <code>?</code> ja <code>[]</code>.</p>
+<p>Näistä yksinkertaisin on <code>?</code>, joka voidaan korvata millä tahansa yhdellä merkillä. Täten siis merkkijono <code>kuva-?.jpg</code> löytää minkä tahansa seuraavista: <code>kuva-2.jpg</code>, <code>kuva-5.jpg</code> ja <code>kuva-9.jpg</code>, mutta ei löydä <code>kuva-.jpg</code> tai <code>kuva-25.jpg</code></p>
+<p>Yleisin jokerimerkki on <code>*</code>. Tämä korvataan millä tahansa määrällä mitä tahansa merkkejä. *-merkki voidaan jättää myös kokonaan korvaamatta. Eli merkkijono <code>kuva-*.jpg</code> löytää tiedostot <code>kuva-2.jpg</code>, <code>kuva-76.jpg</code>, <code>kuva-asd.jpg</code> ja <code>kuva-.jpg</code>, mutta ei löydä merkkijonona <code>asd-2.jpg</code> tai <code>kuva-54.png</code>.</p>
+<p>Tarkimman kontrollin jokerimerkeistä saa joukon määrittävällä jokerimerkillä. Vaihteluvälin voi määritellä kirjoittamalla kaikki hyväksytyt merkit hakasulkeiden (<code>[</code> ja <code>]</code>) väliin. Hakasulkeisiin voidaan kirjoittaa jokainen etsitty merkki erikseen (<code>[a6gnfy]</code>) tai määritellä ne liukuvälinä: <code>[0-9]</code> löytää minkä tahansa numeron ja <code>[a-z]</code> minkä tahansa pienen kirjaimen. Hakasulkeiden sisään voi myös laittaa useamman liukuvälin, jolloin <code>[A-Za-z]</code> löytää minkä tahansa kirjaimen. Joukon määrittelevä jokerimerkki toimii kuten <code>?</code>, eli se etsii vain yhtä merkkiä annetusta paikasta. </p>
+<p>Jokerimerkkejä voi olla useampi samassa haussa. Esimerkiksi haku <code>*.*</code> löytää kaikki kansiossa olevat tiedostot, joilla on tiedostopääte (tai piste muuten nimessä).</p>
+<p>Esimerkkien mukaiset tulokset on toistamiseen nähtävissä alla olevassa taulukossa.</p>
+<table>
+<thead>
+<tr>
+<th>Tiedosto</th>
+<th>kuva-?.jpg</th>
+<th>kuva-*.jpg</th>
+<th>kuva-[0-9][0-9].jpg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>kuva-2.jpg</td>
+<td>X</td>
+<td>X</td>
+<td></td>
+</tr>
+<tr>
+<td>kuva-5.jpg</td>
+<td>X</td>
+<td>X</td>
+<td></td>
+</tr>
+<tr>
+<td>kuva-08.jpg</td>
+<td></td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr>
+<td>kuva-54.jpg</td>
+<td></td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr>
+<td>kuva-f.jpg</td>
+<td>X</td>
+<td>X</td>
+<td></td>
+</tr>
+<tr>
+<td>kuva-.jpg</td>
+<td></td>
+<td>X</td>
+<td></td>
+</tr>
+<tr>
+<td>kuva-asd.jpg</td>
+<td></td>
+<td>X</td>
+<td></td>
+</tr>
+<tr>
+<td>asd-5.jpg</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<details class="info">
+<summary>bash komennot jokerimerkeillä</summary>
+<p>Seuraavat esimerkit käyttävät silmukoita ja muuttujia. Niiden käyttö selitetään alempana.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">kuva-?.jpg</label><label for="__tabbed_1_2">kuva-*.jpg</label><label for="__tabbed_1_3">kuva-[0-9][0-9].jpg</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="admonition shell">
+<p class="admonition-title">bash: ?</p>
+<p><strong>C54W4KDHGK</strong>:kuvia jonrajal$ for tiedosto in <pop>kuva-?.jpg</pop>; do echo $tiedosto; done
+kuva-1.jpg
+kuva-2.jpg
+kuva-3.jpg
+kuva-5.jpg
+kuva-6.jpg
+kuva-7.jpg
+kuva-9.jpg</p>
+</div>
+</div>
+<div class="tabbed-block">
+<div class="admonition shell">
+<p class="admonition-title">bash: *</p>
+<p><strong>C54W4KDHGK</strong>:kuvia jonrajal$ for tiedosto in <pop>kuva-*.jpg</pop>; do echo $tiedosto; done
+kuva-.jpg
+kuva-08.jpg
+kuva-1.jpg
+kuva-10.jpg
+kuva-2.jpg
+kuva-3.jpg
+kuva-5.jpg
+kuva-54.jpg
+kuva-6.jpg
+kuva-7.jpg
+kuva-9.jpg</p>
+</div>
+</div>
+<div class="tabbed-block">
+<div class="admonition shell">
+<p class="admonition-title">bash: []</p>
+<p><strong>C54W4KDHGK</strong>:kuvia jonrajal$ for tiedosto in <pop>kuva-[0-9][0-9].jpg</pop>; do echo $tiedosto; done
+kuva-08.jpg
+kuva-10.jpg
+kuva-54.jpg</p>
+</div>
+</div>
+</div>
+</div>
+</details>
+<p>Näiden <em>bashin</em> sisäänrakennettujen perusjokerimerkkien lisäksi joillain ohjelmilla ja komennoilla voi olla omia jokerimerkkejään. Monet ohjelman tukevat mm. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Cheatsheet">säännöllisiä lausekkeita</a>, jotka tunnetaan myös paremmin englannista tulevalla <strong>regex</strong>-lyhenteellä. Tämä on yksi syy lisää tutustua jokaisen käyttämääsi ohjelmaan <code>man</code>-komennolla.</p>
+<h2 id="ohjausrakenteet">Ohjausrakenteet<a class="headerlink" href="#ohjausrakenteet" title="Permanent link">&para;</a></h2>
+<p>Usein yksinkertaiset listamuotoiset komentosarjat eivät riitä, vaan komentojen pitää myös pystyä tekemään päätöksiä, reagoimaan löydettyihin tuloksiin ja toistamaan toiminta useammalle tiedostolle kerralla. Tätä varten tulkit tukevat samanlaisia ohjausrakenteita kuin tavalliset ohjelmointikielet, eli silmukoita ja ehtolauseita.</p>
+<h3 id="silmukat">Silmukat<a class="headerlink" href="#silmukat" title="Permanent link">&para;</a></h3>
+<p>Silmukat ovat näppäriä rakenteita, jos haluaa toteuttaa saman komennon useammalle asialle yhtä aikaa. Yleisin komentorivisilmukan käyttötapaus on toistaa komento jokaiselle kansion tiedostolle.</p>
+<p>Silmukoita on kahdenlaisia <em>bashissa</em>. Niiden rakenteet ovat seuraavanlaisia:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">for-silmukka</label><label for="__tabbed_2_2">while-silmukka</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>for &lt;muuttuja&gt; in &lt;hakukomento_joka_tuottaa_paljon_tuloksia&gt;
+    do &lt;suoritettava_komento&gt;
+done
+</code></pre></div>
+<p>Yleisempi silmukkarakenne on <code>for</code>-silmukka. Se ottaa vastaan joukon arvoja &ndash; yleensä tiedostoja &ndash; ja kutsuu sarjan komentoja jokaiselle joukon arvolle. Silmukka vaatii yhden muuttujan määrittelyn, joka edustaa vuorollaan jokaista silmukan joukon arvoa. Silmukan sisällä olevat komennot kutsutaan niin monta kertaa, kun käsiteltävässä joukossa on arvoja, ja joka kerta silmukan muuttujan arvo vaihtuu joukon seuraavaksi arvoksi.</p>
+<p>Silmukassa on neljä eri avainsanaa, jotka kaikki on oltava, jotta silmukka toimii: <code>for</code>, <code>in</code>, <code>do</code> ja <code>done</code>, joilla on seuraavat merkitykset:</p>
+<ul>
+<li><code>for</code> esittelee muuttujan, johon vuorollaan tallennetaan kaikki läpikäytävät arvot.</li>
+<li><code>in</code> määrittelee hakukomennon, eli silmukan läpikäyvän alueen.</li>
+<li><code>do</code> rajaa silmukan esittelyn ja silmukan sisällä suoritettavat komennot toisistaan. <code>do</code>n jälkeen kirjoitetaan komennot, jotka halutaan suorittaa kaikille hakukomennon tuloksille.</li>
+<li><code>done</code> merkkaa silmukan loppua. Jos läpikäytävässä joukossa on vielä arvoja, niin silmukka aloitetaan alusta, ja muuttujan arvo vaihtuu seuraavaksi.</li>
+</ul>
+<p>Komennon voi kirjoittaa esitetyllä tavalla käyttäen rivinvaihtoja, tai jokaisen rivinvaihdon voi korvata puolipisteellä <code>;</code>, jolloin silmukan voi kirjoittaa yhdelle riville.</p>
+<p>Silmukassa käytetty <code>for</code> ja <code>in</code> avainsanojen välissä oleva muuttuja toimii kuin tavallinen <a href="#muuttujat">komentorivin muuttuja</a>. Jos sen sisällä olevaa arvoa halutaan käyttää silmukan sisällä, niin arvo pitää hakea laittamalla muuttujan nimen eteen dollarimerkki <code>$</code>. Silmukka automaattisesti päivittää muuttujan arvoa jokaisella silmukan kierroksella siten, että kaikki <em>hakukomennon</em> tulokset on käyty läpi.</p>
+<p>Esimerkkinä <code>for</code>-silmukan käytöstä voisi olla seuraavanlainen tiedostojen tulostuskomento.</p>
+<div class="admonition shell">
+<p class="admonition-title">bask: for - Näytä kaikki tiedostot.</p>
+<p><strong>C54W4KDHGK</strong>:tol-alkeet jonrajal$ <pop>for tiedosto in *.*; do echo $tiedosto; cat $tiedosto; echo ; done</pop>
+README.txt
+# jonimatias.github.io repo </p>
+<p>jonimatias.github.io on epämääräinen kokoelma tietojenkäsittelytieteen opintoihin liittyviä asioita. Tässä repossa on verkkosivujen uusin versio, ja tänne tehtävät muutokset ladataan verkkosivuille GitHub Actionsien avulla.</p>
+<p>Ainoastaan verkkosivulla olevat kuvat kulkevat muuta kautta, mutta niidenkin lataamisen helpottamiseksi voi käyttää repossa olevaa upload_images.command -bash-skriptiä. </p>
+<p>Sivusto on kirjoitettu markdownilla, joka käännetään verkkosivustoksi MkDocsilla. </p>
+<p>selitys.txt
+Tämä on tekstitiedoston sisältö. Tätä käytetään tol-alkeet-materiaalin esimerkkitiedostona.</p>
+<p>Tekstitiedosto sisältää tekstiä, kuten kirjaimia, numeroita ja muita erikoismerkkejä.
+toinen.txt
+Tästä alkaa toinen tekstitiedosto. Tämänkin tiedoston sisältö on tekstiä.</p>
+</div>
+<p>Yllä oleva komento käy kaikki kansion tiedostot (<code>*.*</code>) läpi, ja tulostaa jokaisen tiedoston nimen (<code>echo $tiedosto</code>), sisällön (<code>cat $tiedosto</code>) ja jokaisen tiedoston lopuksi tyhjän rivin (<code>echo</code>). Jokainen erillinen komento erotetaan tässä tapauksessa puolipisteellä, mutta myös rivinvaihdot, eli enter-näppäimen painallukset, ovat sallittuja puolipisteiden sijasta.</p>
+<p>Huomaa, että <a href="../../../intro/tiedostot/#hakemistorakenne">tol-alkeet kansiorakenteessa</a> ei ole tiedostoja, joiden nimessä on välilyönti. Yllä oleva komento toimii sen takia täysin oikein. Välilyönnillisten tiedostonimien kanssa täytyy kuitenkin käyttää lainausmerkkejä (<code>"</code> ) muuttujan nimen ympärille (<code>"$tiedosto"</code>), jottei kääntäjä mene sekaisin. Ilman lainausmerkkejä komennot etsisivät vain tiedostoa, joka vastaa tiedonstonnimen ensimmäiseen sanaan, ja sellaista tiedostoa tuskin kansiosta löytyy. Asiasta löytyy lisää <a href="../../../komentorivi/peruskomennot/bash-peruskomennot/#tiedostonimet-ja-välilyönnit"><em>bash</em>-peruskomentoja käsittelevästä osiosta</a>.</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>while &lt;ehto&gt;
+    do &lt;suoritettava_komento&gt;
+done
+</code></pre></div>
+<p>Yksinkertaisempi silmukka on <code>while</code>-silmukka. Se toistaa määriteltyä komentoa niin kauan, kun sille annettu ehtolause antaa sille luvan. Jos ehtolauseen tulos on <code>0</code>, tyhjä tai <code>epätosi</code>, niin silmukka lopettaa. </p>
+<p>Silmukassa on kolme eri avainsanaa, jotka kaikki on oltava silmukassa:</p>
+<ul>
+<li><code>while</code> esittelee silmukan ja ehtolauseen.</li>
+<li><code>do</code> rajaa silmukan esittelyn ja silmukassa suoritettavat komennot toisistaan. Tämän jälkeen kirjoitetaan kaikki komennot, joita suoritetaan siihen asti, kunnes ehtolause ei enää täyty.</li>
+<li><code>done</code> merkkaa silmukan loppua. Tämän jälkeen tarkistetaan ehtolause. Jos sen ehto edelleen täyttyy, niin <code>do</code>n komennot suoritetaan uudestaan.</li>
+</ul>
+<p>Koska silmukkaa toistetaan niin kauan, kun ehtolause täyttyy, niin silmukan täytyy varmistaa jokin tapa, jolla ehtolauseen lopputulos voi vaihtua jokaisella komentorivin suorituksella. Tämän voi tehdä muutamalla eri tavalla:</p>
+<ul>
+<li>Käyttämällä ehtolauseessa komentoa, jonka tulos vaihtelee itsekseen. Tällaisia ovat mm. <code>RANDOM</code>-muuttuja, joka tuottaa satunnaisluvun tai <code>read</code>-komento, joka lukee annettua tiedostoa rivi kerrallaan.</li>
+<li>Luomalla muuttujan, jonka arvo muuttuu silmukan sisällä.</li>
+<li>Luomalla tietoisesti ikuisen silmukan, joka toistaa komentoa kunnes käyttäjä keskeyttää komentosarjan painamalla <nowrap><kbd><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.78,11.78L18.36,13.19L12,6.83L5.64,13.19L4.22,11.78L12,4L19.78,11.78Z" /></svg></span> Control</kbd>+<kbd>C</kbd></nowrap>.</li>
+</ul>
+<div class="admonition shell">
+<p class="admonition-title">bash: while - numeroita</p>
+<p><strong>C54W4KDHGK</strong>:tol-alkeet jonrajal$ i=0
+<strong>C54W4KDHGK</strong>:tol-alkeet jonrajal$ <pop>while ((i&lt;5)); do echo $i; ((i=i+1)); done</pop>
+0
+1
+2
+3
+4
+5</p>
+</div>
+<p>Yksi yleinen <code>while</code>-silmukan käyttötapaus on tiedostojen sisällön läpikäynti. Siihen tarvitaan <code>read</code>-komentoa ja syötteenohjaumerkkiä <code>&lt;</code>. Syötteenohjausmerkki toimii pitkälti samalla tavalla kuin <a href="../../../komentorivi/peruskomennot/bash-peruskomennot/#tuloste-tiedostoon">tulosteenohjausmerkit</a>, mutta ne muokkaavat syötettä tulosteen sijasta. Syötteenohjausta tarvitaan komennoissa, jotka odottavat käyttäjältä syötettä komennon ajamisen jälkeen. </p>
+<div class="admonition shell">
+<p class="admonition-title">bash: while - lue rivi kerrallaan</p>
+<p><strong>C54W4KDHGK</strong>:tol-alkeet jonrajal$ <pop>while read -r rivi; do echo &ldquo;Rivi: $rivi&rdquo;; done &lt; README.txt</pop>
+Rivi: # jonimatias.github.io repo
+Rivi: 
+Rivi: jonimatias.github.io on epämääräinen kokoelma tietojenkäsittelytieteen opintoihin liittyviä asioita. Tässä repossa on verkkosivujen uusin versio, ja tänne tehtävät muutokset ladataan verkkosivuille GitHub Actionsien avulla.
+Rivi: 
+Rivi: Ainoastaan verkkosivulla olevat kuvat kulkevat muuta kautta, mutta niidenkin lataamisen helpottamiseksi voi käyttää repossa olevaa upload_images.command -bash-skriptiä.
+Rivi: 
+Rivi: Sivusto on kirjoitettu markdownilla, joka käännetään verkkosivustoksi MkDocsilla.</p>
+</div>
+<p>Yllä oleva komento lukee syötettä rivi kerrallaan ja asettaa jokaisen rivin sisällön muuttujaan <code>rivi</code> (<code>read -r rivi</code>). Syötteeksi on määritelty tol-alkeet -kansiossa oleva README.txt-tiedosto (<code>&lt; README.txt</code>). Silmukassa jokainen tiedoston rivi tulostetaan niin, että alkuun lisätään teksti &ldquo;Rivi: &rdquo; (<code>echo "Rivi: $rivi"</code>).</p>
+</div>
+</div>
+</div>
+<h3 id="ehtolauseet">Ehtolauseet<a class="headerlink" href="#ehtolauseet" title="Permanent link">&para;</a></h3>
+<p>Ehtolauseitä käytetään luomaan haaraumakohtia komentosarjan toimintalogiikkaan. Niiden tarkoitus on muokata toiminta yhdessä tilanteessa yhdeksi, ja toisessa tilanteessa toiseksi. </p>
+<p>Yksittäisen haarauman muoto on seuraavanlainen</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Yksittäinen ehto (if)</label><label for="__tabbed_3_2">Jos ei niin sitten (else)</label><label for="__tabbed_3_3">Useampi haara (else if)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>if &lt;ehto&gt;
+    then &lt;suoritettavat_komennot&gt;
+fi
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>if &lt;ehto&gt;
+    then &lt;suoritettavat_komennot&gt;
+else 
+    &lt;suoritettavat_komennot_jos_ehto_ei_täyty&gt;
+fi
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>if &lt;ehto&gt;
+    then &lt;suoritettavat_komennot&gt;
+elif &lt;ehto&gt;
+    then &lt;suoritettavat_komennot_jos_ensimmäinen_ehto_ei_täyty_mutta_toinen_täyttyy&gt;
+elif &lt;ehto&gt;
+    then &lt;suoritettavat_komennot_jos_ensimmäiset_ehdot_eivät_täyty_mutta_kolmas_täyttyy&gt;
+fi
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>Kuten esimerkeistä näkee, haaraumat aloitetaan aina komennolla <code>if</code>, jonka perään kirjoitetaan jokin ehtolause. Ehtolause erotetaan ehtoja seuraavista komennoista komentosanalla <code>then</code>. Haarasta palataan takaisin normaalisuoritukseen komentosanalla <code>fi</code>, eli if väärin päin. Komentosanat <code>else</code> ja <code>elif</code> on varattu yhden haaraumakohdan vaihtoehtoisiin haaroihin.</p>
+<p>Haaraumia voi myös kirjoittaa sisäkkäin, aivan kuten ohjelmointikielissä. Haarauman sisällä oleviin suoritettaviin komentoihin voi laittaa uuden <code>if</code>-komennon, jolloin se suoritetaan niissä tilanteissa, jossa sekä uloin että sisempi ehtolause täyttyy.</p>
+<div class="highlight"><pre><span></span><code>if &lt;ulompi_ehto&gt;
+    then 
+    &lt;suoritettavat_komennot_jos_ulompi_ehto_täyttyy&gt;
+    if &lt;sisempi_ehto&gt;
+        then &lt;suoritettavat_komennot_jos_molemmat_ehdot_täyttyy&gt;
+    fi
+fi
+</code></pre></div>
+<p>Kuten silmukoiden kanssa, ehtohaarat voi kirjoittaa esimerkin mukaisesti jokaisen omalle rivilleen, tai rivinvaihdot voi korvata puolipisteillä (<code>;</code>). Alla olevat esimerkit käyttävät tätä tiiviimpää yksirivistä mallia.</p>
+<h4 id="ehtolauseen-muoto---kaksoissulkeet">Ehtolauseen muoto - kaksoissulkeet<a class="headerlink" href="#ehtolauseen-muoto---kaksoissulkeet" title="Permanent link">&para;</a></h4>
+<p>Haarojen tarvitseman ehtolauseen voi kirjoittaa muutamalla eri tavalla. Aikaisemmin jo esiteltiin muuttujien käyttämä ilmaisutapa kaksoissuluilla. Se toimii erinomaisesti, jos muuttujina on numeroita.</p>
+<div class="admonition shell">
+<p class="admonition-title">bash: if - kaksoissulkeet</p>
+<p><strong>C54W4KDHGK</strong>:tol-alkeet jonrajal$ i=20
+<strong>C54W4KDHGK</strong>:tol-alkeet jonrajal$ <pop>if ((i&lt;20)); then echo pieni; else echo suuri; fi</pop>
+suuri</p>
+</div>
+<p>Kaksoissulkeita voi käyttää myös yksinkertaisiin erisuuruus- ja yhtäsuuruusvertailuihin tekstiä vertaillessa.</p>
+<div class="admonition shell">
+<p class="admonition-title">bash: if - kaksoissulkeet tekstin kanssa</p>
+<p><strong>C54W4KDHGK</strong>:tol-alkeet jonrajal$ i=tiedostonnimi.txt
+<strong>C54W4KDHGK</strong>:tol-alkeet jonrajal$ <pop>if ((i==tiedostonnimi.txt)); then echo on; else echo ei; fi</pop>
+on</p>
+</div>
+<h4 id="ehtolauseen-muoto---hakasulkeet">Ehtolauseen muoto - hakasulkeet<a class="headerlink" href="#ehtolauseen-muoto---hakasulkeet" title="Permanent link">&para;</a></h4>
+<p>Toinen ehtolauseiden käyttämä ilmaisutapa on POSIX-test -standardin mukainen muoto. Tämä on hiukan tehokkaampi ja monipuolisempi kuin kaksoissulkeita käyttävä, mutta samalla monin verroin monimutkaisempi. POSIX-test ilmaistaan kirjoittamalla ehtolause hakasulkeiden (<code>[</code> ja <code>]</code>) sisään.</p>
+<p>Kaikkien POSIX-test -ehtolauseiden muoto on seuraavanlainen: 
+<div class="highlight"><pre><span></span><code>[ &lt;toinen_arvo&gt; &lt;operaattori&gt; &lt;pääasiallinen_arvo&gt; ]
+</code></pre></div></p>
+<p>Toisin kuin kaksoissulkeiden kanssa, Posix-testit vaativat dollarimerkin (<code>$</code>) käyttöä muuttujien arvoihin viitattaessa.</p>
+<p>Posix-test käyttää seuraavia operaattoreita:</p>
+<table>
+<thead>
+<tr>
+<th>Operaattori</th>
+<th>Tarkoitus</th>
+<th>Esimerkki</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>=</td>
+<td>Molemmissa arvoissa on sama teksti</td>
+<td>[ $x = README.txt ]</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>Molemmissa arvoissa on eri teksti</td>
+<td>[ $x != README.txt ]</td>
+</tr>
+<tr>
+<td>-z</td>
+<td>Arvon kirjainten määrä on 0</td>
+<td>[ -z $x ]</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>Arvon kirjainten määrä on suurempi kuin 0</td>
+<td>[ -n $x ]</td>
+</tr>
+<tr>
+<td>(ei mitään)</td>
+<td>Arvo on määritelty</td>
+<td>[ $x ]</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>Arvo on polku, ja polku osoittaa hakemistoon</td>
+<td>[ -d $x ]</td>
+</tr>
+<tr>
+<td>-e</td>
+<td>Arvo on polku, ja polku osoittaa tiedostoon</td>
+<td>[ -e $x ]</td>
+</tr>
+<tr>
+<td>-eq</td>
+<td>Arvo on numero, ja se on yhtä suuri kuin toinen arvo</td>
+<td>[ $x -eq 10 ]</td>
+</tr>
+<tr>
+<td>-ne</td>
+<td>Arvo on numero, ja se on eri suuri kuin toinen arvo</td>
+<td>[ $x -ne 10 ]</td>
+</tr>
+<tr>
+<td>-gt</td>
+<td>Arvo on numero, ja se on suurempi kuin toinen arvo</td>
+<td>[ $x -gt 10 ]</td>
+</tr>
+<tr>
+<td>-ge</td>
+<td>Arvo on numero, ja se on suurempi tai yhtä suuri kuin</td>
+<td>[ $x -ge 10 ]</td>
+</tr>
+<tr>
+<td>-lt</td>
+<td>Arvo on numero, ja se on pienempi kuin toinen arvo</td>
+<td>[ $x -lt 10 ]</td>
+</tr>
+<tr>
+<td>-le</td>
+<td>Arvo on numero, ja se on pienempi tai yhtä suuri kuin</td>
+<td>[ $x -le 10 ]</td>
+</tr>
+</tbody>
+</table>
+<p>Hakasulkeilla olevaa ehtolausetta voi käyttää vaikka sen tarkistamiseen, onko tiedostoa olemassa. Joskus tämä kannattaa tehdä ennen kuin alkaa suorittamaan toimintoa, joka käyttää sitä tiedostoa.</p>
+<div class="admonition shell">
+<p class="admonition-title">bash: POSIX test</p>
+<p><strong>C54W4KDHGK</strong>:tol-alkeet jonrajal$ i=./README.txt
+<strong>C54W4KDHGK</strong>:tol-alkeet jonrajal$ <pop>if [ -e $i ]; then cat $i; else echo &ldquo;Ei ole tiedosto.&rdquo;; fi</pop>
+# jonimatias.github.io repo</p>
+<p>jonimatias.github.io on epämääräinen kokoelma tietojenkäsittelytieteen opintoihin liittyviä asioita. Tässä repossa on verkkosivujen uusin versio, ja tänne tehtävät muutokset ladataan verkkosivuille GitHub Actionsien avulla.</p>
+<p>Ainoastaan verkkosivulla olevat kuvat kulkevat muuta kautta, mutta niidenkin lataamisen helpottamiseksi voi käyttää repossa olevaa upload_images.command -bash-skriptiä.</p>
+<p>Sivusto on kirjoitettu markdownilla, joka käännetään verkkosivustoksi MkDocsilla.</p>
+</div>
+<p>Yllä oleva komento asettaa muuttujan <code>i</code> arvoksi <code>./README.txt</code>, joka on tässä tapauksessa polku README.txt tiedostoon, joka sijaitsee aktiivisessa kansiossa (<code>i=./README.txt</code>). Sitten ohjelma vertailee POSIX testillä, onko koneella tiedostoa muuttujaan asetetussa polussa <code>[ -e $i ]</code>. Jos näin on, niin tiedoston sisältö tulostetaan <code>then cat $i</code>, jos ei, niin tulostetaan <em>Ei ole tiedosto.</em> <code>else echo "Ei ole tiedosto."</code>. </p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Creative Commons Attribution Non Commercial
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.sections", "content.tabs.link"], "search": "../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../../../../js/mkdocs-charts-plugin.js"></script>
+      
+        <script src="../../../../javascripts/extra.js"></script>
+      
+        <script src="../../../../javascripts/tab-control.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+      
+    
+  </body>
+</html>

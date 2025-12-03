@@ -1,0 +1,3250 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Tältä sivustolta löytyy kaikki tarvittava tieto, mitä Oulun yliopistossa aloittava tietojenkäsittelytieteen opiskelijan kannattaa tietokoneesta tietää. Ja vähän enemmän.">
+      
+      
+        <meta name="author" content="Joni Matias Rajala">
+      
+      
+      
+        <link rel="prev" href="../ohjausrakenteet/bat-rakenteet/">
+      
+      
+        <link rel="next" href="../../ascii/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/hex-logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Komentorivin ympäristö - Perustiedot tietojenkäsittelytieteen opiskelijalle</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../style.css">
+    
+      <link rel="stylesheet" href="../../../style-shell.css">
+    
+      <link rel="stylesheet" href="../../../style-tabbed-shell.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#komentorivin-ympäristö" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+  Tämä sivusto on vielä työn alla, joten sivuilta voi vielä puuttua asioita. Eivätköhän ne sinne ilmaannu syksyn 2025 aikana.
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Perustiedot tietojenkäsittelytieteen opiskelijalle" class="md-header__button md-logo" aria-label="Perustiedot tietojenkäsittelytieteen opiskelijalle" data-md-component="logo">
+      
+  <img src="../../../assets/hex-logo-valkoinen.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Perustiedot tietojenkäsittelytieteen opiskelijalle
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Komentorivin ympäristö
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../koodi/koodi_toc/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Tehtävät
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../koodi/apufunktiot/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Apufunktiot
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Komentorivi
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../koodi/muut_sivut/muut_sivut/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Muuta
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Perustiedot tietojenkäsittelytieteen opiskelijalle" class="md-nav__button md-logo" aria-label="Perustiedot tietojenkäsittelytieteen opiskelijalle" data-md-component="logo">
+      
+  <img src="../../../assets/hex-logo-valkoinen.svg" alt="logo">
+
+    </a>
+    Perustiedot tietojenkäsittelytieteen opiskelijalle
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tehtävät
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tehtävät
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../koodi/koodi_toc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aloitussivu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../koodi/haasteet/aakkostus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aakkostus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../koodi/haasteet/boggle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Boggle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../koodi/haasteet/duplikaatti/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Duplikaatit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../koodi/haasteet/palindromi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Palindromit 1: Tunnistaminen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../koodi/haasteet/palindromi2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Palindromit 2: Palindromiprosentti
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../koodi/haasteet/palindromi3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Palindromit 3: Alipalindromit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../koodi/haasteet/roomalaiset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rooma
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../koodi/haasteet/sanakirja/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sanakirja
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apufunktiot
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Apufunktiot
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../koodi/apufunktiot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aloitussivu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../koodi/apufunktiot/tiedoston_lukeminen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tiedostojen lukeminen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../koodi/apufunktiot/unicode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ääkköset
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Komentorivi
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Komentorivi
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tietokoneen käytön perusteet
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tietokoneen käytön perusteet
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intro/tiedostot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tiedostot ja tiedostojärjestelmät
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intro/perustiedostot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Yleisimmät tiedostotyypit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intro/email/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Opiskelijan sähköposti
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Komentorivin alkeet
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Komentorivin alkeet
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../komentorivi/bash-alkeet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Komentorivin esittely
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../komentorivi/peruskomennot/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Yleisimmät peruskomennot
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3_2" id="__nav_3_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Yleisimmät peruskomennot
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../komentorivi/peruskomennot/bash-peruskomennot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bashin peruskomennot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../komentorivi/peruskomennot/windows-peruskomennot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Yleisimmät Windowsin komennot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../komentorivi/bash-muoto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Komentojen rakenne
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../komentorivi/tiedostonimet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tiedostonimet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../komentorivi/asennus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ohjelmien asentaminen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Komentorivin tehokäyttö
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Komentorivin tehokäyttö
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../komentosarjat/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Komentosarjat
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4_1" id="__nav_3_4_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Komentosarjat
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../komentosarjat/bash_script/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bash-komentosarjat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../komentosarjat/bat_script/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windowsin BAT-komentosarjat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../ohjausrakenteet/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ohjausrakenteet
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4_2" id="__nav_3_4_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ohjausrakenteet
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ohjausrakenteet/bash-rakenteet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bashin ohjausrakenteet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ohjausrakenteet/bat-rakenteet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows ohjausrakenteet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Komentorivin ympäristö
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Komentorivin ympäristö
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ympäristömuuttujat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ympäristömuuttujat
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ympäristömuuttujat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        $PATH
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kehotteen-muokkaus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kehotteen muokkaus
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#päätteen-käynnistystiedostot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Päätteen käynnistystiedostot
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Päätteen käynnistystiedostot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alias
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Muuta
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Muuta
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ascii/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ASCII-merkistö
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossaari/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossaari
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Muuta
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Muuta
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../koodi/muut_sivut/muut_sivut/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Muita ideoita
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ympäristömuuttujat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ympäristömuuttujat
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ympäristömuuttujat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        $PATH
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kehotteen-muokkaus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kehotteen muokkaus
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#päätteen-käynnistystiedostot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Päätteen käynnistystiedostot
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Päätteen käynnistystiedostot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alias
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="komentorivin-ympäristö">Komentorivin ympäristö<a class="headerlink" href="#komentorivin-ympäristö" title="Permanent link">&para;</a></h1>
+<p>Komentojen ja automaatioiden lisäksi komentorivillä voi hallita tietokoneen asetuksia. Näiden asetuksien muokkaaminen muuttaa komentorivin, muiden ohjelmien tai koko käyttöjärjestelmän toimintaa.</p>
+<h2 id="ympäristömuuttujat">Ympäristömuuttujat<a class="headerlink" href="#ympäristömuuttujat" title="Permanent link">&para;</a></h2>
+<p>Jokaisella tietokoneella on ympäristömuuttujia. Nämä ovat tietokoneen talteen tallentamia arvoja, joita monet ohjelmat käyttävät saadakseen tietoa tietokoneen ja käyttäjätilin tilasta. Ympäristömuuttujien muokkaaminen on tehokas tapa saada muutettua tietokoneen toimintaa, mutta samalla kannattaa olla tarkkana, ettei sotke tietokonetta, jos niitä lähtee muuttamaan.</p>
+<p>Osaa ympäristömuuttujista ei välttämättä kannata tai voi muokata, sillä käyttöjärjestelmä muokkaa niiden sisältöä automaattisesti ja itsekseen. Tällaisia ovat mm. <nowrap><span class="twemoji"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1.32916,0,0,1.32916,2.28034,-0.453959)">
+        <path d="M19.945,13.092C20.593,13.092 21.65,12.84 23.117,12.337C24.584,11.833 25.857,11.582 26.936,11.582C28.705,11.582 30.28,12.056 31.661,13.006C32.438,13.552 33.207,14.293 33.97,15.228C32.819,16.206 31.977,17.076 31.445,17.838C30.481,19.219 30,20.744 30,22.413C30,24.239 30.51,25.886 31.532,27.353C32.553,28.82 33.718,29.748 35.027,30.137C34.48,31.906 33.574,33.754 32.308,35.682C30.395,38.573 28.497,40.018 26.612,40.018C25.864,40.018 24.832,39.781 23.516,39.306C22.2,38.832 21.089,38.594 20.183,38.594C19.277,38.594 18.223,38.842 17.022,39.339C15.821,39.835 14.846,40.083 14.098,40.083C11.84,40.083 9.625,38.17 7.453,34.344C5.281,30.561 4.195,26.85 4.195,23.211C4.195,19.831 5.026,17.076 6.687,14.947C8.349,12.819 10.445,11.754 12.976,11.754C14.055,11.754 15.361,11.977 16.892,12.423C18.424,12.869 19.442,13.092 19.945,13.092ZM26.699,4.181C26.699,5.102 26.483,6.109 26.051,7.202C25.62,8.295 24.937,9.309 24.002,10.244C23.196,11.035 22.398,11.567 21.607,11.84C21.103,11.999 20.341,12.121 19.32,12.207C19.348,10.021 19.92,8.129 21.035,6.533C22.15,4.936 23.994,3.843 26.569,3.253C26.627,3.44 26.663,3.606 26.677,3.75C26.691,3.893 26.699,4.037 26.699,4.181Z" style="fill-rule:nonzero;"/>
+    </g>
+</svg>
+</span><span class="twemoji"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-1.13223,0.39038)">
+        <path d="M18.976,44.294C14.797,41.601 11.715,37.347 10.557,32.36C12.045,31.411 13.033,29.745 13.033,27.85C13.033,25.973 12.064,24.321 10.601,23.368C11.796,18.44 14.873,14.245 19.025,11.586L22.423,17.47C19.055,19.742 16.839,23.592 16.839,27.956C16.839,32.299 19.034,36.133 22.374,38.409L18.976,44.294ZM21.007,10.475C23.568,9.231 26.442,8.532 29.479,8.532C31.479,8.532 33.408,8.835 35.225,9.398C35.737,11.814 37.882,13.629 40.447,13.629C41.077,13.629 41.681,13.519 42.242,13.319C46.034,16.629 48.53,21.387 48.864,26.727L42.059,26.727C41.441,20.327 36.04,15.316 29.479,15.316C27.678,15.316 25.964,15.694 24.412,16.374L21.007,10.475ZM48.875,28.998C48.591,34.345 46.141,39.122 42.387,42.465C41.786,42.23 41.132,42.101 40.447,42.101C37.814,42.101 35.623,44.013 35.187,46.526C33.382,47.081 31.465,47.38 29.479,47.38C26.421,47.38 23.528,46.672 20.954,45.411L24.359,39.514C25.924,40.21 27.657,40.596 29.479,40.596C36.104,40.596 41.545,35.488 42.076,28.998L48.875,28.998Z"/>
+    </g>
+    <g>
+        <g transform="matrix(0.961658,0,0,0.962734,2.7871,1.65674)">
+            <path d="M37.985,2.594C40.576,2.594 42.68,4.698 42.68,7.29C42.68,9.881 40.576,11.985 37.985,11.985C35.393,11.985 33.289,9.881 33.289,7.29C33.289,4.698 35.393,2.594 37.985,2.594Z"/>
+        </g>
+        <g transform="matrix(0.961658,0,0,0.962734,2.7871,40.8169)">
+            <path d="M37.985,2.594C40.576,2.594 42.68,4.698 42.68,7.29C42.68,9.881 40.576,11.985 37.985,11.985C35.393,11.985 33.289,9.881 33.289,7.29C33.289,4.698 35.393,2.594 37.985,2.594Z"/>
+        </g>
+        <g transform="matrix(0.961658,0,0,0.962734,-29.9666,21.2217)">
+            <path d="M37.985,2.594C40.576,2.594 42.68,4.698 42.68,7.29C42.68,9.881 40.576,11.985 37.985,11.985C35.393,11.985 33.289,9.881 33.289,7.29C33.289,4.698 35.393,2.594 37.985,2.594Z"/>
+        </g>
+    </g>
+</svg>
+</span> <em>bashin</em></nowrap> muuttujat <code>PWD</code> ja <code>OLDPWD</code>, joihin on tallennettu päätteen tämänhetkinen aktiivinen kansio ja edellinen aktiivinen kansio tai <nowrap><span class="twemoji"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g>
+        <g transform="matrix(1.20295,0,0,1.13982,-2.05175,-0.430438)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+        <g transform="matrix(1.20295,0,0,1.13982,-2.05175,23.8121)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+        <g transform="matrix(1.20295,0,0,1.13982,23.1862,-0.430438)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+        <g transform="matrix(1.20295,0,0,1.13982,23.1862,23.8121)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+    </g>
+</svg>
+</span><em>Windowsin</em></nowrap> muuttujat <code>APPDATA</code> ja <code>SystemRoot</code>, joihin on tallennettu sovelluksien käyttämä, profiiliin liittyvä roaming-hakemisto ja käyttöjärjestelmän asennushakemisto (ei todellakaan kannata mennä muokkaamaan noita itse käyttäjänä).</p>
+<p>Ympäristömuuttujia käytetään aivan kuten tavallisia muuttujia (<a href="../ohjausrakenteet/bat-rakenteet/#muuttujat"><span class="twemoji"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g>
+        <g transform="matrix(1.20295,0,0,1.13982,-2.05175,-0.430438)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+        <g transform="matrix(1.20295,0,0,1.13982,-2.05175,23.8121)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+        <g transform="matrix(1.20295,0,0,1.13982,23.1862,-0.430438)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+        <g transform="matrix(1.20295,0,0,1.13982,23.1862,23.8121)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+    </g>
+</svg>
+</span> Windows</a> / <a href="../ohjausrakenteet/bash-rakenteet/#muuttujat"><span class="twemoji"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1.32916,0,0,1.32916,2.28034,-0.453959)">
+        <path d="M19.945,13.092C20.593,13.092 21.65,12.84 23.117,12.337C24.584,11.833 25.857,11.582 26.936,11.582C28.705,11.582 30.28,12.056 31.661,13.006C32.438,13.552 33.207,14.293 33.97,15.228C32.819,16.206 31.977,17.076 31.445,17.838C30.481,19.219 30,20.744 30,22.413C30,24.239 30.51,25.886 31.532,27.353C32.553,28.82 33.718,29.748 35.027,30.137C34.48,31.906 33.574,33.754 32.308,35.682C30.395,38.573 28.497,40.018 26.612,40.018C25.864,40.018 24.832,39.781 23.516,39.306C22.2,38.832 21.089,38.594 20.183,38.594C19.277,38.594 18.223,38.842 17.022,39.339C15.821,39.835 14.846,40.083 14.098,40.083C11.84,40.083 9.625,38.17 7.453,34.344C5.281,30.561 4.195,26.85 4.195,23.211C4.195,19.831 5.026,17.076 6.687,14.947C8.349,12.819 10.445,11.754 12.976,11.754C14.055,11.754 15.361,11.977 16.892,12.423C18.424,12.869 19.442,13.092 19.945,13.092ZM26.699,4.181C26.699,5.102 26.483,6.109 26.051,7.202C25.62,8.295 24.937,9.309 24.002,10.244C23.196,11.035 22.398,11.567 21.607,11.84C21.103,11.999 20.341,12.121 19.32,12.207C19.348,10.021 19.92,8.129 21.035,6.533C22.15,4.936 23.994,3.843 26.569,3.253C26.627,3.44 26.663,3.606 26.677,3.75C26.691,3.893 26.699,4.037 26.699,4.181Z" style="fill-rule:nonzero;"/>
+    </g>
+</svg>
+</span><span class="twemoji"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-1.13223,0.39038)">
+        <path d="M18.976,44.294C14.797,41.601 11.715,37.347 10.557,32.36C12.045,31.411 13.033,29.745 13.033,27.85C13.033,25.973 12.064,24.321 10.601,23.368C11.796,18.44 14.873,14.245 19.025,11.586L22.423,17.47C19.055,19.742 16.839,23.592 16.839,27.956C16.839,32.299 19.034,36.133 22.374,38.409L18.976,44.294ZM21.007,10.475C23.568,9.231 26.442,8.532 29.479,8.532C31.479,8.532 33.408,8.835 35.225,9.398C35.737,11.814 37.882,13.629 40.447,13.629C41.077,13.629 41.681,13.519 42.242,13.319C46.034,16.629 48.53,21.387 48.864,26.727L42.059,26.727C41.441,20.327 36.04,15.316 29.479,15.316C27.678,15.316 25.964,15.694 24.412,16.374L21.007,10.475ZM48.875,28.998C48.591,34.345 46.141,39.122 42.387,42.465C41.786,42.23 41.132,42.101 40.447,42.101C37.814,42.101 35.623,44.013 35.187,46.526C33.382,47.081 31.465,47.38 29.479,47.38C26.421,47.38 23.528,46.672 20.954,45.411L24.359,39.514C25.924,40.21 27.657,40.596 29.479,40.596C36.104,40.596 41.545,35.488 42.076,28.998L48.875,28.998Z"/>
+    </g>
+    <g>
+        <g transform="matrix(0.961658,0,0,0.962734,2.7871,1.65674)">
+            <path d="M37.985,2.594C40.576,2.594 42.68,4.698 42.68,7.29C42.68,9.881 40.576,11.985 37.985,11.985C35.393,11.985 33.289,9.881 33.289,7.29C33.289,4.698 35.393,2.594 37.985,2.594Z"/>
+        </g>
+        <g transform="matrix(0.961658,0,0,0.962734,2.7871,40.8169)">
+            <path d="M37.985,2.594C40.576,2.594 42.68,4.698 42.68,7.29C42.68,9.881 40.576,11.985 37.985,11.985C35.393,11.985 33.289,9.881 33.289,7.29C33.289,4.698 35.393,2.594 37.985,2.594Z"/>
+        </g>
+        <g transform="matrix(0.961658,0,0,0.962734,-29.9666,21.2217)">
+            <path d="M37.985,2.594C40.576,2.594 42.68,4.698 42.68,7.29C42.68,9.881 40.576,11.985 37.985,11.985C35.393,11.985 33.289,9.881 33.289,7.29C33.289,4.698 35.393,2.594 37.985,2.594Z"/>
+        </g>
+    </g>
+</svg>
+</span> Bash</a>). Toiminnan kannalta ne itseasiassa ovat samoja asioita; ne tallennetaan samaan paikkaan ja niitä luetaan samalla tavalla. Ympäristömuuttujissa on vain se jippo, että monet muutkin ohjelmat, jopa ne jotka ovat ennakkoasennettu koneelle, käyttävät ympäristömuuttujia omaan toimintaansa. Itse nimettyjen muuttujien kanssa voi luottaa siihen, etteivät ne sekoita muiden ohjelmien toimintaan merkittävästi.</p>
+<p>Alla on lista muutamasta yleisimmästä ympäristömuuttujasta:</p>
+<table>
+<thead>
+<tr>
+<th><span class="twemoji"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g>
+        <g transform="matrix(1.20295,0,0,1.13982,-2.05175,-0.430438)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+        <g transform="matrix(1.20295,0,0,1.13982,-2.05175,23.8121)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+        <g transform="matrix(1.20295,0,0,1.13982,23.1862,-0.430438)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+        <g transform="matrix(1.20295,0,0,1.13982,23.1862,23.8121)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+    </g>
+</svg>
+</span> Nimi Windowsissa</th>
+<th><span class="twemoji"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1.32916,0,0,1.32916,2.28034,-0.453959)">
+        <path d="M19.945,13.092C20.593,13.092 21.65,12.84 23.117,12.337C24.584,11.833 25.857,11.582 26.936,11.582C28.705,11.582 30.28,12.056 31.661,13.006C32.438,13.552 33.207,14.293 33.97,15.228C32.819,16.206 31.977,17.076 31.445,17.838C30.481,19.219 30,20.744 30,22.413C30,24.239 30.51,25.886 31.532,27.353C32.553,28.82 33.718,29.748 35.027,30.137C34.48,31.906 33.574,33.754 32.308,35.682C30.395,38.573 28.497,40.018 26.612,40.018C25.864,40.018 24.832,39.781 23.516,39.306C22.2,38.832 21.089,38.594 20.183,38.594C19.277,38.594 18.223,38.842 17.022,39.339C15.821,39.835 14.846,40.083 14.098,40.083C11.84,40.083 9.625,38.17 7.453,34.344C5.281,30.561 4.195,26.85 4.195,23.211C4.195,19.831 5.026,17.076 6.687,14.947C8.349,12.819 10.445,11.754 12.976,11.754C14.055,11.754 15.361,11.977 16.892,12.423C18.424,12.869 19.442,13.092 19.945,13.092ZM26.699,4.181C26.699,5.102 26.483,6.109 26.051,7.202C25.62,8.295 24.937,9.309 24.002,10.244C23.196,11.035 22.398,11.567 21.607,11.84C21.103,11.999 20.341,12.121 19.32,12.207C19.348,10.021 19.92,8.129 21.035,6.533C22.15,4.936 23.994,3.843 26.569,3.253C26.627,3.44 26.663,3.606 26.677,3.75C26.691,3.893 26.699,4.037 26.699,4.181Z" style="fill-rule:nonzero;"/>
+    </g>
+</svg>
+</span><span class="twemoji"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-1.13223,0.39038)">
+        <path d="M18.976,44.294C14.797,41.601 11.715,37.347 10.557,32.36C12.045,31.411 13.033,29.745 13.033,27.85C13.033,25.973 12.064,24.321 10.601,23.368C11.796,18.44 14.873,14.245 19.025,11.586L22.423,17.47C19.055,19.742 16.839,23.592 16.839,27.956C16.839,32.299 19.034,36.133 22.374,38.409L18.976,44.294ZM21.007,10.475C23.568,9.231 26.442,8.532 29.479,8.532C31.479,8.532 33.408,8.835 35.225,9.398C35.737,11.814 37.882,13.629 40.447,13.629C41.077,13.629 41.681,13.519 42.242,13.319C46.034,16.629 48.53,21.387 48.864,26.727L42.059,26.727C41.441,20.327 36.04,15.316 29.479,15.316C27.678,15.316 25.964,15.694 24.412,16.374L21.007,10.475ZM48.875,28.998C48.591,34.345 46.141,39.122 42.387,42.465C41.786,42.23 41.132,42.101 40.447,42.101C37.814,42.101 35.623,44.013 35.187,46.526C33.382,47.081 31.465,47.38 29.479,47.38C26.421,47.38 23.528,46.672 20.954,45.411L24.359,39.514C25.924,40.21 27.657,40.596 29.479,40.596C36.104,40.596 41.545,35.488 42.076,28.998L48.875,28.998Z"/>
+    </g>
+    <g>
+        <g transform="matrix(0.961658,0,0,0.962734,2.7871,1.65674)">
+            <path d="M37.985,2.594C40.576,2.594 42.68,4.698 42.68,7.29C42.68,9.881 40.576,11.985 37.985,11.985C35.393,11.985 33.289,9.881 33.289,7.29C33.289,4.698 35.393,2.594 37.985,2.594Z"/>
+        </g>
+        <g transform="matrix(0.961658,0,0,0.962734,2.7871,40.8169)">
+            <path d="M37.985,2.594C40.576,2.594 42.68,4.698 42.68,7.29C42.68,9.881 40.576,11.985 37.985,11.985C35.393,11.985 33.289,9.881 33.289,7.29C33.289,4.698 35.393,2.594 37.985,2.594Z"/>
+        </g>
+        <g transform="matrix(0.961658,0,0,0.962734,-29.9666,21.2217)">
+            <path d="M37.985,2.594C40.576,2.594 42.68,4.698 42.68,7.29C42.68,9.881 40.576,11.985 37.985,11.985C35.393,11.985 33.289,9.881 33.289,7.29C33.289,4.698 35.393,2.594 37.985,2.594Z"/>
+        </g>
+    </g>
+</svg>
+</span> Nimi bashissa</th>
+<th>Kuvaus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>%USERPROFILE%</td>
+<td>$HOME</td>
+<td>Polku kotihakemistoon</td>
+</tr>
+<tr>
+<td>%PATH%</td>
+<td>$PATH</td>
+<td>Polku komentoriviohjelmien oletushakemistoon</td>
+</tr>
+<tr>
+<td><strong>(Ei ole)</strong></td>
+<td>$SHELL</td>
+<td>Polku oletustulkkiin, joka käynnistetään päätteen mukana.</td>
+</tr>
+<tr>
+<td>%USERNAME%</td>
+<td>$USER</td>
+<td>Kirjautuneen käyttäjän käyttäjätunnus.</td>
+</tr>
+<tr>
+<td><strong>(Ei ole)</strong></td>
+<td>$LANG</td>
+<td>Kieliasetukset</td>
+</tr>
+<tr>
+<td>%PROMPT%</td>
+<td>$PS1</td>
+<td>Komentokehotteen muoto</td>
+</tr>
+<tr>
+<td>%OneDrive%</td>
+<td><strong>(Ei ole)</strong></td>
+<td>Hakemisto, johon OneDrive-verkkolevyn sisältö on yhdistetty.</td>
+</tr>
+</tbody>
+</table>
+<p>Myös monet ohjelmat tallentavat ympäristömuuttujia yleiseen käyttöön. Esimerkiksi Java määrittelee kääntäjän ja virtuaalikoneen sijainnin <code>%JAVA_HOME%</code> muuttujalla muita Javaa hyödyntäviä työkaluohjelmia (esim. Maven) varten. Samoin <nowrap><span class="twemoji"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1.32916,0,0,1.32916,2.28034,-0.453959)">
+        <path d="M19.945,13.092C20.593,13.092 21.65,12.84 23.117,12.337C24.584,11.833 25.857,11.582 26.936,11.582C28.705,11.582 30.28,12.056 31.661,13.006C32.438,13.552 33.207,14.293 33.97,15.228C32.819,16.206 31.977,17.076 31.445,17.838C30.481,19.219 30,20.744 30,22.413C30,24.239 30.51,25.886 31.532,27.353C32.553,28.82 33.718,29.748 35.027,30.137C34.48,31.906 33.574,33.754 32.308,35.682C30.395,38.573 28.497,40.018 26.612,40.018C25.864,40.018 24.832,39.781 23.516,39.306C22.2,38.832 21.089,38.594 20.183,38.594C19.277,38.594 18.223,38.842 17.022,39.339C15.821,39.835 14.846,40.083 14.098,40.083C11.84,40.083 9.625,38.17 7.453,34.344C5.281,30.561 4.195,26.85 4.195,23.211C4.195,19.831 5.026,17.076 6.687,14.947C8.349,12.819 10.445,11.754 12.976,11.754C14.055,11.754 15.361,11.977 16.892,12.423C18.424,12.869 19.442,13.092 19.945,13.092ZM26.699,4.181C26.699,5.102 26.483,6.109 26.051,7.202C25.62,8.295 24.937,9.309 24.002,10.244C23.196,11.035 22.398,11.567 21.607,11.84C21.103,11.999 20.341,12.121 19.32,12.207C19.348,10.021 19.92,8.129 21.035,6.533C22.15,4.936 23.994,3.843 26.569,3.253C26.627,3.44 26.663,3.606 26.677,3.75C26.691,3.893 26.699,4.037 26.699,4.181Z" style="fill-rule:nonzero;"/>
+    </g>
+</svg>
+</span> MacOS-koneilla</nowrap> käytettävä <a href="../../komentorivi/asennus/#pakettien-asentaminen">Homebrew</a> asentaa kaikki ohjelmat polkuun, joka on määritelty muuttujassa <code>$HOMEBREW_PREFIX</code>.</p>
+<p>Kaikki ympäristömuuttujat voi saada näkyviin seuraavalla komennolla:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1"><span class="twemoji"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g>
+        <g transform="matrix(1.20295,0,0,1.13982,-2.05175,-0.430438)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+        <g transform="matrix(1.20295,0,0,1.13982,-2.05175,23.8121)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+        <g transform="matrix(1.20295,0,0,1.13982,23.1862,-0.430438)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+        <g transform="matrix(1.20295,0,0,1.13982,23.1862,23.8121)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+    </g>
+</svg>
+</span> Windows</label><label for="__tabbed_1_2"><span class="twemoji"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1.32916,0,0,1.32916,2.28034,-0.453959)">
+        <path d="M19.945,13.092C20.593,13.092 21.65,12.84 23.117,12.337C24.584,11.833 25.857,11.582 26.936,11.582C28.705,11.582 30.28,12.056 31.661,13.006C32.438,13.552 33.207,14.293 33.97,15.228C32.819,16.206 31.977,17.076 31.445,17.838C30.481,19.219 30,20.744 30,22.413C30,24.239 30.51,25.886 31.532,27.353C32.553,28.82 33.718,29.748 35.027,30.137C34.48,31.906 33.574,33.754 32.308,35.682C30.395,38.573 28.497,40.018 26.612,40.018C25.864,40.018 24.832,39.781 23.516,39.306C22.2,38.832 21.089,38.594 20.183,38.594C19.277,38.594 18.223,38.842 17.022,39.339C15.821,39.835 14.846,40.083 14.098,40.083C11.84,40.083 9.625,38.17 7.453,34.344C5.281,30.561 4.195,26.85 4.195,23.211C4.195,19.831 5.026,17.076 6.687,14.947C8.349,12.819 10.445,11.754 12.976,11.754C14.055,11.754 15.361,11.977 16.892,12.423C18.424,12.869 19.442,13.092 19.945,13.092ZM26.699,4.181C26.699,5.102 26.483,6.109 26.051,7.202C25.62,8.295 24.937,9.309 24.002,10.244C23.196,11.035 22.398,11.567 21.607,11.84C21.103,11.999 20.341,12.121 19.32,12.207C19.348,10.021 19.92,8.129 21.035,6.533C22.15,4.936 23.994,3.843 26.569,3.253C26.627,3.44 26.663,3.606 26.677,3.75C26.691,3.893 26.699,4.037 26.699,4.181Z" style="fill-rule:nonzero;"/>
+    </g>
+</svg>
+</span><span class="twemoji"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-1.13223,0.39038)">
+        <path d="M18.976,44.294C14.797,41.601 11.715,37.347 10.557,32.36C12.045,31.411 13.033,29.745 13.033,27.85C13.033,25.973 12.064,24.321 10.601,23.368C11.796,18.44 14.873,14.245 19.025,11.586L22.423,17.47C19.055,19.742 16.839,23.592 16.839,27.956C16.839,32.299 19.034,36.133 22.374,38.409L18.976,44.294ZM21.007,10.475C23.568,9.231 26.442,8.532 29.479,8.532C31.479,8.532 33.408,8.835 35.225,9.398C35.737,11.814 37.882,13.629 40.447,13.629C41.077,13.629 41.681,13.519 42.242,13.319C46.034,16.629 48.53,21.387 48.864,26.727L42.059,26.727C41.441,20.327 36.04,15.316 29.479,15.316C27.678,15.316 25.964,15.694 24.412,16.374L21.007,10.475ZM48.875,28.998C48.591,34.345 46.141,39.122 42.387,42.465C41.786,42.23 41.132,42.101 40.447,42.101C37.814,42.101 35.623,44.013 35.187,46.526C33.382,47.081 31.465,47.38 29.479,47.38C26.421,47.38 23.528,46.672 20.954,45.411L24.359,39.514C25.924,40.21 27.657,40.596 29.479,40.596C36.104,40.596 41.545,35.488 42.076,28.998L48.875,28.998Z"/>
+    </g>
+    <g>
+        <g transform="matrix(0.961658,0,0,0.962734,2.7871,1.65674)">
+            <path d="M37.985,2.594C40.576,2.594 42.68,4.698 42.68,7.29C42.68,9.881 40.576,11.985 37.985,11.985C35.393,11.985 33.289,9.881 33.289,7.29C33.289,4.698 35.393,2.594 37.985,2.594Z"/>
+        </g>
+        <g transform="matrix(0.961658,0,0,0.962734,2.7871,40.8169)">
+            <path d="M37.985,2.594C40.576,2.594 42.68,4.698 42.68,7.29C42.68,9.881 40.576,11.985 37.985,11.985C35.393,11.985 33.289,9.881 33.289,7.29C33.289,4.698 35.393,2.594 37.985,2.594Z"/>
+        </g>
+        <g transform="matrix(0.961658,0,0,0.962734,-29.9666,21.2217)">
+            <path d="M37.985,2.594C40.576,2.594 42.68,4.698 42.68,7.29C42.68,9.881 40.576,11.985 37.985,11.985C35.393,11.985 33.289,9.881 33.289,7.29C33.289,4.698 35.393,2.594 37.985,2.594Z"/>
+        </g>
+    </g>
+</svg>
+</span> bash</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="admonition shell">
+<p class="admonition-title">cmd.exe: näytä ympäristömuuttujat</p>
+<p>C:\TOL-alkeet&gt; <pop>SET</pop></p>
+</div>
+</div>
+<div class="tabbed-block">
+<div class="admonition shell">
+<p class="admonition-title">bash: näytä ympäristömuuttujat</p>
+<p><strong>C54W4KDHGK</strong>:~ jonrajal$ <pop>declare -p</pop></p>
+</div>
+</div>
+</div>
+</div>
+<p>Alla käydään muutama ympäristömuuttuja tarkemmin läpi.</p>
+<h3 id="path">$PATH<a class="headerlink" href="#path" title="Permanent link">&para;</a></h3>
+<p>Yleisimmin muokattu ympäristömuuttuja on <code>PATH</code>. Se määrittelee kaikki hakemistot, joista komentorivitulkki hakee suoritettavat tiedostot kaikille komennoille ja komentojen lailla ajettaville ohjelmille. <code>PATH</code> on lista <a href="../../intro/tiedostot/#täysi-eli-absoluuttinen-polku">absoluuttisia polkuja</a> kansioihin, joista komentoa vastaavaa tiedostoa etsitään. <code>PATH</code> listaa kaikki nämä polut yhdessä pötkössä, ja jokainen polku on erotettu <nowrap><span class="twemoji"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g>
+        <g transform="matrix(1.20295,0,0,1.13982,-2.05175,-0.430438)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+        <g transform="matrix(1.20295,0,0,1.13982,-2.05175,23.8121)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+        <g transform="matrix(1.20295,0,0,1.13982,23.1862,-0.430438)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+        <g transform="matrix(1.20295,0,0,1.13982,23.1862,23.8121)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+    </g>
+</svg>
+</span> puolipisteellä</nowrap> <code>;</code> tai <nowrap><span class="twemoji"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1.32916,0,0,1.32916,2.28034,-0.453959)">
+        <path d="M19.945,13.092C20.593,13.092 21.65,12.84 23.117,12.337C24.584,11.833 25.857,11.582 26.936,11.582C28.705,11.582 30.28,12.056 31.661,13.006C32.438,13.552 33.207,14.293 33.97,15.228C32.819,16.206 31.977,17.076 31.445,17.838C30.481,19.219 30,20.744 30,22.413C30,24.239 30.51,25.886 31.532,27.353C32.553,28.82 33.718,29.748 35.027,30.137C34.48,31.906 33.574,33.754 32.308,35.682C30.395,38.573 28.497,40.018 26.612,40.018C25.864,40.018 24.832,39.781 23.516,39.306C22.2,38.832 21.089,38.594 20.183,38.594C19.277,38.594 18.223,38.842 17.022,39.339C15.821,39.835 14.846,40.083 14.098,40.083C11.84,40.083 9.625,38.17 7.453,34.344C5.281,30.561 4.195,26.85 4.195,23.211C4.195,19.831 5.026,17.076 6.687,14.947C8.349,12.819 10.445,11.754 12.976,11.754C14.055,11.754 15.361,11.977 16.892,12.423C18.424,12.869 19.442,13.092 19.945,13.092ZM26.699,4.181C26.699,5.102 26.483,6.109 26.051,7.202C25.62,8.295 24.937,9.309 24.002,10.244C23.196,11.035 22.398,11.567 21.607,11.84C21.103,11.999 20.341,12.121 19.32,12.207C19.348,10.021 19.92,8.129 21.035,6.533C22.15,4.936 23.994,3.843 26.569,3.253C26.627,3.44 26.663,3.606 26.677,3.75C26.691,3.893 26.699,4.037 26.699,4.181Z" style="fill-rule:nonzero;"/>
+    </g>
+</svg>
+</span><span class="twemoji"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-1.13223,0.39038)">
+        <path d="M18.976,44.294C14.797,41.601 11.715,37.347 10.557,32.36C12.045,31.411 13.033,29.745 13.033,27.85C13.033,25.973 12.064,24.321 10.601,23.368C11.796,18.44 14.873,14.245 19.025,11.586L22.423,17.47C19.055,19.742 16.839,23.592 16.839,27.956C16.839,32.299 19.034,36.133 22.374,38.409L18.976,44.294ZM21.007,10.475C23.568,9.231 26.442,8.532 29.479,8.532C31.479,8.532 33.408,8.835 35.225,9.398C35.737,11.814 37.882,13.629 40.447,13.629C41.077,13.629 41.681,13.519 42.242,13.319C46.034,16.629 48.53,21.387 48.864,26.727L42.059,26.727C41.441,20.327 36.04,15.316 29.479,15.316C27.678,15.316 25.964,15.694 24.412,16.374L21.007,10.475ZM48.875,28.998C48.591,34.345 46.141,39.122 42.387,42.465C41.786,42.23 41.132,42.101 40.447,42.101C37.814,42.101 35.623,44.013 35.187,46.526C33.382,47.081 31.465,47.38 29.479,47.38C26.421,47.38 23.528,46.672 20.954,45.411L24.359,39.514C25.924,40.21 27.657,40.596 29.479,40.596C36.104,40.596 41.545,35.488 42.076,28.998L48.875,28.998Z"/>
+    </g>
+    <g>
+        <g transform="matrix(0.961658,0,0,0.962734,2.7871,1.65674)">
+            <path d="M37.985,2.594C40.576,2.594 42.68,4.698 42.68,7.29C42.68,9.881 40.576,11.985 37.985,11.985C35.393,11.985 33.289,9.881 33.289,7.29C33.289,4.698 35.393,2.594 37.985,2.594Z"/>
+        </g>
+        <g transform="matrix(0.961658,0,0,0.962734,2.7871,40.8169)">
+            <path d="M37.985,2.594C40.576,2.594 42.68,4.698 42.68,7.29C42.68,9.881 40.576,11.985 37.985,11.985C35.393,11.985 33.289,9.881 33.289,7.29C33.289,4.698 35.393,2.594 37.985,2.594Z"/>
+        </g>
+        <g transform="matrix(0.961658,0,0,0.962734,-29.9666,21.2217)">
+            <path d="M37.985,2.594C40.576,2.594 42.68,4.698 42.68,7.29C42.68,9.881 40.576,11.985 37.985,11.985C35.393,11.985 33.289,9.881 33.289,7.29C33.289,4.698 35.393,2.594 37.985,2.594Z"/>
+        </g>
+    </g>
+</svg>
+</span> kaksoispisteellä</nowrap> <code>:</code>.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1"><span class="twemoji"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g>
+        <g transform="matrix(1.20295,0,0,1.13982,-2.05175,-0.430438)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+        <g transform="matrix(1.20295,0,0,1.13982,-2.05175,23.8121)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+        <g transform="matrix(1.20295,0,0,1.13982,23.1862,-0.430438)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+        <g transform="matrix(1.20295,0,0,1.13982,23.1862,23.8121)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+    </g>
+</svg>
+</span> Windows</label><label for="__tabbed_2_2"><span class="twemoji"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1.32916,0,0,1.32916,2.28034,-0.453959)">
+        <path d="M19.945,13.092C20.593,13.092 21.65,12.84 23.117,12.337C24.584,11.833 25.857,11.582 26.936,11.582C28.705,11.582 30.28,12.056 31.661,13.006C32.438,13.552 33.207,14.293 33.97,15.228C32.819,16.206 31.977,17.076 31.445,17.838C30.481,19.219 30,20.744 30,22.413C30,24.239 30.51,25.886 31.532,27.353C32.553,28.82 33.718,29.748 35.027,30.137C34.48,31.906 33.574,33.754 32.308,35.682C30.395,38.573 28.497,40.018 26.612,40.018C25.864,40.018 24.832,39.781 23.516,39.306C22.2,38.832 21.089,38.594 20.183,38.594C19.277,38.594 18.223,38.842 17.022,39.339C15.821,39.835 14.846,40.083 14.098,40.083C11.84,40.083 9.625,38.17 7.453,34.344C5.281,30.561 4.195,26.85 4.195,23.211C4.195,19.831 5.026,17.076 6.687,14.947C8.349,12.819 10.445,11.754 12.976,11.754C14.055,11.754 15.361,11.977 16.892,12.423C18.424,12.869 19.442,13.092 19.945,13.092ZM26.699,4.181C26.699,5.102 26.483,6.109 26.051,7.202C25.62,8.295 24.937,9.309 24.002,10.244C23.196,11.035 22.398,11.567 21.607,11.84C21.103,11.999 20.341,12.121 19.32,12.207C19.348,10.021 19.92,8.129 21.035,6.533C22.15,4.936 23.994,3.843 26.569,3.253C26.627,3.44 26.663,3.606 26.677,3.75C26.691,3.893 26.699,4.037 26.699,4.181Z" style="fill-rule:nonzero;"/>
+    </g>
+</svg>
+</span><span class="twemoji"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-1.13223,0.39038)">
+        <path d="M18.976,44.294C14.797,41.601 11.715,37.347 10.557,32.36C12.045,31.411 13.033,29.745 13.033,27.85C13.033,25.973 12.064,24.321 10.601,23.368C11.796,18.44 14.873,14.245 19.025,11.586L22.423,17.47C19.055,19.742 16.839,23.592 16.839,27.956C16.839,32.299 19.034,36.133 22.374,38.409L18.976,44.294ZM21.007,10.475C23.568,9.231 26.442,8.532 29.479,8.532C31.479,8.532 33.408,8.835 35.225,9.398C35.737,11.814 37.882,13.629 40.447,13.629C41.077,13.629 41.681,13.519 42.242,13.319C46.034,16.629 48.53,21.387 48.864,26.727L42.059,26.727C41.441,20.327 36.04,15.316 29.479,15.316C27.678,15.316 25.964,15.694 24.412,16.374L21.007,10.475ZM48.875,28.998C48.591,34.345 46.141,39.122 42.387,42.465C41.786,42.23 41.132,42.101 40.447,42.101C37.814,42.101 35.623,44.013 35.187,46.526C33.382,47.081 31.465,47.38 29.479,47.38C26.421,47.38 23.528,46.672 20.954,45.411L24.359,39.514C25.924,40.21 27.657,40.596 29.479,40.596C36.104,40.596 41.545,35.488 42.076,28.998L48.875,28.998Z"/>
+    </g>
+    <g>
+        <g transform="matrix(0.961658,0,0,0.962734,2.7871,1.65674)">
+            <path d="M37.985,2.594C40.576,2.594 42.68,4.698 42.68,7.29C42.68,9.881 40.576,11.985 37.985,11.985C35.393,11.985 33.289,9.881 33.289,7.29C33.289,4.698 35.393,2.594 37.985,2.594Z"/>
+        </g>
+        <g transform="matrix(0.961658,0,0,0.962734,2.7871,40.8169)">
+            <path d="M37.985,2.594C40.576,2.594 42.68,4.698 42.68,7.29C42.68,9.881 40.576,11.985 37.985,11.985C35.393,11.985 33.289,9.881 33.289,7.29C33.289,4.698 35.393,2.594 37.985,2.594Z"/>
+        </g>
+        <g transform="matrix(0.961658,0,0,0.962734,-29.9666,21.2217)">
+            <path d="M37.985,2.594C40.576,2.594 42.68,4.698 42.68,7.29C42.68,9.881 40.576,11.985 37.985,11.985C35.393,11.985 33.289,9.881 33.289,7.29C33.289,4.698 35.393,2.594 37.985,2.594Z"/>
+        </g>
+    </g>
+</svg>
+</span> bash</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="admonition shell">
+<p class="admonition-title">cmd.exe: echo %PATH%</p>
+<p>C:\&gt; <pop>echo %PATH%</pop>
+C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem</p>
+</div>
+</div>
+<div class="tabbed-block">
+<div class="admonition shell">
+<p class="admonition-title">bash: echo $PATH</p>
+<p><strong>C54W4KDHGK</strong>:~ jonrajal$ <pop>echo $PATH</pop>
+/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/opt/homebrew/opt/python@3.13/libexec/bin:/Users/jonrajal/.local/bin</p>
+</div>
+</div>
+</div>
+</div>
+<p><code>PATH</code>-muuttujan sisältö on jo oletuksena aika laaja, koska se sisältää kaikki päätteen oletuskomentojen kansiot. Käytännössä kaikki komennot ovat pohjimmiltaan vain suoritettavia tiedostoja, jotka sijaitsevat jossain <code>PATH</code>in kansiossa. Esimerkiksi <nowrap><span class="twemoji"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1.32916,0,0,1.32916,2.28034,-0.453959)">
+        <path d="M19.945,13.092C20.593,13.092 21.65,12.84 23.117,12.337C24.584,11.833 25.857,11.582 26.936,11.582C28.705,11.582 30.28,12.056 31.661,13.006C32.438,13.552 33.207,14.293 33.97,15.228C32.819,16.206 31.977,17.076 31.445,17.838C30.481,19.219 30,20.744 30,22.413C30,24.239 30.51,25.886 31.532,27.353C32.553,28.82 33.718,29.748 35.027,30.137C34.48,31.906 33.574,33.754 32.308,35.682C30.395,38.573 28.497,40.018 26.612,40.018C25.864,40.018 24.832,39.781 23.516,39.306C22.2,38.832 21.089,38.594 20.183,38.594C19.277,38.594 18.223,38.842 17.022,39.339C15.821,39.835 14.846,40.083 14.098,40.083C11.84,40.083 9.625,38.17 7.453,34.344C5.281,30.561 4.195,26.85 4.195,23.211C4.195,19.831 5.026,17.076 6.687,14.947C8.349,12.819 10.445,11.754 12.976,11.754C14.055,11.754 15.361,11.977 16.892,12.423C18.424,12.869 19.442,13.092 19.945,13.092ZM26.699,4.181C26.699,5.102 26.483,6.109 26.051,7.202C25.62,8.295 24.937,9.309 24.002,10.244C23.196,11.035 22.398,11.567 21.607,11.84C21.103,11.999 20.341,12.121 19.32,12.207C19.348,10.021 19.92,8.129 21.035,6.533C22.15,4.936 23.994,3.843 26.569,3.253C26.627,3.44 26.663,3.606 26.677,3.75C26.691,3.893 26.699,4.037 26.699,4.181Z" style="fill-rule:nonzero;"/>
+    </g>
+</svg>
+</span> MacOS-koneilla</nowrap> komento <code>ls</code> löytyy polusta <code>/bin/ls</code> ja <code>man</code> löytyy polusta <code>/user/bin/man</code>. Täten, jos käyttäjä laittaa itse tekemänsä ohjelman mihin tahansa <code>PATH</code>in määrittelemään kansioon, niin sitä voi käyttää kuten komentoa.</p>
+<p>Yleensä <code>PATH</code>in käyttämät oletuskansiot ovat piilossa, vaikeasti päästävissä ja käyttöjärjestelmätasolla suojattu, joten tiedostojen lisääminen niihin kansioihin ei välttämättä ole paras idea. Paljon helpommalla pääsee, jos luo koneelle oman komentoriviohjelmakansion, johon siirtää kaikki haluamansa itsetekemät komentoriviohjelmat ja komentosarjat. Sitten vain lisää tämän oman kansion <code>PATH</code>iin seuraavalla tavalla:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1"><span class="twemoji"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g>
+        <g transform="matrix(1.20295,0,0,1.13982,-2.05175,-0.430438)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+        <g transform="matrix(1.20295,0,0,1.13982,-2.05175,23.8121)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+        <g transform="matrix(1.20295,0,0,1.13982,23.1862,-0.430438)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+        <g transform="matrix(1.20295,0,0,1.13982,23.1862,23.8121)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+    </g>
+</svg>
+</span> Windows</label><label for="__tabbed_3_2"><span class="twemoji"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1.32916,0,0,1.32916,2.28034,-0.453959)">
+        <path d="M19.945,13.092C20.593,13.092 21.65,12.84 23.117,12.337C24.584,11.833 25.857,11.582 26.936,11.582C28.705,11.582 30.28,12.056 31.661,13.006C32.438,13.552 33.207,14.293 33.97,15.228C32.819,16.206 31.977,17.076 31.445,17.838C30.481,19.219 30,20.744 30,22.413C30,24.239 30.51,25.886 31.532,27.353C32.553,28.82 33.718,29.748 35.027,30.137C34.48,31.906 33.574,33.754 32.308,35.682C30.395,38.573 28.497,40.018 26.612,40.018C25.864,40.018 24.832,39.781 23.516,39.306C22.2,38.832 21.089,38.594 20.183,38.594C19.277,38.594 18.223,38.842 17.022,39.339C15.821,39.835 14.846,40.083 14.098,40.083C11.84,40.083 9.625,38.17 7.453,34.344C5.281,30.561 4.195,26.85 4.195,23.211C4.195,19.831 5.026,17.076 6.687,14.947C8.349,12.819 10.445,11.754 12.976,11.754C14.055,11.754 15.361,11.977 16.892,12.423C18.424,12.869 19.442,13.092 19.945,13.092ZM26.699,4.181C26.699,5.102 26.483,6.109 26.051,7.202C25.62,8.295 24.937,9.309 24.002,10.244C23.196,11.035 22.398,11.567 21.607,11.84C21.103,11.999 20.341,12.121 19.32,12.207C19.348,10.021 19.92,8.129 21.035,6.533C22.15,4.936 23.994,3.843 26.569,3.253C26.627,3.44 26.663,3.606 26.677,3.75C26.691,3.893 26.699,4.037 26.699,4.181Z" style="fill-rule:nonzero;"/>
+    </g>
+</svg>
+</span><span class="twemoji"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-1.13223,0.39038)">
+        <path d="M18.976,44.294C14.797,41.601 11.715,37.347 10.557,32.36C12.045,31.411 13.033,29.745 13.033,27.85C13.033,25.973 12.064,24.321 10.601,23.368C11.796,18.44 14.873,14.245 19.025,11.586L22.423,17.47C19.055,19.742 16.839,23.592 16.839,27.956C16.839,32.299 19.034,36.133 22.374,38.409L18.976,44.294ZM21.007,10.475C23.568,9.231 26.442,8.532 29.479,8.532C31.479,8.532 33.408,8.835 35.225,9.398C35.737,11.814 37.882,13.629 40.447,13.629C41.077,13.629 41.681,13.519 42.242,13.319C46.034,16.629 48.53,21.387 48.864,26.727L42.059,26.727C41.441,20.327 36.04,15.316 29.479,15.316C27.678,15.316 25.964,15.694 24.412,16.374L21.007,10.475ZM48.875,28.998C48.591,34.345 46.141,39.122 42.387,42.465C41.786,42.23 41.132,42.101 40.447,42.101C37.814,42.101 35.623,44.013 35.187,46.526C33.382,47.081 31.465,47.38 29.479,47.38C26.421,47.38 23.528,46.672 20.954,45.411L24.359,39.514C25.924,40.21 27.657,40.596 29.479,40.596C36.104,40.596 41.545,35.488 42.076,28.998L48.875,28.998Z"/>
+    </g>
+    <g>
+        <g transform="matrix(0.961658,0,0,0.962734,2.7871,1.65674)">
+            <path d="M37.985,2.594C40.576,2.594 42.68,4.698 42.68,7.29C42.68,9.881 40.576,11.985 37.985,11.985C35.393,11.985 33.289,9.881 33.289,7.29C33.289,4.698 35.393,2.594 37.985,2.594Z"/>
+        </g>
+        <g transform="matrix(0.961658,0,0,0.962734,2.7871,40.8169)">
+            <path d="M37.985,2.594C40.576,2.594 42.68,4.698 42.68,7.29C42.68,9.881 40.576,11.985 37.985,11.985C35.393,11.985 33.289,9.881 33.289,7.29C33.289,4.698 35.393,2.594 37.985,2.594Z"/>
+        </g>
+        <g transform="matrix(0.961658,0,0,0.962734,-29.9666,21.2217)">
+            <path d="M37.985,2.594C40.576,2.594 42.68,4.698 42.68,7.29C42.68,9.881 40.576,11.985 37.985,11.985C35.393,11.985 33.289,9.881 33.289,7.29C33.289,4.698 35.393,2.594 37.985,2.594Z"/>
+        </g>
+    </g>
+</svg>
+</span> bash</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Ympäristömuuttujia muokataan kuten muitakin muuttujia. <code>PATH</code>-muuttujan kanssa kannattaa kuitenkin huomata, ettei vanhoja tietoja poisteta siitä, vaan pelkästään uusi polku lisätään vanhojen jatkeeksi. Tämä onnistuu komennolla <code>SET PATH=%PATH%;C:\\täysi\\polku\\omaan\\kansioon</code>.</p>
+<div class="admonition shell">
+<p class="admonition-title">cmd.exe: aseta PATH</p>
+<p>C:\&gt; <pop>SET PATH=%PATH%;C:\Users\jonrajal\Koodi\scripts</pop></p>
+</div>
+<p>Komento voi näyttää pelottavalta, joten puretaanpa se osiin:</p>
+<ul>
+<li><code>SET PATH=</code> vaihtaa PATH-muuttujan arvon yhtäsuuruusmerkin oikealla puolella olevaksi arvoksi.</li>
+<li><code>%PATH%</code> ensimmäinen asia, mitä uuteen PATH-muuttujaan lisätään, on koko vanhan PATH-muuttujan arvo. <strong>Tällöin mitään ei jää pois.</strong> Jos tämän kohdan ohittaa, käytännössä voi sotkea koko koneen toiminnan, joten <strong>ole tarkkana tämän kohdan kanssa</strong>, ettei muokattu, uusi versio PATH-muuttujan sisällöstä jää esim. kirjoitusvirheen takia sisällöltään puutteelliseksi (missä tilanteessa koko koneen toiminnallisuus saattaa sekoittua).</li>
+<li><code>;</code> seuraavaksi lisätään muuttujaan puolipiste, koska jokainen PATH-muuttujan polku on eroteltu puolipisteellä.</li>
+<li><code>\Users\jonrajal\Koodi\scripts</code> viimeisenä laitetaan oma polku osaksi PATH-muuttujaan asetettavaa arvoa.</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p><em>Bashissa</em> ympäristömuuttujia muokataan kuten muitakin muuttujia. <code>PATH</code>-muuttujan kanssa kannattaa kuitenkin huomata, ettei vanhoja tietoja poisteta siitä, vaan pelkästään uusi polku lisätään vanhojen jatkeeksi. Tämä onnistuu komennolla <code>PATH=$PATH:/täysi/polku/omaan/kansioon</code>. </p>
+<div class="admonition shell">
+<p class="admonition-title">bash: aseta PATH</p>
+<p><strong>C54W4KDHGK</strong>:~ jonrajal$ <pop>PATH=$PATH:/Users/jonrajal/Koodi/scripts</pop></p>
+</div>
+<p>Komento voi näyttää pelottavalta, joten puretaanpa se osiin:</p>
+<ul>
+<li><code>PATH=</code> vaihtaa PATH-muuttujan arvon yhtäsuuruusmerkin oikealla puolella olevaksi arvoksi.</li>
+<li><code>$PATH</code> ensimmäinen asia, mitä uuteen PATH-muuttujaan lisätään, on koko vanhan PATH-muuttujan arvo. Tällöin mitään ei jää pois.</li>
+<li><code>:</code> seuraavaksi lisätään muuttujaan kaksoispiste, koska jokainen PATH-muuttujan polku on eroteltu kaksoispisteellä.</li>
+<li><code>/Users/jonrajal/Koodi/scripts</code> viimeisenä laitetaan oma polku osaksi PATH-muuttujaan asetettavaa arvoa.</li>
+</ul>
+<p>Ongelmia tulee kuitenkin, jos ympäristömuuttujaa yrittää muokata esimerkin mukaisesti suoraan komentokehotteesta. Jokainen komentokehotteessa muokattu muuttuja säilyy muistissa vain siitä <a href="../komentorivi/01-bash-alkeet.md#komentorivin-osat">päätteessä</a>, ja vain niin kauan kuin pääte on käynnissä. Jotta komentoa ei tarvitsisi ajaa joka kerta uudestaan, se kannattaa sijoittaa <a href="#päätteen-käynnistystiedostot">päätteen käynnistystiedostoon</a>, jossa se suoritetaan automaattisesti aina päätteen käynnistyessä.</p>
+<p><code>PATH</code>-muuttujan saa nopeasti käynnistystiedostoon lisäämällä seuraava rivi <code>.bash_profile</code>-tiedostoon (tiedosto on kotihakemistossa <code>~</code>):
+<div class="highlight"><pre><span></span><code>export PATH=$PATH:/täysi/polku/omaan/kansioon
+</code></pre></div></p>
+<p>Tämä on lähes sama komento kuin komentorivillekin kirjoitettaessa, mutta alussa on lisäksi avainsana <code>export</code>. Tämä avainsana lisätään, koska <code>.bash_profile</code> on <a href="komentosarjat/02-bash_script.md#bash-komentosarjat">komentosarjatiedosto</a>. Komentosarjojen muokkaamat muuttujat tavallisesti jäävät vain komentosarjan sisäiseksi muutokseksi. Komento <code>export</code> laajentaa muuttujan muutoksen koko päätteelle näkyväksi.</p>
+<p>Voit lukea lisää <code>.bash_profile</code>-tiedoston muokkaamisesta ja avaamista <a href="#päätteen-käynnistystiedostot">alta</a>, mutta helppo tapa lisätä tiedostoon uusi rivi on käyttää <a href="../../komentorivi/peruskomennot/bash-peruskomennot/#tuloste-tiedostoon">tulosteenohjausmerkkejä</a>. </p>
+<div class="admonition shell">
+<p class="admonition-title">bash: PATH &gt;&gt;</p>
+<p><strong>C54W4KDHGK</strong>:~ jonrajal$ <pop>echo PATH=$PATH:/Users/jonrajal/Koodi/scripts &gt;&gt; ~/.bash_profile</pop></p>
+</div>
+</div>
+</div>
+</div>
+<h3 id="kehotteen-muokkaus">Kehotteen muokkaus<a class="headerlink" href="#kehotteen-muokkaus" title="Permanent link">&para;</a></h3>
+<p><a href="../../komentorivi/bash-alkeet/#komentorivin-osat">Komentokehotteen</a> ulkoasua voi muokata haluamansalaiseksi ympäristömuuttujilla. Joka komentotulkilla on oma tapansa kehotteen muotoiluksi, joten käydään tässä molemmat läpi.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1"><span class="twemoji"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g>
+        <g transform="matrix(1.20295,0,0,1.13982,-2.05175,-0.430438)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+        <g transform="matrix(1.20295,0,0,1.13982,-2.05175,23.8121)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+        <g transform="matrix(1.20295,0,0,1.13982,23.1862,-0.430438)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+        <g transform="matrix(1.20295,0,0,1.13982,23.1862,23.8121)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+    </g>
+</svg>
+</span> Windows</label><label for="__tabbed_4_2"><span class="twemoji"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1.32916,0,0,1.32916,2.28034,-0.453959)">
+        <path d="M19.945,13.092C20.593,13.092 21.65,12.84 23.117,12.337C24.584,11.833 25.857,11.582 26.936,11.582C28.705,11.582 30.28,12.056 31.661,13.006C32.438,13.552 33.207,14.293 33.97,15.228C32.819,16.206 31.977,17.076 31.445,17.838C30.481,19.219 30,20.744 30,22.413C30,24.239 30.51,25.886 31.532,27.353C32.553,28.82 33.718,29.748 35.027,30.137C34.48,31.906 33.574,33.754 32.308,35.682C30.395,38.573 28.497,40.018 26.612,40.018C25.864,40.018 24.832,39.781 23.516,39.306C22.2,38.832 21.089,38.594 20.183,38.594C19.277,38.594 18.223,38.842 17.022,39.339C15.821,39.835 14.846,40.083 14.098,40.083C11.84,40.083 9.625,38.17 7.453,34.344C5.281,30.561 4.195,26.85 4.195,23.211C4.195,19.831 5.026,17.076 6.687,14.947C8.349,12.819 10.445,11.754 12.976,11.754C14.055,11.754 15.361,11.977 16.892,12.423C18.424,12.869 19.442,13.092 19.945,13.092ZM26.699,4.181C26.699,5.102 26.483,6.109 26.051,7.202C25.62,8.295 24.937,9.309 24.002,10.244C23.196,11.035 22.398,11.567 21.607,11.84C21.103,11.999 20.341,12.121 19.32,12.207C19.348,10.021 19.92,8.129 21.035,6.533C22.15,4.936 23.994,3.843 26.569,3.253C26.627,3.44 26.663,3.606 26.677,3.75C26.691,3.893 26.699,4.037 26.699,4.181Z" style="fill-rule:nonzero;"/>
+    </g>
+</svg>
+</span><span class="twemoji"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-1.13223,0.39038)">
+        <path d="M18.976,44.294C14.797,41.601 11.715,37.347 10.557,32.36C12.045,31.411 13.033,29.745 13.033,27.85C13.033,25.973 12.064,24.321 10.601,23.368C11.796,18.44 14.873,14.245 19.025,11.586L22.423,17.47C19.055,19.742 16.839,23.592 16.839,27.956C16.839,32.299 19.034,36.133 22.374,38.409L18.976,44.294ZM21.007,10.475C23.568,9.231 26.442,8.532 29.479,8.532C31.479,8.532 33.408,8.835 35.225,9.398C35.737,11.814 37.882,13.629 40.447,13.629C41.077,13.629 41.681,13.519 42.242,13.319C46.034,16.629 48.53,21.387 48.864,26.727L42.059,26.727C41.441,20.327 36.04,15.316 29.479,15.316C27.678,15.316 25.964,15.694 24.412,16.374L21.007,10.475ZM48.875,28.998C48.591,34.345 46.141,39.122 42.387,42.465C41.786,42.23 41.132,42.101 40.447,42.101C37.814,42.101 35.623,44.013 35.187,46.526C33.382,47.081 31.465,47.38 29.479,47.38C26.421,47.38 23.528,46.672 20.954,45.411L24.359,39.514C25.924,40.21 27.657,40.596 29.479,40.596C36.104,40.596 41.545,35.488 42.076,28.998L48.875,28.998Z"/>
+    </g>
+    <g>
+        <g transform="matrix(0.961658,0,0,0.962734,2.7871,1.65674)">
+            <path d="M37.985,2.594C40.576,2.594 42.68,4.698 42.68,7.29C42.68,9.881 40.576,11.985 37.985,11.985C35.393,11.985 33.289,9.881 33.289,7.29C33.289,4.698 35.393,2.594 37.985,2.594Z"/>
+        </g>
+        <g transform="matrix(0.961658,0,0,0.962734,2.7871,40.8169)">
+            <path d="M37.985,2.594C40.576,2.594 42.68,4.698 42.68,7.29C42.68,9.881 40.576,11.985 37.985,11.985C35.393,11.985 33.289,9.881 33.289,7.29C33.289,4.698 35.393,2.594 37.985,2.594Z"/>
+        </g>
+        <g transform="matrix(0.961658,0,0,0.962734,-29.9666,21.2217)">
+            <path d="M37.985,2.594C40.576,2.594 42.68,4.698 42.68,7.29C42.68,9.881 40.576,11.985 37.985,11.985C35.393,11.985 33.289,9.881 33.289,7.29C33.289,4.698 35.393,2.594 37.985,2.594Z"/>
+        </g>
+    </g>
+</svg>
+</span> bash</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><em>Windowsissa</em> voi komentokehotteen muotoa (siis sitä kohtaa, joka tulostuu aina uudelle riville aluksi kun on antamassa jotain komentoa <code>cmd.exe</code>-ikkunassa) voi muokata ympäristömuuttujan <code>PROMPT</code> kautta. Nykyään (aina ei näin ole ollut) oletuksena kehotteen muoto on:
+<code>asematunnuskirjain:aktiivinen_kansio&gt;</code></p>
+<p>eli mikä on tämänkin sivuston esimerkeissä näkynyt kehotteissa:</p>
+<div class="admonition shell">
+<p class="admonition-title">cmd.exe: kehotteen oletusmuoto</p>
+<p><pop>C:\TOL-alkeet&gt;</pop></p>
+</div>
+<p>Mutta: mikäli oletuskehotemuoto alkaa kyllästyttämään, tai yleisemmin: mikäli kehotteeseen haluaa näkymään jotain muuta tietoa, voi asettaa <code>PROMPT</code>-muuttujaan erilaisia kohtia tekstiparametreilla. </p>
+<p>Oletuskehotteen muodon saa näkymään (mahdollisesti takaisin, mikäli kokeilut eivät ole olleet onnistuneita ja/tai mieleisiä) asettamalla <code>PROMPT</code>-muuttujan sisällöksi tekstiparametrin <code>$P$G</code>, eli <code>SET PROMPT=$P$G</code></p>
+<div class="admonition shell">
+<p class="admonition-title">cmd.exe: kehotteen muuttaminen takaisin oletusmuotoon</p>
+<p>DFDGMA34341::-30.2: <pop>SET PROMPT=$P$G</pop></p>
+<p>C:\TOL-alkeet&gt;</p>
+</div>
+<p>Edellä olevassa komennossa on seuraavat osat:</p>
+<ul>
+<li><code>SET</code> muuttaa siis ympäristömuuttujaa</li>
+<li><code>PROMPT</code> on ympäristömuuttuja, jota halutaan muokata. Tässä tapauksessa siis komentokehotteen muotoilu-muuttuja</li>
+<li><code>$P</code> dollarimerkillä ilmaistaan että halutaan ottaa käyttöön tätä tarkoitusta varten määriteltyjä esiasetuksia, ja tässä yhteydessä asetusta <code>P</code> eli nykyisen aseman tunnus ja aktiivinen hakemisto -tietoa.</li>
+<li><code>$G</code> sama juttu kuin edellä dollarimerkin osalta, mutta nyt käytä asetusta mikä tulostaa <code>&gt;</code> eli suurempi kuin -merkin.</li>
+</ul>
+<p>Tekstiparametrille voi antaa toki myös ns. vakioita ja hyödyntää muita ympäristömuuttujia <code>%</code>-merkkejä käyttäen, mutta seuraavat osat on samalla tavalla &ldquo;sisäänrakennettu&rdquo; hyödynnettäviksi kuten nuo <code>$P</code> ja <code>$G</code> ovat:</p>
+<table>
+<thead>
+<tr>
+<th>Avain</th>
+<th>Merkitys</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$$</td>
+<td>$ (Dollarimerkki)</td>
+</tr>
+<tr>
+<td>$t</td>
+<td>Kellonaika</td>
+</tr>
+<tr>
+<td>$d</td>
+<td>Päivämäärä</td>
+</tr>
+<tr>
+<td>$p</td>
+<td>Nykyinen asema ja aktiivinen hakemisto</td>
+</tr>
+<tr>
+<td>$v</td>
+<td>Windowsin versio</td>
+</tr>
+<tr>
+<td>$n</td>
+<td>Nykyinen asema</td>
+</tr>
+<tr>
+<td>$g</td>
+<td>&gt; (suurempi kuin -merkki)</td>
+</tr>
+<tr>
+<td>$l</td>
+<td>&lt; (pienempi kuin -merkki)</td>
+</tr>
+<tr>
+<td>$b</td>
+<td>| (pystyviiva)</td>
+</tr>
+<tr>
+<td>$q</td>
+<td>= (yhtäsuuruusmerkki)</td>
+</tr>
+<tr>
+<td>$_</td>
+<td>rivinvaihto</td>
+</tr>
+<tr>
+<td>$e</td>
+<td>ANSI-escape -koodi (koodi 27, tai 0x1B -katso <a href="/unix/ascii">ASCII-koodit</a>)</td>
+</tr>
+<tr>
+<td>$h</td>
+<td>askelpalautin l. backspace (poistaa merkin, joka on kirjoitettu näytölle)</td>
+</tr>
+<tr>
+<td>$a</td>
+<td>&amp;-merkki (&ldquo;ampersand&rdquo;)</td>
+</tr>
+<tr>
+<td>$c</td>
+<td>(-merkki (avaava sulje)</td>
+</tr>
+<tr>
+<td>$f</td>
+<td>)-merkki (sulkeva sulje)</td>
+</tr>
+<tr>
+<td>$s</td>
+<td>välilyönti</td>
+</tr>
+</tbody>
+</table>
+<details class="info">
+<summary>Muutama esimerkkikehote</summary>
+<p>Kehote voi näyttää myös kellonajan ja päivän. Näppärä, jos pitää kirjaa ajamistaan komennoista kopioimalla päätteen tulosteet erilliseen tekstitiedostoon.</p>
+<p><code>SET PROMPT=$t$s$d$s$p$g</code></p>
+<div class="admonition shell">
+<p class="admonition-title">cmd.exe: SET PROMPT=$t$s$d$s$p$g</p>
+<p>C:\TOL-alkeet&gt;set PROMPT=$t$s$d$s$p$g</p>
+<p>20.42.35,09 ma 24.11.2025 C:\TOL-alkeet&gt; </p>
+</div>
+<hr />
+<p>Mikäli haluaa, niin kehotteen saa enemmän <nowrap><span class="twemoji"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1.32916,0,0,1.32916,2.28034,-0.453959)">
+        <path d="M19.945,13.092C20.593,13.092 21.65,12.84 23.117,12.337C24.584,11.833 25.857,11.582 26.936,11.582C28.705,11.582 30.28,12.056 31.661,13.006C32.438,13.552 33.207,14.293 33.97,15.228C32.819,16.206 31.977,17.076 31.445,17.838C30.481,19.219 30,20.744 30,22.413C30,24.239 30.51,25.886 31.532,27.353C32.553,28.82 33.718,29.748 35.027,30.137C34.48,31.906 33.574,33.754 32.308,35.682C30.395,38.573 28.497,40.018 26.612,40.018C25.864,40.018 24.832,39.781 23.516,39.306C22.2,38.832 21.089,38.594 20.183,38.594C19.277,38.594 18.223,38.842 17.022,39.339C15.821,39.835 14.846,40.083 14.098,40.083C11.84,40.083 9.625,38.17 7.453,34.344C5.281,30.561 4.195,26.85 4.195,23.211C4.195,19.831 5.026,17.076 6.687,14.947C8.349,12.819 10.445,11.754 12.976,11.754C14.055,11.754 15.361,11.977 16.892,12.423C18.424,12.869 19.442,13.092 19.945,13.092ZM26.699,4.181C26.699,5.102 26.483,6.109 26.051,7.202C25.62,8.295 24.937,9.309 24.002,10.244C23.196,11.035 22.398,11.567 21.607,11.84C21.103,11.999 20.341,12.121 19.32,12.207C19.348,10.021 19.92,8.129 21.035,6.533C22.15,4.936 23.994,3.843 26.569,3.253C26.627,3.44 26.663,3.606 26.677,3.75C26.691,3.893 26.699,4.037 26.699,4.181Z" style="fill-rule:nonzero;"/>
+    </g>
+</svg>
+</span><span class="twemoji"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-1.13223,0.39038)">
+        <path d="M18.976,44.294C14.797,41.601 11.715,37.347 10.557,32.36C12.045,31.411 13.033,29.745 13.033,27.85C13.033,25.973 12.064,24.321 10.601,23.368C11.796,18.44 14.873,14.245 19.025,11.586L22.423,17.47C19.055,19.742 16.839,23.592 16.839,27.956C16.839,32.299 19.034,36.133 22.374,38.409L18.976,44.294ZM21.007,10.475C23.568,9.231 26.442,8.532 29.479,8.532C31.479,8.532 33.408,8.835 35.225,9.398C35.737,11.814 37.882,13.629 40.447,13.629C41.077,13.629 41.681,13.519 42.242,13.319C46.034,16.629 48.53,21.387 48.864,26.727L42.059,26.727C41.441,20.327 36.04,15.316 29.479,15.316C27.678,15.316 25.964,15.694 24.412,16.374L21.007,10.475ZM48.875,28.998C48.591,34.345 46.141,39.122 42.387,42.465C41.786,42.23 41.132,42.101 40.447,42.101C37.814,42.101 35.623,44.013 35.187,46.526C33.382,47.081 31.465,47.38 29.479,47.38C26.421,47.38 23.528,46.672 20.954,45.411L24.359,39.514C25.924,40.21 27.657,40.596 29.479,40.596C36.104,40.596 41.545,35.488 42.076,28.998L48.875,28.998Z"/>
+    </g>
+    <g>
+        <g transform="matrix(0.961658,0,0,0.962734,2.7871,1.65674)">
+            <path d="M37.985,2.594C40.576,2.594 42.68,4.698 42.68,7.29C42.68,9.881 40.576,11.985 37.985,11.985C35.393,11.985 33.289,9.881 33.289,7.29C33.289,4.698 35.393,2.594 37.985,2.594Z"/>
+        </g>
+        <g transform="matrix(0.961658,0,0,0.962734,2.7871,40.8169)">
+            <path d="M37.985,2.594C40.576,2.594 42.68,4.698 42.68,7.29C42.68,9.881 40.576,11.985 37.985,11.985C35.393,11.985 33.289,9.881 33.289,7.29C33.289,4.698 35.393,2.594 37.985,2.594Z"/>
+        </g>
+        <g transform="matrix(0.961658,0,0,0.962734,-29.9666,21.2217)">
+            <path d="M37.985,2.594C40.576,2.594 42.68,4.698 42.68,7.29C42.68,9.881 40.576,11.985 37.985,11.985C35.393,11.985 33.289,9.881 33.289,7.29C33.289,4.698 35.393,2.594 37.985,2.594Z"/>
+        </g>
+    </g>
+</svg>
+</span><em>bash:n</em></nowrap> näköiseksi myös <nowrap><span class="twemoji"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g>
+        <g transform="matrix(1.20295,0,0,1.13982,-2.05175,-0.430438)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+        <g transform="matrix(1.20295,0,0,1.13982,-2.05175,23.8121)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+        <g transform="matrix(1.20295,0,0,1.13982,23.1862,-0.430438)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+        <g transform="matrix(1.20295,0,0,1.13982,23.1862,23.8121)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+    </g>
+</svg>
+</span>cmd.exe</nowrap>-puolella asettamalla aktiivisen käyttäjän käyttäjänimen ja tietokoneen nimen ympäristömuuttujista, sekä muuttamalla viimeisimmäksi tulostettavan merkin <code>$</code>-merkiksi komennolla</p>
+<p><code>SET PROMPT=%USERNAME%@%COMPUTERNAME%:$p$$</code></p>
+<div class="admonition shell">
+<p class="admonition-title">cmd.exe: SET PROMPT=%USERNAME%@%COMPUTERNAME%:$p$$</p>
+<p>C:\TOL-alkeet&gt;set PROMPT=%USERNAME%@%COMPUTERNAME%:$p$$</p>
+<p>Jouni@JL-DESKTOP:C:\TOL-alkeet$</p>
+</div>
+<hr />
+<p>Komentokehotteen muokkaamiseen voi hyödyntää myös tuota edellä olevassa listassa olevaa, kryptiseltä kuulostavaa <code>$e</code> eli &ldquo;ANSI escape-merkkiä&rdquo; ja muokata esim. käytössä olevia tekstivärejä. Komento</p>
+<p><code>C:\TOL-alkeet&gt;set PROMPT=$E[1;32;40m%USERNAME%@%COMPUTERNAME%$E[1;37;40m:$E[1;34;40m$p$E[1;37;40m$$</code>   </p>
+<div class="admonition shell">
+<p class="admonition-title">cmd.exe: SET PROMPT väreissä</p>
+<p>C:\TOL-alkeet&gt;set PROMPT=$E[1;32;40m%USERNAME%@%COMPUTERNAME%$E[1;37;40m:$E[1;34;40m$p$E[1;37;40m$$</p>
+<p><span style="color:green">Jouni@JL-DESKTOP</span><span style="color:white">:</span><span style="color:blue">C:\TOL-alkeet</span><span style="color:white">$</span></p>
+</div>
+<p>muuttaa tulostusvärit tekstille kehotteen eri osiin (ensimmäinen osio käyttäjänimi@koneen_nimi vihreällä tekstillä, kaksoispiste ja lopun <code>$</code>-merkit valkoisella ja aktiivisen hakemiston polku sinisellä). Lisää värityksiä ja muita muotoiluja löytyy <a href="https://learn.microsoft.com/en-us/windows/console/console-virtual-terminal-sequences#text-formatting">Microsoftin learn-resursseista</a></p>
+</details>
+</div>
+<div class="tabbed-block">
+<p><em>Bashissa</em> on itseasiassa useampi ympäristömuuttuja kehotteen muodolle, riippuen käyttäjän ajamasta komennosta. <code>PS1</code> muokkaa peruskehotetta, joten siihen voidaan perehtyä lähemmin. Muuttujia <code>PS2</code>, <code>PS3</code> ja <code>PS4</code> käytetään erikoistapaukissa.</p>
+<p>Kuten <a href="../komentorivi/01-bash-alkeet.md#kehotteen-muotoja">komentorivin perusteissa</a> esiteltiin, <em>bashin</em> kehote on oletuksena muotoa:</p>
+<p><code>tietokoneen_nimi:aktiivinen_kansio käyttäjätunnus$</code>. </p>
+<p><code>PS1</code>-muuttujan käyttämässä muodossa tämä esitetään tekstirivillä:</p>
+<p><code>\h:\W \u\$</code>.</p>
+<p>Kehotteen muotoilussa käytetään siis avaimia, jotka korvataan oikealla sisällöllä, kun kehote näytetään käyttäjälle. <code>PS1</code>:n tukemia avaimia on ainakin seuraavat:</p>
+<table>
+<thead>
+<tr>
+<th>Avain</th>
+<th>Merkitys</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\u</td>
+<td>Käyttäjätunnus</td>
+</tr>
+<tr>
+<td>\h</td>
+<td>Tietokoneen nimi</td>
+</tr>
+<tr>
+<td>\H</td>
+<td>Tietokoneen koko nimi</td>
+</tr>
+<tr>
+<td>\d</td>
+<td>Päivämäärä</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>Kellonaika</td>
+</tr>
+<tr>
+<td>\v</td>
+<td><em>Bashin</em> versio</td>
+</tr>
+<tr>
+<td>\w</td>
+<td>Polku aktiiviseen kansioon</td>
+</tr>
+<tr>
+<td>\W</td>
+<td>Aktiivisen kansion nimi</td>
+</tr>
+<tr>
+<td>\$</td>
+<td>Näyttää <code>$</code>, ellei käyttäjä ole pääkäyttäjä. Pääkäyttäjälle <code>#</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Avaimia on myös enemmän, joten komentorivistä saa melko helposti haluamansa näköisen. Muuttujaan voi kirjoittaa myös vapaamuotoista tekstiä, tai laittaa muuttujien arvoja käyttämällä dollarimerkkiä (<code>$</code>).</p>
+<p>Varsinkin hakasulkuavaimien (<code>\[</code> ja <code>\]</code>) väliin voi laittaa erikoismerkkejä, jotka muuttavat toimintaa merkittävästi.</p>
+<details class="info">
+<summary>Muutama esimerkkikehote</summary>
+<p>Kehote voi näyttää kellonajan ja päivän. Näppärä, jos pitää kirjaa ajamistaan komennoista kopioimalla päätteen tulosteet erilliseen tekstitiedostoon.
+<div class="highlight"><pre><span></span><code>PS1=&quot;[\d \t \u@\h:\w ] $ &quot;
+</code></pre></div></p>
+<div class="admonition shell">
+<p class="admonition-title">bash: PS1=&rdquo;[\d \t \u@\h:\w ] $ </p>
+<p>[To Mar 13 20:11:32 jonrajal@C54W4KDHGK:~ ] $</p>
+</div>
+<hr />
+<p>Kehote voi näyttää polun vakiintuneessa URL-muodossa. 
+<div class="highlight"><pre><span></span><code>PS1=&quot;\u@\h:\w\$ &quot;
+</code></pre></div></p>
+<div class="admonition shell">
+<p class="admonition-title">bash: &ldquo;\u@\h:\w\$ &ldquo;</p>
+<p>jonrajal@C54W4KDHGK:~/Koodi/opetus/tol-alkeet/kuvia$</p>
+</div>
+<hr />
+<p>Kehotteen muotoiluun voi kirjoittaa myös vapaamuotoista tekstiä.
+<div class="highlight"><pre><span></span><code>PS1=&quot;Tämä on kehote &gt; &quot;
+</code></pre></div></p>
+<div class="admonition shell">
+<p class="admonition-title">bash: PS1="Tämä on kehote"</p>
+<p>Tämä on kehote &gt; </p>
+</div>
+<hr />
+<p>Kehotteessa saa käyttää myös muuttujia. Tässä on käytettä muuttujaa <code>PWD</code>, jotta <em>bashin</em> kehote näyttäisi samalta kuin Windowsin cmd.exen kehote.
+<div class="highlight"><pre><span></span><code>PS1=&quot;$PWD&gt; &quot;
+</code></pre></div></p>
+<div class="admonition shell">
+<p class="admonition-title">bash: PS1=$PWD</p>
+<p>/Users/jonrajal&gt; </p>
+</div>
+</details>
+</div>
+</div>
+</div>
+<h2 id="päätteen-käynnistystiedostot">Päätteen käynnistystiedostot<a class="headerlink" href="#päätteen-käynnistystiedostot" title="Permanent link">&para;</a></h2>
+<p>Usein komentoriviä käyttäessä tulee vastaan tilanteita, joissa aina haluaisi suorittaa samat komennot, riippumatta mistään. Jos haluaa asettaa ympäristömuuttujat aina kohdalleen, tai vaihtaa komentorivi aloittamaan aina tietysti kansiosta.</p>
+<p>Näitä varten komentotulkit käyttävät käynnistystiedostoja. Nämä käynnistystiedostot ovat aivan tavallisia <a href="../komentosarjat/#komentosarjat">komentosarjatiedostoja</a>, jotka tulkki suorittaa aina käynnistyessään.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:4"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><input id="__tabbed_5_4" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1"><span class="twemoji"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g>
+        <g transform="matrix(1.20295,0,0,1.13982,-2.05175,-0.430438)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+        <g transform="matrix(1.20295,0,0,1.13982,-2.05175,23.8121)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+        <g transform="matrix(1.20295,0,0,1.13982,23.1862,-0.430438)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+        <g transform="matrix(1.20295,0,0,1.13982,23.1862,23.8121)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+    </g>
+</svg>
+</span> Windows</label><label for="__tabbed_5_2"><span class="twemoji"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1.32916,0,0,1.32916,2.28034,-0.453959)">
+        <path d="M19.945,13.092C20.593,13.092 21.65,12.84 23.117,12.337C24.584,11.833 25.857,11.582 26.936,11.582C28.705,11.582 30.28,12.056 31.661,13.006C32.438,13.552 33.207,14.293 33.97,15.228C32.819,16.206 31.977,17.076 31.445,17.838C30.481,19.219 30,20.744 30,22.413C30,24.239 30.51,25.886 31.532,27.353C32.553,28.82 33.718,29.748 35.027,30.137C34.48,31.906 33.574,33.754 32.308,35.682C30.395,38.573 28.497,40.018 26.612,40.018C25.864,40.018 24.832,39.781 23.516,39.306C22.2,38.832 21.089,38.594 20.183,38.594C19.277,38.594 18.223,38.842 17.022,39.339C15.821,39.835 14.846,40.083 14.098,40.083C11.84,40.083 9.625,38.17 7.453,34.344C5.281,30.561 4.195,26.85 4.195,23.211C4.195,19.831 5.026,17.076 6.687,14.947C8.349,12.819 10.445,11.754 12.976,11.754C14.055,11.754 15.361,11.977 16.892,12.423C18.424,12.869 19.442,13.092 19.945,13.092ZM26.699,4.181C26.699,5.102 26.483,6.109 26.051,7.202C25.62,8.295 24.937,9.309 24.002,10.244C23.196,11.035 22.398,11.567 21.607,11.84C21.103,11.999 20.341,12.121 19.32,12.207C19.348,10.021 19.92,8.129 21.035,6.533C22.15,4.936 23.994,3.843 26.569,3.253C26.627,3.44 26.663,3.606 26.677,3.75C26.691,3.893 26.699,4.037 26.699,4.181Z" style="fill-rule:nonzero;"/>
+    </g>
+</svg>
+</span> MacOS (bash)</label><label for="__tabbed_5_3"><span class="twemoji"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1.32916,0,0,1.32916,2.28034,-0.453959)">
+        <path d="M19.945,13.092C20.593,13.092 21.65,12.84 23.117,12.337C24.584,11.833 25.857,11.582 26.936,11.582C28.705,11.582 30.28,12.056 31.661,13.006C32.438,13.552 33.207,14.293 33.97,15.228C32.819,16.206 31.977,17.076 31.445,17.838C30.481,19.219 30,20.744 30,22.413C30,24.239 30.51,25.886 31.532,27.353C32.553,28.82 33.718,29.748 35.027,30.137C34.48,31.906 33.574,33.754 32.308,35.682C30.395,38.573 28.497,40.018 26.612,40.018C25.864,40.018 24.832,39.781 23.516,39.306C22.2,38.832 21.089,38.594 20.183,38.594C19.277,38.594 18.223,38.842 17.022,39.339C15.821,39.835 14.846,40.083 14.098,40.083C11.84,40.083 9.625,38.17 7.453,34.344C5.281,30.561 4.195,26.85 4.195,23.211C4.195,19.831 5.026,17.076 6.687,14.947C8.349,12.819 10.445,11.754 12.976,11.754C14.055,11.754 15.361,11.977 16.892,12.423C18.424,12.869 19.442,13.092 19.945,13.092ZM26.699,4.181C26.699,5.102 26.483,6.109 26.051,7.202C25.62,8.295 24.937,9.309 24.002,10.244C23.196,11.035 22.398,11.567 21.607,11.84C21.103,11.999 20.341,12.121 19.32,12.207C19.348,10.021 19.92,8.129 21.035,6.533C22.15,4.936 23.994,3.843 26.569,3.253C26.627,3.44 26.663,3.606 26.677,3.75C26.691,3.893 26.699,4.037 26.699,4.181Z" style="fill-rule:nonzero;"/>
+    </g>
+</svg>
+</span> MacOS (zsh)</label><label for="__tabbed_5_4"><span class="twemoji"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-1.13223,0.39038)">
+        <path d="M18.976,44.294C14.797,41.601 11.715,37.347 10.557,32.36C12.045,31.411 13.033,29.745 13.033,27.85C13.033,25.973 12.064,24.321 10.601,23.368C11.796,18.44 14.873,14.245 19.025,11.586L22.423,17.47C19.055,19.742 16.839,23.592 16.839,27.956C16.839,32.299 19.034,36.133 22.374,38.409L18.976,44.294ZM21.007,10.475C23.568,9.231 26.442,8.532 29.479,8.532C31.479,8.532 33.408,8.835 35.225,9.398C35.737,11.814 37.882,13.629 40.447,13.629C41.077,13.629 41.681,13.519 42.242,13.319C46.034,16.629 48.53,21.387 48.864,26.727L42.059,26.727C41.441,20.327 36.04,15.316 29.479,15.316C27.678,15.316 25.964,15.694 24.412,16.374L21.007,10.475ZM48.875,28.998C48.591,34.345 46.141,39.122 42.387,42.465C41.786,42.23 41.132,42.101 40.447,42.101C37.814,42.101 35.623,44.013 35.187,46.526C33.382,47.081 31.465,47.38 29.479,47.38C26.421,47.38 23.528,46.672 20.954,45.411L24.359,39.514C25.924,40.21 27.657,40.596 29.479,40.596C36.104,40.596 41.545,35.488 42.076,28.998L48.875,28.998Z"/>
+    </g>
+    <g>
+        <g transform="matrix(0.961658,0,0,0.962734,2.7871,1.65674)">
+            <path d="M37.985,2.594C40.576,2.594 42.68,4.698 42.68,7.29C42.68,9.881 40.576,11.985 37.985,11.985C35.393,11.985 33.289,9.881 33.289,7.29C33.289,4.698 35.393,2.594 37.985,2.594Z"/>
+        </g>
+        <g transform="matrix(0.961658,0,0,0.962734,2.7871,40.8169)">
+            <path d="M37.985,2.594C40.576,2.594 42.68,4.698 42.68,7.29C42.68,9.881 40.576,11.985 37.985,11.985C35.393,11.985 33.289,9.881 33.289,7.29C33.289,4.698 35.393,2.594 37.985,2.594Z"/>
+        </g>
+        <g transform="matrix(0.961658,0,0,0.962734,-29.9666,21.2217)">
+            <path d="M37.985,2.594C40.576,2.594 42.68,4.698 42.68,7.29C42.68,9.881 40.576,11.985 37.985,11.985C35.393,11.985 33.289,9.881 33.289,7.29C33.289,4.698 35.393,2.594 37.985,2.594Z"/>
+        </g>
+    </g>
+</svg>
+</span> Ubuntu</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Toisin kuin <nowrap><span class="twemoji"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1.32916,0,0,1.32916,2.28034,-0.453959)">
+        <path d="M19.945,13.092C20.593,13.092 21.65,12.84 23.117,12.337C24.584,11.833 25.857,11.582 26.936,11.582C28.705,11.582 30.28,12.056 31.661,13.006C32.438,13.552 33.207,14.293 33.97,15.228C32.819,16.206 31.977,17.076 31.445,17.838C30.481,19.219 30,20.744 30,22.413C30,24.239 30.51,25.886 31.532,27.353C32.553,28.82 33.718,29.748 35.027,30.137C34.48,31.906 33.574,33.754 32.308,35.682C30.395,38.573 28.497,40.018 26.612,40.018C25.864,40.018 24.832,39.781 23.516,39.306C22.2,38.832 21.089,38.594 20.183,38.594C19.277,38.594 18.223,38.842 17.022,39.339C15.821,39.835 14.846,40.083 14.098,40.083C11.84,40.083 9.625,38.17 7.453,34.344C5.281,30.561 4.195,26.85 4.195,23.211C4.195,19.831 5.026,17.076 6.687,14.947C8.349,12.819 10.445,11.754 12.976,11.754C14.055,11.754 15.361,11.977 16.892,12.423C18.424,12.869 19.442,13.092 19.945,13.092ZM26.699,4.181C26.699,5.102 26.483,6.109 26.051,7.202C25.62,8.295 24.937,9.309 24.002,10.244C23.196,11.035 22.398,11.567 21.607,11.84C21.103,11.999 20.341,12.121 19.32,12.207C19.348,10.021 19.92,8.129 21.035,6.533C22.15,4.936 23.994,3.843 26.569,3.253C26.627,3.44 26.663,3.606 26.677,3.75C26.691,3.893 26.699,4.037 26.699,4.181Z" style="fill-rule:nonzero;"/>
+    </g>
+</svg>
+</span>mac-ympäristössä</nowrap> ja <nowrap><span class="twemoji"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-1.13223,0.39038)">
+        <path d="M18.976,44.294C14.797,41.601 11.715,37.347 10.557,32.36C12.045,31.411 13.033,29.745 13.033,27.85C13.033,25.973 12.064,24.321 10.601,23.368C11.796,18.44 14.873,14.245 19.025,11.586L22.423,17.47C19.055,19.742 16.839,23.592 16.839,27.956C16.839,32.299 19.034,36.133 22.374,38.409L18.976,44.294ZM21.007,10.475C23.568,9.231 26.442,8.532 29.479,8.532C31.479,8.532 33.408,8.835 35.225,9.398C35.737,11.814 37.882,13.629 40.447,13.629C41.077,13.629 41.681,13.519 42.242,13.319C46.034,16.629 48.53,21.387 48.864,26.727L42.059,26.727C41.441,20.327 36.04,15.316 29.479,15.316C27.678,15.316 25.964,15.694 24.412,16.374L21.007,10.475ZM48.875,28.998C48.591,34.345 46.141,39.122 42.387,42.465C41.786,42.23 41.132,42.101 40.447,42.101C37.814,42.101 35.623,44.013 35.187,46.526C33.382,47.081 31.465,47.38 29.479,47.38C26.421,47.38 23.528,46.672 20.954,45.411L24.359,39.514C25.924,40.21 27.657,40.596 29.479,40.596C36.104,40.596 41.545,35.488 42.076,28.998L48.875,28.998Z"/>
+    </g>
+    <g>
+        <g transform="matrix(0.961658,0,0,0.962734,2.7871,1.65674)">
+            <path d="M37.985,2.594C40.576,2.594 42.68,4.698 42.68,7.29C42.68,9.881 40.576,11.985 37.985,11.985C35.393,11.985 33.289,9.881 33.289,7.29C33.289,4.698 35.393,2.594 37.985,2.594Z"/>
+        </g>
+        <g transform="matrix(0.961658,0,0,0.962734,2.7871,40.8169)">
+            <path d="M37.985,2.594C40.576,2.594 42.68,4.698 42.68,7.29C42.68,9.881 40.576,11.985 37.985,11.985C35.393,11.985 33.289,9.881 33.289,7.29C33.289,4.698 35.393,2.594 37.985,2.594Z"/>
+        </g>
+        <g transform="matrix(0.961658,0,0,0.962734,-29.9666,21.2217)">
+            <path d="M37.985,2.594C40.576,2.594 42.68,4.698 42.68,7.29C42.68,9.881 40.576,11.985 37.985,11.985C35.393,11.985 33.289,9.881 33.289,7.29C33.289,4.698 35.393,2.594 37.985,2.594Z"/>
+        </g>
+    </g>
+</svg>
+</span>linux-puolella</nowrap> <em>bash</em>-komentotulkissa, <nowrap><span class="twemoji"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g>
+        <g transform="matrix(1.20295,0,0,1.13982,-2.05175,-0.430438)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+        <g transform="matrix(1.20295,0,0,1.13982,-2.05175,23.8121)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+        <g transform="matrix(1.20295,0,0,1.13982,23.1862,-0.430438)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+        <g transform="matrix(1.20295,0,0,1.13982,23.1862,23.8121)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+    </g>
+</svg>
+</span>Windowsissa</nowrap> komentokehotteen käynnistämisen yhteydessä ei automaattisesti ajeta mitään käyttäjän muokattavaksi tarkoitettuja asetustiedostoja, joita muokkaamalla voisi suorittaa haluamiaan komentosarjoja. Pieni kiertotie on muuttaa Windowsin pääteohjelman asetuksista <code>Komentokehote</code>-ohjelman (eng. <code>Command Prompt</code>) käynnistyskomentoa, ja lisätä siihen <code>/k</code> -valitsin ja halutun komentosarjatiedoston nimi polkuineen (ikään kuin rakentaa oma, <em>bash</em>-puolen <code>~/.bashrc</code>:tä vastaava tiedosto ja systeemi). Esimerkiksi, mikäli tiedosto <code>C:\TOL-alkeet\oma.bat</code> sisältäisi tuon aiemmin käytetyn <code>SET PROMPT</code>-komennon, jolla muutetaan kehoteteksti &ldquo;<em>bash</em>-maiseksi&rdquo; ja väritetyksi:</p>
+<p><div class="highlight"><pre><span></span><code>@ECHO OFF
+SET PROMPT=$E[1;32;40m%USERNAME%@%COMPUTERNAME%$E[1;37;40m:$E[1;34;40m$p$E[1;37;40m$$
+</code></pre></div>
+sen voisi asettaa automaattisesti käynnistyksen yhteydessä ajettavaksi asettamalla komentorivin käynnistyskomennon muotoon</p>
+<div class="highlight"><pre><span></span><code>%SystemRoot%\System32\cmd.exe /k C:\TOL-alkeet\oma.bat
+</code></pre></div>
+<p><img alt="" src="../kuvat/win-terminal-settings.png" /></p>
+<p><img alt="" src="../kuvat/win-terminal-startupfile.png" /></p>
+<p><img alt="" src="../kuvat/win-terminal-custom-startup.png" /></p>
+</div>
+<div class="tabbed-block">
+<div class="admonition danger">
+<p class="admonition-title">Bash ei ole oletustulkki</p>
+<p><em>Jos olet vaihtanut MacOS:n tulkin Zsh:sta Bashiin, niin lue tämä osio. Jos käytät käyttöjärjestelmän määrittelemää oletustulkkia – </em>Zsh<em> – niin lue sitä käsittelevä osio.</em></p>
+</div>
+<div class="admonition warning inline end">
+<p class="admonition-title">.bashrc</p>
+<p><em>Bash</em> joskus lukee käynnistyessään tiedoston <code>~/.bashrc</code> muiden tiedostojen sijasta. Tämä tiedosto luetaan vain niissä tapauksissa, jos tulkki käynnistyy ilman sisäänkirjautumista. MacOS:llä tämä on kuitenkin harvinaista.</p>
+</div>
+<p><em>Bash</em> aina käynnistyessään suorittaa yhden käynnistystiedoston, riippuen siitä, minkä tiedoston se löytää ensimmäisenä. <em>Bash</em> hakee ensin tiedostoa <code>~/.bash_profile</code> ja suorittaa sen; jos sitä ei löydy, niin <em>bash</em> etsii tiedoston <code>~/.bash_login</code>. Senkin puuttuessa etsitään vielä tiedosto <code>~/.profile</code>. Jos mitään näistä ei löydy, <em>bash</em> ei suorita mitään käynnistystiedostoa.</p>
+<p><code>.bash_profile</code> ja sen kaverit ovat piilotettuja tekstitiedostoja, joten niiden avaaminen komentorivin kautta voi olla vaikeaa. Kokeile jotain seuraavista komennoista sen avaamiseksi:</p>
+<ul>
+<li><code>open -t ~/.bash_profile</code> avaa Texturin (eng. <em>TextEdit</em>) tiedoston muokkaamista varten.</li>
+<li><code>nano ~/.bash_profile</code> avaa tekstitiedoston Nanolla, joka on komentorivillä toimiva tekstieditori.</li>
+<li>Jos haluat vain lisätä tekstiä tiedoston perään, voit käyttää <a href="../../komentorivi/peruskomennot/bash-peruskomennot/#tuloste-tiedostoon">tulosteenohjausmerkkejä</a>. <code>echo PATH=$PATH:/täysi/polku/omaan/kansioon &gt;&gt; ~/.bash_profile</code> lisää halutun rivin tiedoston perään.</li>
+</ul>
+<p>Kun käynnistystiedostoa on muokattu se suoritetaan sellaisenaan seuraavan kerran tulkin käynnistyessä, eli komentorivi-ikkunan auetessa. Jos muutokset haluaa nykyiseen tulkkiin, niin kannattaa ajaa komento <code>source ~/.bash_profile</code>(vaihtaen tiedostonimeksi muokatun käynnistystiedoston nimi), jotta nykyinen tulkki suorittaisi käynnistystiedoston.</p>
+<p>Käynnistystiedostojen kanssa kannattaa myös huomioida se, että ne suoritetaan vain <em>interaktiivisen</em> tulkin käynnistyessä, eli tilanteissa jossa tulkki näyttää komentokehotteen. Jos suoritat komentosarjoja tai komentoriviohjelmia graafisen käyttöliittymän kautta, näitä käynnistystiedostossa esiteltyjä <code>PATH</code>-muutoksia tai <code>alias</code>-määrittelyjä ei suoriteta.</p>
+</div>
+<div class="tabbed-block">
+<p><em>Zsh</em> suorittaa yhden käynnistystiedoston käynnistyessään: <code>~/.zshenv</code>.</p>
+<p><code>.zshenv</code> ja on piilotettu tekstitiedosto, joten niiden avaaminen komentorivin kautta voi olla vaikeaa. Kokeile jotain seuraavista komennoista sen avaamiseksi:</p>
+<ul>
+<li><code>open -t ~/.zshenv</code> avaa Texturin (eng. <em>TextEdit</em>) tiedoston muokkaamista varten.</li>
+<li><code>nano ~/.zshenv</code> avaa tekstitiedoston Nanolla, joka on komentorivillä toimiva tekstieditori.</li>
+<li>Jos haluat vain lisätä tekstiä tiedoston perään, voit käyttää <a href="../../komentorivi/peruskomennot/bash-peruskomennot/#tuloste-tiedostoon">tulosteenohjausmerkkejä</a>. <code>echo PATH=$PATH:/täysi/polku/omaan/kansioon &gt;&gt; ~/.zshenv</code> lisää halutun rivin tiedoston perään.</li>
+</ul>
+<p>Kun käynnistystiedostoa on muokattu se suoritetaan sellaisenaan seuraavan kerran tulkin käynnistyessä, eli komentorivi-ikkunan auetessa. Jos muutokset haluaa nykyiseen tulkkiin, niin kannattaa ajaa komento <code>source ~/.zshenv</code>, jotta nykyinen tulkki suorittaisi käynnistystiedoston.</p>
+<p>Toisin kuin <em>Bash</em>, <em>Zsh</em> suorittaa käynnistystiedoston myös epäinteraktiivisissa tiloissa. Tämä tarkoittaa sitä, että myös graafisen käyttöliittymän kautta ajetut komentosarjat näkevät muutokset käynnistystiedostoihin. Jos haluaa määritellä komentoja, joita ajetaan vain interaktiivisessa tulkissa ja kirjautuneelle käyttäjälle, niin Zsh tukee myös tiedostoja <code>~/.zprofile</code> ja <code>~/.zlogin</code> siihen tarkoitukseen.</p>
+</div>
+<div class="tabbed-block">
+<div class="admonition warning inline end">
+<p class="admonition-title">.bash_profile</p>
+<p><em>Bashilla</em> on paljon erilaisia käynnistystiedostoja eri käyttötapauksiin. Ubuntun oletuspääte ei kirjaa käyttäjää sisään tulkkiin, joten se käyttää <code>.bashrc</code>-tiedostoa. Toisaalta <em>bash</em> käyttää myös tiedostoja <code>.bash_profile</code>, <code>.bash_login</code> ja <code>.profile</code>, jos kirjautunut käyttäjä käynnistää tulkin. Näiden kanssa kannattaa olla tarkkana.</p>
+</div>
+<p><em>Bash</em> aina käynnistyessään suorittaa tiedoston <code>~/.bashrc</code> sisällön komentosarjana. Jos tiedostoa ei ole käyttäjän kotihakemistossa, niin mitään ei suoriteta.</p>
+<p><code>.bashrc</code> ja sen kaverit ovat piilotettuja tekstitiedostoja (niiden nimi alkaa pisteellä), joten niiden avaaminen komentorivin kautta voi olla vaikeaa. Kokeile jotain seuraavista komennoista sen avaamiseksi:</p>
+<ul>
+<li><code>xdg-open ~/.bashrc</code> avaa käyttöjärjestelmän oletustekstieditorin tiedoston muokkaamista varten. Pahimmassa tapauksessa se voi olla <a href="../../vim.hidden/"><em>vim</em></a>.</li>
+<li><code>nano ~/.bashrc</code> avaa tekstitiedoston Nanolla, joka on komentorivillä toimiva tekstieditori.</li>
+<li>Jos haluat vain lisätä tekstiä tiedoston perään, voit käyttää <a href="../../komentorivi/peruskomennot/bash-peruskomennot/#tuloste-tiedostoon">tulosteenohjausmerkkejä</a>. <code>echo PATH=$PATH:/täysi/polku/omaan/kansioon &gt;&gt; ~/.bashrc</code> lisää halutun rivin tiedoston perään.</li>
+</ul>
+<p>Kun käynnistystiedostoa on muokattu se suoritetaan sellaisenaan seuraavan kerran tulkin käynnistyessä, eli komentorivi-ikkunan auetessa. Jos muutokset haluaa nykyiseen tulkkiin, niin kannattaa ajaa komento <code>source ~/.bashrc</code>, jotta nykyinen tulkki suorittaisi käynnistystiedoston.</p>
+<p>Käynnistystiedostojen kanssa kannattaa myös huomioida se, että ne suoritetaan vain <em>interaktiivisen</em> tulkin käynnistyessä, eli tilanteissa jossa tulkki näyttää komentokehotteen. Jos suoritat komentosarjoja tai komentoriviohjelmia graafisen käyttöliittymän kautta, näitä käynnistystiedostossa esiteltyjä <code>PATH</code>-muutoksia tai <code>alias</code>-määrittelyjä ei suoriteta.</p>
+</div>
+</div>
+</div>
+<h3 id="alias">Alias<a class="headerlink" href="#alias" title="Permanent link">&para;</a></h3>
+<p>Käynnistystiedostot ovat näppäriä paikkoja kirjoittaa aikaisemmin esitellyt <a href="#path">PATHin lisäykset</a> ja <a href="#kehotteen-muokkaus">kehotteen muotoilut</a>, mutta niitä voi käyttää myös muuhun. Toinen yleinen tarkoitus niille on esitellä komentojen synonyymeja tai pienoiskomentoja. Tapoja kirjoittaa lyhenteitä monimutkaisemmille komennoille.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1"><span class="twemoji"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g>
+        <g transform="matrix(1.20295,0,0,1.13982,-2.05175,-0.430438)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+        <g transform="matrix(1.20295,0,0,1.13982,-2.05175,23.8121)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+        <g transform="matrix(1.20295,0,0,1.13982,23.1862,-0.430438)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+        <g transform="matrix(1.20295,0,0,1.13982,23.1862,23.8121)">
+            <rect x="5.238" y="5.071" width="19.083" height="19.083"/>
+        </g>
+    </g>
+</svg>
+</span> Windows doskey</label><label for="__tabbed_6_2"><span class="twemoji"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1.32916,0,0,1.32916,2.28034,-0.453959)">
+        <path d="M19.945,13.092C20.593,13.092 21.65,12.84 23.117,12.337C24.584,11.833 25.857,11.582 26.936,11.582C28.705,11.582 30.28,12.056 31.661,13.006C32.438,13.552 33.207,14.293 33.97,15.228C32.819,16.206 31.977,17.076 31.445,17.838C30.481,19.219 30,20.744 30,22.413C30,24.239 30.51,25.886 31.532,27.353C32.553,28.82 33.718,29.748 35.027,30.137C34.48,31.906 33.574,33.754 32.308,35.682C30.395,38.573 28.497,40.018 26.612,40.018C25.864,40.018 24.832,39.781 23.516,39.306C22.2,38.832 21.089,38.594 20.183,38.594C19.277,38.594 18.223,38.842 17.022,39.339C15.821,39.835 14.846,40.083 14.098,40.083C11.84,40.083 9.625,38.17 7.453,34.344C5.281,30.561 4.195,26.85 4.195,23.211C4.195,19.831 5.026,17.076 6.687,14.947C8.349,12.819 10.445,11.754 12.976,11.754C14.055,11.754 15.361,11.977 16.892,12.423C18.424,12.869 19.442,13.092 19.945,13.092ZM26.699,4.181C26.699,5.102 26.483,6.109 26.051,7.202C25.62,8.295 24.937,9.309 24.002,10.244C23.196,11.035 22.398,11.567 21.607,11.84C21.103,11.999 20.341,12.121 19.32,12.207C19.348,10.021 19.92,8.129 21.035,6.533C22.15,4.936 23.994,3.843 26.569,3.253C26.627,3.44 26.663,3.606 26.677,3.75C26.691,3.893 26.699,4.037 26.699,4.181Z" style="fill-rule:nonzero;"/>
+    </g>
+</svg>
+</span><span class="twemoji"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-1.13223,0.39038)">
+        <path d="M18.976,44.294C14.797,41.601 11.715,37.347 10.557,32.36C12.045,31.411 13.033,29.745 13.033,27.85C13.033,25.973 12.064,24.321 10.601,23.368C11.796,18.44 14.873,14.245 19.025,11.586L22.423,17.47C19.055,19.742 16.839,23.592 16.839,27.956C16.839,32.299 19.034,36.133 22.374,38.409L18.976,44.294ZM21.007,10.475C23.568,9.231 26.442,8.532 29.479,8.532C31.479,8.532 33.408,8.835 35.225,9.398C35.737,11.814 37.882,13.629 40.447,13.629C41.077,13.629 41.681,13.519 42.242,13.319C46.034,16.629 48.53,21.387 48.864,26.727L42.059,26.727C41.441,20.327 36.04,15.316 29.479,15.316C27.678,15.316 25.964,15.694 24.412,16.374L21.007,10.475ZM48.875,28.998C48.591,34.345 46.141,39.122 42.387,42.465C41.786,42.23 41.132,42.101 40.447,42.101C37.814,42.101 35.623,44.013 35.187,46.526C33.382,47.081 31.465,47.38 29.479,47.38C26.421,47.38 23.528,46.672 20.954,45.411L24.359,39.514C25.924,40.21 27.657,40.596 29.479,40.596C36.104,40.596 41.545,35.488 42.076,28.998L48.875,28.998Z"/>
+    </g>
+    <g>
+        <g transform="matrix(0.961658,0,0,0.962734,2.7871,1.65674)">
+            <path d="M37.985,2.594C40.576,2.594 42.68,4.698 42.68,7.29C42.68,9.881 40.576,11.985 37.985,11.985C35.393,11.985 33.289,9.881 33.289,7.29C33.289,4.698 35.393,2.594 37.985,2.594Z"/>
+        </g>
+        <g transform="matrix(0.961658,0,0,0.962734,2.7871,40.8169)">
+            <path d="M37.985,2.594C40.576,2.594 42.68,4.698 42.68,7.29C42.68,9.881 40.576,11.985 37.985,11.985C35.393,11.985 33.289,9.881 33.289,7.29C33.289,4.698 35.393,2.594 37.985,2.594Z"/>
+        </g>
+        <g transform="matrix(0.961658,0,0,0.962734,-29.9666,21.2217)">
+            <path d="M37.985,2.594C40.576,2.594 42.68,4.698 42.68,7.29C42.68,9.881 40.576,11.985 37.985,11.985C35.393,11.985 33.289,9.881 33.289,7.29C33.289,4.698 35.393,2.594 37.985,2.594Z"/>
+        </g>
+    </g>
+</svg>
+</span> <em>Bash</em> alias</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Windows ei tue aliasta tai vastaavaa järjestelmää, mutta cmd.exe:ssä voi luoda makroja komennolla <code>doskey</code>. Tällä tekniikalla voi tavallaan antaa komennoille vaihtoehtoisia nimiä. Esimerkiksi <code>doskey ls=dir</code> tekee dir-komennosta sellaisen, jonka voi suorittaa joko kirjoittamalla <code>dir</code> tai <code>ls</code>. </p>
+<div class="admonition shell">
+<p class="admonition-title">cmd.exe: doskey</p>
+<p>C:\TOL-alkeet&gt;<pop>doskey ls=dir /w</pop></p>
+<p>C:\TOL-alkeet&gt;<pop>ls</pop>
+ Volume in drive C has no label.
+ Volume Serial Number is 1028-66AE</p>
+<p>Directory of C:\TOL-alkeet</p>
+<p>[.]               fibo.bat          hello.exe         [html-kansio]     [kuvia]            README.txt        teksti.txt        test.txt          testi.bat         [toinen]          toinen.txt        toinen.zip        uusi.txt
+              16 File(s)         51 456 bytes
+               4 Dir(s)  1 310 752 272 384 bytes free</p>
+<p>C:\TOL-alkeet&gt;</p>
+</div>
+<p>Tällöin tosin menettää kyvyn antaa dir-komennolle kuuluvia valitsimia <code>ls</code>-nimen kautta käytettäessä. Toisaalta, <code>doskey</code>-makroa voi käyttää lyhyenä oikotienä komennolle, jolle haluaa antaa useita ja/tai pitkiä argumentti- ja valitsinyhdistelmiä.</p>
+<p>Kaikki sillä hetkellä määritellyt <code>doskey</code>-makrot saa listattua komennolla <code>doskey /macros</code>, ja mikäli makroasetuksista haluaa pysyvämpiä kuin vain senhetkisen komentokehoteistunnon aikaisia, voi soveltaa <a href="#päätteen-käynnistystiedostot">päätteen käynnistystiedostot</a>-kohdassa esitettyä <code>/k</code>-valitsinta ja komentosarjatiedostoa doskey-makrojen luontiin joka komentokehotteen käynnistyksen yhteydessä.</p>
+<p>Jos komento, jolle <code>doskey</code>-makron haluaa luoda ottaa argumentteja, ne voi välittää makron nimelle käyttämällä joko yksittäistä parametria <code>$1</code>-<code>$9</code> makron <code>=</code>-merkin oikealla puolella olevalle alkuperäiselle komennolle, tai (kuten monesti on tarve) välittää vain &ldquo;loput&rdquo; parametrit makrolle <code>$*</code>-merkinnällä.</p>
+<div class="admonition shell">
+<p class="admonition-title">cmd.exe: doskey $*</p>
+<p>C:\TOL-alkeet&gt;<pop>doskey cat=type $*</pop></p>
+<p>C:\TOL-alkeet&gt;cat teksti.txt
+Tõmõ on tekstitiedoston sisõlt÷. Tõtõ kõytetõõn tol-alkeet-materiaalin esimerkkitiedostona.</p>
+<p>Tekstitiedosto sisõltõõ tekstiõ, kuten kirjaimia, numeroita ja muita erikoismerkkejõ.</p>
+</div>
+<p><code>doskey</code>-makroihin löytyy lisätietoa <a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/doskey">Microsoftin learn-portaalista</a>.</p>
+</div>
+<div class="tabbed-block">
+<p><em>Bashilla</em> pienoiskomennot saa luotua <code>alias</code>-komennolla.</p>
+<p><code>alias</code> luo uuden avainsanan komentoriville, joka aina kirjoitettaessa laajenee annettuun merkitykseensä. Esimerkiksi <code>alias vaihdakansio=cd</code> luo käyttäjälle uuden komennon nimeltä <code>vaihdakansio</code>, joka toimii kuin <code>cd</code>.</p>
+<div class="admonition shell">
+<p class="admonition-title">bash: alias vaihdakansio=cd</p>
+<p><strong>C54W4KDHGK</strong>:tol-alkeet jonrajal$ <pop>alias vaihdakansio=cd</pop>
+<strong>C54W4KDHGK</strong>:tol-alkeet jonrajal$ pwd
+/Users/jonrajal/Koodi/opetus/tol-alkeet
+<strong>C54W4KDHGK</strong>:tol-alkeet jonrajal$ <pop>vaihdakansio kuvia</pop>
+<strong>C54W4KDHGK</strong>:kuvia jonrajal$ pwd
+/Users/jonrajal/Koodi/opetus/tol-alkeet/kuvia</p>
+</div>
+<p>Toinen näppärä käyttö aliaksille on muuttaa olemassa olevia komentoja toimimaan haluamallaan tavalla. Esimerkiksi komento <code>alias ls='ls -GFh'</code> muuttaa <code>ls</code>-komennon toiminnan siten, että siinä on aina liput <code>-GFh</code> päällä.</p>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Creative Commons Attribution Non Commercial
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.sections", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../../../js/mkdocs-charts-plugin.js"></script>
+      
+        <script src="../../../javascripts/extra.js"></script>
+      
+        <script src="../../../javascripts/tab-control.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+      
+    
+  </body>
+</html>
